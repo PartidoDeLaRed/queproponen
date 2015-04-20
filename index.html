@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>¿Vos que Propones?</title>
+<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="JS/Utilities.js"></script>
+<script src="JS/Clases.js"></script>
+<script src="JS/Templates.js"></script>
+<script src="JS/javascript.js"></script>
+
+<script language="javascript" type="application/javascript">
+
+var partidos = null;
+$(document).ready(function(e) {
+	$('.contentContainer').append(MostrarContenedor(contenedores.PARTIDOS));
+	$('.contentContainer').append(MostrarContenedor(contenedores.CANDIDATOS));
+	$('.contentContainer').append(MostrarContenedor(contenedores.PROPUESTAS));
+	
+	partidos = shuffle(CargarDatos());
+	partidos.forEach(function(part)
+	{
+		MostrarPartido(0, part);
+		part.candidatos.forEach(function(cand)
+		{
+			MostrarCandidato(0, cand);
+			cand.propuestas.forEach(function(prop)
+			{
+				MostrarPropuesta(0, prop);
+			});
+		});
+	});
+});
+
+</script>
+
+</head>
+
+<body>
+
+	<div class="headerContainer">
+    	<div class="color"></div>
+    	<div class="title">¿VOS QUE PROPONES?</div>
+    	<div class="subtitle">Sabé cuales son las propuestas de gobierno de todos los candidatos a Jefe de Gobierno de la Ciudad de Buenos Aires</div>
+    </div>
+
+	<div class="searchContainer">
+    	<input class="searchField" type="text" placeholder="Buscá partidos, candidatos o temas de propuestas..."/>
+    	<div class="searchButton">
+        </div>
+    </div>
+
+	<div id="contenido" class="mainContainer">
+    	<div class="contentContainer">
+        </div>
+    </div>
+
+	<div class="footerContainer">
+    </div>
+
+</body>
+</html>
