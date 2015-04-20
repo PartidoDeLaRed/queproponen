@@ -14,7 +14,7 @@ function CargarDatos()
 					[
 					]
 				), 
-				Candidato(2, 'Gustavo López', 'CIUDAD PARA TODOS', 'López.jpg', 0, 
+				Candidato(2, 'Gustavo López', 'CIUDAD PARA TODOS', 'Lopez.jpg', 0, 
 					[
 					]
 				), 
@@ -54,7 +54,7 @@ function CargarDatos()
 					[
 					]
 				), 
-				Candidato(1, 'Graciela Ocaña', 'TRANSPARENCIA Y GESTIÓN', 'Ocaña.jpg', 2, 
+				Candidato(1, 'Graciela Ocaña', 'TRANSPARENCIA Y GESTIÓN', 'Ocania.jpg', 2, 
 					[
 					]
 				),
@@ -70,7 +70,7 @@ function CargarDatos()
 					[
 					]
 				), 
-				Candidato(1, 'Sergio García', 'LISTA 2', 'García.jpg', 3, 
+				Candidato(1, 'Sergio García', 'LISTA 2', 'Garcia.jpg', 3, 
 					[
 					]
 				),
@@ -150,7 +150,7 @@ function CargarDatos()
 		),
 		Partido(11, 'Nuevo MAS', 'nm.png', '#F9343B', 
 			[
-				Candidato(0, 'Manuela Castañeira', 'LAS ROJAS', 'Castañeira.jpg', 11, 
+				Candidato(0, 'Manuela Castañeira', 'LAS ROJAS', 'Castanieira.jpg', 11, 
 					[
 					]
 				)

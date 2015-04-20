@@ -52,15 +52,24 @@ body,html{
 }
 
 .searchContainer{
-	border-radius: 10px;
-	border: 1px solid #8ac;
-	width: 940px;
 	height: 80px;
+	width: auto;
+	text-align:center;
 	z-index: 10;
 	margin: -40px auto -40px auto;
-	background: #fff;
+	padding: 0 20px;
 	position: relative;
+}
+
+.searchBox{
+	border-radius: 10px;
+	border: 1px solid #8ac;
 	box-shadow: 0 2px 5px rgba(0,0,0,.2);
+	background: #fff;
+	height: 80px;
+	max-width: 940px;
+	margin: 0 auto;
+	position: relative;
 }
 
 .searchField {
@@ -100,7 +109,7 @@ body,html{
 }
 
 .contentContainer {
-    width: 960px;
+    max-width: 960px;
     margin: 0 auto;
     padding: 40px 0;
 }
@@ -337,4 +346,5 @@ body,html{
 	font-size: 22px;
 	font-weight:300;
 	font-family:'Alegreya Sans', sans-serif;
+	overflow:hidden;
 }
