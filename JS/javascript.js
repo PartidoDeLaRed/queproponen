@@ -9,6 +9,7 @@ function CargarDatos()
 						Propuesta("Ampliación de los hospitales públicos", "Se planea construir 10 metros cuadrados más en cada hospital y así poder poner un inodóro más.", temas.SALUD, 0, 0),
 						Propuesta("Bandas en las puertas", "Todos los días desde las 17 a las 19 hs en la puerta de cada hospital público se presentaran diversas bandas musicales para alegrarle el día a los pobres enfermos.", temas.SALUD, 0, 0)
 					]
+					, '@fvilledary'
 				), 
 				Candidato(1, 'Gabriela Cerruti', 'LA CIUDAD ES EL OTRO', 'Cerruti.jpg', 0, 
 					[
@@ -347,6 +348,8 @@ function MostrarPropuesta(modo, prop)
 {
 	if(prop.partido != undefined)
 	{
+		var candidato = partidos.filter(function(e){return e.codigo == prop.partido;})[0].candidatos.filter(function(e){return e.codigo == prop.candidato;})[0];
+		
 		switch(modo)
 		{
 			case 0:
@@ -417,10 +420,21 @@ function MostrarPropuesta(modo, prop)
 				$(texto).addClass('textoPropuesta');
 				$(texto).html(prop.texto);
 				$(cont).append(texto);
-	
+
 				$(container).append(cont);
+	
+				var tweet = document.createElement('a');
+				$(tweet).addClass('twitterButton');
+				$(tweet).html('Decile a '+candidato.nombre+' lo que pensas de esta propuesta');
+				$(tweet).click(function(e) {
+                    window.open('https://twitter.com/share?'+
+				'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepopones%2Fpropuesta%2F'+prop.titulo+'&'+
+				'related=fvilledary&'+
+				'text='+candidato.twitter+' '+prop.titulo, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+                });
+				$(container).append(tweet);
 				
-				$(container).append(MostrarCandidato(2, partidos.filter(function(e){return e.codigo == prop.partido;})[0].candidatos.filter(function(e){return e.codigo == prop.candidato;})[0]));
+				$(container).append(MostrarCandidato(2, candidato));
 				
 			}break;
 			case 1:

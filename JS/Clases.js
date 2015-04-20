@@ -27,7 +27,7 @@ function Partido(_codigo, _nombre, _imagen, _color, _candidatos)
 	return partido;
 }
 
-function Candidato(_codigo, _nombre, _lista, _imagen, _partido, _propuestas)
+function Candidato(_codigo, _nombre, _lista, _imagen, _partido, _propuestas, _twitter)
 {
 	var candidato = 
 	{
@@ -35,6 +35,7 @@ function Candidato(_codigo, _nombre, _lista, _imagen, _partido, _propuestas)
 		nombre: _nombre,
 		lista: _lista,
 		imagen: _imagen,
+		twitter: _twitter,
 		partido: _partido,
 		propuestas: _propuestas
 	}
