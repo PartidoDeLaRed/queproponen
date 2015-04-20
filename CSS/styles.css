@@ -62,9 +62,8 @@ body,html{
 }
 
 .searchBox{
-	border-radius: 10px;
-	border: 1px solid #8ac;
-	box-shadow: 0 2px 5px rgba(0,0,0,.2);
+	border-radius: 40px;
+	box-shadow: inset 0px 1px 6px .2px #035;
 	background: #fff;
 	height: 80px;
 	max-width: 940px;
@@ -83,15 +82,16 @@ body,html{
     border: none;
     outline: none;
     color: #777;
+    background: none;
 }
 
 .searchButton {
-    height: 64px;
-    width: 64px;
+    height: 66px;
+    width: 66px;
     background: #8ac;
     border: 2px solid #468;
     margin: 7px;
-    border-radius: 10px;
+    border-radius: 33px;
     position: absolute;
     top: 0;
     right: 0;
@@ -348,3 +348,32 @@ body,html{
 	font-family:'Alegreya Sans', sans-serif;
 	overflow:hidden;
 }
+
+.twitterButton {
+  display: inline-block;
+  background: #88bbdd;
+  border-bottom: 1px solid #479;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'Alegreya Sans', sans-serif;
+  padding: 10px 10px 10px 35px;
+  margin: 10px 0 0 0px;
+  color: #fff;
+  position:relative;
+  cursor:pointer;
+}
+.twitterButton::before{
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	margin: -2px 5px;
+	left: 0;
+	content: '';
+	padding-left: 25px;
+	background-image:url(../IMG/twitterIcon.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: contain;
+}
+
