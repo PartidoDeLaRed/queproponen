@@ -232,7 +232,21 @@ function MostrarPartido(modo, part)
 		}break;
 		case 1:
 		{
+			$('.contentContainer').html('');
 			
+			//Header del partido
+			
+			MostrarContenedor(contenedores.CANDIDATOS);
+			MostrarContenedor(contenedores.PROPUESTAS);
+			
+			part.candidatos.forEach(function(cand)
+			{
+				MostrarCandidato(0, cand);
+				cand.propuestas.forEach(function(prop)
+				{
+					MostrarPropuesta(0, prop);
+				});
+			});
 		}break;
 	}
 }
@@ -285,7 +299,16 @@ function MostrarCandidato(modo, cand)
 		}break;
 		case 1:
 		{
+			$('.contentContainer').html('');
 			
+			//Header del candidato
+			
+			MostrarContenedor(contenedores.PROPUESTAS);
+			
+			cand.propuestas.forEach(function(prop)
+			{
+				MostrarPropuesta(0, prop);
+			});
 		}break;
 
 		case 2:
