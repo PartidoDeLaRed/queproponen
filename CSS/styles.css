@@ -5,7 +5,7 @@
 	margin:0;
 	padding:0;
 	box-sizing:border-box;
-	font-family: 'Alegreya Sans', sans-serif;
+	font-family: 'Roboto Condensed', sans-serif;
 }
 
 body,html{
@@ -36,7 +36,6 @@ body,html{
 	margin:0 auto;
 	padding:50px 0 0 0;
 	font-size:100px;
-	font-family:'Alegreya Sans', sans-serif;
 	font-weight: 400;
 	color:#f6f6f6;
 	max-width:960px;
@@ -46,7 +45,6 @@ body,html{
 	text-align:center;
 	margin:0 auto;
 	font-size:30px;
-	font-family:'Alegreya Sans', sans-serif;
 	font-weight: 400;
 	color:#eee;
 	max-width:750px;
@@ -60,6 +58,7 @@ body,html{
 	margin: -40px auto -40px auto;
 	padding: 0 20px;
 	position: relative;
+	display:none;
 }
 
 .searchBox{
@@ -76,7 +75,6 @@ body,html{
     height: 100%;
     vertical-align: middle;
     font-size: 32px;
-    font-family: 'Alegreya Sans', sans-serif;
     padding: 0 75px 0 25px;
     border-radius: 37px;
     width: 100%;
@@ -112,7 +110,7 @@ body,html{
 .contentContainer {
     max-width: 960px;
     margin: 0 auto;
-    padding: 40px 0;
+    padding: 0;
 }
 
 .contentContainer .title{
@@ -120,7 +118,6 @@ body,html{
 	margin:5px;
 	padding: 0;
 	font-size: 50px;
-	font-family:'Alegreya Sans', sans-serif;
 	font-weight: 300;
 	color:#88bbdd;
 }
@@ -141,6 +138,7 @@ body,html{
 	opacity:.8;
 	overflow:hidden;
 	transition:all 200ms ease-out;
+	position:relative;
 }
 .partidoContainer:hover{
 	transition:all 200ms ease-out;
@@ -156,12 +154,34 @@ body,html{
 	background-size: cover;
 }
 
+.imagenPartido_Header{
+	height: 105px;
+  width: 160px;
+  background-color: #fff;
+  background-position: center center;
+  background-size: cover;
+  display: inline-block;
+}
+.nombre_Header{
+position: absolute;
+  left: 160px;
+  right: 0;
+  top: 0;
+  bottom:0;
+  width: auto;
+  vertical-align: top;
+  
+font-size: 70px;
+  font-weight: 400;
+line-height: 80px;
+padding: 10px 20px !important;
+}
+
 .item{
 	background:#f7f7f7;
 	width:100%;
 	padding: 10px;
 	text-align:left;
-	font-family:'Alegreya Sans', sans-serif;
 	border-bottom: 1px solid #e6e6e6;
 }
 
@@ -205,6 +225,70 @@ body,html{
 	background-repeat: no-repeat;    background-position: left center;    background-size: contain;
 	color: #444;
 }
+
+.item.candidatos_Header{
+	text-align: center;
+  	
+	font-weight: 300;
+  	line-height: 50px;
+  	color: #333;
+  	position: absolute;
+  	
+	right: 120px;
+  	top: 0;
+  	bottom: 0;
+  	
+	font-size: 60px;
+  	
+	width: 120px;
+  	border-left: 1px solid #e6e6e6;
+}
+.item.candidatos_Header::after{        
+	position: absolute;
+	bottom: 0; 
+	left: 0;
+	right: 0;
+	text-align:center;    
+	content: 'Candidatos';
+	font-size: 15px;
+	font-weight: 300 !important;
+	color: #444;
+}
+
+.item.propuestas_Header{
+	text-align: center;
+  	
+	font-weight: 300;
+  	
+	line-height: 50px;
+  	color: #333;
+  	
+	position: absolute;
+  	
+	right: 0;
+  	
+	top: 0;
+  	
+	bottom: 0;
+  	
+	font-size: 60px;
+  	
+	width: 120px;
+  	
+	border-left: 1px solid #e6e6e6;
+}
+.item.propuestas_Header::after{        
+	position: absolute;
+	bottom: 0; 
+	left: 0;
+	right: 0;
+	text-align:center;    
+	content: 'Propuestas';
+	font-size: 15px;
+	font-weight: 300 !important;
+	color: #444;
+}
+
 
 .candidatosContainer{	
     margin: 20px 0;
@@ -270,7 +354,6 @@ body,html{
 	font-size: 24px;
 	font-weight:400;
 	display:inline-block;
-	font-family:'Alegreya Sans', sans-serif;
 }
 .nombreCandidato_mini {
 	margin: 6px 5px 6px 0;
@@ -279,7 +362,6 @@ body,html{
 	font-size: 20px;
 	font-weight: 400;
 	display: inline-block;
-	font-family: 'Alegreya Sans', sans-serif;
 }
 
 .listaCandidato{
@@ -288,7 +370,6 @@ body,html{
 	line-height: 8px;
 	font-size: 14px;
 	font-weight:300;
-	font-family:'Alegreya Sans', sans-serif;
 }
 
 .tipo{
@@ -296,12 +377,17 @@ body,html{
 	
 }
 
+.quantityList{
+	color: #333;
+	float: right;
+	margin: 0;	
+}
+
 .tipo .title{
 	text-align:left;
 	margin: 0;
 	padding: 10px;
 	font-size: 40px;
-	font-family:'Alegreya Sans', sans-serif;
 	font-weight: 300;
 	color:#FCF;
 	background: #fff;
@@ -337,19 +423,18 @@ body,html{
 
 .tituloPropuesta{
 	text-align:left;
-	line-height: 42px;
-	padding: 0 185px 0 0;
+	line-height: 31px;
+	padding: 5px 185px 5px 0;
 	font-size: 28px;
 	font-weight:400;
 	color: #555555;
-	font-family:'Alegreya Sans', sans-serif;
 }
 .textoPropuesta{
 	text-align:left;
 	font-size: 22px;
 	font-weight:300;
-	font-family:'Alegreya Sans', sans-serif;
 	overflow:hidden;
+	padding: 0 0 5px 0;
 }
 
 .noPropuestaContainer{
@@ -377,7 +462,6 @@ body,html{
   border-radius: 3px;
   text-decoration: none;
   font-size: 18px;
-  font-family: 'Alegreya Sans', sans-serif;
   padding: 10px 10px 10px 35px;
   margin: 10px 5px 0 0px;
   color: #fff;

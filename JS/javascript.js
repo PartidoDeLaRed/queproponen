@@ -11,16 +11,16 @@ function MostrarPartido(modo, part)
 				MostrarPartido(1, part)
 			});
 
+			var imagen = document.createElement('div');
+			$(imagen).addClass('imagenPartido');
+			$(imagen).css('background-image', 'url(IMG/partidos/' + part.imagen + ')');
+			$(container).append(imagen);
+			
 			var nombre = document.createElement('div');
 			$(nombre).addClass('item').addClass('nombre');
 			$(nombre).css('color', part.color);
 			$(nombre).html(part.nombre);
 			$(container).append(nombre);
-			
-			var imagen = document.createElement('div');
-			$(imagen).addClass('imagenPartido');
-			$(imagen).css('background-image', 'url(IMG/partidos/' + part.imagen + ')');
-			$(container).append(imagen);
 			
 			var candidatosDIV = document.createElement('div');
 			$(candidatosDIV).addClass('item').addClass('candidatos');
@@ -53,11 +53,11 @@ function MostrarPartido(modo, part)
 				candidatos.filter(function(a){return a.partido == part.codigo}).forEach(function(cand) {MostrarCandidato(0, cand);});
 				propuestas.filter(function(a){return a.partido == part.codigo}).forEach(function(prop) {MostrarPropuesta(0, prop);});
 				VerificarPropuestas(part);
-	
+				
             }).fadeIn('300ms').animate({marginTop:'0px'},'300ms');
 			$('html, body').animate({
 		        scrollTop: cont.offset().top
-		    }, 400);
+		    }, 400, function(){GenerarGrafico()});
 			CambiarURL(0, part);
 		}break;
 	}
@@ -287,7 +287,32 @@ function VerificarPropuestas(cosa)
 	$('.tipo').each(function(index, element) {
 		if($(element).children('.propuestaContainer').length == 0)
 			$(element).append(NoPropuesta(cosa));
-	});
+		else
+			$(element).children('.title').children('.quantityList').html($(element).children('.propuestaContainer').length + ' propuestas');
+	});	
+}
+
+function GenerarGrafico()
+{
+	var chart = document.createElement('canvas');
+	if($('#chart').length > 0)
+		chart = $('#chart').get(0);
+	$(chart).attr('id','chart').css('width','100%').css('height','300');
+	$(chart).insertAfter($('.propuestasContainer').children('.title').get(0));
+	var data = {
+		labels: ["Salud", "Educacion", "Sociedad", "Economia", "Transporte", "Derechos Humanos", "Seguridad"],
+		datasets: [
+			{
+				label: "Propuestas de ",
+				fillColor: "rgba(100,100,100,0.9)",
+				strokeColor: "rgba(220,220,220,0.8)",
+				highlightFill: "rgba(100,100,100,0.9)",
+				highlightStroke: "rgba(220,220,220,0.8)",
+				data: [20, 7, 0, 15, 10, 2, 1]
+			},
+		]
+	};
+	new Chart(chart.getContext("2d")).Bar(data);
 }
 
 function NoPropuesta(cosa)
@@ -321,7 +346,7 @@ function NoPropuesta(cosa)
 			$(tweet).html('Escribile a '+a.nombre);
 			$(tweet).click(function(e) {
 				window.open('https://twitter.com/share?'+
-			'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepopones%2Fcandidato%2F'+a.nombre.replace(' ','-')+'&'+
+			'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepropones%2F#candidato%2F'+a.nombre.replace(' ','-')+'&'+
 			'related=fvilledary&'+
 			'text='+a.twitter + ', quisiera saber propuestas tuyas sobre '+$(this).parents('.tipo').attr('id'), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 			});
@@ -345,7 +370,7 @@ function NoPropuesta(cosa)
 		$(tweet).html('Preguntale a '+cosa.nombre+' que piensa sobre esto');
 		$(tweet).click(function(e) {
 			window.open('https://twitter.com/share?'+
-		'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepopones%2Fcandidato%2F'+cosa.nombre.replace(' ','-')+'&'+
+		'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepropones%2F#candidato%2F'+cosa.nombre.replace(' ','-')+'&'+
 		'related=fvilledary&'+
 		'text='+cosa.twitter + ', quisiera saber propuestas tuyas sobre '+$(this).parents('.tipo').attr('id'), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 		});
