@@ -9,14 +9,18 @@
 <script src="JS/Utilities.js"></script>
 <script src="JS/Clases.js"></script>
 <script src="JS/Templates.js"></script>
+<script src="JS/Partidos.js"></script>
+<script src="JS/Candidatos.js"></script>
+<script src="JS/Propuestas.js"></script>
 <script src="JS/javascript.js"></script>
 
 <script language="javascript" type="application/javascript">
 
-var partidos = null;
 $(document).ready(function(e) {
-	
-	partidos = shuffle(CargarDatos());
+	CargarPartidos();
+	CargarCandidatos();
+	CargarPropuestas();
+	partidos = shuffle(partidos);
 	CargarSeccion();
 
 	window.onhashchange =  function (event, data) {

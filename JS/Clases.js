@@ -1,11 +1,14 @@
 var temas = {
 	SALUD: 0,
-	EDUCACIÓN: 1,
+	EDUCACION: 1,
 	SOCIEDAD: 2,
 	SEGURIDAD: 3,
 	DERECHOS_HUMANOS: 4,
 	PLANEAMIENTO_URBANO: 5,
-	ECONOMÍA: 6
+	ECONOMIA: 6,
+	TRANSPORTE: 7,
+	INTERNACIONAL: 8,
+	INSTITUCIONAL: 9
 }
 
 var contenedores = {
@@ -14,20 +17,19 @@ var contenedores = {
 	PROPUESTAS: 2
 }
 
-function Partido(_codigo, _nombre, _imagen, _color, _candidatos)
+function Partido(_codigo, _nombre, _imagen, _color)
 {
 	var partido = 
 	{
 		codigo:_codigo,
 		nombre: _nombre,
 		imagen: _imagen,
-		color: _color,
-		candidatos: _candidatos
+		color: _color
 	}
 	return partido;
 }
 
-function Candidato(_codigo, _nombre, _lista, _imagen, _partido, _propuestas, _twitter)
+function Candidato(_codigo, _nombre, _lista, _imagen, _partido, _twitter)
 {
 	var candidato = 
 	{
@@ -36,8 +38,7 @@ function Candidato(_codigo, _nombre, _lista, _imagen, _partido, _propuestas, _tw
 		lista: _lista,
 		imagen: _imagen,
 		twitter: _twitter,
-		partido: _partido,
-		propuestas: _propuestas
+		partido: _partido
 	}
 	return candidato;
 }

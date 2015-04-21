@@ -1,198 +1,3 @@
-
-function CargarDatos()
-{
-	var partidos = [
-		Partido(0, 'FPV', 'fpv.png', '#4FADE7', 
-			[
-				Candidato(0, 'Mariano Recalde', 'CFK', 'Recalde.jpg', 0, 
-					[
-						Propuesta("Ampliación de los hospitales públicos", "Se planea construir 10 metros cuadrados más en cada hospital y así poder poner un inodóro más.", temas.SALUD, 0, 0),
-						Propuesta("Bandas en las puertas", "Todos los días desde las 17 a las 19 hs en la puerta de cada hospital público se presentaran diversas bandas musicales para alegrarle el día a los pobres enfermos.", temas.SALUD, 0, 0)
-					]
-					, '@fvilledary'
-				), 
-				Candidato(1, 'Gabriela Cerruti', 'LA CIUDAD ES EL OTRO', 'Cerruti.jpg', 0, 
-					[
-					]
-				), 
-				Candidato(2, 'Gustavo López', 'CIUDAD PARA TODOS', 'Lopez.jpg', 0, 
-					[
-					]
-				), 
-				Candidato(3, 'Aníbal Ibarra', 'FRENTE SÍ', 'Ibarra.jpg', 0, 
-					[
-					]
-				), 
-				Candidato(4, 'Carlos Heller', 'UNIDOS POR LA CIUDAD', 'Heller.jpg', 0, 
-					[
-					]
-				), 
-				Candidato(5, 'Carlos Oviedo', 'ESPACIO ABIERTO', 'Oviedo.jpg', 0, 
-					[
-					]
-				), 
-				Candidato(6, 'Víctor Ramos', 'REVOLUCIÓN URBANA', 'Ramos.jpg', 0, 
-					[
-					]
-				)
-			]
-		),
-		Partido(1, 'PRO', 'pro.png', '#FFDD00', 
-			[
-				Candidato(0, 'Horacio R. Larreta', 'LISTA A', 'Larreta.jpg', 1, 
-					[
-					]
-				), 
-				Candidato(1, 'Gabriela Michetti', 'HAY EQUIPO', 'Michetti.jpg', 1, 
-					[
-					]
-				) 
-			]
-		),
-		Partido(2, 'ECO', 'eco.png', '#87C301', 
-			[
-				Candidato(0, 'Martín Lousteau', 'SUMÁ +', 'Lousteau.jpg', 2, 
-					[
-					]
-				), 
-				Candidato(1, 'Graciela Ocaña', 'TRANSPARENCIA Y GESTIÓN', 'Ocania.jpg', 2, 
-					[
-					]
-				),
-				Candidato(2, 'Andrés Borthagaray', 'ABRIMOS BA', 'Borthagaray.jpg', 2, 
-					[
-					]
-				) 
-			]
-		),
-		Partido(3, 'MST', 'mst.png', '#D50100', 
-			[
-				Candidato(0, 'Héctor Bidonde', 'LISTA 1', 'Bidonde.jpg', 3, 
-					[
-					]
-				), 
-				Candidato(1, 'Sergio García', 'LISTA 2', 'Garcia.jpg', 3, 
-					[
-					]
-				),
-				Candidato(2, 'Maru Lopes', 'LISTA 3', 'Lopes.jpg', 3, 
-					[
-					]
-				),
-				Candidato(3, 'Martín Torres', 'LISTA 4', 'Torres.jpg', 3, 
-					[
-					]
-				) 
-			]
-		),
-		Partido(4, 'SURGEN', 'surgen.png', '#238E48', 
-			[
-				Candidato(0, 'Humberto Tumini', 'VIENTOS DE CAMBIO', 'Tumini.jpg', 4, 
-					[
-					]
-				), 
-				Candidato(1, 'Sergio Abrevaya', 'CIUDAD JUSTA', 'Abrevaya.jpg', 4, 
-					[
-					]
-				)
-			]
-		),
-		Partido(5, 'Movimiento para el Bien Comun', 'bc.png', '#198BA5', 
-			[
-				Candidato(0, 'Gustavo Vera', 'LISTA A', 'Vera.jpg', 5, 
-					[
-					]
-				), 
-				Candidato(1, 'Leonardo Fabre', 'LISTA B', 'Fabre.jpg', 5, 
-					[
-					]
-				)
-			]
-		),
-		Partido(6, 'Frente Renovador', 'fr.png', '#000000', 
-			[
-				Candidato(0, 'Guillermo Nielsen', 'FRENTE POR BUENOS AIRES', 'Nielsen.jpg', 6, 
-					[
-					]
-				)
-			]
-		),
-		Partido(7, 'Es posible', 'ep.png', '#0073C8', 
-			[
-				Candidato(0, 'Ivo Cutzarida', 'COMPROMISO FEDERAL', 'Cutzarida.jpg', 7, 
-					[
-					]
-				)
-			]
-		),
-		Partido(8, 'Camino Popular', 'cp.png', '#FE5900', 
-			[
-				Candidato(0, 'Claudio Lozano', 'OTRO CAMINO PARA GOBERNAR', 'Lozano.jpg', 8, 
-					[
-					]
-				)
-			]
-		),
-		Partido(9, 'Frente de Izquierda', 'fit.png', '#E20612', 
-			[
-				Candidato(0, 'Myriam Bregman', 'UNIDAD', 'Bregman.jpg', 9, 
-					[
-					]
-				)
-			]
-		),
-		Partido(10, 'Alternativa Buenos Aires', 'aba.png', '#14C8C7', 
-			[
-				Candidato(0, 'Pablo Ferreyra', 'LISTA A', 'Ferreyra.jpg', 10, 
-					[
-					]
-				)
-			]
-		),
-		Partido(11, 'Nuevo MAS', 'nm.png', '#F9343B', 
-			[
-				Candidato(0, 'Manuela Castañeira', 'LAS ROJAS', 'Castanieira.jpg', 11, 
-					[
-					]
-				)
-			]
-		),
-		Partido(12, 'Partido Humanista', 'ph.png', '#FE5900', 
-			[
-				Candidato(0, 'Gustavo Tenaglia', 'LISTA ÚNICA', 'Tenaglia.jpg', 12, 
-					[
-					]
-				)
-			]
-		),
-		Partido(13, 'Bandera Vecinal', 'bv.png', '#494CAB', 
-			[
-				Candidato(0, 'Ramiro Vasena', 'COMÚN', 'Vasena.jpg', 13, 
-					[
-					]
-				)
-			]
-		),
-		Partido(14, 'Movimiento Federal', 'mf.png', '#0A6955', 
-			[
-				Candidato(0, 'Enrique Piragini', 'CELESTE Y BLANCA', 'Piragini.jpg', 14, 
-					[
-					]
-				)
-			]
-		),
-		Partido(15, 'Autodeterminación y Libertad', 'ayl.png', '#790786',  
-			[
-				Candidato(0, 'Luis Zamora', 'CAMINAMOS PREGUNTANDO', 'Zamora.jpg', 15, 
-					[
-					]
-				)
-			]
-		)
-	];
-	return partidos;
-}
-
 function MostrarPartido(modo, part)
 {
 	switch(modo)
@@ -217,17 +22,19 @@ function MostrarPartido(modo, part)
 			$(imagen).css('background-image', 'url(IMG/partidos/' + part.imagen + ')');
 			$(container).append(imagen);
 			
-			var candidatos = document.createElement('div');
-			$(candidatos).addClass('item').addClass('candidatos');
-			$(candidatos).html(part.candidatos.length);
-			$(container).append(candidatos);
+			var candidatosDIV = document.createElement('div');
+			$(candidatosDIV).addClass('item').addClass('candidatos');
+			$(candidatosDIV).html(candidatos.filter(function(a){return a.partido == part.codigo}).length);
+			$(container).append(candidatosDIV);
 
-			var propuestas = document.createElement('div');
-			$(propuestas).addClass('item').addClass('propuestas');
+			var propuestasDIV = document.createElement('div');
+			$(propuestasDIV).addClass('item').addClass('propuestas');
 			var cantPropuestas = 0;
-			part.candidatos.forEach(function(e){ cantPropuestas += e.propuestas.length; });
-			$(propuestas).html(cantPropuestas);
-			$(container).append(propuestas);
+			cantPropuestas = propuestas.filter(function(a){return a.partido == part.codigo}).length;
+			$(propuestasDIV).html(cantPropuestas);
+			if(cantPropuestas == 0)
+				$(propuestasDIV).css('color','#f11');
+			$(container).append(propuestasDIV);
 
 			$('.partidosContainer').append(container);
 		}break;
@@ -237,23 +44,20 @@ function MostrarPartido(modo, part)
 			cont.stop(true, true).fadeOut('300ms', function() {
 				$('.contentContainer').html('');
 				
-				cont.append(MostrarVolver(0, part));
+				cont.append(MostrarVolver(0, null));
 				cont.append(HeaderPartido(part));
 				
 				cont.append(MostrarContenedor(contenedores.CANDIDATOS));
 				cont.append(MostrarContenedor(contenedores.PROPUESTAS));
 				
-				part.candidatos.forEach(function(cand)
-				{
-					MostrarCandidato(0, cand);
-					cand.propuestas.forEach(function(prop)
-					{
-						MostrarPropuesta(0, prop);
-					});
-				});
+				candidatos.filter(function(a){return a.partido == part.codigo}).forEach(function(cand) {MostrarCandidato(0, cand);});
+				propuestas.filter(function(a){return a.partido == part.codigo}).forEach(function(prop) {MostrarPropuesta(0, prop);});
 				VerificarPropuestas(part);
 	
-            }).fadeIn('300ms').animate({marginTop:'0px'},'300ms').animate({scrollTop:200}, '300');
+            }).fadeIn('300ms').animate({marginTop:'0px'},'300ms');
+			$('html, body').animate({
+		        scrollTop: cont.offset().top
+		    }, 400);
 			CambiarURL(0, part);
 		}break;
 	}
@@ -300,10 +104,12 @@ function MostrarCandidato(modo, cand)
 
 			$(container).append(cont);
 			
-			var propuestas = document.createElement('div');
-			$(propuestas).addClass('item').addClass('propuestas');
-			$(propuestas).html(cand.propuestas.length);
-			$(container).append(propuestas);
+			var propuestasDIV = document.createElement('div');
+			$(propuestasDIV).addClass('item').addClass('propuestas');
+			$(propuestasDIV).html(propuestas.filter(function(a){return a.candidato == cand.codigo && a.partido == cand.partido}).length);
+			if(propuestas.filter(function(a){return a.candidato == cand.codigo && a.partido == cand.partido}).length == 0)
+				$(propuestasDIV).css('color','#f11');
+			$(container).append(propuestasDIV);
 		}break;
 		case 1:
 		{
@@ -311,19 +117,21 @@ function MostrarCandidato(modo, cand)
 			cont.stop(true, true).fadeOut('300ms', function() {
 				$('.contentContainer').html('');
 				
-				cont.append(MostrarVolver(0, cand));
+				cont.append(MostrarVolver(0, partidos.filter(function(e){ return e.codigo == cand.partido; })[0]));
 				cont.append(HeaderCandidato(cand));
 				
 				cont.append(MostrarContenedor(contenedores.PROPUESTAS));
 				
-				cand.propuestas.forEach(function(prop)
+				propuestas.filter(function(a){return a.candidato == cand.codigo && a.partido == cand.partido}).forEach(function(prop)
 				{
 					MostrarPropuesta(0, prop);
 				});
 				VerificarPropuestas(cand);
 	
-            }).fadeIn('300ms').animate({marginTop:'0px'},'300ms').animate({scrollTop:200}, '300');
-			
+            }).fadeIn('300ms').animate({marginTop:'0px'},'300ms');
+			$('html, body').animate({
+		        scrollTop: cont.offset().top
+		    }, 400);
 			CambiarURL(1, cand);
 		}break;
 
@@ -362,7 +170,7 @@ function MostrarPropuesta(modo, prop)
 {
 	if(prop.partido != undefined)
 	{
-		var candidato = partidos.filter(function(e){return e.codigo == prop.partido;})[0].candidatos.filter(function(e){return e.codigo == prop.candidato;})[0];
+		var candidato = candidatos.filter(function(e){return e.codigo == prop.candidato && e.partido == prop.partido;})[0];
 		
 		switch(modo)
 		{
@@ -383,7 +191,7 @@ function MostrarPropuesta(modo, prop)
 						colorValue = '#D99ED6';
 						$('#salud').append(container);
 					}break;
-					case temas.ECONOMÍA:
+					case temas.ECONOMIA:
 					{
 						colorValue = '#9ED9C3';
 						$('#economia').append(container);
@@ -398,7 +206,7 @@ function MostrarPropuesta(modo, prop)
 						colorValue = '#ECEAA8';
 						$('.seguridad').append(container);
 					}break;
-					case temas.EDUCACIÓN:
+					case temas.EDUCACION:
 					{
 						colorValue = '#9EB8D9';
 						$('#educacion').append(container);
@@ -412,6 +220,21 @@ function MostrarPropuesta(modo, prop)
 					{
 						colorValue = '#D9BE9E';
 						$('#planeamientoUrbano').append(container);
+					}break;
+					case temas.INSTITUCIONAL:
+					{
+						colorValue = '#FFAA7F';
+						$('#institucional').append(container);
+					}break;
+					case temas.TRANSPORTE:
+					{
+						colorValue = '#AA7FFF';
+						$('#transporte').append(container);
+					}break;
+					case temas.INTERNACIONAL:
+					{
+						colorValue = '#55D4FF';
+						$('#internacional').append(container);
 					}break;
 				}
 	
@@ -439,7 +262,7 @@ function MostrarPropuesta(modo, prop)
 	
 				var tweet = document.createElement('a');
 				$(tweet).addClass('twitterButton');
-				$(tweet).html('Decile a '+candidato.nombre+' lo que pensas de esta propuesta');
+				$(tweet).html('Hablá con '+candidato.nombre+' sobre esto');
 				$(tweet).click(function(e) {
                     window.open('https://twitter.com/share?'+
 				'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepopones%2Fpropuesta%2F'+prop.titulo.replace(' ','-')+'&'+
@@ -480,33 +303,33 @@ function NoPropuesta(cosa)
 		$(titulo).html('No hay propuestas');
 		$(cont).append(titulo);
 	}
-	else if(cosa.candidatos != undefined)
+	else if(cosa.color != undefined)
 	{
 		$(titulo).html('No tienen propuestas');
 		var texto = document.createElement('div');
 		$(texto).addClass('textoNoPropuesta');
-		$(texto).html('Si queres preguntarles a sus candidatos algo sobre esta categoría, escribiles:');
+		$(texto).html('Si querés preguntarle a sus candidatos algo sobre esta categoría, escribiles:');
 		$(cont).append(titulo);
 		$(cont).append(texto);
 
 		var tweetContainer = document.createElement('div');
 		$(tweetContainer).css('display', 'block').css('margin','0 auto 20px auto').css('text-align','center');
-		cosa.candidatos.forEach(function(e)
+		candidatos.filter(function(a){return a.partido == cosa.codigo}).forEach(function(a)
 		{
 			var tweet = document.createElement('a');
 			$(tweet).addClass('twitterButton');
-			$(tweet).html('Escribile a '+e.nombre);
+			$(tweet).html('Escribile a '+a.nombre);
 			$(tweet).click(function(e) {
 				window.open('https://twitter.com/share?'+
-			'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepopones%2Fpartido%2F'+cosa.nombre.replace(' ','-')+'&'+
+			'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepopones%2Fcandidato%2F'+a.nombre.replace(' ','-')+'&'+
 			'related=fvilledary&'+
-			'text=hola '+e.twitter + ', quisiera preguntarle sobre', 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+			'text='+a.twitter + ', quisiera saber propuestas tuyas sobre '+$(this).parents('.tipo').attr('id'), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 			});
 			$(tweetContainer).append(tweet);
 		});
 		$(cont).append(tweetContainer);
 	}
-	else if(cosa.propuestas != undefined)
+	else if(cosa.twitter != undefined)
 	{
 		$(titulo).html('No tiene propuestas');
 		var texto = document.createElement('div');
@@ -524,7 +347,7 @@ function NoPropuesta(cosa)
 			window.open('https://twitter.com/share?'+
 		'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepopones%2Fcandidato%2F'+cosa.nombre.replace(' ','-')+'&'+
 		'related=fvilledary&'+
-		'text=hola '+cosa.twitter + ', quisiera preguntarle sobre', 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+		'text='+cosa.twitter + ', quisiera saber propuestas tuyas sobre '+$(this).parents('.tipo').attr('id'), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 		});
 		$(tweetContainer).append(tweet);
 		$(cont).append(tweetContainer);
@@ -554,6 +377,11 @@ function CambiarURL(tipo, cosa)
 			title = '¿Vos que propones? - '+cosa.titulo;
 			url = window.location.origin + window.location.pathname + '#propuesta/'+(cosa.titulo.replace(' ','-'));
 		}break;
+		case 3:
+		{
+			title = '¿Vos que propones?';
+			url = window.location.origin + window.location.pathname;
+		}break;
 	}
 	ChangeUrl(title, url);
 }
@@ -576,20 +404,12 @@ function CargaInicial()
 		cont.append(MostrarContenedor(contenedores.CANDIDATOS));
 		cont.append(MostrarContenedor(contenedores.PROPUESTAS));
 		
-		partidos.forEach(function(part)
-		{
-			MostrarPartido(0, part);
-			part.candidatos.forEach(function(cand)
-			{
-				MostrarCandidato(0, cand);
-				cand.propuestas.forEach(function(prop)
-				{
-					MostrarPropuesta(0, prop);
-				});
-			});
-		});
+		partidos.forEach(function(part) {MostrarPartido(0, part);});
+		candidatos.forEach(function(cand) {MostrarCandidato(0, cand);});
+		propuestas.forEach(function(prop) {MostrarPropuesta(0, prop);});
 		VerificarPropuestas(null);
     }).fadeIn('300ms').animate({marginTop:'0px'},'300ms').animate({scrollTop:200}, '300');
+	CambiarURL(3, null);
 }
 
 function CargarSeccion()
@@ -608,15 +428,12 @@ function CargarSeccion()
 		}
 		else if(window.location.hash.indexOf('candidato') != -1)
 		{
-			partidos.forEach(function(e)
+			var lista = candidatos.filter(function(e){ return e.nombre == nombre; });
+			if(lista.length > 0)
 			{
-				var lista = e.candidatos.filter(function(e){ return e.nombre == nombre; });
-				if(lista.length > 0)
-				{
-					MostrarCandidato(1, lista[0]);
-					return true;
-				}
-			});
+				MostrarCandidato(1, lista[0]);
+				return true;
+			}
 		}
 	}
 	CargaInicial();

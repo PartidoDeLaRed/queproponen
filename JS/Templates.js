@@ -34,8 +34,17 @@ function MostrarContenedor(tipo)
 					"<div class='tipo' id='derechosHumanos'>"+
 						"<div class='title'><img src='' /><span style='color:#333333;'>Derechos Humanos</span></div>"+
 					"</div>"+
+					"<div class='tipo' id='transporte'>"+
+						"<div class='title'><img src='IMG/temas/transporte.png' /><span style='color:#AA7FFF;'>Transporte</span></div>"+
+					"</div>"+
+					"<div class='tipo' id='institucional'>"+
+						"<div class='title'><img src='IMG/temas/institucional.png' /><span style='color:#FFAA7F;'>Institucional</span></div>"+
+					"</div>"+
 					"<div class='tipo' id='planeamientoUrbano'>"+
 						"<div class='title'><img src='IMG/temas/planificacionUrbana.png' /><span style='color:#D9BE9E;'>Planeamiento Urbano</span></div>"+
+					"</div>"+
+					"<div class='tipo' id='internacional'>"+
+						"<div class='title'><img src='IMG/temas/internacional.png' /><span style='color:#55D4FF;'>Internacionales</span></div>"+
 					"</div>"+
 				"</div> ";
 			break;
@@ -55,5 +64,31 @@ function HeaderCandidato(cand)
 
 function MostrarVolver(tipo, cosa)
 {
+	var cont = document.createElement('div');
+	$(cont).addClass('atrasContainer');
+	$(cont).append(flecha);
 	
+	var flecha = document.createElement('div');
+	$(flecha).addClass('flechaAtras');
+	$(cont).append(flecha);
+	
+	var texto = document.createElement('div');
+	$(texto).addClass('textoAtras');
+	if(cosa == null)
+		$(texto).html('Volver al inicio ');
+	else
+		$(texto).html('Volver a ' + cosa.nombre);
+		
+	$(cont).click(function(e) {
+		if(cosa == null)
+			CargaInicial();
+		else if(cosa.propuestas == undefined)
+			MostrarPartido(1, cosa);
+		else
+			MostrarCandidato(1, cosa);
+    });	
+		
+	$(cont).append(texto);
+	
+	return cont;
 }

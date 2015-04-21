@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# ---------------------------------------
+# BEGIN Domain to folder mapping
+
+# pointing queproponen.com.ar to vosquepropones
+ReWriteCond %{HTTP_HOST} queproponen.com.ar
+ReWriteCond %{REQUEST_URI} !vosquepropones/
+ReWriteRule ^(.*)$ vosquepropones/$1 [L]
+
+# END Domain to folder mapping
+# ---------------------------------------
+
+</IfModule>

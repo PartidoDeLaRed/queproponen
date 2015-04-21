@@ -203,6 +203,7 @@ body,html{
 	content: 'Propuestas';    padding-left: 25px;    font-size: 21px;    line-height: 21px;    font-weight: 400 !important;
 	background-image:url(../IMG/propuestaIcon.png);
 	background-repeat: no-repeat;    background-position: left center;    background-size: contain;
+	color: #444;
 }
 
 .candidatosContainer{	
@@ -316,7 +317,7 @@ body,html{
 }
 
 .propuestaContainer{
-	min-height: 0;
+	min-height: 90px;
 	width:100%;
 	margin:0px;
 	padding: 10px 10px 10px 20px;
@@ -337,7 +338,8 @@ body,html{
 .tituloPropuesta{
 	text-align:left;
 	line-height: 42px;
-	font-size: 35px;
+	padding: 0 185px 0 0;
+	font-size: 28px;
 	font-weight:400;
 	color: #555555;
 	font-family:'Alegreya Sans', sans-serif;
@@ -372,7 +374,6 @@ body,html{
 .twitterButton {
   display: inline-block;
   background: #88bbdd;
-  border-bottom: 1px solid #479;
   border-radius: 3px;
   text-decoration: none;
   font-size: 18px;
@@ -397,3 +398,49 @@ body,html{
 	background-size: contain;
 }
 
+.propuestaContainer .twitterButton {
+  border-radius: 22px;
+  padding: 5px 5px 5px 35px;
+  margin: 10px 10px 5px 0px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+.propuestaContainer:hover > .twitterButton {
+	opacity: 1;
+	transition: all 200ms;
+}
+
+.atrasContainer{
+	text-align:right;
+	width: auto;
+	padding: 5px 10px;
+	border-radius: 24px;	
+	display: inline-block;
+	cursor: pointer;
+	transition: all 200ms;
+	margin: 10px 0 0 0;
+}
+.atrasContainer:hover{
+	background:#f8f8f8;
+	transition:all 200ms;
+}
+.flechaAtras{
+	width:30px;
+	height:30px;
+	background-image:url(../IMG/backIcon.png);
+	background-size:cover;
+	background-position:center center;
+	display: inline-block;
+	margin: 0 10px 0 0;
+}
+
+.textoAtras{
+	font-size:30px;
+	font-weight: 300;
+	color:#88AACC;
+	display: inline-block;
+	vertical-align: super;
+}
