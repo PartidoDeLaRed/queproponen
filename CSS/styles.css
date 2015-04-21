@@ -5,6 +5,7 @@
 	margin:0;
 	padding:0;
 	box-sizing:border-box;
+	font-family: 'Alegreya Sans', sans-serif;
 }
 
 body,html{
@@ -349,6 +350,25 @@ body,html{
 	overflow:hidden;
 }
 
+.noPropuestaContainer{
+	display:block;
+	width:100%;
+	background: #eee;
+	border: 1px solid #ddd;
+}
+
+.tituloNoPropuesta {
+	text-align: center;
+	margin: auto;
+	padding: 20px 30px;
+	font-size: 50px;
+	color: #f55;
+}
+.textoNoPropuesta {
+ 	font-size: 25px;
+ 	text-align: center;
+}
+
 .twitterButton {
   display: inline-block;
   background: #88bbdd;
@@ -358,7 +378,7 @@ body,html{
   font-size: 18px;
   font-family: 'Alegreya Sans', sans-serif;
   padding: 10px 10px 10px 35px;
-  margin: 10px 0 0 0px;
+  margin: 10px 5px 0 0px;
   color: #fff;
   position:relative;
   cursor:pointer;

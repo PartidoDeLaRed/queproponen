@@ -42,3 +42,18 @@ function MostrarContenedor(tipo)
 	};
 	return template;
 }
+
+function HeaderPartido(part)
+{
+	
+}
+
+function HeaderCandidato(cand)
+{
+	
+}
+
+function MostrarVolver(tipo, cosa)
+{
+	
+}

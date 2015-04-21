@@ -233,21 +233,28 @@ function MostrarPartido(modo, part)
 		}break;
 		case 1:
 		{
-			$('.contentContainer').html('');
-			
-			//Header del partido
-			
-			MostrarContenedor(contenedores.CANDIDATOS);
-			MostrarContenedor(contenedores.PROPUESTAS);
-			
-			part.candidatos.forEach(function(cand)
-			{
-				MostrarCandidato(0, cand);
-				cand.propuestas.forEach(function(prop)
+			var cont = $('.contentContainer');
+			cont.stop(true, true).fadeOut('300ms', function() {
+				$('.contentContainer').html('');
+				
+				cont.append(MostrarVolver(0, part));
+				cont.append(HeaderPartido(part));
+				
+				cont.append(MostrarContenedor(contenedores.CANDIDATOS));
+				cont.append(MostrarContenedor(contenedores.PROPUESTAS));
+				
+				part.candidatos.forEach(function(cand)
 				{
-					MostrarPropuesta(0, prop);
+					MostrarCandidato(0, cand);
+					cand.propuestas.forEach(function(prop)
+					{
+						MostrarPropuesta(0, prop);
+					});
 				});
-			});
+				VerificarPropuestas(part);
+	
+            }).fadeIn('300ms').animate({marginTop:'0px'},'300ms').animate({scrollTop:200}, '300');
+			CambiarURL(0, part);
 		}break;
 	}
 }
@@ -300,16 +307,24 @@ function MostrarCandidato(modo, cand)
 		}break;
 		case 1:
 		{
-			$('.contentContainer').html('');
+			var cont = $('.contentContainer');
+			cont.stop(true, true).fadeOut('300ms', function() {
+				$('.contentContainer').html('');
+				
+				cont.append(MostrarVolver(0, cand));
+				cont.append(HeaderCandidato(cand));
+				
+				cont.append(MostrarContenedor(contenedores.PROPUESTAS));
+				
+				cand.propuestas.forEach(function(prop)
+				{
+					MostrarPropuesta(0, prop);
+				});
+				VerificarPropuestas(cand);
+	
+            }).fadeIn('300ms').animate({marginTop:'0px'},'300ms').animate({scrollTop:200}, '300');
 			
-			//Header del candidato
-			
-			MostrarContenedor(contenedores.PROPUESTAS);
-			
-			cand.propuestas.forEach(function(prop)
-			{
-				MostrarPropuesta(0, prop);
-			});
+			CambiarURL(1, cand);
 		}break;
 
 		case 2:
@@ -339,7 +354,6 @@ function MostrarCandidato(modo, cand)
 			$(container).append(nombre);
 			
 			return container;
-			
 		}break;
 	}
 }
@@ -428,7 +442,7 @@ function MostrarPropuesta(modo, prop)
 				$(tweet).html('Decile a '+candidato.nombre+' lo que pensas de esta propuesta');
 				$(tweet).click(function(e) {
                     window.open('https://twitter.com/share?'+
-				'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepopones%2Fpropuesta%2F'+prop.titulo+'&'+
+				'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepopones%2Fpropuesta%2F'+prop.titulo.replace(' ','-')+'&'+
 				'related=fvilledary&'+
 				'text='+candidato.twitter+' '+prop.titulo, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
                 });
@@ -443,4 +457,167 @@ function MostrarPropuesta(modo, prop)
 			}break;
 		}
 	}
+}
+
+function VerificarPropuestas(cosa)
+{
+	$('.tipo').each(function(index, element) {
+		if($(element).children('.propuestaContainer').length == 0)
+			$(element).append(NoPropuesta(cosa));
+	});
+}
+
+function NoPropuesta(cosa)
+{
+	var cont = document.createElement('div');
+	$(cont).addClass('noPropuestaContainer');
+	
+	var titulo = document.createElement('div');
+	$(titulo).addClass('tituloNoPropuesta');
+
+	if(cosa == null)
+	{
+		$(titulo).html('No hay propuestas');
+		$(cont).append(titulo);
+	}
+	else if(cosa.candidatos != undefined)
+	{
+		$(titulo).html('No tienen propuestas');
+		var texto = document.createElement('div');
+		$(texto).addClass('textoNoPropuesta');
+		$(texto).html('Si queres preguntarles a sus candidatos algo sobre esta categoría, escribiles:');
+		$(cont).append(titulo);
+		$(cont).append(texto);
+
+		var tweetContainer = document.createElement('div');
+		$(tweetContainer).css('display', 'block').css('margin','0 auto 20px auto').css('text-align','center');
+		cosa.candidatos.forEach(function(e)
+		{
+			var tweet = document.createElement('a');
+			$(tweet).addClass('twitterButton');
+			$(tweet).html('Escribile a '+e.nombre);
+			$(tweet).click(function(e) {
+				window.open('https://twitter.com/share?'+
+			'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepopones%2Fpartido%2F'+cosa.nombre.replace(' ','-')+'&'+
+			'related=fvilledary&'+
+			'text=hola '+e.twitter + ', quisiera preguntarle sobre', 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+			});
+			$(tweetContainer).append(tweet);
+		});
+		$(cont).append(tweetContainer);
+	}
+	else if(cosa.propuestas != undefined)
+	{
+		$(titulo).html('No tiene propuestas');
+		var texto = document.createElement('div');
+		$(texto).addClass('textoNoPropuesta');
+		$(texto).html('Si queres preguntarle algo sobre esta categoría, escribile:');
+		$(cont).append(titulo);
+		$(cont).append(texto);
+
+		var tweetContainer = document.createElement('div');
+		$(tweetContainer).css('display', 'block').css('margin','0 auto 20px auto').css('text-align','center');
+		var tweet = document.createElement('a');
+		$(tweet).addClass('twitterButton');
+		$(tweet).html('Preguntale a '+cosa.nombre+' que piensa sobre esto');
+		$(tweet).click(function(e) {
+			window.open('https://twitter.com/share?'+
+		'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepopones%2Fcandidato%2F'+cosa.nombre.replace(' ','-')+'&'+
+		'related=fvilledary&'+
+		'text=hola '+cosa.twitter + ', quisiera preguntarle sobre', 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+		});
+		$(tweetContainer).append(tweet);
+		$(cont).append(tweetContainer);
+	}
+	
+	return cont;
+}
+
+function CambiarURL(tipo, cosa)
+{
+	var title = '';
+	var url= '';
+	switch(tipo)
+	{
+		case 0:
+		{
+			title = '¿Vos que propones? - '+cosa.nombre;
+			url = window.location.origin + window.location.pathname + '#partido/'+(cosa.nombre.replace(' ','-'));
+		}break;
+		case 1:
+		{
+			title = '¿Vos que propones? - '+cosa.nombre;
+			url = window.location.origin + window.location.pathname + '#candidato/'+(cosa.nombre.replace(' ','-'));
+		}break;
+		case 2:
+		{
+			title = '¿Vos que propones? - '+cosa.titulo;
+			url = window.location.origin + window.location.pathname + '#propuesta/'+(cosa.titulo.replace(' ','-'));
+		}break;
+	}
+	ChangeUrl(title, url);
+}
+
+function ChangeUrl(title, url) 
+{
+    if (typeof (history.pushState) != "undefined") 
+	{
+        var obj = { Title: title, Url: url };
+        history.pushState(obj, obj.Title, obj.Url);
+    } 
+}
+
+function CargaInicial()
+{
+	cont = $('.contentContainer');
+	cont.stop(true, true).fadeOut('300ms', function() {
+		cont.html('');
+		cont.append(MostrarContenedor(contenedores.PARTIDOS));
+		cont.append(MostrarContenedor(contenedores.CANDIDATOS));
+		cont.append(MostrarContenedor(contenedores.PROPUESTAS));
+		
+		partidos.forEach(function(part)
+		{
+			MostrarPartido(0, part);
+			part.candidatos.forEach(function(cand)
+			{
+				MostrarCandidato(0, cand);
+				cand.propuestas.forEach(function(prop)
+				{
+					MostrarPropuesta(0, prop);
+				});
+			});
+		});
+		VerificarPropuestas(null);
+    }).fadeIn('300ms').animate({marginTop:'0px'},'300ms').animate({scrollTop:200}, '300');
+}
+
+function CargarSeccion()
+{
+	if(window.location.hash.split('/')[1] != undefined)
+	{
+		var nombre = window.location.hash.split('/')[1].replace('-',' ');
+		if(window.location.hash.indexOf('partido') != -1)
+		{
+			var lista = partidos.filter(function(e){ return e.nombre == nombre; });
+			if(lista.length > 0)
+			{
+				MostrarPartido(1, lista[0]);
+				return true;
+			}
+		}
+		else if(window.location.hash.indexOf('candidato') != -1)
+		{
+			partidos.forEach(function(e)
+			{
+				var lista = e.candidatos.filter(function(e){ return e.nombre == nombre; });
+				if(lista.length > 0)
+				{
+					MostrarCandidato(1, lista[0]);
+					return true;
+				}
+			});
+		}
+	}
+	CargaInicial();
 }

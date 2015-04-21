@@ -15,23 +15,13 @@
 
 var partidos = null;
 $(document).ready(function(e) {
-	$('.contentContainer').append(MostrarContenedor(contenedores.PARTIDOS));
-	$('.contentContainer').append(MostrarContenedor(contenedores.CANDIDATOS));
-	$('.contentContainer').append(MostrarContenedor(contenedores.PROPUESTAS));
 	
 	partidos = shuffle(CargarDatos());
-	partidos.forEach(function(part)
-	{
-		MostrarPartido(0, part);
-		part.candidatos.forEach(function(cand)
-		{
-			MostrarCandidato(0, cand);
-			cand.propuestas.forEach(function(prop)
-			{
-				MostrarPropuesta(0, prop);
-			});
-		});
-	});
+	CargarSeccion();
+
+	window.onhashchange =  function (event, data) {
+		CargarSeccion();
+	};
 });
 
 </script>
