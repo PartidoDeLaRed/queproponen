@@ -191,24 +191,23 @@ padding: 10px 20px !important;
 }
 
 .item.candidatos{
-	text-align: right;
-	font-size: 20px;
-	font-weight: 600;
-	line-height: 18px;
+	text-align: center;
+	font-size: 32px;
+	font-weight: 400;
+	vertical-align: bottom;
 	color:#333;
 	position: relative;
+	display: inline-block;
+	padding: 10px;
+	width: 50%;
 }
 .item.candidatos::before{
-	width: 20px;
-	height:20px;
-	position: absolute;
-	margin: 0 5px;
-	left: 0;
-	content: 'Candidatos';
-	padding-left: 25px;
-	font-size: 21px;
-	line-height: 21px;
-	font-weight: 400 !important;
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	margin: 0 5px 0 -14px;
+	content: '';
+	padding-left: 24px;
 	background-image:url(../IMG/personIcon.png);
 	background-repeat: no-repeat;
 	background-position: left center;
@@ -216,11 +215,22 @@ padding: 10px 20px !important;
 }
 
 .item.propuestas{
-    text-align: right;    font-size: 20px;    font-weight: 600;    line-height: 18px;    color: #333;    position: relative;
+    text-align: center;    
+    font-size: 32px;    
+    font-weight: 400;        vertical-align: bottom;
+    color: #333;    position: relative;
+    display: inline-block;
+    border-left: 1px solid #e7e7e7;
+    padding: 10px;
+    width: 50%;
 }
 .item.propuestas::before{        
-	width: 20px;    height: 20px;    position: absolute;    margin: 0 5px;    left: 0;    
-	content: 'Propuestas';    padding-left: 25px;    font-size: 21px;    line-height: 21px;    font-weight: 400 !important;
+	width: 24px;    
+	height: 24px;        
+	vertical-align: middle;
+	margin: 0 5px 0 -14px;        
+	content: '';    
+	padding-left: 24px;            
 	background-image:url(../IMG/propuestaIcon.png);
 	background-repeat: no-repeat;    background-position: left center;    background-size: contain;
 	color: #444;
@@ -312,10 +322,11 @@ padding: 10px 20px !important;
 }
 
 .colorCandidato{
-	height: 60px;
-	width:5px;
-	margin: 5px;
-	display:inline-block;	
+	width: auto;
+	margin: 0 5px;
+	padding: 2px 5px;
+	color: #fff;
+	display: inline-block;	
 }
 .colorCandidato_mini{
 	height: 30px;
@@ -349,11 +360,11 @@ padding: 10px 20px !important;
 }
 
 .nombreCandidato{
-	margin: 5px 0;
+	margin: 0 5px;
 	text-align:left;
 	font-size: 24px;
 	font-weight:400;
-	display:inline-block;
+	display: block;
 }
 .nombreCandidato_mini {
 	margin: 6px 5px 6px 0;
@@ -370,6 +381,7 @@ padding: 10px 20px !important;
 	line-height: 8px;
 	font-size: 14px;
 	font-weight:300;
+	display: inline-block;
 }
 
 .tipo{
