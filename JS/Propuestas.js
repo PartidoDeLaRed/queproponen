@@ -616,5 +616,43 @@ Propuesta("Gravar con una tasa elevada los millonarios ingresos del juego (Casin
 
 Propuesta("Aumentar las patentes a los autos de alta gama (y demás bienes suntuarios) radicados o por operaciones de compra-venta en la Ciudad.","", temas.ECONOMIA, 15, 0),
 
+
+
+//  Ramiro Vassena 13, 0 
+Propuesta("Igualdad ante la ley","Sustancial reforma de las leyes que permita la abolición de los inaceptables privilegios e inmunidades que hoy tienen los funcionarios de los poderes Ejecutivo y Legislativo. Consideramos que nuestra Ciudad debería marcar el camino ejemplar para que en Argentina rija de una vez por todas el Imperio de la Ley y se garantice efectivamente que todos somos Iguales en Derechos y Obligaciones.", temas.INSTITUCIONAL, 13, 0 ),
+
+Propuesta("Igualdad ante la Ley","Elevar al máximo las penas para los delitos de corrupción por parte de los funcionarios públicos. El incumplimiento del deber de cualquier funcionario público debe ser castigado con el máximo rigor, y en los primeros niveles de responsabilidad debería ser equivalente al delito de traición a la Patria.", temas.INSTITUCIONAL, 13, 0 ),
+
+Propuesta("Delito","Urgente desmantelamiento de la red del delito que azota las calles y los hogares de nuestros ciudadanos. Pero considera que dicha tarea es imposible si, como ya se señaló, no es acompañada con la drástica moralización de la función pública en todos sus niveles. Detrás de las redes de narcotráfico, trata de personas, usurpaciones y hechos delictivos de la más diversa índole que operan en nuestra Ciudad, existe en muchísimos casos la cómplice inoperancia y hasta a veces la directa asociación de prominentes factores políticos. Para combatir a la delincuencia de raíz, el primer paso es terminar con las mafias que se han enquistado en el propio seno del Estado.", temas.SEGURIDAD, 13, 0 ),
+ 
+Propuesta("Código Contravencional","Urgente modificación del Código Contravencional de la Ciudad, a fin de establecer penas más duras para las faltas en la vía pública, delimitar con claridad las facultades de la Policía Metropolitana, y erradicar la prostitución y el tráfico de drogas de las calles.", temas.SEGURIDAD, 13, 0 ),
+ 
+Propuesta("Defensor del Pueblo","Que el Defensor del Pueblo sea elegido directamente por el voto de los ciudadanos y no por la Legislatura. De esta manera, su designación quedará ajena a eventuales condicionamientos, disputas y/o acuerdos políticos que pudieran suscitarse en el seno del recinto parlamentario. Las condiciones mínimas a reunir por el candidato deberán ser iguales a las que deben cumplirse para la candidatura a Diputado Nacional. En la lista, el Defensor del Pueblo deberá incorporar a sus adjuntos, y en su campaña deberá presentar un programa de gestión, todo esto con el fin de que los ciudadanos conozcan el perfil y los objetivos del postulante. La principal función del Defensor del Pueblo será, como hasta ahora, el controlar a la Administración Pública, aunque ampliándole sus facultades de intervención, a fin de que tenga potestad de cuestionar toda resolución que encuentre contraria a la ley o notoriamente perjudicial para los ciudadanos, y que tenga también el poder de iniciar procesos sumarios contra aquellos funcionarios sospechosos de actividades ilícitas, los cuales luego deberá elevar ate el juzgado correspondiente para que el Poder Judicial avance en la investigación y sanción del delito, si este hecho se verifica.", temas.INSTITUCIONAL, 13, 0 ),
+ 
+
+Propuesta("Doble Escolaridad","Que en el plazo de tres años, todas las escuelas primarias y secundarias dependientes de la Ciudad de Buenos Aires tengan doble escolaridad, con desayuno, almuerzo y merienda reforzadas, con el fin de mejorar los niveles de educación, al tiempo que se haga una tarea de prevención y contención para que nuestros jóvenes no caigan en la delincuencia o las drogas.", temas.EDUCACION, 13, 0 ),
+ 
+Propuesta("Becas Escolares","Se sume la creación de Becas a la Excelencia, para premiar a los alumnos con los promedios más altos, alentándolos a seguir progresando y ayudando también a sus familias. No sólo debemos proteger a los más necesitados, sino también reconocer y cuidar a nuestro recurso más valioso: el esfuerzo y el talento humanos.", temas.EDUCACION, 13, 0 ),
+ 
+Propuesta("Atención Sanitaria", "Redistribución de las partidas de gastos del presupuesto de la Ciudad, en el que deberá privilegiarse la atención sanitaria gratuita y una efectiva cobertura farmacológica, especialmente de insumos críticos, que requiera todo ciudadano.", temas.SALUD, 13, 0 ),
+ 
+Propuesta("Prevención", "Poner en marcha una batería de medidas de prevención de enfermedades infecto-contagiosas, que eviten en forma rápida y eficiente la propagación de éstas.", temas.SALUD, 13, 0 ),
+ 
+Propuesta("Atención Primaria", "Descentralizar las bocas de atención primaria de los centros de alta complejidad, aumentando el horario de atención al público en un 100%; la infraestructura hospitalaria se utilizará durante más horas y se distribuirán los recursos humanos remanentes de otras áreas para reforzar la de salud.",  temas.SALUD, 13, 0 ),
+
+Propuesta("Censo para Acción Sanitaria", "Censo domiciliario a cargo de agentes de salud en toda la Ciudad, que durará 2 meses, a fin de tener una base de datos real que permitirá planificar la acción sanitaria a mediano y largo plazo. Se tendrá de esta forma un panorama concreto de los padecimientos patológicos que aquejan a sus habitantes, tratamientos instaurados, cumplimiento o no de los mismos, necesidades sanitarias insatisfechas, nivel de educación, ración alimentaria diaria, libreta sanitaria, control del cronograma de vacunación, etc.", temas.SALUD, 13, 0 ),
+ 
+Propuesta("Medicamentos básicos", "reactivación de los laboratorios de los hospitales para la producción de medicamentos básicos, a fin de brindar la cobertura a todos los centros de salud dependientes del gobierno de la Ciudad, más los necesarios para la atención en domicilio, ambulancias y móviles.", temas.SALUD, 13, 0 ),
+
+Propuesta("Emergencia Social, Sanitaria y Económica", "Declaración de la Emergencia Social, Sanitaria y Económica en la Ciudad. Vivimos en tiempos en los que hay cientos de colegios sin las mínimas condiciones edilicias para albergar a nuestros chicos y jóvenes, en los que los hospitales de la Ciudad están colapsados, y donde miles de personas sobreviven y duermen todas las noches en las calles buscando en la basura un mínimo sustento. Nuestro Partido sostiene que la solución de todos estos problemas deben ser la primera preocupación para los integrantes de la Jefatura de Gobierno y los miembros de la Legislatura de la Ciudad.", temas.ECONOMIA, 13, 0 ),
+
+Propuesta("Emergencia Social, Sanitaria y Económica", "Con la declaración de la Emergencia Social, Sanitaria y Económica, Bandera Vecinal plantea que el Presupuesto deberá dar prioridad absoluta a la Salud, la Educación y la Obra Pública, reduciendo al mínimo indispensable las partidas de Turismo, Publicidad y demás rubros que en la actualidad son superfluos. Es inmoral que se dilapiden fondos públicos en eventos para visitantes extranjeros o para grupos sociales reducidos, mientras la Ciudad está sumida en la pobreza, la marginalidad y la delincuencia.", temas.ECONOMIA, 13, 0 ),
+
+Propuesta("Impuestos", "Para ayudar al desarrollo comercial e industrial, atendiendo especialmente la difícil situación que atraviesan muchas Pymes, promovemos la sustancial reducción del Impuesto a los Ingresos Brutos.", temas.ECONOMIA, 13, 0 ),
+
+Propuesta("Libertad de Opinión", "Derogación de toda normativa que restrinja la libertad de opinión, expresión y/o investigación. En el siglo XXI, entendemos que esta libertad es fundamental para nuestra evolución como sociedad democrática, y que cualquier intento de cercenamiento o proscripción de ideas atenta contra la esencia misma de nuestra República.", temas.DERECHOS_HUMANOS, 13, 0 ),
+
+Propuesta("Malvinas", "Las Islas Malvinas, Georgias del Sur y Sandwich del Sur fueron, son y serán Argentinas. Como partido político, rechazamos cualquier intento de negociación internacional que pretenda desconocer nuestra soberanía sobre esos territorios usurpados. Reivindicamos a nuestros heroicos Veteranos de Guerra y rechazamos la discriminación y marginación que han padecido desde 1982 hasta el presente.", temas.SOCIEDAD, 13, 0 ),
+
 ];
 }
