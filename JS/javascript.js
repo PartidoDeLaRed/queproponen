@@ -278,7 +278,7 @@ function MostrarPropuesta(modo, prop)
                     window.open('https://twitter.com/share?'+
 				'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepopones%2Fpropuesta%2F'+(prop.titulo.replace(' ','-'))+'&'+
 				'related=fvilledary&'+
-				'text='+ prop.titulo + ' ' + candidato.twitter + " @partidodelared", 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+				'text='+ 'Hola ' + candidato.twitter + " quería decirte algo de tu propuesta %23yvosquepropones", 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
                 });
 				$(container).append(tweet);
 				
@@ -390,7 +390,7 @@ function NoPropuesta(cosa)
 			$(tweet).click(function(e) {
 				window.open('https://twitter.com/intent/tweet?'+
 			'related=fvilledary&'+
-			'text='+a.twitter + ', quisiera saber propuestas tuyas sobre '+$(this).parents('.tipo').children('.contPropuestas').attr('id'), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+			'text=' + 'Hola ' + a.twitter + ' %23yvosquepropones para la Ciudad sobre ' + $(this).parents('.tipo').children('.contPropuestas').attr('id'), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 			});
 			$(tweetContainer).append(tweet);
 		});
@@ -413,8 +413,8 @@ function NoPropuesta(cosa)
 			$(tweet).click(function(e) {
 				window.open('https://twitter.com/intent/tweet?'+
 			'related=fvilledary&'+
-			'text='+cosa.twitter + ', quisiera saber propuestas tuyas sobre '+$(this).parents('.tipo').children('.contPropuestas').attr('id'), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
-			});
+			'text=' + 'Hola ' + cosa.twitter + ' %23yvosquepropones para la Ciudad sobre '+$(this).parents('.tipo').children('.contPropuestas').attr('id'), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+			})
 		$(tweetContainer).append(tweet);
 		$(cont).append(tweetContainer);
 	}
