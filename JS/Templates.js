@@ -5,7 +5,7 @@ function MostrarContenedor(tipo)
 	{
 		case contenedores.PARTIDOS:
 			template = "<div class='partidosContainer'>"+
-            	"<div class='title'>Partidos Polítcos y Frentes</div>"+
+            	"<div class='title'>Partidos Políticos y Frentes</div>"+
 				"</div> ";
 			break;
 		case contenedores.CANDIDATOS:
