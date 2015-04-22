@@ -279,7 +279,7 @@ function MostrarPropuesta(modo, prop)
 				$(tweet).click(function(e) {
                     window.open('https://twitter.com/intent/tweet?'+
 					'related=PartidodelaRed&'+
-					'text='+ 'Hola ' + candidato.twitter + " quería decirte algo de tu propuesta %23yvosquepropones", 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+					'text='+ 'Hola ' + candidato.twitter + " quiero decirte sobre tu propuesta: %23yvosquepropones", 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
                 });
 				$(container).append(tweet);
 				
