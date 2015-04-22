@@ -3,7 +3,7 @@ var temas = {
 	EDUCACION: {codigo:1, color: '#7FAAFF'},
 	SOCIEDAD: {codigo:2, color: '#FF7F88'},
 	SEGURIDAD: {codigo:3, color: '#F6F6A1'},
-	DERECHOS_HUMANOS: {codigo:4, color: '#333333'},
+	DERECHOS_HUMANOS: {codigo:4, color: '#443868'},
 	PLANEAMIENTO_URBANO: {codigo:5, color: '#D8AD83'},
 	ECONOMIA: {codigo:6, color: '#90E5BA'},
 	TRANSPORTE: {codigo:7, color: '#BC92E7'},
