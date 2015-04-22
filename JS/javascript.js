@@ -275,9 +275,8 @@ function MostrarPropuesta(modo, prop)
 				$(tweet).addClass('twitterButton');
 				$(tweet).html('Hablá con '+candidato.nombre+' sobre esto');
 				$(tweet).click(function(e) {
-                    window.open('https://twitter.com/share?'+
-				'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepopones%2Fpropuesta%2F'+(prop.titulo.replace(' ','-'))+'&'+
-				'related=fvilledary&'+
+                    window.open('https://twitter.com/intent/tweet?'+
+				'related=PartidodelaRed&'+
 				'text='+candidato.twitter+' '+prop.titulo, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
                 });
 				$(container).append(tweet);
@@ -314,24 +313,24 @@ function GenerarGrafico()
 		$(chart).attr('id','chart').css('width','100%').css('height','300');
 		$(chart).insertAfter($('.propuestasContainer').children('.title').get(0));
 		var data = {
-			labels: ["Salud", "Educacion", "Sociedad", "Economia", "Transporte", "Derechos Humanos", "Seguridad", "Vivienda", "Planeamiento Urbano", "Medio Ambiente", "Institucional", "Internacional"],
+			labels: ["Salud", "Vivienda", "Sociedad", "Institucional", "Planeamiento Urbano", "Seguridad", "Medio Ambiente", "Economia", "Internacional", "Educacion", "Transporte", "Derechos Humanos"],
 			datasets: [
 				{
 					label: "",
 					highlightFill: "rgba(240,240,240,0.75)",
 					data: [
 						$('#salud').children('.propuestaContainer').length, 
-						$('#educacion').children('.propuestaContainer').length, 
-						$('#sociedad').children('.propuestaContainer').length, 
-						$('#economia').children('.propuestaContainer').length, 
-						$('#transporte').children('.propuestaContainer').length, 
-						$('#derechosHumanos').children('.propuestaContainer').length, 
-						$('#seguridad').children('.propuestaContainer').length,
 						$('#vivienda').children('.propuestaContainer').length, 
-						$('#planeamientoUrbano').children('.propuestaContainer').length, 
-						$('#medioAmbiente').children('.propuestaContainer').length, 
+						$('#sociedad').children('.propuestaContainer').length, 
 						$('#institucional').children('.propuestaContainer').length, 
-						$('#internacional').children('.propuestaContainer').length
+						$('#planeamientoUrbano').children('.propuestaContainer').length, 
+						$('#seguridad').children('.propuestaContainer').length,
+						$('#medioAmbiente').children('.propuestaContainer').length, 
+						$('#economia').children('.propuestaContainer').length, 
+						$('#internacional').children('.propuestaContainer').length,
+						$('#educacion').children('.propuestaContainer').length, 
+						$('#transporte').children('.propuestaContainer').length, 
+						$('#derechosHumanos').children('.propuestaContainer').length 
 					]
 				},
 			]
@@ -343,17 +342,17 @@ function GenerarGrafico()
 		});
 		
 		myObjBar.datasets[0].bars[0].fillColor = temas.SALUD.color;
-		myObjBar.datasets[0].bars[1].fillColor = temas.EDUCACION.color;
+		myObjBar.datasets[0].bars[1].fillColor = temas.VIVIENDA.color;
 		myObjBar.datasets[0].bars[2].fillColor = temas.SOCIEDAD.color;
-		myObjBar.datasets[0].bars[3].fillColor = temas.ECONOMIA.color;
-		myObjBar.datasets[0].bars[4].fillColor = temas.TRANSPORTE.color;
-		myObjBar.datasets[0].bars[5].fillColor = temas.DERECHOS_HUMANOS.color;
-		myObjBar.datasets[0].bars[6].fillColor = temas.SEGURIDAD.color;
-		myObjBar.datasets[0].bars[7].fillColor = temas.VIVIENDA.color;
-		myObjBar.datasets[0].bars[8].fillColor = temas.PLANEAMIENTO_URBANO.color;
-		myObjBar.datasets[0].bars[9].fillColor = temas.MEDIO_AMBIENTE.color;
-		myObjBar.datasets[0].bars[10].fillColor = temas.INSTITUCIONAL.color;
-		myObjBar.datasets[0].bars[11].fillColor = temas.INTERNACIONAL.color;
+		myObjBar.datasets[0].bars[3].fillColor = temas.INSTITUCIONAL.color;
+		myObjBar.datasets[0].bars[4].fillColor = temas.PLANEAMIENTO_URBANO.color;
+		myObjBar.datasets[0].bars[5].fillColor = temas.SEGURIDAD.color;
+		myObjBar.datasets[0].bars[6].fillColor = temas.MEDIO_AMBIENTE.color;
+		myObjBar.datasets[0].bars[7].fillColor = temas.ECONOMIA.color;
+		myObjBar.datasets[0].bars[8].fillColor = temas.INTERNACIONAL.color;
+		myObjBar.datasets[0].bars[9].fillColor = temas.EDUCACION.color;
+		myObjBar.datasets[0].bars[10].fillColor = temas.TRANSPORTE.color;
+		myObjBar.datasets[0].bars[11].fillColor = temas.DERECHOS_HUMANOS.color;
 		myObjBar.update();
 	}
 }
@@ -389,8 +388,8 @@ function NoPropuesta(cosa)
 			$(tweet).html('Escribile a '+a.nombre);
 			$(tweet).click(function(e) {
 				window.open('https://twitter.com/intent/tweet?'+
-			'related=fvilledary&'+
-			'text='+a.twitter + ', quisiera saber propuestas tuyas sobre '+$(this).parents('.tipo').children('.contPropuestas').attr('id'), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+			'related=PartidodelaRed&'+
+			'text='+a.twitter + ', quisiera saber sus propuestas sobre '+$(this).parents('.tipo').children('.title').children('span').html(), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 			});
 			$(tweetContainer).append(tweet);
 		});
@@ -412,8 +411,8 @@ function NoPropuesta(cosa)
 		$(tweet).html('Preguntale a '+cosa.nombre+' que piensa sobre esto');
 			$(tweet).click(function(e) {
 				window.open('https://twitter.com/intent/tweet?'+
-			'related=fvilledary&'+
-			'text='+cosa.twitter + ', quisiera saber propuestas tuyas sobre '+$(this).parents('.tipo').children('.contPropuestas').attr('id'), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+			'related=PartidodelaRed&'+
+			'text='+cosa.twitter + ', quisiera saber sus propuestas sobre '+$(this).parents('.tipo').children('.title').children('span').html(), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 			});
 		$(tweetContainer).append(tweet);
 		$(cont).append(tweetContainer);
@@ -430,22 +429,22 @@ function CambiarURL(tipo, cosa)
 	{
 		case 0:
 		{
-			title = '¿Vos que propones? - '+cosa.nombre;
-			url = window.location.origin + window.location.pathname + '#partido/'+(cosa.nombre.replace(' ','-'));
+			title = '¿Que proponen? - '+cosa.nombre;
+			url = window.location.origin + window.location.pathname + '#partido/'+(cosa.nombre.split(' ').join('-'));
 		}break;
 		case 1:
 		{
-			title = '¿Vos que propones? - '+cosa.nombre;
-			url = window.location.origin + window.location.pathname + '#candidato/'+(cosa.nombre.replace(' ','-'));
+			title = '¿Que proponen? - '+cosa.nombre;
+			url = window.location.origin + window.location.pathname + '#candidato/'+(cosa.nombre.split(' ').join('-'));
 		}break;
 		case 2:
 		{
-			title = '¿Vos que propones? - '+cosa.titulo;
-			url = window.location.origin + window.location.pathname + '#propuesta/'+(cosa.titulo.replace(' ','-'));
+			title = '¿Que proponen? - '+cosa.titulo;
+			url = window.location.origin + window.location.pathname + '#propuesta/'+(cosa.titulo.split(' ').join('-'));
 		}break;
 		case 3:
 		{
-			title = '¿Vos que propones?';
+			title = '¿Que proponen?';
 			url = window.location.origin + window.location.pathname;
 		}break;
 	}
@@ -486,7 +485,7 @@ function CargarSeccion()
 {
 	if(window.location.hash.split('/')[1] != undefined)
 	{
-		var nombre = window.location.hash.split('/')[1].replace('-',' ');
+		var nombre = window.location.hash.split('/')[1].split('-').join(' ');
 		if(window.location.hash.indexOf('partido') != -1)
 		{
 			var lista = partidos.filter(function(e){ return e.nombre == nombre; });
