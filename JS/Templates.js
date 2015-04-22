@@ -50,7 +50,7 @@ function MostrarContenedor(tipo)
 						"<div class='title'><img src='IMG/temas/transporte.png' height='50' width='50' /><span style='color:"+temas.TRANSPORTE.color+";'>Transporte</span><div class='arrowButton down' onclick='javascript:ToggleCategoria(this)'></div><span class='quantityList'>0</span></div>"+
 					"<div id='transporte' class='contPropuestas'></div></div>"+
 					"<div class='tipo'>"+
-						"<div class='title'><img src='' height='50' width='50' /><span style='color:"+temas.DERECHOS_HUMANOS.color+";'>Derechos Humanos</span><div class='arrowButton down' onclick='javascript:ToggleCategoria(this)'></div><span class='quantityList'>0</span></div>"+
+						"<div class='title'><img src='IMG/temas/derechosHumanos.png' height='50' width='50' /><span style='color:"+temas.DERECHOS_HUMANOS.color+";'>Derechos Humanos</span><div class='arrowButton down' onclick='javascript:ToggleCategoria(this)'></div><span class='quantityList'>0</span></div>"+
 					"<div id='derechosHumanos' class='contPropuestas'></div></div>"+
 				"</div> ";
 			break;
