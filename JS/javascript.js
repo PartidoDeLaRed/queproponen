@@ -430,22 +430,22 @@ function CambiarURL(tipo, cosa)
 	{
 		case 0:
 		{
-			title = '¿Vos que propones? - '+cosa.nombre;
+			title = '¿Vos que propones? - ' +cosa.nombre + ' - Partido de la Red';
 			url = window.location.origin + window.location.pathname + '#partido/'+(cosa.nombre.replace(' ','-'));
 		}break;
 		case 1:
 		{
-			title = '¿Vos que propones? - '+cosa.nombre;
+			title = '¿Vos que propones? - ' +cosa.nombre + ' - Partido de la Red';
 			url = window.location.origin + window.location.pathname + '#candidato/'+(cosa.nombre.replace(' ','-'));
 		}break;
 		case 2:
 		{
-			title = '¿Vos que propones? - '+cosa.titulo;
+			title = '¿Vos que propones? - ' +cosa.titulo + ' - Partido de la Red';
 			url = window.location.origin + window.location.pathname + '#propuesta/'+(cosa.titulo.replace(' ','-'));
 		}break;
 		case 3:
 		{
-			title = '¿Vos que propones?';
+			title = '¿Vos que propones?' + ' - Partido de la Red';
 			url = window.location.origin + window.location.pathname;
 		}break;
 	}
