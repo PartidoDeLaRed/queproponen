@@ -210,7 +210,11 @@ padding: 10px 20px !important;
 	width: 24px;
 	height: 24px;
 	vertical-align: middle;
+<<<<<<< HEAD
 	margin: 0 5px 0 -6px;
+=======
+	margin: 0 5px 0 -14px;
+>>>>>>> origin/master
 	content: '';
 	padding-left: 24px;
 	background-image:url(../IMG/personIcon.png);
@@ -227,18 +231,25 @@ padding: 10px 20px !important;
     display: inline-block;
     border-left: 1px solid #e7e7e7;
     padding: 10px;
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> origin/master
     width: 50%;
 }
 .item.propuestas::before{        
 	width: 24px;    
 	height: 24px;        
 	vertical-align: middle;
+<<<<<<< HEAD
 	margin: 0 5px 0 -6px;        
+=======
+	margin: 0 5px 0 -14px;        
+>>>>>>> origin/master
 	content: '';    
 	padding-left: 24px;            
 	background-image:url(../IMG/propuestaIcon.png);
@@ -350,12 +361,19 @@ padding: 10px 20px !important;
 
 .colorCandidato{
 	width: auto;
+<<<<<<< HEAD
 	margin: 2px;
 	padding: 2px 5px;
 	color: #fff;
 	font-size: 12px;
 	display: inline-block;	
 	border-radius: 3px;
+=======
+	margin: 0 5px;
+	padding: 2px 5px;
+	color: #fff;
+	display: inline-block;	
+>>>>>>> origin/master
 }
 .colorCandidato_mini{
 	height: 26px;
@@ -398,7 +416,11 @@ padding: 10px 20px !important;
 }
 
 .nombreCandidato{
+<<<<<<< HEAD
 	margin: 0 2px;
+=======
+	margin: 0 5px;
+>>>>>>> origin/master
 	text-align:left;
 	font-size: 24px;
 	font-weight:400;
@@ -424,11 +446,18 @@ padding: 10px 20px !important;
 .listaCandidato{
 	margin: 2px;
 	text-align:left;
+<<<<<<< HEAD
 	font-size: 12px;
 }
 .candidatoContainer_Header .listaCandidato{
 	font-size: 20px;
 	display:inline-block;
+=======
+	line-height: 8px;
+	font-size: 14px;
+	font-weight:300;
+	display: inline-block;
+>>>>>>> origin/master
 }
 
 .tipo{
@@ -592,6 +621,7 @@ padding: 10px 20px !important;
 	display: inline-block;
 	vertical-align: super;
 }
+<<<<<<< HEAD
 
 .arrowButton{
 	width:40px;
@@ -618,3 +648,5 @@ padding: 10px 20px !important;
 .arrowButton.up:hover{
 	background:url(../IMG/upIcon.png), #e8e8e8;
 }
+=======
+>>>>>>> origin/master
