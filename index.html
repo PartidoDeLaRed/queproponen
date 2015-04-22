@@ -5,7 +5,7 @@
 <title>¿Vos que Propones?</title>
 <link href="CSS/styles.css" rel="stylesheet" type="text/css" />
 <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css" />
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="JS/Utilities.js"></script>
 <script src="JS/Clases.js"></script>
@@ -21,6 +21,8 @@
 <script language="javascript" type="application/javascript">
 
 $(document).ready(function(e) {
+	CargarAbout();
+
 	CargarPartidos();
 	CargarCandidatos();
 	CargarPropuestas();
@@ -45,7 +47,7 @@ $(document).ready(function(e) {
 
 	<div class="headerContainer">
     	<div class="color"></div>
-    	<div class="title" onclick="javascript:CargaInicial()">¿VOS QUE PROPONES?</div>
+    	<div class="title" onclick="javascript:CargaInicial()">¿QUE PROPONEN?</div>
     	<div class="subtitle">Sabé cuales son las propuestas de gobierno de todos los candidatos a Jefe de Gobierno de la Ciudad de Buenos Aires</div>
     </div>
 
@@ -61,8 +63,12 @@ $(document).ready(function(e) {
         </div>
     </div>
 
-	<div class="footerContainer">
-    </div>
-
+	<div class='footerContainer'>
+        <div style="width:960px; margin:auto;">
+            <a class="footerLinkGrande" href="http://partidodelared.org" target="_blank">Quienes somos <div>partidodelared.org</div></a>
+            <div class="logoPartido"></div>
+            <a class="footerLinkGrande" href="http://democraciaenred.org" target="_blank" style="text-align: left;">Participá en la red <div>democraciaenred.org</div></a>
+        </div>
+  	</div>
 </body>
 </html>
