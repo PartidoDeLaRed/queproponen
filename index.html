@@ -46,8 +46,8 @@ $(document).ready(function(e) {
 function load()
 {
     //Get your own Browser API Key from  https://code.google.com/apis/console/
-    gapi.client.setApiKey('AIzaSyCto0kYSGt2dFZm79T2L0reMVK-IBORxTY');
-    gapi.client.load('urlshortener', 'v1',function(){document.getElementById("output").innerHTML="";});
+    gapi.client.setApiKey('AIzaSyBq8cgwmzcjrwp2tRKFVgV8_IY6PuQHIhU');
+    gapi.client.load('urlshortener', 'v1',function(){document.getElementById("shortener").innerHTML="";});
 }
 window.onload = load;
 
@@ -94,5 +94,6 @@ window.onload = load;
             <a class="footerLinkGrande" href="http://democraciaenred.org" target="_blank" style="text-align: left;">Participá en la red <div>DemocraciaEnRed.org</div></a>
         </div>
   	</div>
+   <div style="display:none;" id="shortener"></div>
 </body>
 </html>

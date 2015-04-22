@@ -277,15 +277,13 @@ function MostrarPropuesta(modo, prop)
 				$(tweet).addClass('twitterButton');
 				$(tweet).html('Hablá con '+candidato.nombre+' sobre esto');
 				
+				setTimeout(makeShort(container, window.location.href+prop.titulo.split(' ').join('-')), 4000);
+				
 				$(tweet).click(function(e) {
-					
-					var shortURL = document.createElement('div');
-					makeShort(shortURL, window.location.href);
-
-                    window.open('https://twitter.com/intent/tweet?'+
+					window.open('https://twitter.com/intent/tweet?'+
 					'related=PartidodelaRed&'+
-					'text='+ 'Hola ' + candidato.twitter + " quiero decirte sobre tu propuesta: %23yvosquepropones", 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
-                });
+					'text='+ 'Hola ' + candidato.twitter + " quiero decirte sobre tu propuesta: "+shortURL.innerHTML+" %23yvosquepropones", 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+				});
 				$(container).append(tweet);
 				
 				$(container).append(MostrarCandidato(2, candidato));
@@ -438,17 +436,17 @@ function CambiarURL(tipo, cosa)
 		case 0:
 		{
 			title = '¿Que proponen? - ' +cosa.nombre + ' - Partido de la Red';
-			url = window.location.origin + window.location.pathname + '#partido/'+(cosa.nombre.replace(' ','-'));
+			url = window.location.origin + window.location.pathname + '#partido/'+(cosa.nombre.split(' ').join('-'));
 		}break;
 		case 1:
 		{
 			title = '¿Que proponen? - ' +cosa.nombre + ' - Partido de la Red';
-			url = window.location.origin + window.location.pathname + '#candidato/'+(cosa.nombre.replace(' ','-'));
+			url = window.location.origin + window.location.pathname + '#candidato/'+(cosa.nombre.split(' ').join('-'));
 		}break;
 		case 2:
 		{
 			title = '¿Que proponen? - ' +cosa.titulo + ' - Partido de la Red';
-			url = window.location.origin + window.location.pathname + '#propuesta/'+(cosa.titulo.replace(' ','-'));
+			url = window.location.origin + window.location.pathname + '#propuesta/'+(cosa.titulo.split(' ').join('-'));
 		}break;
 		case 3:
 		{
