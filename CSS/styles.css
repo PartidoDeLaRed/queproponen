@@ -202,44 +202,46 @@ padding: 10px 20px !important;
 	font-size: 32px;
 	font-weight: 400;
 	vertical-align: bottom;
-	color:#333;
+	color: #333;
 	position: relative;
 	display: inline-block;
-	padding: 10px;
+	padding: 3px 10px;
 	width: 50%;
+	height: 62px;
 }
 .item.candidatos::before{
-	width: 24px;
-	height: 24px;
-	vertical-align: middle;
-	margin: 0 5px 0 -6px;
-	content: '';
-	padding-left: 24px;
-	background-image:url(../IMG/personIcon.png);
-	background-repeat: no-repeat;
-	background-position: left center;
-	background-size: contain;
+	position: absolute;
+	bottom: 5px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	content: 'Candidatos';
+	font-size: 15px;
+	font-weight: 300 !important;
+	color: #444;
 }
 
 .item.propuestas{
-    text-align: center;    
-    font-size: 32px;    
-    font-weight: 400;        vertical-align: bottom;
-    color: #333;    position: relative;
-    display: inline-block;
-    border-left: 1px solid #e7e7e7;
-    padding: 10px;
-    width: 50%;
+text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  vertical-align: bottom;
+  color: #333;
+  position: relative;
+  display: inline-block;
+  padding: 3px 10px;
+  width: 50%;
+  height: 62px;
 }
 .item.propuestas::before{        
-	width: 24px;    
-	height: 24px;        
-	vertical-align: middle;
-	margin: 0 5px 0 -6px;        
-	content: '';    
-	padding-left: 24px;            
-	background-image:url(../IMG/propuestaIcon.png);
-	background-repeat: no-repeat;    background-position: left center;    background-size: contain;
+	position: absolute;
+	bottom: 5px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	content: 'Propuestas';
+	font-size: 15px;
+	font-weight: 300 !important;
 	color: #444;
 }
 
@@ -414,8 +416,16 @@ padding: 10px 20px !important;
 }
 
 .candidatoContainer .item.propuestas {
-  width: 100%;
-  padding: 0;
+	width: 100%;
+  	padding: 0 10px;
+  	height: 40px;
+  	text-align: right;
+}
+.candidatoContainer .item.propuestas:before {
+  position: relative;
+  float: left;
+  margin: 13px 0;
+  font-size: 20px;
 }
 
 .listaCandidato{

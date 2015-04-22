@@ -63,6 +63,7 @@ function MostrarPartido(modo, part)
 				candidatos.filter(function(a){return a.partido == part.codigo}).forEach(function(cand) {MostrarCandidato(0, cand);});
 				propuestas.filter(function(a){return a.partido == part.codigo}).forEach(function(prop) {MostrarPropuesta(0, prop);});
 				VerificarPropuestas(part);
+				AbrirPropuestas();
 				
             }).fadeIn('300ms').animate({marginTop:'0px'},'300ms');
 			$('html, body').animate({
@@ -140,6 +141,7 @@ function MostrarCandidato(modo, cand)
 					MostrarPropuesta(0, prop);
 				});
 				VerificarPropuestas(cand);
+				AbrirPropuestas();
 	
             }).fadeIn('300ms').animate({marginTop:'0px'},'300ms');
 			$('html, body').animate({
@@ -506,4 +508,11 @@ function CargarSeccion()
 		}
 	}
 	CargaInicial();
+}
+
+function AbrirPropuestas()
+{
+	$('.tipo').children('.title').children('div').each(function(index, element) {
+		ToggleCategoria(element);
+    });
 }
