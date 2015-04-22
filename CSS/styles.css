@@ -16,10 +16,10 @@ body,html{
 
 .headerContainer{
 	height: 350px;
-	border-bottom: 1px solid #8ac;
+	border-bottom: 1px solid #169CBF;
 	background: url(../IMG/backgroundHeader.jpg);
 	background-size:cover;
-	background-position: center -100px;
+	background-position: center center;
 	position:relative;
 	z-index: 1;
 }
@@ -88,7 +88,7 @@ body,html{
 .searchButton {
     height: 66px;
     width: 66px;
-    background: #8ac;
+    background: #169CBF;
     border: 2px solid #468;
     margin: 7px;
     border-radius: 33px;
@@ -121,7 +121,7 @@ body,html{
 	padding: 0;
 	font-size: 50px;
 	font-weight: 300;
-	color:#88bbdd;
+	color:#169CBF;
 }
 
 .partidosContainer{
@@ -532,7 +532,7 @@ text-align: center;
 
 .twitterButton {
   display: inline-block;
-  background: #88bbdd;
+  background: #169CBF;
   border-radius: 3px;
   text-decoration: none;
   font-size: 15px;
@@ -598,7 +598,7 @@ text-align: center;
 .textoAtras{
 	font-size:30px;
 	font-weight: 300;
-	color:#88AACC;
+	color:#169CBF;
 	display: inline-block;
 	vertical-align: super;
 }
@@ -655,7 +655,7 @@ text-align: center;
   text-align: right;
   line-height: 32px;
   text-decoration: none;
-  color: #8ac;
+  color: #169CBF;
   font-size: 43px;
   font-weight: 300;
   display: inline-block;
@@ -675,7 +675,7 @@ text-align: center;
   top: 0;
   width: 60px;
   height: 60px;
-  background: url(../IMG/helpIcon.png), #8AC;
+  background: url(../IMG/helpIcon.png), #169CBF;
   background-size: cover;
   background-position: center center;
   border-radius: 30px;
@@ -686,7 +686,7 @@ text-align: center;
 }
 
 .aboutContainer {
-  background-color: #88aacc;
+  background-color: #169CBF;
   padding: 55px;
   position: fixed;
   top: 40px;

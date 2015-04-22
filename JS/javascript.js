@@ -276,7 +276,12 @@ function MostrarPropuesta(modo, prop)
 				var tweet = document.createElement('a');
 				$(tweet).addClass('twitterButton');
 				$(tweet).html('Hablá con '+candidato.nombre+' sobre esto');
+				
 				$(tweet).click(function(e) {
+					
+					var shortURL = document.createElement('div');
+					makeShort(shortURL, window.location.href);
+
                     window.open('https://twitter.com/intent/tweet?'+
 					'related=PartidodelaRed&'+
 					'text='+ 'Hola ' + candidato.twitter + " quiero decirte sobre tu propuesta: %23yvosquepropones", 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
@@ -340,7 +345,8 @@ function GenerarGrafico()
 		window.myObjBar = new Chart(chart.getContext("2d")).Bar(data, {
 			barStrokeWidth : 0,
 			barValueSpacing : 1,
-			responsive : true
+			responsive : false,
+			maintainAspectRatio: false
 		});
 		
 		myObjBar.datasets[0].bars[0].fillColor = temas.SALUD.color;

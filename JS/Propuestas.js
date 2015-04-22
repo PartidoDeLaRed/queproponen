@@ -654,39 +654,40 @@ Propuesta("Libertad de Opinión", "Derogación de toda normativa que restrinja l
 
 Propuesta("Malvinas", "Las Islas Malvinas, Georgias del Sur y Sandwich del Sur fueron, son y serán Argentinas. Como partido político, rechazamos cualquier intento de negociación internacional que pretenda desconocer nuestra soberanía sobre esos territorios usurpados. Reivindicamos a nuestros heroicos Veteranos de Guerra y rechazamos la discriminación y marginación que han padecido desde 1982 hasta el presente.", temas.INTERNACIONAL, 13, 0 ),
 
-Propuesta("Promover el desarrollo e implementación de un Plan de Seguridad Integral, que contemple no solo el accionar de las fuerzas policiales o de seguridad sino también el accionar de la justicia y las acciones preventivas pertinentes.","", temas. SEGURIDAD, 14, 0),
+// Enrique Piragini
+Propuesta("Promover el desarrollo e implementación de un Plan de Seguridad Integral, que contemple no solo el accionar de las fuerzas policiales o de seguridad sino también el accionar de la justicia y las acciones preventivas pertinentes.","", temas.SEGURIDAD, 14, 0),
 
-Propuesta("Exigiremos transparencia en los procesos políticos, en la administración de las finanzas públicas, en los actos de gobierno y en los procedimientos de licitaciones y contratos de acuerdo con la legislación local, prevenir los abusos y mantener la confianza pública.","", temas. INSTITUCIONAL, 14, 0),
+Propuesta("Exigiremos transparencia en los procesos políticos, en la administración de las finanzas públicas, en los actos de gobierno y en los procedimientos de licitaciones y contratos de acuerdo con la legislación local, prevenir los abusos y mantener la confianza pública.","", temas.INSTITUCIONAL, 14, 0),
 
-Propuesta("El mantenimiento y limpieza de los espacios públicos.  En este sentido, cabe tener presente la falta de higiene provocada por las tareas que desempeñan los recuperadores urbanos en la vía pública, entendiendo que corresponde remediar la misma,a través de la normatización adecuada, con plena intervención  y coordinación de la Dirección General de Reciclado.","", temas. PLANEAMIENTO_URBANO, 14, 0),
+Propuesta("El mantenimiento y limpieza de los espacios públicos.  En este sentido, cabe tener presente la falta de higiene provocada por las tareas que desempeñan los recuperadores urbanos en la vía pública, entendiendo que corresponde remediar la misma,a través de la normatización adecuada, con plena intervención  y coordinación de la Dirección General de Reciclado.","", temas.PLANEAMIENTO_URBANO, 14, 0),
 
-Propuesta("El reordenamiento del espacio público, de los permisos y habilitaciones de puesto de venta en la vía pública, vendedores ambulantes y artesanos.","", temas. PLANEAMIENTO_URBANO, 14, 0),
+Propuesta("El reordenamiento del espacio público, de los permisos y habilitaciones de puesto de venta en la vía pública, vendedores ambulantes y artesanos.","", temas.PLANEAMIENTO_URBANO, 14, 0),
 
-Propuesta("Instar al Poder Ejecutivo a encuadrar los programas de prevención de Seguridad vial dentro del marco conceptual de los derechos humanos. La inseguridad vial, con su secuela de muerte y lesiones, vulnera el derecho a la vida, a la integridad física.","", temas. TRANSPORTE, 14, 0),
+Propuesta("Instar al Poder Ejecutivo a encuadrar los programas de prevención de Seguridad vial dentro del marco conceptual de los derechos humanos. La inseguridad vial, con su secuela de muerte y lesiones, vulnera el derecho a la vida, a la integridad física.","", temas.TRANSPORTE, 14, 0),
 
-Propuesta("A partir de la instalación del Metrobus, y consecuente modificación de recorridos de las líneas de colectivos, resulta necesario reestructurar y alentar la sectorización de nuevos lugares públicos para el estacionamiento de vehículos particulares.","", temas. TRANSPORTE, 14, 0),
+Propuesta("A partir de la instalación del Metrobus, y consecuente modificación de recorridos de las líneas de colectivos, resulta necesario reestructurar y alentar la sectorización de nuevos lugares públicos para el estacionamiento de vehículos particulares.","", temas.TRANSPORTE, 14, 0),
 
-Propuesta("Revisión de las arterias por las que circula el tránsito pesado ante la constatación de la circulación de camiones y vehículos de gran porte por arterias que no se encuentran comprendidas en la Red de Tránsito Pesado, establecido mediante Ley 216.","", temas. TRANSPORTE, 14, 0),
+Propuesta("Revisión de las arterias por las que circula el tránsito pesado ante la constatación de la circulación de camiones y vehículos de gran porte por arterias que no se encuentran comprendidas en la Red de Tránsito Pesado, establecido mediante Ley 216.","", temas.TRANSPORTE, 14, 0),
 
-Propuesta("Cuenca Matanza- Riachuelo. Necesidad del manejo sistémico de la Cuenca. Control de vertido de desagues cloacales y pluviales, de líquidos , compuestos orgánicos, de metales y otros elementos contaminantes. Todo ello, a fin del efectivo cuidado de los recursos naturales, la recuperación del ecosistema  y promoción del desarrollo ambientalmente sustentable","", temas. MEDIO_AMBIENTE, 14, 0),
+Propuesta("Cuenca Matanza- Riachuelo. Necesidad del manejo sistémico de la Cuenca. Control de vertido de desagues cloacales y pluviales, de líquidos , compuestos orgánicos, de metales y otros elementos contaminantes. Todo ello, a fin del efectivo cuidado de los recursos naturales, la recuperación del ecosistema  y promoción del desarrollo ambientalmente sustentable","", temas.MEDIO_AMBIENTE, 14, 0),
 
-Propuesta("Adecuar el procesamiento de los residuos domiciliarios. Eliminar la superficie de basurales clandestino y/o a cielo abierto, ya que representan focos infecciosos para las personas que conviven con la basura acumulada pero que a su vez viven de ella por obtener material para reciclar. Relocalizar la población permanente de los basurales que se incrementa en forma permanente.","", temas. MEDIO_AMBIENTE, 14, 0),
+Propuesta("Adecuar el procesamiento de los residuos domiciliarios. Eliminar la superficie de basurales clandestino y/o a cielo abierto, ya que representan focos infecciosos para las personas que conviven con la basura acumulada pero que a su vez viven de ella por obtener material para reciclar. Relocalizar la población permanente de los basurales que se incrementa en forma permanente.","", temas.MEDIO_AMBIENTE, 14, 0),
 
-Propuesta("El ordenamiento del tránsito, circulación de camiones y todo tipo de reparto y distribución de mercaderías.","", temas. TRANSPORTE, 14, 0),
+Propuesta("El ordenamiento del tránsito, circulación de camiones y todo tipo de reparto y distribución de mercaderías.","", temas.TRANSPORTE, 14, 0),
 
-Propuesta("Fortalecer la salud a partir de la medicina preventiva, implementando el Boletín de Salud en todas la escuelas públicas de nivel inicial y primaria, con el fin de detectar tempranamente afecciones y patologías.","", temas. SALUD, 14, 0),
+Propuesta("Fortalecer la salud a partir de la medicina preventiva, implementando el Boletín de Salud en todas la escuelas públicas de nivel inicial y primaria, con el fin de detectar tempranamente afecciones y patologías.","", temas.SALUD, 14, 0),
 
-Propuesta("Implementación de planes integrales de prevención y asistencia a las adicciones  de sustancias y otras prácticas de riesgo adictivo.","", temas. SALUD, 14, 0),
+Propuesta("Implementación de planes integrales de prevención y asistencia a las adicciones  de sustancias y otras prácticas de riesgo adictivo.","", temas.SALUD, 14, 0),
 
-Propuesta("Estimular las actividades artísticas en todas sus dimensiones : dibujo.pintura- literatura-música- danzas. ","", temas. EDUCACION, 14, 0),
+Propuesta("Estimular las actividades artísticas en todas sus dimensiones : dibujo.pintura- literatura-música- danzas. ","", temas.EDUCACION, 14, 0),
 
-Propuesta("Propiciar el hábito lector como fuente para alcanzar otros conocimientos, pudiendo disfrutar de las bibliotecas escolares como también las bibliotecas públicas. ","", temas. EDUCACION, 14, 0),
+Propuesta("Propiciar el hábito lector como fuente para alcanzar otros conocimientos, pudiendo disfrutar de las bibliotecas escolares como también las bibliotecas públicas. ","", temas.EDUCACION, 14, 0),
 
-Propuesta("cumplimiento del Programa de Emergencia Habitacional para grupo familiares que se encuentran alojados bajo la modalidad transitoria de alojamiento de hoteles (subsidios por única vez o créditos hipotecarios; paradores nocturnos y controlrespecto de la accesibilidad al programa alimentario por parte de la población vulnerable. ","", temas. VIVIENDA, 14, 0),
+Propuesta("cumplimiento del Programa de Emergencia Habitacional para grupo familiares que se encuentran alojados bajo la modalidad transitoria de alojamiento de hoteles (subsidios por única vez o créditos hipotecarios; paradores nocturnos y controlrespecto de la accesibilidad al programa alimentario por parte de la población vulnerable. ","", temas.VIVIENDA, 14, 0),
 
-Propuesta("Mejorar la Administración de Justicia, propiciando el desarrollo devias alternativas de solución de conflictos, como la mediación, conciliación y arbitraje.Bajar el índice de litigiosidad que hay en la Ciudad, a través de estos métodos alternativos, evitando el colapso de la administración de justicia, con métodos más rápidos y menor honerosos.","", temas. INSTITUCIONAL, 14, 0),
+Propuesta("Mejorar la Administración de Justicia, propiciando el desarrollo devias alternativas de solución de conflictos, como la mediación, conciliación y arbitraje.Bajar el índice de litigiosidad que hay en la Ciudad, a través de estos métodos alternativos, evitando el colapso de la administración de justicia, con métodos más rápidos y menor honerosos.","", temas.INSTITUCIONAL, 14, 0),
 
-Propuesta("Propugnamos la orientación del gasto público, con sentido retributivo, hacia la cobertura  de las necesidades básicas de la población,  así como del ingreso real de los asalariados.","", temas. ECONOMIA, 14, 0),
+Propuesta("Propugnamos la orientación del gasto público, con sentido retributivo, hacia la cobertura  de las necesidades básicas de la población,  así como del ingreso real de los asalariados.","", temas.ECONOMIA, 14, 0),
 
 ];
 }
