@@ -275,16 +275,9 @@ function MostrarPropuesta(modo, prop)
 				$(tweet).addClass('twitterButton');
 				$(tweet).html('Hablá con '+candidato.nombre+' sobre esto');
 				$(tweet).click(function(e) {
-<<<<<<< HEAD
                     window.open('https://twitter.com/intent/tweet?'+
-				'related=PartidodelaRed&'+
-				'text='+candidato.twitter+' '+prop.titulo, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
-=======
-                    window.open('https://twitter.com/share?'+
-				'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepopones%2Fpropuesta%2F'+(prop.titulo.replace(' ','-'))+'&'+
-				'related=fvilledary&'+
-				'text='+ 'Hola ' + candidato.twitter + " quería decirte algo de tu propuesta %23yvosquepropones", 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
->>>>>>> origin/master
+					'related=PartidodelaRed&'+
+					'text='+ 'Hola ' + candidato.twitter + " quería decirte algo de tu propuesta %23yvosquepropones", 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
                 });
 				$(container).append(tweet);
 				
@@ -395,13 +388,8 @@ function NoPropuesta(cosa)
 			$(tweet).html('Escribile a '+a.nombre);
 			$(tweet).click(function(e) {
 				window.open('https://twitter.com/intent/tweet?'+
-<<<<<<< HEAD
 			'related=PartidodelaRed&'+
-			'text='+a.twitter + ', quisiera saber sus propuestas sobre '+$(this).parents('.tipo').children('.title').children('span').html(), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
-=======
-			'related=fvilledary&'+
-			'text=' + 'Hola ' + a.twitter + ' %23yvosquepropones para la Ciudad sobre ' + $(this).parents('.tipo').children('.contPropuestas').attr('id'), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
->>>>>>> origin/master
+			'text=' + 'Hola ' + a.twitter + ' %23yvosquepropones para la Ciudad sobre ' + $(this).parents('.tipo').children('.title').children('span').html(), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 			});
 			$(tweetContainer).append(tweet);
 		});
@@ -423,15 +411,9 @@ function NoPropuesta(cosa)
 		$(tweet).html('Preguntale a '+cosa.nombre+' que piensa sobre esto');
 			$(tweet).click(function(e) {
 				window.open('https://twitter.com/intent/tweet?'+
-<<<<<<< HEAD
 			'related=PartidodelaRed&'+
-			'text='+cosa.twitter + ', quisiera saber sus propuestas sobre '+$(this).parents('.tipo').children('.title').children('span').html(), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
-			});
-=======
-			'related=fvilledary&'+
-			'text=' + 'Hola ' + cosa.twitter + ' %23yvosquepropones para la Ciudad sobre '+$(this).parents('.tipo').children('.contPropuestas').attr('id'), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+			'text=' + 'Hola ' + cosa.twitter + ' %23yvosquepropones para la Ciudad sobre '+$(this).parents('.tipo').children('.title').children('span').html(), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 			})
->>>>>>> origin/master
 		$(tweetContainer).append(tweet);
 		$(cont).append(tweetContainer);
 	}
@@ -447,41 +429,22 @@ function CambiarURL(tipo, cosa)
 	{
 		case 0:
 		{
-<<<<<<< HEAD
-			title = '¿Que proponen? - '+cosa.nombre;
-			url = window.location.origin + window.location.pathname + '#partido/'+(cosa.nombre.split(' ').join('-'));
-		}break;
-		case 1:
-		{
-			title = '¿Que proponen? - '+cosa.nombre;
-			url = window.location.origin + window.location.pathname + '#candidato/'+(cosa.nombre.split(' ').join('-'));
-		}break;
-		case 2:
-		{
-			title = '¿Que proponen? - '+cosa.titulo;
-			url = window.location.origin + window.location.pathname + '#propuesta/'+(cosa.titulo.split(' ').join('-'));
-		}break;
-		case 3:
-		{
-			title = '¿Que proponen?';
-=======
-			title = '¿Vos que propones? - ' +cosa.nombre + ' - Partido de la Red';
+			title = '¿Que proponen? - ' +cosa.nombre + ' - Partido de la Red';
 			url = window.location.origin + window.location.pathname + '#partido/'+(cosa.nombre.replace(' ','-'));
 		}break;
 		case 1:
 		{
-			title = '¿Vos que propones? - ' +cosa.nombre + ' - Partido de la Red';
+			title = '¿Que proponen? - ' +cosa.nombre + ' - Partido de la Red';
 			url = window.location.origin + window.location.pathname + '#candidato/'+(cosa.nombre.replace(' ','-'));
 		}break;
 		case 2:
 		{
-			title = '¿Vos que propones? - ' +cosa.titulo + ' - Partido de la Red';
+			title = '¿Que proponen? - ' +cosa.titulo + ' - Partido de la Red';
 			url = window.location.origin + window.location.pathname + '#propuesta/'+(cosa.titulo.replace(' ','-'));
 		}break;
 		case 3:
 		{
-			title = '¿Vos que propones?' + ' - Partido de la Red';
->>>>>>> origin/master
+			title = '¿Que proponen?' + ' - Partido de la Red';
 			url = window.location.origin + window.location.pathname;
 		}break;
 	}
