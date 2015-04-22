@@ -278,7 +278,7 @@ function MostrarPropuesta(modo, prop)
                     window.open('https://twitter.com/share?'+
 				'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepopones%2Fpropuesta%2F'+(prop.titulo.replace(' ','-'))+'&'+
 				'related=fvilledary&'+
-				'text='+candidato.twitter+' '+prop.titulo, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+				'text='+ prop.titulo + ' ' + candidato.twitter + " @partidodelared", 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
                 });
 				$(container).append(tweet);
 				
