@@ -67,7 +67,7 @@ function MostrarPartido(modo, part)
             }).fadeIn('300ms').animate({marginTop:'0px'},'300ms');
 			$('html, body').animate({
 		        scrollTop: cont.offset().top
-		    }, 400, function(){GenerarGrafico()});
+		    }, 500, function(){GenerarGrafico()});
 			CambiarURL(0, part);
 		}break;
 	}
@@ -144,7 +144,7 @@ function MostrarCandidato(modo, cand)
             }).fadeIn('300ms').animate({marginTop:'0px'},'300ms');
 			$('html, body').animate({
 		        scrollTop: cont.offset().top
-		    }, 400, function(){GenerarGrafico()});
+		    }, 500, function(){GenerarGrafico()});
 			CambiarURL(1, cand);
 		}break;
 
@@ -213,7 +213,7 @@ function MostrarPropuesta(modo, prop)
 					}break;
 					case temas.SEGURIDAD:
 					{
-						$('.seguridad').append(container);
+						$('#seguridad').append(container);
 					}break;
 					case temas.EDUCACION:
 					{
@@ -326,7 +326,7 @@ function GenerarGrafico()
 						$('#economia').children('.propuestaContainer').length, 
 						$('#transporte').children('.propuestaContainer').length, 
 						$('#derechosHumanos').children('.propuestaContainer').length, 
-						$('#Seguridad').children('.propuestaContainer').length,
+						$('#seguridad').children('.propuestaContainer').length,
 						$('#vivienda').children('.propuestaContainer').length, 
 						$('#planeamientoUrbano').children('.propuestaContainer').length, 
 						$('#medioAmbiente').children('.propuestaContainer').length, 
@@ -476,6 +476,9 @@ function CargaInicial()
 		propuestas.forEach(function(prop) {MostrarPropuesta(0, prop);});
 		VerificarPropuestas(null);
     }).fadeIn('300ms').animate({marginTop:'0px'},'300ms').animate({scrollTop:200}, '300');
+	$('html, body').animate({
+		scrollTop: 0
+	}, 500, function(){GenerarGrafico()});
 	CambiarURL(3, null);
 }
 
