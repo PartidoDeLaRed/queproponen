@@ -552,5 +552,69 @@ Propuesta('Por un gobierno de los trabajadores y el pueblo','Por un gobierno de 
 Propuesta('Retiro inmediato de las tropas argentinas de Haití','Retiro inmediato de las tropas argentinas de Haití. Fuera ingleses y la OTAN de Malvinas. Contra el bloqueo y cualquier tipo de agresión imperialista contra Cuba. Por una política internacional de apoyo a la rebelión obrera y popular en todo el mundo, por la expulsión del imperialismo de todos los países, por la unidad socialista de América Latina, por el socialismo internacional',temas.INTERNACIONAL, 9,0),
 Propuesta('Fuera el imperialismo de medio oriente','Fuera el imperialismo de medio oriente. Abajo la ocupación sionista de Palestina.',temas.INTERNACIONAL, 9,0),
 
+// Zamora
+
+Propuesta("Consultas populares previas y vinculantes para decidir temas de fondo. ","", temas.INSTITUCIONAL, 15, 0),
+
+Propuesta("Sueldos de Jefe de Gobierno, ministros, legisladores y jueces igual al de los docentes.","", temas.INSTITUCIONAL, 15, 0),
+
+Propuesta("El presupuesto de la ciudad tiene que ser votado por la población: las prioridades y montos asignados en el presupuesto anual deben ser decididos por el pueblo de la ciudad.","", temas.INSTITUCIONAL, 15, 0),
+
+Propuesta("Supresión de los subsidios estatales a las escuelas privadas, montos que se usarán para mejorar la escuela pública.","", temas.EDUCACION, 15, 0),
+
+Propuesta("Red descentralizada de servicios priorizando la promoción y prevención de la salud a través de más centros en todos los barrios, articulando con atención domiciliaria y derivación a hospitales para emergencias, internación y estudios de alta complejidad. ","", temas.SALUD, 15, 0),
+
+Propuesta("Producción pública de medicamentos y acceso gratuito. ","", temas.SALUD, 15, 0),
+
+Propuesta("Aumento de presupuesto inmediato para la salud pública.","", temas.SALUD, 15, 0),
+
+Propuesta("Asignación de partidas para aumentar los puestos de trabajo de profesionales de la salud.","", temas.SALUD, 15, 0),
+
+Propuesta("Necesitamos evitar la sobrecarga de trabajo de enfermeras y residentes (sostén del sistema de salud), aumentar sus salarios y poder garantizar una buena calidad de atención para todos/as.","", temas.SALUD, 15, 0),
+
+Propuesta("Finalización inmediata del hospital en Lugano.","", temas.SALUD, 15, 0),
+
+Propuesta("Construcción cooperativa con asistencia de las carreras de Arquitectura e Ingeniería de Universidades Nacionales. ","", temas.VIVIENDA, 15, 0),
+
+Propuesta("Democratización del Instituto de la Vivienda para su ejecución y control por vecinos elegidos en cada barrio y revocables.  ","", temas.VIVIENDA, 15, 0),
+
+Propuesta("Volcar fondos gravando las actividades financieras y redefiniendo el ABL sobre empresas con mayor capacidad contributiva.","", temas.VIVIENDA, 15, 0),
+
+Propuesta("Atacar el gigantesco foco contaminante del Matanza/Riachuelo integrando a la Autoridad de Cuenca a Instituciones barriales y vecinos electos democráticamente y revocables, que garantice la ejecución y control de los planes de saneamiento con técnicos y profesionales de Universidades Nacionales.","", temas.MEDIO_AMBIENTE, 15, 0),
+
+Propuesta("Recolección y reciclado a cargo de una empresa de propiedad pública integrada por los recuperadores urbanos. ","", temas.MEDIO_AMBIENTE, 15, 0),
+
+Propuesta("Anulación de los actuales contratos con las empresas privadas. ","", temas.MEDIO_AMBIENTE, 15, 0),
+
+Propuesta("Separación de los residuos secos y húmedos en origen. ","", temas.MEDIO_AMBIENTE, 15, 0),
+
+Propuesta("Contenedores diferenciados en todos los barrios.","", temas.MEDIO_AMBIENTE, 15, 0),
+
+Propuesta("Proponemos propiedad pública de las empresas de colectivos y subterráneos para que sean verdaderamente un servicio público.","", temas.TRANSPORTE, 15, 0),
+
+Propuesta(" Jornada de seis horas para los conductores de colectivos. ","", temas.TRANSPORTE, 15, 0),
+
+Propuesta("Plan integral para comunicar toda la ciudad y todos los barrios entre sí. ","", temas.TRANSPORTE, 15, 0),
+
+Propuesta("Administración y Control del sistema por una Comisión Pública de Usuarios y Choferes con el equipo técnico de especialistas de Universidades Nacionales que designen para garantizar buenas condiciones de transporte y trabajo.","", temas.TRANSPORTE, 15, 0),
+
+Propuesta("Centros Culturales Juveniles por cada barrio. Con presupuesto estatal y gratuitos. Autogestionados por los jóvenes. Con actividades artísticas y para su formación en artes y oficios.","", temas.SOCIEDAD, 15, 0),
+
+Propuesta("Ningún cierre ni privatización de los complejos culturales existentes y reapertura de aquellos que fueron cerrados.","", temas.SOCIEDAD, 15, 0),
+
+Propuesta("Políticas para combatir las causas de la inequidad social y la exclusión. Investigación de los vínculos políticos, judiciales y de las fuerzas de seguridad con el crimen organizado, las barras bravas así como con la brutalidad represiva de las fuerzas policiales.","", temas.SEGURIDAD, 15, 0),
+
+Propuesta("Elección popular de los jueces con mandatos de cuatro años y revocables. Juicios por jurados populares.","", temas.SEGURIDAD, 15, 0),
+
+Propuesta("Garantizar la educación sexual integral, el acceso gratuito y masivo a los métodos anticonceptivos y legalizar el aborto libre, seguro y gratuito, reconociendo el derecho a la mujer a decidir libremente la interrupción de su embarazo. ","", temas.DERECHOS_HUMANOS, 15, 0),
+
+Propuesta("Desmantelamiento inmediato de las redes de trata de mujeres con fines de explotación sexual.","", temas.DERECHOS_HUMANOS, 15, 0),
+
+Propuesta("Ante la regresividad del sistema aumentar el ABL al 10% de los inmuebles de mayor valor fiscal y a las propiedades inmobiliarias de las grandes empresas, muchas de ellas multinacionales, que tienen domicilio en la ciudad. ","", temas.ECONOMIA, 15, 0),
+
+Propuesta("Gravar con una tasa elevada los millonarios ingresos del juego (Casino, bingos, Hipódromo, y demás casas de apuestas). ","", temas.ECONOMIA, 15, 0),
+
+Propuesta("Aumentar las patentes a los autos de alta gama (y demás bienes suntuarios) radicados o por operaciones de compra-venta en la Ciudad.","", temas.ECONOMIA, 15, 0),
+
 ];
 }
