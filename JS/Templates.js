@@ -16,36 +16,42 @@ function MostrarContenedor(tipo)
 		case contenedores.PROPUESTAS:
 			template = "<div class='propuestasContainer'>"+
 					"<div class='title'>Propuestas</div>"+
-					"<div class='tipo' id='salud'>"+
-						"<div class='title'><img src='IMG/temas/salud.png' height='60' width='60' /><span style='color:#D99ED6;'>Salud</span><span class='quantityList'>0</span></div>"+
-					"</div>"+
-					"<div class='tipo' id='educacion'>"+
-						"<div class='title'><img src='IMG/temas/educacion.png' /><span style='color:#9EB8D9;'>Educación</span><span class='quantityList'>0</span></div>"+
-					"</div>"+
-					"<div class='tipo' id='sociedad'>"+
-						"<div class='title'><img src='IMG/temas/sociedad.png' /><span style='color:#D99EA6;'>Sociedad</span><span class='quantityList'>0</span></div>"+
-					"</div>"+
-					"<div class='tipo' id='seguridad'>"+
-						"<div class='title'><img src='IMG/temas/seguridad.png' /><span style='color:#ECEAA8;'>Seguridad</span><span class='quantityList'>0</span></div>"+
-					"</div>"+
-					"<div class='tipo' id='economia'>"+
-						"<div class='title'><img src='IMG/temas/economia.png' /><span style='color:#9ED9C3;'>Economía</span><span class='quantityList'>0</span></div>"+
-					"</div>"+
-					"<div class='tipo' id='derechosHumanos'>"+
-						"<div class='title'><img src='' /><span style='color:#333333;'>Derechos Humanos</span><span class='quantityList'>0</span></div>"+
-					"</div>"+
-					"<div class='tipo' id='transporte'>"+
-						"<div class='title'><img src='IMG/temas/transporte.png' /><span style='color:#AA7FFF;'>Transporte</span><span class='quantityList'>0</span></div>"+
-					"</div>"+
-					"<div class='tipo' id='institucional'>"+
-						"<div class='title'><img src='IMG/temas/institucional.png' /><span style='color:#FFAA7F;'>Institucional</span><span class='quantityList'>0</span></div>"+
-					"</div>"+
-					"<div class='tipo' id='planeamientoUrbano'>"+
-						"<div class='title'><img src='IMG/temas/planificacionUrbana.png' /><span style='color:#D9BE9E;'>Planeamiento Urbano</span><span class='quantityList'>0</span></div>"+
-					"</div>"+
-					"<div class='tipo' id='internacional'>"+
-						"<div class='title'><img src='IMG/temas/internacional.png' /><span style='color:#55D4FF;'>Internacionales</span><span class='quantityList'>0</span></div>"+
-					"</div>"+
+					"<div class='tipo'>"+
+						"<div class='title'><img src='IMG/temas/salud.png' height='50' width='50' /><span style='color:"+temas.SALUD.color+";'>Salud</span><div class='arrowButton up' onclick='javascript:ToggleCategoria(this)'></div><span class='quantityList'>0</span></div>"+
+					"<div id='salud' class='contPropuestas'></div> </div>"+
+					"<div class='tipo'>"+
+						"<div class='title'><img src='IMG/temas/educacion.png' height='50' width='50' /><span style='color:"+temas.EDUCACION.color+";'>Educación</span><div class='arrowButton up' onclick='javascript:ToggleCategoria(this)'></div><span class='quantityList'>0</span></div>"+
+					"<div id='educacion' class='contPropuestas'></div></div>"+
+					"<div class='tipo'>"+
+						"<div class='title'><img src='IMG/temas/sociedad.png' height='50' width='50' /><span style='color:"+temas.SOCIEDAD.color+";'>Sociedad</span><div class='arrowButton up' onclick='javascript:ToggleCategoria(this)'></div><span class='quantityList'>0</span></div>"+
+					"<div id='sociedad' class='contPropuestas'></div></div>"+
+					"<div class='tipo'>"+
+						"<div class='title'><img src='IMG/temas/seguridad.png' height='50' width='50' /><span style='color:"+temas.SEGURIDAD.color+";'>Seguridad</span><div class='arrowButton up' onclick='javascript:ToggleCategoria(this)'></div><span class='quantityList'>0</span></div>"+
+					"<div id='seguridad' class='contPropuestas'></div></div>"+
+					"<div class='tipo'>"+
+						"<div class='title'><img src='IMG/temas/economia.png' height='50' width='50' /><span style='color:"+temas.ECONOMIA.color+";'>Economía</span><div class='arrowButton up' onclick='javascript:ToggleCategoria(this)'></div><span class='quantityList'>0</span></div>"+
+					"<div id='economia' class='contPropuestas'></div></div>"+
+					"<div class='tipo'>"+
+						"<div class='title'><img src='' height='50' width='50' /><span style='color:"+temas.DERECHOS_HUMANOS.color+";'>Derechos Humanos</span><div class='arrowButton up' onclick='javascript:ToggleCategoria(this)'></div><span class='quantityList'>0</span></div>"+
+					"<div id='derechosHumanos' class='contPropuestas'></div></div>"+
+					"<div class='tipo'>"+
+						"<div class='title'><img src='IMG/temas/transporte.png' height='50' width='50' /><span style='color:"+temas.TRANSPORTE.color+";'>Transporte</span><div class='arrowButton up' onclick='javascript:ToggleCategoria(this)'></div><span class='quantityList'>0</span></div>"+
+					"<div id='transporte' class='contPropuestas'></div></div>"+
+					"<div class='tipo'>"+
+						"<div class='title'><img src='IMG/temas/institucional.png' height='50' width='50' /><span style='color:"+temas.INSTITUCIONAL.color+";'>Institucional</span><div class='arrowButton up' onclick='javascript:ToggleCategoria(this)'></div><span class='quantityList'>0</span></div>"+
+					"<div id='institucional' class='contPropuestas'></div></div>"+
+					"<div class='tipo'>"+
+						"<div class='title'><img src='IMG/temas/planificacionUrbana.png' height='50' width='50' /><span style='color:"+temas.PLANEAMIENTO_URBANO.color+";'>Planeamiento Urbano</span><div class='arrowButton up' onclick='javascript:ToggleCategoria(this)'></div><span class='quantityList'>0</span></div>"+
+					"<div id='planeamientoUrbano' class='contPropuestas'></div></div>"+
+					"<div class='tipo'>"+
+						"<div class='title'><img src='IMG/temas/vivienda.png' height='50' width='50' /><span style='color:"+temas.VIVIENDA.color+";'>Vivienda</span><div class='arrowButton up' onclick='javascript:ToggleCategoria(this)'></div><span class='quantityList'>0</span></div>"+
+					"<div id='vivienda' class='contPropuestas'></div></div>"+
+					"<div class='tipo'>"+
+						"<div class='title'><img src='IMG/temas/medioAmbiente.png' height='50' width='50' /><span style='color:"+temas.MEDIO_AMBIENTE.color+";'>Medio Ambiente</span><div class='arrowButton up' onclick='javascript:ToggleCategoria(this)'></div><span class='quantityList'>0</span></div>"+
+					"<div id='medioAmbiente' class='contPropuestas'></div></div>"+
+					"<div class='tipo'>"+
+						"<div class='title'><img src='IMG/temas/internacional.png' height='50' width='50' /><span style='color:"+temas.INTERNACIONAL.color+";'>Internacionales</span><div class='arrowButton up' onclick='javascript:ToggleCategoria(this)'></div><span class='quantityList'>0</span></div>"+
+					"<div id='internacional' class='contPropuestas'></div></div>"+
 				"</div> ";
 			break;
 	};
@@ -92,7 +98,51 @@ function HeaderPartido(part)
 
 function HeaderCandidato(cand)
 {
+	var container = document.createElement('div');
+	$(container).attr('id', cand.nombre);
+	$(container).addClass('candidatoContainer_Header');
+	$(container).click(function(){
+		MostrarCandidato(1, cand)
+	});
+	$('.candidatosContainer').append(container);
 	
+	var imagen = document.createElement('div');
+	$(imagen).addClass('imagenCandidato');
+	$(imagen).css('background-image', 'url(IMG/candidatos/' + cand.imagen + ')');
+	$(container).append(imagen);
+	
+	var cont = document.createElement('div');
+	$(cont).css('display', 'inline-block');
+	$(cont).css('vertical-align', 'top');
+	$(cont).css('margin', '6px 0');
+	
+	var nombre = document.createElement('div');
+	$(nombre).addClass('nombreCandidato');
+	$(nombre).html(cand.nombre);
+	$(cont).append(nombre);
+	
+	var part = partidos.filter(function(e){return e.codigo == cand.partido;})[0];
+	var color = document.createElement('div');
+	$(color).addClass('colorCandidato');
+	$(color).css('background-color', part.color);
+	$(color).html(part.nombre);
+	$(cont).append(color);
+	
+	var lista = document.createElement('div');
+	$(lista).addClass('listaCandidato');
+	$(lista).html(cand.lista);
+	$(cont).append(lista);
+	
+	$(container).append(cont);
+	
+	var propuestasDIV = document.createElement('div');
+	$(propuestasDIV).addClass('item').addClass('propuestas_Header');
+	$(propuestasDIV).html(propuestas.filter(function(a){return a.candidato == cand.codigo && a.partido == cand.partido}).length);
+	if(propuestas.filter(function(a){return a.candidato == cand.codigo && a.partido == cand.partido}).length == 0)
+		$(propuestasDIV).css('color','#f11');
+	$(container).append(propuestasDIV);
+	
+	return container;
 }
 
 function MostrarVolver(tipo, cosa)

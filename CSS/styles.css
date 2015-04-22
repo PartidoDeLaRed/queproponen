@@ -39,6 +39,7 @@ body,html{
 	font-weight: 400;
 	color:#f6f6f6;
 	max-width:960px;
+	cursor: pointer;
 }
 
 .subtitle{	
@@ -127,9 +128,10 @@ body,html{
 }
 
 .partidoContainer{	
-	width: 297px;
-	margin:10px;
+	width: 220px;
+	margin: 10px 0;
 	background:#fff;
+	border: 1px solid #ccc;
 	border-radius:5px;
 	display: inline-block;
 	background-position: center center;
@@ -145,9 +147,12 @@ body,html{
 	box-shadow:0 2px 5px rgba(0,0,0,.5);
 	opacity:1;	
 }
+.partidosContainer .partidoContainer {
+  margin: 10px;
+}
 
 .imagenPartido{
-	height: 200px;
+	height: 146px;
 	width: 100%;
 	background-color:#fff;
 	background-position: center center;
@@ -163,15 +168,15 @@ body,html{
   display: inline-block;
 }
 .nombre_Header{
+text-align: left !important;
 position: absolute;
   left: 160px;
   right: 0;
   top: 0;
   bottom:0;
-  width: auto;
+width: auto !important;
   vertical-align: top;
-  
-font-size: 70px;
+font-size: 45px;
   font-weight: 400;
 line-height: 80px;
 padding: 10px 20px !important;
@@ -180,35 +185,34 @@ padding: 10px 20px !important;
 .item{
 	background:#f7f7f7;
 	width:100%;
-	padding: 10px;
-	text-align:left;
+	padding: 10px 0;
+	text-align: center;
 	border-bottom: 1px solid #e6e6e6;
 }
 
 .item.nombre{
 	font-size: 21px;
-	font-weight:600;
+	font-weight: 600;
 }
 
 .item.candidatos{
-	text-align: right;
-	font-size: 20px;
-	font-weight: 600;
-	line-height: 18px;
+	text-align: center;
+	font-size: 32px;
+	font-weight: 400;
+	vertical-align: bottom;
 	color:#333;
 	position: relative;
+	display: inline-block;
+	padding: 10px;
+	width: 50%;
 }
 .item.candidatos::before{
-	width: 20px;
-	height:20px;
-	position: absolute;
-	margin: 0 5px;
-	left: 0;
-	content: 'Candidatos';
-	padding-left: 25px;
-	font-size: 21px;
-	line-height: 21px;
-	font-weight: 400 !important;
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	margin: 0 5px 0 -6px;
+	content: '';
+	padding-left: 24px;
 	background-image:url(../IMG/personIcon.png);
 	background-repeat: no-repeat;
 	background-position: left center;
@@ -216,11 +220,27 @@ padding: 10px 20px !important;
 }
 
 .item.propuestas{
-    text-align: right;    font-size: 20px;    font-weight: 600;    line-height: 18px;    color: #333;    position: relative;
+    text-align: center;    
+    font-size: 32px;    
+    font-weight: 400;        vertical-align: bottom;
+    color: #333;    position: relative;
+    display: inline-block;
+    border-left: 1px solid #e7e7e7;
+    padding: 10px;
+
+
+
+
+
+    width: 50%;
 }
 .item.propuestas::before{        
-	width: 20px;    height: 20px;    position: absolute;    margin: 0 5px;    left: 0;    
-	content: 'Propuestas';    padding-left: 25px;    font-size: 21px;    line-height: 21px;    font-weight: 400 !important;
+	width: 24px;    
+	height: 24px;        
+	vertical-align: middle;
+	margin: 0 5px 0 -6px;        
+	content: '';    
+	padding-left: 24px;            
 	background-image:url(../IMG/propuestaIcon.png);
 	background-repeat: no-repeat;    background-position: left center;    background-size: contain;
 	color: #444;
@@ -291,12 +311,15 @@ padding: 10px 20px !important;
 
 
 .candidatosContainer{	
+    text-align: center;
     margin: 20px 0;
 }
 
 .candidatoContainer{	
+	text-align: left;
 	width:297px;
 	margin:10px;
+	border: 1px solid #ccc;
 	border-radius: 5px;
 	background:#fff;
 	display: inline-block;
@@ -310,66 +333,102 @@ padding: 10px 20px !important;
 	box-shadow:0 2px 5px rgba(0,0,0,.5);
 	opacity:1;	
 }
+.candidatoContainer_Header{	
+	text-align: left;
+	width:100%;
+	margin:10px 0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background:#fff;
+	display: block;
+	cursor:pointer;
+	opacity:1;
+	overflow: hidden;
+	transition:all 200ms ease-out;
+	position:relative;
+}
 
 .colorCandidato{
-	height: 60px;
-	width:5px;
-	margin: 5px;
-	display:inline-block;	
+	width: auto;
+	margin: 2px;
+	padding: 2px 5px;
+	color: #fff;
+	font-size: 12px;
+	display: inline-block;	
+	border-radius: 3px;
 }
 .colorCandidato_mini{
-	height: 30px;
-	width:5px;
-	margin: 3px;
+	height: 26px;
+	width: 15px;
+	margin: 0;
 	display:inline-block;	
+}
+.candidatoContainer_Header .colorCandidato{
+	font-size: 20px;
 }
 
 
 .imagenCandidato{
-	height: 55px;
-	width: 55px;
+	height: 70px;
+	width: 70px;
 	margin: 7px 5px;
 	background-color:#fff;
-	border-radius: 35px;
+	border-radius: 5px;
 	display: inline-block;
 	vertical-align: top;
 	background-position: center center;
 	background-size: cover;
+	border: 1px solid #ddd;
 }
 .imagenCandidato_mini{
-	height: 25px;
-	width: 25px;
-	margin: 5px 5px;
+	height: 22px;
+	width: 22px;
+	margin: 2px 1px 2px -12px;
 	background-color:#fff;
+	border: 1px solid #ccc;
 	border-radius: 13px;
 	display: inline-block;
 	vertical-align: top;
 	background-position: center center;
 	background-size: cover;
 }
+.candidatoContainer_Header .imagenCandidato{
+	height: 90px;
+	width: 90px;
+}
 
 .nombreCandidato{
-	margin: 5px 0;
+	margin: 0 2px;
 	text-align:left;
 	font-size: 24px;
 	font-weight:400;
-	display:inline-block;
+	display: block;
 }
 .nombreCandidato_mini {
-	margin: 6px 5px 6px 0;
+	margin: 3px 5px 3px 2px;
 	vertical-align: top;
 	text-align: left;
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: 400;
 	display: inline-block;
 }
+.candidatoContainer_Header .nombreCandidato{
+	font-size:45px;
+}
+
+.candidatoContainer .item.propuestas {
+  width: 100%;
+  padding: 0;
+}
 
 .listaCandidato{
-	margin: 5px 0;
+	margin: 2px;
 	text-align:left;
-	line-height: 8px;
-	font-size: 14px;
-	font-weight:300;
+	font-size: 12px;
+}
+.candidatoContainer_Header .listaCandidato{
+	font-size: 20px;
+	display:inline-block;
 }
 
 .tipo{
@@ -379,28 +438,29 @@ padding: 10px 20px !important;
 
 .quantityList{
 	color: #333;
-	float: right;
 	margin: 0;	
+	float: right;
 }
 
 .tipo .title{
 	text-align:left;
 	margin: 0;
 	padding: 10px;
-	font-size: 40px;
+	font-size: 34px;
 	font-weight: 300;
 	color:#FCF;
 	background: #fff;
 }
 
 .tipo span{
-	margin:0 15px;
+	margin: 4px 15px;
 	vertical-align:super;	
 }
 
 .propuestasContainer{	
     margin: 20px 0;
 }
+
 
 .propuestaContainer{
 	min-height: 90px;
@@ -409,6 +469,9 @@ padding: 10px 20px !important;
 	padding: 10px 10px 10px 20px;
 	background:#f5f5f5;
 	border:1px solid #ddd;
+}
+.propuestaContainer .candidatoContainer{
+	border-radius: 16px;
 }
 
 .colorPropuesta{
@@ -423,15 +486,15 @@ padding: 10px 20px !important;
 
 .tituloPropuesta{
 	text-align:left;
-	line-height: 31px;
+	line-height: 25px;
 	padding: 5px 185px 5px 0;
-	font-size: 28px;
-	font-weight:400;
+	font-size: 23px;
+	font-weight: 600;
 	color: #555555;
 }
 .textoPropuesta{
 	text-align:left;
-	font-size: 22px;
+	font-size: 16px;
 	font-weight:300;
 	overflow:hidden;
 	padding: 0 0 5px 0;
@@ -448,11 +511,12 @@ padding: 10px 20px !important;
 	text-align: center;
 	margin: auto;
 	padding: 20px 30px;
-	font-size: 50px;
+
+	font-size: 40px;
 	color: #f55;
 }
 .textoNoPropuesta {
- 	font-size: 25px;
+ 	font-size: 20px;
  	text-align: center;
 }
 
@@ -461,7 +525,7 @@ padding: 10px 20px !important;
   background: #88bbdd;
   border-radius: 3px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 15px;
   padding: 10px 10px 10px 35px;
   margin: 10px 5px 0 0px;
   color: #fff;
@@ -469,8 +533,8 @@ padding: 10px 20px !important;
   cursor:pointer;
 }
 .twitterButton::before{
-	width: 25px;
-	height: 25px;
+	width: 22px;
+	height: 22px;
 	position: absolute;
 	margin: -2px 5px;
 	left: 0;
@@ -484,7 +548,7 @@ padding: 10px 20px !important;
 
 .propuestaContainer .twitterButton {
   border-radius: 22px;
-  padding: 5px 5px 5px 35px;
+  padding: 5px 10px 5px 32px;
   margin: 10px 10px 5px 0px;
   position: absolute;
   right: 0;
@@ -527,4 +591,30 @@ padding: 10px 20px !important;
 	color:#88AACC;
 	display: inline-block;
 	vertical-align: super;
+}
+
+.arrowButton{
+	width:40px;
+	height:40px;
+	display:inline-block;
+	background-size:contain !important;
+	background-position:center center;
+	background-repeat:no-repeat;
+	border-radius:20px;
+	float: right;
+	margin: 6px 0;
+}
+
+.arrowButton.down{
+	background:url(../IMG/downIcon.png), #fff;
+}
+.arrowButton.down:hover{
+	background:url(../IMG/downIcon.png), #e8e8e8;
+}
+
+.arrowButton.up{
+	background:url(../IMG/upIcon.png), #fff;
+}
+.arrowButton.up:hover{
+	background:url(../IMG/upIcon.png), #e8e8e8;
 }

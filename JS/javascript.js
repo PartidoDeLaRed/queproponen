@@ -1,3 +1,13 @@
+function ToggleCategoria(boton)
+{
+	var contenedorPropuestas = $(boton).parents('.tipo').children('.contPropuestas');
+	if(contenedorPropuestas.css('display') == 'none')
+		$(boton).removeClass('down').addClass('up');
+	else
+		$(boton).removeClass('up').addClass('down');
+	contenedorPropuestas.slideToggle('fast');
+}
+
 function MostrarPartido(modo, part)
 {
 	switch(modo)
@@ -77,11 +87,6 @@ function MostrarCandidato(modo, cand)
 			});
 			$('.candidatosContainer').append(container);
 
-			var color = document.createElement('div');
-			$(color).addClass('colorCandidato');
-			$(color).css('background-color', partidos.filter(function(e){return e.codigo == cand.partido;})[0].color);
-			$(container).append(color);
-
 			var imagen = document.createElement('div');
 			$(imagen).addClass('imagenCandidato');
 			$(imagen).css('background-image', 'url(IMG/candidatos/' + cand.imagen + ')');
@@ -91,11 +96,19 @@ function MostrarCandidato(modo, cand)
 			$(cont).css('display', 'inline-block');
 			$(cont).css('vertical-align', 'top');
 			$(cont).css('margin', '6px 0');
+			$(cont).css('max-width', '215px');
 			
 			var nombre = document.createElement('div');
 			$(nombre).addClass('nombreCandidato');
 			$(nombre).html(cand.nombre);
 			$(cont).append(nombre);
+
+			var part = partidos.filter(function(e){return e.codigo == cand.partido;})[0];
+			var color = document.createElement('div');
+			$(color).addClass('colorCandidato');
+			$(color).css('background-color', part.color);
+			$(color).html(part.nombre);
+			$(cont).append(color);
 
 			var lista = document.createElement('div');
 			$(lista).addClass('listaCandidato');
@@ -131,7 +144,7 @@ function MostrarCandidato(modo, cand)
             }).fadeIn('300ms').animate({marginTop:'0px'},'300ms');
 			$('html, body').animate({
 		        scrollTop: cont.offset().top
-		    }, 400);
+		    }, 400, function(){GenerarGrafico()});
 			CambiarURL(1, cand);
 		}break;
 
@@ -188,59 +201,57 @@ function MostrarPropuesta(modo, prop)
 				{
 					case temas.SALUD:
 					{
-						colorValue = '#D99ED6';
 						$('#salud').append(container);
 					}break;
 					case temas.ECONOMIA:
 					{
-						colorValue = '#9ED9C3';
 						$('#economia').append(container);
 					}break;
 					case temas.SOCIEDAD:
 					{
-						colorValue = '#D99EA6';
 						$('#sociedad').append(container);
 					}break;
 					case temas.SEGURIDAD:
 					{
-						colorValue = '#ECEAA8';
 						$('.seguridad').append(container);
 					}break;
 					case temas.EDUCACION:
 					{
-						colorValue = '#9EB8D9';
 						$('#educacion').append(container);
 					}break;
 					case temas.DERECHOS_HUMANOS:
 					{
-						colorValue = '#222222';
 						$('#derechosHumanos').append(container);
 					}break;
 					case temas.PLANEAMIENTO_URBANO:
 					{
-						colorValue = '#D9BE9E';
 						$('#planeamientoUrbano').append(container);
 					}break;
 					case temas.INSTITUCIONAL:
 					{
-						colorValue = '#FFAA7F';
 						$('#institucional').append(container);
 					}break;
 					case temas.TRANSPORTE:
 					{
-						colorValue = '#AA7FFF';
 						$('#transporte').append(container);
 					}break;
 					case temas.INTERNACIONAL:
 					{
-						colorValue = '#55D4FF';
 						$('#internacional').append(container);
+					}break;
+					case temas.MEDIO_AMBIENTE:
+					{
+						$('#medioAmbiente').append(container);
+					}break;
+					case temas.VIVIENDA:
+					{
+						$('#vivienda').append(container);
 					}break;
 				}
 	
 				var color = document.createElement('div');
 				$(color).addClass('colorPropuesta');
-				$(color).css('background-color', colorValue);
+				$(color).css('background-color', prop.tema.color);
 				$(container).append(color);
 	
 				var cont = document.createElement('div');
@@ -265,7 +276,7 @@ function MostrarPropuesta(modo, prop)
 				$(tweet).html('Hablá con '+candidato.nombre+' sobre esto');
 				$(tweet).click(function(e) {
                     window.open('https://twitter.com/share?'+
-				'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepopones%2Fpropuesta%2F'+prop.titulo.replace(' ','-')+'&'+
+				'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepopones%2Fpropuesta%2F'+(prop.titulo.replace(' ','-'))+'&'+
 				'related=fvilledary&'+
 				'text='+candidato.twitter+' '+prop.titulo, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
                 });
@@ -285,34 +296,66 @@ function MostrarPropuesta(modo, prop)
 function VerificarPropuestas(cosa)
 {
 	$('.tipo').each(function(index, element) {
-		if($(element).children('.propuestaContainer').length == 0)
-			$(element).append(NoPropuesta(cosa));
+		if($($(element).children().last()).children('.propuestaContainer').length == 0)
+		{
+			$(NoPropuesta(cosa)).insertBefore($($(element).children().last()));
+			$(element).children('.title').children('.arrowButton').hide('fast');
+		}
 		else
-			$(element).children('.title').children('.quantityList').html($(element).children('.propuestaContainer').length + ' propuestas');
+			$(element).children('.title').children('.quantityList').html($($(element).children().last()).children('.propuestaContainer').length + ' propuestas');
 	});	
 }
 
 function GenerarGrafico()
 {
 	var chart = document.createElement('canvas');
-	if($('#chart').length > 0)
-		chart = $('#chart').get(0);
-	$(chart).attr('id','chart').css('width','100%').css('height','300');
-	$(chart).insertAfter($('.propuestasContainer').children('.title').get(0));
-	var data = {
-		labels: ["Salud", "Educacion", "Sociedad", "Economia", "Transporte", "Derechos Humanos", "Seguridad"],
-		datasets: [
-			{
-				label: "Propuestas de ",
-				fillColor: "rgba(100,100,100,0.9)",
-				strokeColor: "rgba(220,220,220,0.8)",
-				highlightFill: "rgba(100,100,100,0.9)",
-				highlightStroke: "rgba(220,220,220,0.8)",
-				data: [20, 7, 0, 15, 10, 2, 1]
-			},
-		]
-	};
-	new Chart(chart.getContext("2d")).Bar(data);
+	if($('#chart').length == 0)
+	{
+		$(chart).attr('id','chart').css('width','100%').css('height','300');
+		$(chart).insertAfter($('.propuestasContainer').children('.title').get(0));
+		var data = {
+			labels: ["Salud", "Educacion", "Sociedad", "Economia", "Transporte", "Derechos Humanos", "Seguridad", "Vivienda", "Planeamiento Urbano", "Medio Ambiente", "Institucional", "Internacional"],
+			datasets: [
+				{
+					label: "",
+					highlightFill: "rgba(240,240,240,0.75)",
+					data: [
+						$('#salud').children('.propuestaContainer').length, 
+						$('#educacion').children('.propuestaContainer').length, 
+						$('#sociedad').children('.propuestaContainer').length, 
+						$('#economia').children('.propuestaContainer').length, 
+						$('#transporte').children('.propuestaContainer').length, 
+						$('#derechosHumanos').children('.propuestaContainer').length, 
+						$('#Seguridad').children('.propuestaContainer').length,
+						$('#vivienda').children('.propuestaContainer').length, 
+						$('#planeamientoUrbano').children('.propuestaContainer').length, 
+						$('#medioAmbiente').children('.propuestaContainer').length, 
+						$('#institucional').children('.propuestaContainer').length, 
+						$('#internacional').children('.propuestaContainer').length
+					]
+				},
+			]
+		};
+		window.myObjBar = new Chart(chart.getContext("2d")).Bar(data, {
+			barStrokeWidth : 0,
+			barValueSpacing : 1,
+			responsive : true
+		});
+		
+		myObjBar.datasets[0].bars[0].fillColor = temas.SALUD.color;
+		myObjBar.datasets[0].bars[1].fillColor = temas.EDUCACION.color;
+		myObjBar.datasets[0].bars[2].fillColor = temas.SOCIEDAD.color;
+		myObjBar.datasets[0].bars[3].fillColor = temas.ECONOMIA.color;
+		myObjBar.datasets[0].bars[4].fillColor = temas.TRANSPORTE.color;
+		myObjBar.datasets[0].bars[5].fillColor = temas.DERECHOS_HUMANOS.color;
+		myObjBar.datasets[0].bars[6].fillColor = temas.SEGURIDAD.color;
+		myObjBar.datasets[0].bars[7].fillColor = temas.VIVIENDA.color;
+		myObjBar.datasets[0].bars[8].fillColor = temas.PLANEAMIENTO_URBANO.color;
+		myObjBar.datasets[0].bars[9].fillColor = temas.MEDIO_AMBIENTE.color;
+		myObjBar.datasets[0].bars[10].fillColor = temas.INSTITUCIONAL.color;
+		myObjBar.datasets[0].bars[11].fillColor = temas.INTERNACIONAL.color;
+		myObjBar.update();
+	}
 }
 
 function NoPropuesta(cosa)
@@ -345,10 +388,9 @@ function NoPropuesta(cosa)
 			$(tweet).addClass('twitterButton');
 			$(tweet).html('Escribile a '+a.nombre);
 			$(tweet).click(function(e) {
-				window.open('https://twitter.com/share?'+
-			'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepropones%2F#candidato%2F'+a.nombre.replace(' ','-')+'&'+
+				window.open('https://twitter.com/intent/tweet?'+
 			'related=fvilledary&'+
-			'text='+a.twitter + ', quisiera saber propuestas tuyas sobre '+$(this).parents('.tipo').attr('id'), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+			'text='+a.twitter + ', quisiera saber propuestas tuyas sobre '+$(this).parents('.tipo').children('.contPropuestas').attr('id'), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 			});
 			$(tweetContainer).append(tweet);
 		});
@@ -368,12 +410,11 @@ function NoPropuesta(cosa)
 		var tweet = document.createElement('a');
 		$(tweet).addClass('twitterButton');
 		$(tweet).html('Preguntale a '+cosa.nombre+' que piensa sobre esto');
-		$(tweet).click(function(e) {
-			window.open('https://twitter.com/share?'+
-		'url=https%3A%2F%2Ffedericovilledary.com.ar%2Fvosquepropones%2F#candidato%2F'+cosa.nombre.replace(' ','-')+'&'+
-		'related=fvilledary&'+
-		'text='+cosa.twitter + ', quisiera saber propuestas tuyas sobre '+$(this).parents('.tipo').attr('id'), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
-		});
+			$(tweet).click(function(e) {
+				window.open('https://twitter.com/intent/tweet?'+
+			'related=fvilledary&'+
+			'text='+cosa.twitter + ', quisiera saber propuestas tuyas sobre '+$(this).parents('.tipo').children('.contPropuestas').attr('id'), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+			});
 		$(tweetContainer).append(tweet);
 		$(cont).append(tweetContainer);
 	}
@@ -415,6 +456,7 @@ function ChangeUrl(title, url)
 {
     if (typeof (history.pushState) != "undefined") 
 	{
+		document.title = title;
         var obj = { Title: title, Url: url };
         history.pushState(obj, obj.Title, obj.Url);
     } 
