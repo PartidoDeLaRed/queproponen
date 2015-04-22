@@ -19,7 +19,7 @@ body,html{
 	border-bottom: 1px solid #8ac;
 	background: url(../IMG/backgroundHeader.jpg);
 	background-size:cover;
-	background-position: center -225px;
+	background-position: center -100px;
 	position:relative;
 	z-index: 1;
 }
