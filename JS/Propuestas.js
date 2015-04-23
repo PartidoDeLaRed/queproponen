@@ -752,7 +752,7 @@ Propuesta("Urbanización participativa de villas y asentamientos", "En una Ciuda
 
 Propuesta("Regulación de alquileres y Construcción de viviendas", "En aras de combatir la especulación y reducir los precios de los alquileres, creemos que debe avanzarse en regular fuertemente la actividad. Para ello, deben rebajarse por ley las comisiones inmobiliarias, ampliarse los plazos mínimos de alquiler y establecerse precios máximos por barrio. También, creemos importante incrementar el impuesto al sello para los alquileres destinados a turistas extranjeros.Con lo obtenido en la reforma tributaria en materia inmobiliaria puede también generarse un fondo de garantía social que haga de garante en un contrato alquiler a aquellas familias que por alguna razón no puedan contar con dicha figura.", temas.VIVIENDA, 10, 0),
 
-Propuesta("Subte","Terminar con las obras planificadas por la ley N°670 (líneas F, G e I, 10, 0),, con prioridad en la I (Parque Chacabuco-Plaza Italia, 10, 0),, que potenciará la conexión de los barrios del suroeste de la ciudad a la red. Será un nuevo eje Norte-Sur conectado con las demás líneas.", temas.TRANSPORTE, 10, 0),
+Propuesta("Subte","Terminar con las obras planificadas por la ley N°670 (líneas F, G e I), con prioridad en la I (Parque Chacabuco-Plaza Italia), que potenciará la conexión de los barrios del suroeste de la ciudad a la red. Será un nuevo eje Norte-Sur conectado con las demás líneas.", temas.TRANSPORTE, 10, 0),
 
 Propuesta("Concesión Metrovías","Rescisión sin indemnización de la concesión a Metrovías y estatización del servicio a través del SBASE.", temas.TRANSPORTE, 10, 0),
 
@@ -764,15 +764,15 @@ Propuesta("Material rodante","Renovar el material rodante de todas las líneas a
 
 Propuesta("Extensión de líneas","Extensión de la red de subtes: Línea C a Estación Buenos Aires y unión con línea H por el sur, logrando el segundo circuito circular H-C. La construcción de línea H2, a Aeroparque y Ciudad Universitaria. Extensión de la línea E de Retiro a Plaza Italia. Esto complementará la construcción de la futura línea I, permitiendo un viaje circular pasando por Parque Chacabuco, Plaza Italia, Retiro y Plaza de Mayo.", temas.TRANSPORTE, 10, 0),
 
-Propuesta(" ","Elaborar plan metropolitano de transporte integral con participación ciudadana.", temas.TRANSPORTE, 10, 0),
+Propuesta("Elaborar plan metropolitano de transporte integral con participación ciudadana.", " ", temas.TRANSPORTE, 10, 0),
 
-Propuesta(" ","Crear una sociedad dependiente de Subterráneos de Buenos Aires Sociedad del Estado (SBASE, 10, 0),, o del ejecutivo porteño, que explote los ramales de Metrobus y que sirva para integrar los distintos trazados de Metrobus, hoy desarticulados.", temas.TRANSPORTE, 10, 0),
+Propuesta("Crear una sociedad dependiente de SBASE","Crear una sociedad dependiente de Subterráneos de Buenos Aires Sociedad del Estado (SBASE), o del ejecutivo porteño, que explote los ramales de Metrobus y que sirva para integrar los distintos trazados de Metrobus, hoy desarticulados.", temas.TRANSPORTE, 10, 0),
 
-Propuesta(" ","Implementación de Estaciones Multimodales de trasbordo.", temas.VIVIENDA, 10, 0),
+Propuesta("Implementación de Estaciones Multimodales de trasbordo.", " ",temas.VIVIENDA, 10, 0),
 
 Propuesta("Pasos a nivel","Implementación de tecnología antes de los pasos a nivel, de manera de hacerlos más seguros en términos viales hasta tanto no se realicen las obras de bajo nivel.", temas.TRANSPORTE, 10, 0),
 
-Propuesta("Líneas de tránsito rápido de Metrobus","Creación de líneas exclusivas de transito rápido de Metrobus para en el AMBA La implementación de sistemas BRT (Metrobus, 10, 0), desde el 1er y 2do cordón del conurbano hasta el macrocentro y en la circunvalación de la Ciudad no sólo reduce los tiempos, sino que aumenta la seguridad vial y reduce la polución ambiental.", temas.TRANSPORTE, 10, 0),
+Propuesta("Líneas de tránsito rápido de Metrobus","Creación de líneas exclusivas de transito rápido de Metrobus para en el AMBA La implementación de sistemas BRT (Metrobus), desde el 1er y 2do cordón del conurbano hasta el macrocentro y en la circunvalación de la Ciudad no sólo reduce los tiempos, sino que aumenta la seguridad vial y reduce la polución ambiental.", temas.TRANSPORTE, 10, 0),
 
 Propuesta("Ciclovías","Creación de un plan de desarrollo de Ciclovías basado en la complementariedad con los otros modos de transporte, especialmente, subterráneos y ferrocarriles de superficie, y la masificación de la red en el sur de la ciudad manteniendo la gratuidad del servicio.", temas.TRANSPORTE, 10, 0),
 
@@ -786,7 +786,7 @@ Propuesta("Empleo Joven","Creación de programas inclusivos de empleo joven que 
 
 Propuesta("Economía Popular", "Creación del Área de Economía Popular: que institucionalice los mercados populares y establezca líneas de fomento a la producción y comercialización de las experiencias de economía Popular así como acceso a derechos para sus trabajadores. Que el Poder Ejecutivo garantice el cumplimiento de todos los convenios firmados con las cooperativas de trabajadores y concrete las expropiaciones pendientes.", temas.ECONOMIA, 10, 0),
 
-Propuesta(" ", "Eliminación de las exenciones impositivas a grandes empresas emplazadas en los distritos.", temas.ECONOMIA, 10, 0),
+Propuesta("Eliminación de las exenciones impositivas a grandes empresas emplazadas en los distritos."," ", temas.ECONOMIA, 10, 0),
 
 Propuesta("Aborto","Legalización del aborto, por el derecho a la autonomía de nuestros cuerpos.", temas.DERECHOS_HUMANOS, 10, 0),
 
@@ -796,7 +796,7 @@ Propuesta("Aborto","Campañas públicas de información.", temas.SOCIEDAD, 10, 0
 
 Propuesta("Aborto","Ampliar, visibilizar e institucionalizar los servicios de salud y consejerías pre y pos aborto con disponibilidad de misoprostol y su producción pública.", temas.SALUD, 10, 0),
 
-Propuesta("Sanción de una Ley de Educación para la Ciudad","Que defienda y fortalezca la educación pública, laica y gratuita. Que apunte a revertir las desigualdades sociales preexistentes a la escuela. Que fomente el trabajo pedagógico y la formación docente acorde a las distintas realidades sociales y educativas. La sanción de la misma debe ser el resultado de un proceso de discusión y debate en la sociedad, particularmente, entre los diferentes sectores de la comunidad educativa (familias, docentes, sindicatos, organizaciones sociales, alumnos, 10, 0),.", temas.EDUCACION, 10, 0),
+Propuesta("Sanción de una Ley de Educación para la Ciudad","Que defienda y fortalezca la educación pública, laica y gratuita. Que apunte a revertir las desigualdades sociales preexistentes a la escuela. Que fomente el trabajo pedagógico y la formación docente acorde a las distintas realidades sociales y educativas. La sanción de la misma debe ser el resultado de un proceso de discusión y debate en la sociedad, particularmente, entre los diferentes sectores de la comunidad educativa (familias, docentes, sindicatos, organizaciones sociales, alumnos).", temas.EDUCACION, 10, 0),
 
 Propuesta("Jardines de Nivel Inicial","Construcción de jardines de nivel inicial desde los 45 días para garantizar la vacante en escuelas privadas desde esa edad a todos los niños y niñas de la Ciudad garantizando condiciones de habitabilidad, materiales pedagógicos, derechos laborales para docentes y material didáctico.", temas.EDUCACION, 10, 0),
 
@@ -806,11 +806,11 @@ Propuesta("Participatividad","Desarrollo de mecanismos para que estudiantes, doc
 
 Propuesta("Formación docente","La formación docente debe anclarse en las nuevas configuraciones sociales y las realidades propias de nuestra Ciudad. Para ello, es necesario la formación continua de los docentes y generar las bases para que la misma resulte una instancia de enriquecimiento de las prácticas de enseñanza.", temas.EDUCACION, 10, 0),
 
-Propuesta(" ","Garantizar el cumplimiento de las leyes de obligatoriedad escolar (ley nro.898 CABA, 10, 0), con la consecuente construcción de instancias y programas intersectoriales que sostengan y andamien las trayectorias escolares de los niños, niñas y adolescentes.", temas.EDUCACION, 10, 0),
+Propuesta(" ","Garantizar el cumplimiento de las leyes de obligatoriedad escolar (ley nro.898 CABA) con la consecuente construcción de instancias y programas intersectoriales que sostengan y andamien las trayectorias escolares de los niños, niñas y adolescentes.", temas.EDUCACION, 10, 0),
 
-Propuesta("Equipos de Orientación Escolar","El trabajo pedagógico en las escuelas debe perfeccionarse para poder apuntalar las necesidades crecientes del Sistema Educativo. Para eso, deben consolidarse los Equipos de Conducción de las escuelas generando articulación con otras instancias ya creadas para tal fin (Equipo de Orientación Escolar, por ejemplo, 10, 0),.", temas. EDUCACION, 10, 0),
+Propuesta("Equipos de Orientación Escolar","El trabajo pedagógico en las escuelas debe perfeccionarse para poder apuntalar las necesidades crecientes del Sistema Educativo. Para eso, deben consolidarse los Equipos de Conducción de las escuelas generando articulación con otras instancias ya creadas para tal fin (Equipo de Orientación Escolar, por ejemplo).", temas. EDUCACION, 10, 0),
 
-Propuesta(" ","Oficialización de todos los bachilleratos populares de la Ciudad con reconocimiento de todas sus especificidades pedagógicas, becas para todos sus estudiantes, salarios para sus docentes y financiamiento integral.", temas.EDUCACION, 10, 0),
+Propuesta("Bachilleratos populares","Oficialización de todos los bachilleratos populares de la Ciudad con reconocimiento de todas sus especificidades pedagógicas, becas para todos sus estudiantes, salarios para sus docentes y financiamiento integral.", temas.EDUCACION, 10, 0),
 
 Propuesta("Ley de Paritaria Docente","Sanción de una Ley de Paritaria Docente que institucionalice y fortalezca el espacio de debate entre los Sindicatos y el Gobierno de la Ciudad.", temas.EDUCACION, 10, 0),
 
@@ -822,9 +822,9 @@ Propuesta("Prevención y Control Sanitario","Avanzar hacia un sistema comunitari
 
 Propuesta("Promotor de Salud","Profesionalización de la figura del promotor de salud: Avanzar en la capacitación y formación de promotores de salud que actúen dentro del primer nivel sanitario trabajando con las problemáticas específicas de una comuna desde una perspectiva interdisciplinar.", temas.SALUD, 10, 0),
 
-Propuesta(" ","Sancionar la ley de producción pública de medicamentos.", temas.SALUD, 10, 0),
+Propuesta("Sancionar la ley de producción pública de medicamentos."," ", temas.SALUD, 10, 0),
 
-Propuesta("Ley de Identidad de género","Reglamentación y cumplimiento de La Ley de Identidad de género (4238, 10, 0), en la Ciudad, sin restricciones: Garantizando el suministro gratuito de preservativos y anticonceptivos en todos los centros de salud.", temas.SALUD, 10, 0),
+Propuesta("Ley de Identidad de género","Reglamentación y cumplimiento de La Ley de Identidad de género (4238) en la Ciudad, sin restricciones: Garantizando el suministro gratuito de preservativos y anticonceptivos en todos los centros de salud.", temas.SALUD, 10, 0),
 
 Propuesta("Diverdidad", "Políticas públicas de investigación, formación y atención en salud de las identidades sexuales, culturales y de género para una salud que respete y trabaje en la diversidad.", temas.SALUD, 10, 0),
 
@@ -840,9 +840,9 @@ Propuesta("Control comunal y participación de la comunidad en asuntos de seguri
 
 Propuesta("Control de las Fuerzas","Eliminar todas las instancias represivas policiales y parapoliciales de la Ciudad para lo cual es necesario abandonar el simple rechazo al aparato represivo y revertir el actual modelo de delegación a uno de control sobre las fuerzas.", temas.SEGURIDAD, 10, 0),
 
-Propuesta(" ","Aumento y reconfiguración del presupuesto para política cultural", temas.SOCIEDAD, 10, 0),
+Propuesta("Aumento y reconfiguración del presupuesto para política cultural"," ", temas.SOCIEDAD, 10, 0),
 
-Propuesta("Presupuesto para Cultura","En la actualidad el presupuesto destinado a cultura es el 2,7% (alrededor de 2.300 millones de pesos, 10, 0),. Los festivales y eventos centrales reciben seis veces más financiamiento que los programas destinados al desarrollo cultural en barrios. Además de haber reducido el presupuesto total de cultura en más de un 20% en los últimos años, el Gobierno de la Ciudad lo subejecuta sistemáticamente, como en el resto de las áreas sociales. Es posible y necesario aumentar este presupuesto y que el destino de ese dinero sea una política cultural diferente, democrática y descentralizada.", temas.SOCIEDAD, 10, 0),
+Propuesta("Presupuesto para Cultura","En la actualidad el presupuesto destinado a cultura es el 2,7% (alrededor de 2.300 millones de pesos). Los festivales y eventos centrales reciben seis veces más financiamiento que los programas destinados al desarrollo cultural en barrios. Además de haber reducido el presupuesto total de cultura en más de un 20% en los últimos años, el Gobierno de la Ciudad lo subejecuta sistemáticamente, como en el resto de las áreas sociales. Es posible y necesario aumentar este presupuesto y que el destino de ese dinero sea una política cultural diferente, democrática y descentralizada.", temas.SOCIEDAD, 10, 0),
 
 Propuesta("Gestión comunal de la política cultural para el desarrollo de la cultura de los barrios","Las comunas pueden ser los ámbitos que articulen la existencia de entes descentralizados de gestión cultural, colegiados, con participación de los Gobiernos Comunales, de las instituciones culturales estatales y comunitarias de los barrios y de los trabajadores de la cultura. De ese modo, las políticas culturales pueden adquirir vínculo real con los territorios y sus habitantes, y que sean ellos mismos quienes definan sobré qué se va a impulsar y financiar en sus territorios.", temas.SOCIEDAD, 10, 0),
 
@@ -856,10 +856,18 @@ Propuesta("Recolección diferenciada de residuos","Implementar un sistema de con
 
 Propuesta("Reducir y reciclar residuos","Generar campañas efectivas que cuenten con el otorgamiento del material necesario para la separación en origen de residuos. Además de implementar plantas de separación a gran escala y plantas de reciclado para los residuos ya seleccionados", temas.MEDIO_AMBIENTE, 10, 0),
 
-Propuesta(" ","Urbanización de los asentamientos situados en la orilla de la Cuenca Matanza Riachuelo: Relocalizar a las familias que habiten el camino de sirga en zonas no contaminadas y no inundables, con servicios de agua, cloaca y electricidad.", temas.PLANEAMIENTO_URBANO, 10, 0),
+Propuesta("Urbanización de los asentamientos","Urbanización de los asentamientos situados en la orilla de la Cuenca Matanza Riachuelo: Relocalizar a las familias que habiten el camino de sirga en zonas no contaminadas y no inundables, con servicios de agua, cloaca y electricidad.", temas.PLANEAMIENTO_URBANO, 10, 0),
 
 Propuesta("Recuperación de los espacios verdes concesionados indebidamente","Recuperar los espacios verdes en manos de capitales privados para el disfrute colectivo de estas áreas sin aranceles y en igualdad de oportunidades para todos los habitantes.", temas.PLANEAMIENTO_URBANO, 10, 0),
 
+
+//Manuela Castañeira
+
+Propuesta("Planteamos congelar alquileres, hacer un censo de viviendas ociosas y lanzar un verdadero plan para obtener la casa propia. Además, aplicaremos impuestos a la gran propiedad inmobiliaria para invertirlos en la construcción de viviendas populares.", "", temas.VIVIENDA, 11, 0),
+Propuesta("Hay que construir una red de transporte público digno y humano, para disminuir la cantidad de autos particulares que circulan por la Ciudad. Un aspecto clave en este emprendimiento es dedicar inversiones a la extensión de la red de subterráneo.", "", temas.TRANSPORTE, 11, 0),
+Propuesta("Hay que aumentar los salarios de los trabajadores de la salud, terminar con la tercerización del sector, abrir concursos y cubrir personal. Es necesario que se respeten los derechos de las mujeres, como el aborto no punible, e impulsar la lucha por el derecho al aborto legal, seguro y gratuito.", "", temas.SALUD, 11, 0),
+Propuesta("Hay que terminar con los subsidios a la educación privada y religiosa y volcar esos recursos a la educación pública. El macrismo dice que la gente no quiere ir a la escuela pública, pero eso sucede justamente porque el gobierno se encargó de destruirla.", "", temas.EDUCACION, 11, 0),
+Propuesta("La inseguridad es hija del capitalismo. Hay que terminar con la pobreza comenzando por crear puestos de trabajo. Llenar la Ciudad de policías no es la solución para un problema que es complejo y donde además la policía ha demostrado ser soda del narcotráfico y de todos los negocios sucios.", "", temas.SEGURIDAD, 11, 0),
 
 ];
 }
