@@ -172,11 +172,12 @@ body,html{
 
 .imagenPartido_Header{
 	height: 105px;
-  width: 160px;
-  background-color: #fff;
-  background-position: center center;
-  background-size: cover;
-  display: inline-block;
+	width: 160px;
+	border-right: 1px solid #eee;
+	background-color: #fff;
+	background-position: center center;
+	background-size: cover;
+	display: inline-block;
 }
 .nombre_Header{
 text-align: left !important;
