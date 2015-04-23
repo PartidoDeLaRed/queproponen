@@ -393,9 +393,11 @@ function NoPropuesta(cosa)
 			$(tweet).addClass('twitterButton');
 			$(tweet).html('Escribile a '+a.nombre);
 			$(tweet).click(function(e) {
-				window.open('https://twitter.com/intent/tweet?'+
-			'related=PartidodelaRed&'+
-			'text=' + 'Hola ' + a.twitter + ' %23yvosquepropones para la Ciudad sobre ' + $(this).parents('.tipo').children('.title').children('span').html(), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+				makeShort(cont, window.location.origin + window.location.pathname + '#candidato/'+a.nombre.split(' ').join('-'), function(){
+					window.open('https://twitter.com/intent/tweet?'+
+						'related=PartidodelaRed&'+
+						'text=' + 'Hola ' + a.twitter + ' %23yvosquepropones para la Ciudad sobre ' + $(e.target).parents('.tipo').children('.title').children('span').html() +' '+ cont.dataset.shorturl, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+				});
 			});
 			$(tweetContainer).append(tweet);
 		});
@@ -416,10 +418,12 @@ function NoPropuesta(cosa)
 		$(tweet).addClass('twitterButton');
 		$(tweet).html('Preguntale a '+cosa.nombre+' que piensa sobre esto');
 			$(tweet).click(function(e) {
-				window.open('https://twitter.com/intent/tweet?'+
-			'related=PartidodelaRed&'+
-			'text=' + 'Hola ' + cosa.twitter + ' %23yvosquepropones para la Ciudad sobre '+$(this).parents('.tipo').children('.title').children('span').html(), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
-			})
+				makeShort(cont, window.location.origin + window.location.pathname + '#candidato/'+cosa.nombre.split(' ').join('-'), function(){
+					window.open('https://twitter.com/intent/tweet?'+
+						'related=PartidodelaRed&'+
+						'text=' + 'Hola ' + cosa.twitter + ' %23yvosquepropones para la Ciudad sobre '+$(e.target).parents('.tipo').children('.title').children('span').html() + cont.dataset.shorturl, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+				});
+			});
 		$(tweetContainer).append(tweet);
 		$(cont).append(tweetContainer);
 	}

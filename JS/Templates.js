@@ -5,7 +5,7 @@ function MostrarContenedor(tipo)
 	{
 		case contenedores.PARTIDOS:
 			template = "<div class='partidosContainer'>"+
-            	"<div class='title'>Partidos Políticos y Frentes</div>"+
+            	"<div class='title'>Partidos Políticos y Frentes</div>"+"<a class='twitterButton' onclick='javascript:CompartirInicio()'>Compartí las propuestas de todos los candidatos<a/>"+
 				"</div> ";
 			break;
 		case contenedores.CANDIDATOS:
@@ -58,15 +58,19 @@ function MostrarContenedor(tipo)
 	return template;
 }
 
+function CompartirInicio()
+{
+	window.open('https://twitter.com/share?'+
+	'related=PartidodelaRed&'+
+	'text='+ '%23yvosquepropones las propuestas de todos los candidatos para CABA en un solo lugar queproponen.com.ar', 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+}
+
 function HeaderPartido(part)
 {
 	var container = document.createElement('div');
 	$(container).attr('id', part.nombre);
 	$(container).addClass('partidoContainer');
 	$(container).css('display', 'block').css('width', '100%');
-	$(container).click(function(){
-		MostrarPartido(1, part)
-	});
 	
 	var imagen = document.createElement('div');
 	$(imagen).addClass('imagenPartido_Header');
@@ -79,10 +83,23 @@ function HeaderPartido(part)
 	$(nombre).html(part.nombre);
 	$(container).append(nombre);
 	
+	var tweet = document.createElement('a');
+	$(tweet).addClass('twitterButton');
+	$(tweet).html('Compartí sus propuestas');
+	$(tweet).click(function(e) {
+		makeShort(container, window.location.origin + window.location.pathname + '#partido/'+part.nombre.split(' ').join('-'), function(){
+			window.open('https://twitter.com/intent/tweet?'+
+			'related=PartidodelaRed&'+
+			'text='+ '%23yvosquepropones Mirá las propuestas para CABA de ' + part.nombre +' '+container.dataset.shorturl, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+		});
+	});
+	$(container).append(tweet);
+
 	var candidatosDIV = document.createElement('div');
 	$(candidatosDIV).addClass('item').addClass('candidatos_Header');
 	$(candidatosDIV).html(candidatos.filter(function(a){return a.partido == part.codigo}).length);
 	$(container).append(candidatosDIV);
+
 	
 	var propuestasDIV = document.createElement('div');
 	$(propuestasDIV).addClass('item').addClass('propuestas_Header');
@@ -101,10 +118,6 @@ function HeaderCandidato(cand)
 	var container = document.createElement('div');
 	$(container).attr('id', cand.nombre);
 	$(container).addClass('candidatoContainer_Header');
-	$(container).click(function(){
-		MostrarCandidato(1, cand)
-	});
-	$('.candidatosContainer').append(container);
 	
 	var imagen = document.createElement('div');
 	$(imagen).addClass('imagenCandidato');
@@ -134,6 +147,18 @@ function HeaderCandidato(cand)
 	$(cont).append(lista);
 	
 	$(container).append(cont);
+
+	var tweet = document.createElement('a');
+	$(tweet).addClass('twitterButton');
+	$(tweet).html('Compartí sus propuestas');
+	$(tweet).click(function(e) {
+		makeShort(container, window.location.origin + window.location.pathname + '#candidato/'+cand.nombre.split(' ').join('-'), function(){
+			window.open('https://twitter.com/intent/tweet?'+
+			'related=PartidodelaRed&'+
+			'text='+ '%23yvosquepropones Mirá las propuestas para CABA de ' + cand.nombre +' '+container.dataset.shorturl, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+		});
+	});
+	$(container).append(tweet);
 	
 	var propuestasDIV = document.createElement('div');
 	$(propuestasDIV).addClass('item').addClass('propuestas_Header');
