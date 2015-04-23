@@ -31,10 +31,9 @@
 <script src="https://apis.google.com/js/client.js"></script>
 
 <script language="javascript" type="application/javascript">
+if (window.location.hash == 'close.html') window.close();
 
 $(document).ready(function(e) {
-	CargarAbout();
-
 	CargarPartidos();
 	CargarCandidatos();
 	CargarPropuestas();
@@ -46,6 +45,9 @@ $(document).ready(function(e) {
 	window.onhashchange =  function (event, data) {
 		CargarSeccion();
 	};
+
+	CargarAbout();
+	
 });
 
 
@@ -72,6 +74,25 @@ window.onload = load;
       ga('send', 'pageview');
 
     </script>
+    
+	<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '825676227513877',
+          xfbml      : true,
+          version    : 'v2.3'
+        });
+      };
+    
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
     <div class="github-fork-ribbon-wrapper right">
         <div class="github-fork-ribbon">
             <a href="https://github.com/DemocraciaEnRed/vos-que-propones">Fork me on GitHub</a>

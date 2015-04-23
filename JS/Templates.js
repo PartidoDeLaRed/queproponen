@@ -60,7 +60,7 @@ function MostrarContenedor(tipo)
 
 function CompartirInicio()
 {
-	window.open('https://twitter.com/share?'+
+	window.open('https://twitter.com/intent/tweet?'+
 	'related=PartidodelaRed&'+
 	'text='+ '%23yvosquepropones las propuestas de todos los candidatos para CABA en un solo lugar queproponen.com.ar', 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 }
@@ -94,6 +94,23 @@ function HeaderPartido(part)
 		});
 	});
 	$(container).append(tweet);
+
+	var facebook = document.createElement('a');
+	$(facebook).addClass('facebookButton');
+	$(facebook).html('Compartí sus propuestas');
+	$(facebook).click(function(e) {
+		window.open(
+		'http://www.facebook.com/dialog/feed?app_id=825676227513877' +
+        '&link=' + escape(window.location.href) +
+        '&picture=http:%2F%2Fqueproponen.com.ar%2Fvosquepropones%2FIMG%2FshareLogo.png' +
+        '&name=' + 'Todas las propuestas de ' + part.nombre +
+        '&caption=' + 'via quepropones.com.ar - Partido de la Red' +
+        '&description=' + 'Conocé todas sus propuestas y la de todos los candidatos a Jefe e Gobierno en la Ciudad' +
+        '&redirect_uri=' + 'http://queproponen.com.ar/close.html' +
+        '&display=popup'
+		, 'Compartí todas las propuestas del partido', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+	});
+	$(container).append(facebook);
 
 	var candidatosDIV = document.createElement('div');
 	$(candidatosDIV).addClass('item').addClass('candidatos_Header');
@@ -160,6 +177,23 @@ function HeaderCandidato(cand)
 	});
 	$(container).append(tweet);
 	
+	var facebook = document.createElement('a');
+	$(facebook).addClass('facebookButton');
+	$(facebook).html('Compartí sus propuestas');
+	$(facebook).click(function(e) {
+		window.open(
+		'http://www.facebook.com/dialog/feed?app_id=825676227513877' +
+        '&link=' + escape(window.location.href) +
+        '&picture=http:%2F%2Fqueproponen.com.ar%2Fvosquepropones%2FIMG%2FshareLogo.png' +
+        '&name=' + 'Todas las propuestas de ' + cand.nombre +
+        '&caption=' + 'via quepropones.com.ar - Partido de la Red' +
+        '&description=' + 'Conocé todas sus propuestas y la de todos los candidatos a Jefe e Gobierno en la Ciudad' +
+        '&redirect_uri=' + 'http://queproponen.com.ar/close.html' +
+        '&display=popup'
+		, 'Compartí todas las propuestas del partido', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+	});
+	$(container).append(facebook);
+
 	var propuestasDIV = document.createElement('div');
 	$(propuestasDIV).addClass('item').addClass('propuestas_Header');
 	$(propuestasDIV).html(propuestas.filter(function(a){return a.candidato == cand.codigo && a.partido == cand.partido}).length);

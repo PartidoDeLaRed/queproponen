@@ -543,7 +543,7 @@ text-align: center;
 
 .twitterButton {
   display: inline-block;
-  background: #169CBF;
+  background: #7FC2EE;
   border-radius: 3px;
   text-decoration: none;
   font-size: 15px;
@@ -575,8 +575,12 @@ text-align: center;
 
 .partidoContainer > .twitterButton {
   position: absolute;
+  margin: 0;
   left: 170px;
   bottom: 10px;
+  text-align: center;
+  border-radius: 20px;
+  padding: 8px 15px 8px 35px;
 }
 .candidatoContainer_Header > .twitterButton {
   position: absolute;
@@ -603,6 +607,56 @@ text-align: center;
 .propuestaContainer:hover > .twitterButton {
 	opacity: 1;
 	transition: all 200ms;
+}
+
+.facebookButton {
+	display: inline-block;
+	background: #415E9B;
+	border-radius: 3px;
+	text-decoration: none;
+	font-size: 15px;
+	padding: 10px 10px 10px 35px;
+	margin: 10px 5px 0 0px;
+	color: #fff;
+	position:relative;
+	cursor:pointer;
+	opacity:.8;
+	transition:all 200ms;
+}
+.facebookButton::before{
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	margin: -2px 5px;
+	left: 0;
+	content: '';
+	padding-left: 25px;
+	background-image:url(../IMG/facebookIcon.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: contain;
+}
+.facebookButton:hover {
+	opacity:1;
+	transition:all 200ms;
+}
+
+.partidoContainer > .facebookButton {
+  position: absolute;
+  margin: 0;
+  right: 250px;
+  bottom: 10px;    text-align: center;    border-radius: 20px;    padding: 8px 15px 8px 35px;
+}
+.candidatoContainer_Header > .facebookButton {
+  position: absolute;
+  right: 125px;
+  bottom: 10px;
+}
+
+.partidosContainer > .facebookButton {
+  position: absolute;
+  right: 5px;
+  top: 0;
 }
 
 .atrasContainer{
