@@ -17,7 +17,7 @@ body,html{
 .headerContainer{
 	height: 350px;
 	border-bottom: 1px solid #169CBF;
-	background: url(../IMG/backgroundHeader.jpg);
+	background-image: url(../IMG/backgroundHeader.jpg);
 	background-size:cover;
 	background-position: center center;
 	position:relative;
@@ -163,7 +163,7 @@ body,html{
 }
 
 .imagenPartido{
-	height: 146px;
+	height: 145px;
 	width: 100%;
 	background-color:#fff;
 	background-position: center center;
@@ -573,15 +573,16 @@ text-align: center;
 	transition:all 200ms;
 }
 
-.partidoContainer > .twitterButton {
+.partidoContainer .twitterButton {
   position: absolute;
   margin: 0;
-  left: 170px;
+  left: 8px;
   bottom: 10px;
   text-align: center;
   padding: 8px 15px 8px 35px;
+  line-height: 20px;
 }
-.candidatoContainer_Header > .twitterButton {
+.candidatoContainer_Header .twitterButton {
   position: absolute;
   right: 125px;
   top: 0;
@@ -589,7 +590,7 @@ text-align: center;
   text-align: right;
 }
 
-.partidosContainer > .twitterButton {
+.partidosContainer .twitterButton {
   position: absolute;
   right: 5px;
   top: 0;
@@ -642,13 +643,14 @@ text-align: center;
 	transition:all 200ms;
 }
 
-.partidoContainer > .facebookButton {
+.partidoContainer .facebookButton {
   position: absolute;
   margin: 0;
   right: 250px;
   bottom: 10px;    text-align: center;        padding: 8px 15px 8px 35px;
+  line-height: 20px;
 }
-.candidatoContainer_Header > .facebookButton {
+.candidatoContainer_Header .facebookButton {
   position: absolute;
   right: 125px;
   bottom: 10px;
@@ -731,7 +733,7 @@ text-align: center;
 
 .logoPartido {
   margin: auto;
-  width: 25%;
+  width: 240px;
   max-width: 240px;
   height: 240px;
   background-image: url(../IMG/Isologo.gif);
@@ -743,16 +745,16 @@ text-align: center;
 }
 
 .footerLinkGrande {
-  text-align: right;
+  text-align: left;
   line-height: 32px;
   text-decoration: none;
   color: #169CBF;
   font-size: 43px;
   font-weight: 300;
-  display: inline-block;
-  vertical-align: top;
-  margin: 100px 10px;
-  width: 33%;
+  display: block;
+  margin: 0 10px;
+  padding: 30px 0;
+  height: 120px;
 }
 
 .footerLinkGrande div {
@@ -821,4 +823,185 @@ text-align: center;
 	font-weight:600;
 	line-height:30px;
 	cursor:pointer;
+}
+
+
+@media (max-width: 480px)  {
+}
+@media (max-width: 650px)  {
+	.partidoContainer{
+		width:100%;
+		margin: 10px 0 !important;
+	}
+
+	.imagenPartido{
+		height: 245px;
+	}
+
+	.candidatoContainer{
+		width:100%;
+		margin:10px 0;
+	}
+	
+	.tipo .title{
+		font-size:24px;
+		line-height: 50px;
+	}
+	.tipo img {
+	  width: 40px;
+	  height: 40px;
+	}
+}
+@media (max-width: 800px)  {
+	.tituloPropuesta{
+		padding:40px 0px 5px 0 !important;
+	}
+	
+	.propuestaContainer .candidatoContainer {
+	  border-radius: 3px !important;
+	  left: 25px !important;
+	  right: 10px !important;
+  	}
+	.colorCandidato_mini {
+  		height: 30px;
+	}
+	.quantityList{
+		display:none;
+	}
+	
+	.propuestaContainer .twitterButton{
+		left: 25px !important;
+		opacity: 1 !important;
+		bottom: 5px !important;
+		border-radius:3px !important;
+		padding:7px 10px 7px 32px !important;
+	}
+	
+	.textoPropuesta {
+		padding: 0 0 40px 0 !important;
+	}
+	
+	.headerContainer{
+		background-image: url(../IMG/shareLogo.png) !important;
+		height:200px !important;
+	}
+	
+	.github-fork-ribbon-wrapper{
+		display:none !important;
+	}
+	
+	.partidosContainer .twitterButton {
+		position: relative;
+		display: block;
+		width: 99%;
+		margin: auto;	
+	}
+	
+	.imagenPartido_Header{
+		height: 245px;
+  		width: 100%;
+		display:block;
+	}
+	
+	.nombre_Header{
+		height: 150px;
+		position: initial;
+		text-align: center !important;
+	}
+	
+	.partidoContainer .twitterButton{
+		position: initial;
+		width: 100%;
+		margin: 5px;
+	}
+	.partidoContainer .twitterButton::before {
+		left:17px;
+	}
+	
+	.partidoContainer .facebookButton{
+		position: initial;
+		width: 100%;
+		margin: 5px;
+	}
+	.partidoContainer .facebookButton::before {
+		left:17px;
+	}
+	
+	.item.candidatos_Header{
+		position: initial;
+		display: inline-block;
+		width: 50%;
+		line-height: 40px;
+		padding: 10px 0 0 0;
+	}
+
+	.item.propuestas_Header{
+		position: initial;
+		display: inline-block;
+		width: 50%;
+		line-height: 40px;
+		padding: 10px 0 0 0;
+	}
+
+	.item.candidatos_Header::after {
+		position: initial;
+		display: block;
+	}
+	
+	.item.propuestas_Header::after {
+		position: initial;
+		display: block;
+	}
+	
+	.candidatoContainer_Header .imagenCandidato{
+		zoom:.85;
+	}
+	
+	.candidatoContainer_Header .nombreCandidato{
+		zoom:.85;
+	}
+
+	.candidatoContainer_Header .colorCandidato{
+		zoom:.85;
+	}
+
+	.candidatoContainer_Header .listaCandidato{
+		zoom:.85;
+	}
+	
+	.candidatoContainer_Header .item.propuestas_Header{
+		width:100%;
+	}
+	
+	.candidatoContainer_Header .twitterButton {
+		position: initial;
+		display: block;
+		width: 98% !important;
+		margin: 5px;
+		text-align: left;
+	}
+	.candidatoContainer_Header .twitterButton::before{
+		left:6px;
+	}
+
+	.candidatoContainer_Header .facebookButton {
+		position: initial;
+		display: block;
+		width: 98% !important;
+		margin: 5px;
+		text-align: left;
+	}
+	.candidatoContainer_Header .facebookButton::before{
+		left:6px;
+	}
+	
+	.aboutContainer{
+		width: 100%;
+		font-size: 18px;
+		padding: 35px;
+	}
+	.aboutContainer:before{
+		width:80px;
+		height:80px;
+	}
 }

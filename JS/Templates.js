@@ -5,7 +5,7 @@ function MostrarContenedor(tipo)
 	{
 		case contenedores.PARTIDOS:
 			template = "<div class='partidosContainer'>"+
-            	"<div class='title'>Partidos Políticos y Frentes</div>"+"<a class='twitterButton' onclick='javascript:CompartirInicio()'>Compartí las propuestas de todos los candidatos<a/>"+
+            	"<div class='title'>"+"<a class='twitterButton' onclick='javascript:CompartirInicio()'>Compartí las propuestas de todos los candidatos<a/>"+"Partidos Políticos y Frentes</div>"+
 				"</div> ";
 			break;
 		case contenedores.CANDIDATOS:
@@ -93,7 +93,7 @@ function HeaderPartido(part)
 			'text='+ '%23yvosquepropones Mirá las propuestas para CABA de ' + part.nombre +' '+container.dataset.shorturl, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 		});
 	});
-	$(container).append(tweet);
+	$(nombre).append(tweet);
 
 	var facebook = document.createElement('a');
 	$(facebook).addClass('facebookButton');
@@ -104,13 +104,13 @@ function HeaderPartido(part)
         '&link=' + escape(window.location.href) +
         '&picture=http:%2F%2Fqueproponen.com.ar%2Fvosquepropones%2FIMG%2FshareLogo.png' +
         '&name=' + 'Todas las propuestas de ' + part.nombre +
-        '&caption=' + 'via quepropones.com.ar - Partido de la Red' +
+        '&caption=' + 'via queproponen.com.ar - Partido de la Red' +
         '&description=' + 'Conocé todas sus propuestas y la de todos los candidatos a Jefe e Gobierno en la Ciudad' +
         '&redirect_uri=' + 'http://queproponen.com.ar/close.html' +
         '&display=popup'
 		, 'Compartí todas las propuestas del partido', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 	});
-	$(container).append(facebook);
+	$(nombre).append(facebook);
 
 	var candidatosDIV = document.createElement('div');
 	$(candidatosDIV).addClass('item').addClass('candidatos_Header');
@@ -186,7 +186,7 @@ function HeaderCandidato(cand)
         '&link=' + escape(window.location.href) +
         '&picture=http:%2F%2Fqueproponen.com.ar%2Fvosquepropones%2FIMG%2FshareLogo.png' +
         '&name=' + 'Todas las propuestas de ' + cand.nombre +
-        '&caption=' + 'via quepropones.com.ar - Partido de la Red' +
+        '&caption=' + 'via queproponen.com.ar - Partido de la Red' +
         '&description=' + 'Conocé todas sus propuestas y la de todos los candidatos a Jefe e Gobierno en la Ciudad' +
         '&redirect_uri=' + 'http://queproponen.com.ar/close.html' +
         '&display=popup'
@@ -249,6 +249,6 @@ function CargarAbout()
 	$(about).html("La metodología de recopilación de la información se realizó investigando los medios sociales de los candidatos, frentes y partidos. <br/><br/> Se considera una propuesta a aquellas consignas cuyo destinatario sea una política pública a realizar en caso de que el candidato sea electo, NO a bases de acción política o manifiestos políticos.");
 	$('body').append(about);
 	$(about).click(function(e) {
-        $('.aboutContainer').animate({marginLeft:'-493px'},300);
+        $('.aboutContainer').animate({marginLeft: '-'+$(this).outerWidth() +'px'},300);
     });
 }
