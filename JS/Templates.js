@@ -85,7 +85,7 @@ function HeaderPartido(part)
 	
 	var tweet = document.createElement('a');
 	$(tweet).addClass('twitterButton');
-	$(tweet).html('Compartí sus propuestas');
+	$(tweet).html('Compartí sus propuestas en twitter');
 	$(tweet).click(function(e) {
 		makeShort(container, window.location.origin + window.location.pathname + '#partido/'+part.nombre.split(' ').join('-'), function(){
 			window.open('https://twitter.com/intent/tweet?'+
@@ -97,7 +97,7 @@ function HeaderPartido(part)
 
 	var facebook = document.createElement('a');
 	$(facebook).addClass('facebookButton');
-	$(facebook).html('Compartí sus propuestas');
+	$(facebook).html('Compartí sus propuestas en facebook');
 	$(facebook).click(function(e) {
 		window.open(
 		'http://www.facebook.com/dialog/feed?app_id=825676227513877' +
@@ -167,7 +167,7 @@ function HeaderCandidato(cand)
 
 	var tweet = document.createElement('a');
 	$(tweet).addClass('twitterButton');
-	$(tweet).html('Compartí sus propuestas');
+	$(tweet).html('Compartí sus propuestas en twitter');
 	$(tweet).click(function(e) {
 		makeShort(container, window.location.origin + window.location.pathname + '#candidato/'+cand.nombre.split(' ').join('-'), function(){
 			window.open('https://twitter.com/intent/tweet?'+
@@ -179,7 +179,7 @@ function HeaderCandidato(cand)
 	
 	var facebook = document.createElement('a');
 	$(facebook).addClass('facebookButton');
-	$(facebook).html('Compartí sus propuestas');
+	$(facebook).html('Compartí sus propuestas en facebook');
 	$(facebook).click(function(e) {
 		window.open(
 		'http://www.facebook.com/dialog/feed?app_id=825676227513877' +
