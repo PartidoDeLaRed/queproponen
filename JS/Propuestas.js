@@ -915,6 +915,123 @@ Propuesta("Hospital General de Agudos para Lugano. Finalización de la obra con 
 Propuesta("Reglamentación e implementación de la Ley de Centros Culturales votada en diciembre de 2014. Reapertura de todos los espacios clausurados durante la última gestión del GCBA.","", temas.SOCIEDAD, 12, 0),
 
 
+//Guillermo Nielsen
+
+Propuesta("Salud pública, eficiente y al alcance de todos","Lo público debe volver al centro de escena, con un Estado que retoma su lugar en el ámbito de la salud a través de la inversión y el desarrollo de políticas de prevención y atención de calidad para la ciudadanía. Entendemos que la regla prioritaria debe ser una salud pública, eficiente y al alcance de todos.", temas.SALUD ,6, 0),
+
+Propuesta("Prevención","Las políticas de salud pública deben estar siempre orientadas a la prevención. La prevención se logra sólo con la fuerte presencia del Estado mediante campañas de concientización ciudadana. Las campañas deben servir para acercar al vecino a acciones de salud pública particulares que eviten la sobrecarga de las instalaciones. El éxito logrado en la prevención es un punto fundamental para lograr la eficiencia del sistema de salud público de nuestra Ciudad, optimizando la operatividad de nuestros hospitales.", temas.SALUD ,6, 0),
+
+Propuesta("Presupuesto", "La Ciudad debe redoblar sus partidas presupuestarias en salud para garantizar una adecuada inversión en infraestructura y equipamiento que ponga en valor los hospitales para que sean lugares donde se brinde asistencia con calidad.", temas.SALUD ,6, 0),
+
+Propuesta(" ","La autonomía financiera de la Ciudad permite la planificación y aplicación de políticas públicas para pensar a Buenos Aires como la metrópolis del futuro. La Ciudad de Buenos Aires posee el tercer mayor presupuesto del país, luego de considerar el de la Nación y el de la Provincia de Buenos Aires. Siendo el 90% de los mismos recursos propios lo que genera un nivel de autonomía financiera con la que una gestión anclada en la consolidación del rol del Estado en el accionar público se encuentra en condiciones llevar adelante las políticas públicas que le permitan a la Ciudad contar con las obras de infraestructura y los servicios necesarios para toda la ciudadanía. Sin embargo, hoy observamos que el endeudamiento en deuda pública supera los $22.600 millones, los cuales seguramente comprometerán a medida de su vencimiento las recaudaciones futuras.", temas.ECONOMIA ,6, 0),
+
+Propuesta("Sistema Tributario","La Ciudad posee un sistema tributario regresivo, apoyado fundamentalmente en los impuestos al consumo que recae en todos los ciudadanos sin importar su capacidad contributiva. En el mismo sentido, los impuestos patrimoniales cada vez aportan menor cantidad de recursos lo que refuerza la dependencia del sistema tributario de los ciclos económicos y produce oscilaciones no deseadas para el sostenimiento de políticas públicas a mediano y largo plazo. Pretendemos una discusión para obtener una reforma tributaria integral que dote al sistema de la equidad y la justicia necesaria para tener una Buenos Aires más igualitaria.", temas.ECONOMIA ,6, 0),
+
+Propuesta("Articulación de organismos Públicos y privados","Elaboramos un Plan de Seguridad, apoyado en la articulación con distintos organismos públicos y privados del área metropolitana, bajo los ejes de prevención y contención del delito, apuntando a la vez a los problemas urgentes y los de fondo. Medidas: Sistema de Control y vigilancia nuestro. El Plan de Seguridad prevé la incorporación de tecnología de última generación aplicada al tratamiento efectivo de vigilancia. Estipula aumentar la inversión en centros de monitoreo y la ampliación de la red de cámaras de seguridad en zonas de riesgo. Articulación de Policías Metropolitana y Federal, una verdadera política de articulación es clave para optimizar el trabajo de las fuerzas de seguridad que operan en la ciudad, y para lograrlo es necesario una planificación conjunta de las actividades, funciones y alcances de las policías Metropolitana y Federal, en línea con una complementación funcional al control.", temas.SEGURIDAD ,6, 0),
+
+Propuesta("Convenios con municipios del conurbano","Entendemos que el problema de la inseguridad tiene causantes multidimensionales, y afecta a toda el área metropolitana, las soluciones deben ser conjuntas entre los distintos actores del área. El plan estipula convenios específicos con los municipios del conurbano, la Provincia y la Nación para abordar la problemática de manera integrada y ajustar soluciones de mayor alcance y profundidad.", temas.SEGURIDAD ,6, 0),
+
+
+
+Propuesta("Prevención","Otro de los ejes del Plan se sostiene sobre la prevención de los factores de riesgo. En esta línea, se busca generar desde la Ciudad iniciativas destinadas a la inclusión social de sectores vulnerables desde el desarrollo de políticas de educación, salud y asistencia social. También se aborda la prevención en cuanto el mejoramiento del espacio público a través de la iluminación, señalización, desmalezamiento, en vistas de reducir los lugares y las condiciones propicias para el delito.", temas.SEGURIDAD ,6, 0),
+
+
+
+Propuesta("Peaje Urbano","Nuestro foco es un desarrollo sostenible sobre la base de la integración urbanística, la extensión y mejoramiento del transporte público y el desaliento para reemplazar el uso del automóvil particular. Para ello implementamos medidas como el Peaje Urbano. En sintonía con la tendencia actual de las grandes ciudades con problemas de tráfico, se estipula para ingresar al macrocentro el Cargo por Congestión a través de un abono en Peajes perimetrales bajo el objetivo de reducir la cantidad de vehículos en circulación en el radio del centro y sectores aledaños.", temas.TRANSPORTE ,6, 0),
+
+
+
+Propuesta("Sistema de Buses de Tránsito Rápido (BRT)","La iniciativa se centra en la ampliación del sistema de líneas y carriles exclusivos para colectivos con plataformas de ascenso y descenso, y la operación de una línea de colectivo por avenida en las principales arterias.", temas.TRANSPORTE ,6, 0),
+
+
+
+Propuesta("Promoción del uso de bicisendas","En la línea de alentar transportes alternativos, el Plan Integral de Movilidad Urbana estipula la ampliación del espacio de bicisendas en la ciudad apoyándose de lleno en la promoción del uso de las mismas a través de la sistematización de campañas de estímulo.", temas.TRANSPORTE ,6, 0),
+
+
+
+Propuesta("Playas de Estacionamiento Periféricas","En la búsqueda de desalentar el uso del automóvil en el radio céntrico y aledaños, el Plan dispone establecer centros de estacionamiento articulados con el sistema de transporte público para los vehículos provenientes de la periferia metropolitana.", temas.TRANSPORTE ,6, 0),
+
+
+
+Propuesta("Conector Ribereño de Buenos Aires","Es la iniciativa de mayor porte dentro del Plan de Movilidad. Estipula la construcción de una autopista sobre el Río de la Plata entre la zona norte del Puerto y el segmento sur uniendo las autopistas Illia y Buenos Aires - La Plata, bajo la búsqueda de descongestionar el tránsito céntrico y ampliar la Red de Tránsito Pesado de la ciudad.", temas.TRANSPORTE ,6, 0),
+
+
+
+Propuesta("Residuos","Proponemos un Plan de Gestión de Residuos y Medioambiente con prioridad en la promoción del uso responsable de los residuos y el fomento de una nueva actitud de los ciudadanos ante el problema a través de campañas de concientización e instrucción. El plan estipula la recolección en contenedores diferenciados en toda la ciudad y la disposición diferenciada. Nuestro propósito es el uso responsable de los residuos y la educación a todo el conjunto de la población para la colocación diferenciada en vía pública y reciclaje.", temas.MEDIO_AMBIENTE ,6, 0),
+
+
+
+Propuesta("Reciclaje","Otra de las iniciativas del Plan es la del reciclaje, a través de la ampliación del sistema de tratamiento de la basura con nuevas plantas. Apuntamos a optimizar el desempeño actual en la reconversión de la basura en energías alternativas, fertilizantes y componentes para distintos usos industriales.", temas.MEDIO_AMBIENTE ,6, 0),
+
+
+
+Propuesta("Desarrollo Económico","Nuestro objetivo es convertir a la ciudad como un centro de desarrollo de conocimiento aplicado a la optimización de oportunidades de negocio generando empleo y riqueza, como también integración social y equidad. La Ciudad debe definir su matriz de desarrollo en un marco de diálogo con los distintos sectores productivos y del mundo del conocimiento para comprometerlos con la estrategia y orientar todos sus recursos en esa dirección. Para ello debemos trabajar para generar mayores vínculos entre el mundo académico y el mundo laboral. El objetivo es identificar nuestra Ciudad con el conocimiento y transformarlo en desarrollo económico generando nuevos emprendimientos que se traduzcan en una mejora de los niveles de empleo y generación de riqueza que junto con la acción gubernamental se convierta en desarrollo económico. Además, Buenos Aires posee una alta capacidad en sus recursos humanos, un excelente sistema universitario, una población con alto nivel de ingresos, buena infraestructura y un alto nivel de exposición internacional.", temas.ECONOMIA ,6, 0),
+
+
+
+Propuesta("Presupuesto","La recuperación de los niveles de calidad de enseñanza y la articulación del mundo educativo con el ámbito laboral son el centro de nuestra política del sector para convertir nuevamente a la educación en una herramienta de inclusión social. Para ello se debe aumentar significativamente las partidas presupuestarias orientadas a mejorar el nivel educativo mediante una fuerte inversión en infraestructura y en tecnología. La inversión en infraestructura debe aumentarse y además debemos tener un Estado eficiente en la ejecución de esos recursos para arreglar las escuelas existentes y construir nuevas.", temas.EDUCACION ,6, 0),
+
+
+
+Propuesta("Tecnología","La tecnología también cumple un rol fundamental en la educación. Las herramientas 3.0 tienen que ser parte de la oferta educativa mediante bibliotecas virtuales con contenidos educativos que acerquen a los chicos al mundo del conocimiento.", temas.EDUCACION ,6, 0),
+
+
+
+Propuesta(" ","La escuela debe inculcar fuertemente en los niveles medio y superior la generación de la cultura emprendedora en cada alumno y en brindar las habilidades necesarias para que la vinculación del mundo del conocimiento con el mundo laboral deje de ser un slogan y se convierta en oportunidades de trabajo.", temas.EDUCACION ,6, 0),
+
+
+
+Propuesta("Becas","Se deben extender los alcances de las becas educativas para cubrir los requerimientos de la matrícula escolar y garantizar el acceso a todos los jóvenes de nuestra Ciudad.", temas.EDUCACION ,6, 0),
+
+
+
+Propuesta("Capacitación Docente","Los docentes deben capacitarse permanentemente, en especial, en torno a las herramientas tecnológicas para incentivar a los alumnos el acercamiento al mundo 3.0 y con ello el acercamiento al mundo del conocimiento. La formación docente debe incluir la tecnología y el uso de las herramientas 3.0. Además, debemos escuchar a los docentes que son quienes diariamente se vinculan con los chicos y conocen sus inquietudes y necesidades para en un diálogo permanente entre Gobierno y docentes poder encontrar las soluciones necesarias para mejorar la educación de la Ciudad.", temas.EDUCACION ,6, 0),
+
+
+
+Propuesta(" ","Debemos redefinir el uso del espacio público como un lugar de encuentro ciudadano. Un lugar de encuentro común donde los vecinos compartan la responsabilidad de su cuidado conjuntamente con las autoridades comunales. El espacio público se debe redefinir como un lugar lindo y limpio donde los vecinos se encuentren a compartir situaciones de la vida cotidiana. Debe ser el lugar de encuentro ciudadano. El espacio público como lugar común de encuentro ciudadano debe servir de base a la resolución de conflictos y al acercamiento vecinal construir una Ciudad mejor de manera colectiva. Debemos repensar el espacio público para adaptarlo a las nuevas demandas de los vecinos, debemos aumentar los espacios de recreación para que todos puedan practicar deportes con menos riesgos y sin molestar al resto de los usuarios de estos espacios.", temas.PLANEAMIENTO_URBANO ,6, 0),
+
+
+
+Propuesta("Espacios Verdes","Hay que abrir nuevos espacios verdes para que las plazas, parques y todos los espacios comunes sean reabiertos a la comunidad y sean liberados de los enrejados que alejan a los vecinos de estos espacios comunes. Tenemos que avanzar en la transferencia de las competencias exclusivas de las comunas, descentralizando recursos de las áreas de espacios verdes, alumbrado público y mantenimiento urbano, centrando nuestra atención en la planificación y ejecución de acciones a escala Ciudad que recuperen el espacio público como el espacio de todos.", temas.PLANEAMIENTO_URBANO ,6, 0),
+
+
+
+Propuesta("Cuidado del Espacio Público","Paralelamente, entendemos que el cuidado del espacio público exige, además de inversión y políticas públicas, de una modificación de los comportamientos ciudadanos, para lo que tenemos la responsabilidad de crear conciencia ciudadana en el cuidado compartido entre el Gobierno y la ciudadanía de estos espacios, como lo hicimos en nuestra gestión con Actitud Buenos Aires, un hito en la comunicación con el ciudadano para el desarrollo de conductas cívicas y cuidado del Espacio Público.", temas.PLANEAMIENTO_URBANO ,6, 0),
+
+
+
+Propuesta("Participación Vecinal","El próximo Jefe de Gobierno tendrá la obligación de fortalecer el proceso de descentralización de la Ciudad Autónoma de Buenos Aires. Concebimos a las Comunas como una pieza fundamental en la construcción de un modelo de Ciudad más cercano, justo, equitativo e integrado. Estamos convencidos en la necesidad de avanzar hacia una efectiva descentralización política y administrativa que signifique un verdadero proceso de reforma política, democratizando los procesos de toma de decisiones sobre políticas públicas de alcance local y facilitando el control ciudadano sobre la cosa pública.", temas.INSTITUCIONAL ,6, 0),
+
+
+
+Propuesta("Comunas","Proponemos una mayor desconcentración de recursos de gestión en las Comunas, dotándolas de las herramientas necesarias para la búsqueda de soluciones a las demandas ciudadanas, haciendo de esta manera más eficaz y eficiente la inversión pública. Este proceso debe contribuir a transformar la relación entre el Estado y la sociedad en un sentido democrático y participativo, aportando a la transparencia y al logro de consensos, haciendo a los vecinos protagonistas en la definición de las agendas locales, discutiendo y elaborando prioridades presupuestarias a escala barrial. Descentralizar política y administrativamente la Ciudad de Buenos Aires implica modernizar el Estado, fortaleciendo su capacidad de intervención para reducir los desequilibrios y promover la equidad a favor de las zonas más desfavorecidas de la ciudad.", temas.INSTITUCIONAL ,6, 0),
+
+Propuesta(" ","Es necesario que el Estado retome los vínculos con los distintos actores sociales, recomponga el dialogo, reabra los canales de participación, redefiniendo en conjunto con la sociedad civil las problemáticas locales. Recuperar estas capacidades, equivaldrá a construir las bases de un gobierno que esté preparado para hacer frente a las complejidades que día a día se presentan en nuestra querida Ciudad, un gobierno capaz de anticiparse a los conflictos, coordinando, orientando y planificando políticas públicas en beneficio del interés general.", temas.INSTITUCIONAL ,6, 0),
+
+
+
+Propuesta("Desarrollo Urbano", "La inversión en infraestructura es central para el desarrollo económico y social de nuestra Ciudad, potencia su perfil productivo, generando mejores condiciones de vida para sus habitantes. Entendemos que la inversión pública en infraestructura debe definirse con un sentido estratégico, en base a una lógica plurianual que permita una adecuada planificación y desarrollo del plan de obras y que contemple las posibilidades de financiamiento más convenientes. La Ciudad debe retomar un plan de obras de infraestructura a largo plazo que se oriente a compensar las desigualdades existentes entre norte y sur, propiciando un desarrollo más equilibrado de su territorio, potenciando su capacidad productiva e incentivando la inversión privada. La extensión y construcción de nuevas líneas de subterráneos será para nosotros el pilar de un plan de movilidad sustentable, que sumados a la eliminación de las barreras urbanísticas, y a la expansión e interconexión de la red de autopistas aporte a una transformación definitiva del tránsito y el transporte en nuestra ciudad.", temas.PLANEAMIENTO_URBANO ,6, 0),
+
+
+
+Propuesta("Turismo","Nuestra Ciudad es una gran urbe cosmopolita y una de las ciudades más importantes de Latinoamérica. Cuenta con diversos circuitos turísticos que se despliegan en todos los barrios porteños. Por eso se necesita extender el circuito turístico integrando a los diversos actores involucrados y a toda la cadena de valor, para mejorar la oferta y ampliar el alcance de los beneficios para los segmentos relegados. El crecimiento turístico cuantitativo de los últimos años es innegable y se ve íntimamente relacionado con el crecimiento turístico a nivel nacional. En lo que respecta al turismo internacional, Buenos Aires es uno de los principales puntos de ingreso al país para el turista. Es costumbre para el mismo, de este modo, pasar unos pocos días en la Ciudad. Este tipo de turismo está instaurado en paquetes de venta conjuntos que incluyen otros destinos dentro del país pero suele ser de poca estadía en la Ciudad. Será otro de los grandes desafíos de cara al turismo externo, posicionar a Buenos Aires como uno de las principales plazas turísticas del país, con valor agregado en todas sus propuestas extendiendo el promedio de estadía actual de los visitantes extranjeros.", temas.ECONOMIA ,6, 0),
+
+
+
+Propuesta("Emergencia Habitacional","La emergencia habitacional demanda la coordinación y activación de las políticas del sector, como también el desarrollo de iniciativas sociales, económicas y culturales al interior de los barrios. El déficit de viviendas de la Ciudad de Buenos Aires es de larga data y los habitantes de la misma denominados en \x22situación de calle\x22 o simplemente \x22sin techo\x22, aumentan día a día sin que se les ofrezca una solución a su problemática. Hoy casi el 15% vive en situación de emergencia habitacional, padeciendo graves problemas relacionados con el acceso a la vivienda y condiciones de habitabilidad en general.", temas.VIVIENDA ,6, 0),
+
+
+
+Propuesta("Alquileres","Asimismo entendemos que la problemática de la vivienda no solo implica la falta de oferta para llegar a ella, sino también el encarecimiento de los valores para alquilar.", temas.VIVIENDA ,6, 0),
+
+
+
+Propuesta("Villas y Asentamientos","Seguramente, también, vamos a coincidir en que la urbanización de villas, asentamientos y núcleos habitacionales transitorios implica mucho más que la simple actividad de construcción de viviendas, significa un proceso político, cultural y social que debe darse al interior de los barrios. Es importante una política fuerte respecto a la urbanización de villas integrando las mismas al tejido de la Ciudad y logrando que todos los habitantes accedan a iguales servicios en todo el territorio de la Capital.", temas.VIVIENDA ,6, 0),
+
+
+
+Propuesta("Crédito Hipotecario","En este sentido también en conjunto con el Banco Ciudad, se desarrollará una política activa de acceso al crédito hipotecario para que los que actualmente alquilan y no tienen vivienda puedan acceder a su primera vivienda. Además, crearemos un programa para que el acceso de los jóvenes a una vivienda por medio del alquiler sea más sencillo y accesible.", temas.VIVIENDA ,6, 0),
 
 
 ];
