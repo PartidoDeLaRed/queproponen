@@ -4,9 +4,10 @@ function MostrarContenedor(tipo)
 	switch(tipo)
 	{
 		case contenedores.PARTIDOS:
-			template = "<div class='partidosContainer'>"+
-            	"<div class='title'>"+"<a class='twitterButton' onclick='javascript:CompartirInicio()'>Compartí las propuestas de todos los candidatos<a/>"+"Partidos Políticos y Frentes</div>"+
-				"</div> ";
+			template = 
+			"<a class='twitterButton' onclick='javascript:CompartirInicio(0)'>Compartí en Twitter</a>"
+			+"<a class='facebookButton' onclick='javascript:CompartirInicio(1)'>Compartí en Facebook</a>"
+			+"<div class='partidosContainer'><div class='title'>Partidos Políticos y Frentes</div></div> ";
 			break;
 		case contenedores.CANDIDATOS:
 			template = "<div class='candidatosContainer'>"+
@@ -58,11 +59,22 @@ function MostrarContenedor(tipo)
 	return template;
 }
 
-function CompartirInicio()
+function CompartirInicio(tipo)
 {
-	window.open('https://twitter.com/intent/tweet?'+
-	'related=PartidodelaRed&'+
-	'text='+ '%23yvosquepropones las propuestas de todos los candidatos para CABA en un solo lugar queproponen.com.ar', 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+	if(tipo == 0)
+	  window.open('https://twitter.com/intent/tweet?'+
+	  'related=PartidodelaRed&'+
+	  'text='+ '%23yvosquepropones las propuestas de todos los candidatos para CABA en un solo lugar queproponen.com.ar', 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+	else
+	  window.open('http://www.facebook.com/dialog/feed?app_id=825676227513877' +
+        '&link=http://quepropones.com.ar' +
+        '&picture=http:%2F%2Fqueproponen.com.ar%2Fvosquepropones%2FIMG%2FshareLogo.png' +
+        '&name=' + 'Todas las propuestas de los candidatos en un solo lugar' +
+        '&caption=' + 'via queproponen.com.ar - Partido de la Red' +
+        '&description=' + 'Conocé todas las propuestas de los candidatos a Jefe de Gobierno de CABA y discutilas directamente con los ellos.' +
+        '&redirect_uri=' + 'http://queproponen.com.ar/close.html' +
+        '&display=popup'
+		, 'Compartí todas las propuestas', 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 }
 
 function HeaderPartido(part)
@@ -167,7 +179,7 @@ function HeaderCandidato(cand)
 
 	var tweet = document.createElement('a');
 	$(tweet).addClass('twitterButton');
-	$(tweet).html('Compartí sus propuestas en twitter');
+	$(tweet).html('Compartílo en twitter');
 	$(tweet).click(function(e) {
 		makeShort(container, window.location.origin + window.location.pathname + '#candidato/'+cand.nombre.split(' ').join('-'), function(){
 			window.open('https://twitter.com/intent/tweet?'+
@@ -179,7 +191,7 @@ function HeaderCandidato(cand)
 	
 	var facebook = document.createElement('a');
 	$(facebook).addClass('facebookButton');
-	$(facebook).html('Compartí sus propuestas en facebook');
+	$(facebook).html('Compartílo en facebook');
 	$(facebook).click(function(e) {
 		window.open(
 		'http://www.facebook.com/dialog/feed?app_id=825676227513877' +

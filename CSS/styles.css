@@ -590,10 +590,19 @@ text-align: center;
   text-align: right;
 }
 
-.partidosContainer .twitterButton {
-  position: absolute;
-  right: 5px;
+.contentContainer > .twitterButton {
+	position: relative;
+  display: inline-block;
+  float: left;
+  margin: 0 !important;
+  width: 48%;
+  left: 5px;
   top: 0;
+  font-size: 20px;
+  z-index:10;
+}
+.twitterButton:hover {
+	opacity:1;
 }
 
 .propuestaContainer .twitterButton {
@@ -641,6 +650,21 @@ text-align: center;
 .facebookButton:hover {
 	opacity:1;
 	transition:all 200ms;
+}
+
+.contentContainer > .facebookButton {
+	position: relative;
+  display: inline-block;
+  float: right;
+  margin: 0 !important;
+  width: 48%;
+  right: 5px;
+  top: 0;
+  font-size: 20px;
+  z-index:10;
+}
+.facebookButton:hover {
+	opacity:1;
 }
 
 .partidoContainer .facebookButton {
@@ -835,7 +859,7 @@ text-align: center;
 	}
 
 	.imagenPartido{
-		height: 245px;
+		height: 145px;
 	}
 
 	.candidatoContainer{
@@ -1004,4 +1028,10 @@ text-align: center;
 		width:80px;
 		height:80px;
 	}
+	
+	.contentContainer .title{
+		line-height: 60px !important;
+		font-size: 30px;
+	}
+
 }
