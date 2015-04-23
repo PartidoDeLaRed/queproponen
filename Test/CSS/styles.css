@@ -1,0 +1,1007 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+body,html{
+	width:100%;	
+	height: 100%;
+	background: #e5e5e5;
+}
+
+.headerContainer{
+	height: 350px;
+	border-bottom: 1px solid #169CBF;
+	background-image: url(../IMG/backgroundHeader.jpg);
+	background-size:cover;
+	background-position: center center;
+	position:relative;
+	z-index: 1;
+}
+.headerContainer .color{
+	background:rgba(136,187,221,.5);
+	width:100%;
+	height:100%;
+	z-index: -1;
+	position: absolute;
+}
+
+.title{
+	text-align:center;
+	margin:0 auto;
+	padding:50px 0 0 0;
+	font-size:100px;
+	font-weight: 400;
+	color:#f6f6f6;
+	max-width:960px;
+	cursor: pointer;
+}
+
+.subtitle{	
+	text-align:center;
+	margin:0 auto;
+	font-size:30px;
+	font-weight: 400;
+	color:#eee;
+	max-width:750px;
+}
+
+.searchContainer{
+	height: 80px;
+	width: auto;
+	text-align:center;
+	z-index: 10;
+	margin: -40px auto -40px auto;
+	padding: 0 20px;
+	position: relative;
+	display:none;
+}
+
+.searchBox{
+	border-radius: 40px;
+	box-shadow: inset 0px 1px 6px .2px #035;
+	background: #fff;
+	height: 80px;
+	max-width: 940px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.searchField {
+    height: 100%;
+    vertical-align: middle;
+    font-size: 32px;
+    padding: 0 75px 0 25px;
+    border-radius: 37px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #777;
+    background: none;
+}
+
+.searchButton {
+    height: 66px;
+    width: 66px;
+    background: #169CBF;
+    border: 2px solid #468;
+    margin: 7px;
+    border-radius: 33px;
+    position: absolute;
+    top: 0;
+    right: 0;
+	background-image:url(../IMG/searchIcon.png);
+    background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+}
+
+.mainContainer{
+	background-color: #e5e5e5;
+	width:100%;
+	z-index: 1;
+}
+
+.contentContainer {
+	min-height:1000px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.contentContainer .title{
+	text-align:left;
+	margin:5px;
+	padding: 0;
+	font-size: 50px;
+	font-weight: 300;
+	color:#169CBF;
+}
+
+.partidosContainer{
+    margin: 20px 0;
+	text-align: center;
+    position: relative;
+}
+
+.partidoContainer{	
+	width: 220px;
+	margin: 10px 0;
+	background:#fff;
+	border: 1px solid #ccc;
+	border-radius:5px;
+	display: inline-block;
+	background-position: center center;
+	background-size: cover;
+	cursor:pointer;
+	opacity:.8;
+	overflow:hidden;
+	transition:all 200ms ease-out;
+	position:relative;
+}
+.partidoContainer:hover{
+	transition:all 200ms ease-out;
+	box-shadow:0 2px 5px rgba(0,0,0,.5);
+	opacity:1;	
+}
+.partidosContainer .partidoContainer {
+  margin: 10px;
+}
+
+.contentContainer > .partidoContainer{
+	cursor:default !important;
+	opacity:1 !important;
+}
+.contentContainer > .partidoContainer:hover{
+	box-shadow:none !important;
+}
+
+.imagenPartido{
+	height: 145px;
+	width: 100%;
+	background-color:#fff;
+	background-position: center center;
+	background-size: cover;
+}
+
+.imagenPartido_Header{
+	height: 105px;
+	width: 160px;
+	border-right: 1px solid #eee;
+	background-color: #fff;
+	background-position: center center;
+	background-size: cover;
+	display: inline-block;
+}
+.nombre_Header{
+text-align: left !important;
+position: absolute;
+  left: 160px;
+  right: 0;
+  top: 0;
+  
+bottom:0;
+width: auto !important;
+  
+vertical-align: top;
+font-size: 45px;
+  font-weight: 400;
+line-height: 50px;
+padding: 5px 10px !important;
+}
+
+.item{
+	background:#f7f7f7;
+	width:100%;
+	padding: 10px 0;
+	text-align: center;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.item.nombre{
+	font-size: 21px;
+	font-weight: 600;
+}
+
+.item.candidatos{
+	text-align: center;
+	font-size: 32px;
+	font-weight: 400;
+	vertical-align: bottom;
+	color: #333;
+	position: relative;
+	display: inline-block;
+	padding: 3px 10px;
+	width: 50%;
+	height: 62px;
+}
+.item.candidatos::before{
+	position: absolute;
+	bottom: 5px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	content: 'Candidatos';
+	font-size: 15px;
+	font-weight: 300 !important;
+	color: #444;
+}
+
+.item.propuestas{
+text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  vertical-align: bottom;
+  color: #333;
+  position: relative;
+  display: inline-block;
+  padding: 3px 10px;
+  width: 50%;
+  height: 62px;
+}
+.item.propuestas::before{        
+	position: absolute;
+	bottom: 5px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	content: 'Propuestas';
+	font-size: 15px;
+	font-weight: 300 !important;
+	color: #444;
+}
+
+.item.candidatos_Header{
+	text-align: center;
+  	
+	font-weight: 300;
+  	line-height: 50px;
+  	color: #333;
+  	position: absolute;
+  	
+	right: 120px;
+  	top: 0;
+  	bottom: 0;
+  	
+	font-size: 60px;
+  	
+	width: 120px;
+  	border-left: 1px solid #e6e6e6;
+}
+.item.candidatos_Header::after{        
+	position: absolute;
+	bottom: 0; 
+	left: 0;
+	right: 0;
+	text-align:center;    
+	content: 'Candidatos';
+	font-size: 15px;
+	font-weight: 300 !important;
+	color: #444;
+}
+
+.item.propuestas_Header{
+	text-align: center;
+  	
+	font-weight: 300;
+  	
+	line-height: 50px;
+  	color: #333;
+  	
+	position: absolute;
+  	
+	right: 0;
+  	
+	top: 0;
+  	
+	bottom: 0;
+  	
+	font-size: 60px;
+  	
+	width: 120px;
+  	
+	border-left: 1px solid #e6e6e6;
+}
+.item.propuestas_Header::after{        
+	position: absolute;
+	bottom: 0; 
+	left: 0;
+	right: 0;
+	text-align:center;    
+	content: 'Propuestas';
+	font-size: 15px;
+	font-weight: 300 !important;
+	color: #444;
+}
+
+
+.candidatosContainer{	
+    margin: 20px 0;
+}
+
+.candidatoContainer{	
+	text-align: left;
+	width:297px;
+	margin:10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background:#fff;
+	display: inline-block;
+	cursor:pointer;
+	opacity:.8;
+	overflow: hidden;
+	transition:all 200ms ease-out;
+}
+.candidatoContainer:hover{
+	transition:all 200ms ease-out;
+	box-shadow:0 2px 5px rgba(0,0,0,.5);
+	opacity:1;	
+}
+.candidatoContainer_Header{	
+	text-align: left;
+	width:100%;
+	margin:10px 0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background:#fff;
+	display: block;
+	cursor:default;
+	opacity:1;
+	overflow: hidden;
+	transition:all 200ms ease-out;
+	position:relative;
+}
+
+.colorCandidato{
+	width: auto;
+	margin: 2px;
+	padding: 2px 5px;
+	color: #fff;
+	font-size: 12px;
+	display: inline-block;	
+	border-radius: 3px;
+}
+.colorCandidato_mini{
+	height: 26px;
+	width: 15px;
+	margin: 0;
+	display:inline-block;	
+}
+.candidatoContainer_Header .colorCandidato{
+	font-size: 20px;
+}
+
+
+.imagenCandidato{
+	height: 70px;
+	width: 70px;
+	margin: 7px 5px;
+	background-color:#fff;
+	border-radius: 5px;
+	display: inline-block;
+	vertical-align: top;
+	background-position: center center;
+	background-size: cover;
+	border: 1px solid #ddd;
+}
+.imagenCandidato_mini{
+	height: 22px;
+	width: 22px;
+	margin: 2px 1px 2px -12px;
+	background-color:#fff;
+	border: 1px solid #ccc;
+	border-radius: 13px;
+	display: inline-block;
+	vertical-align: top;
+	background-position: center center;
+	background-size: cover;
+}
+.candidatoContainer_Header .imagenCandidato{
+	height: 90px;
+	width: 90px;
+}
+
+.nombreCandidato{
+	margin: 0 2px;
+	text-align:left;
+	font-size: 24px;
+	font-weight:400;
+	display: block;
+}
+.nombreCandidato_mini {
+	margin: 3px 5px 3px 2px;
+	vertical-align: top;
+	text-align: left;
+	font-size: 16px;
+	font-weight: 400;
+	display: inline-block;
+}
+.candidatoContainer_Header .nombreCandidato{
+	font-size:45px;
+}
+
+.candidatoContainer .item.propuestas {
+	width: 100%;
+  	padding: 0 10px;
+  	height: 40px;
+  	text-align: right;
+}
+.candidatoContainer .item.propuestas:before {
+  position: relative;
+  float: left;
+  margin: 13px 0;
+  font-size: 20px;
+}
+
+.listaCandidato{
+	margin: 2px;
+	text-align:left;
+	font-size: 12px;
+}
+.candidatoContainer_Header .listaCandidato{
+	font-size: 20px;
+	display:inline-block;
+}
+
+.tipo{
+    margin: 0 0 10px 0;
+	
+}
+
+.quantityList{
+	color: #333;
+	margin: 0;	
+	float: right;
+}
+
+.tipo .title{
+	text-align:left;
+	margin: 0;
+	padding: 10px;
+	font-size: 34px;
+	font-weight: 300;
+	color:#FCF;
+	background: #fff;
+}
+
+.tipo span{
+	margin: 4px 15px;
+	vertical-align:super;	
+}
+
+.propuestasContainer{	
+    margin: 20px 0;
+}
+
+.contPropuestas{
+	display:none;	
+}
+
+.propuestaContainer{
+	min-height: 90px;
+	width:100%;
+	margin:0px;
+	padding: 10px 10px 10px 20px;
+	background:#f5f5f5;
+	border:1px solid #ddd;
+}
+.propuestaContainer .candidatoContainer{
+	border-radius: 16px;
+}
+
+.colorPropuesta{
+	width:5px;
+	position: absolute;
+	margin: 10px;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	display:inline-block;	
+}
+
+.tituloPropuesta{
+	text-align:left;
+	line-height: 25px;
+	padding: 5px 185px 5px 0;
+	font-size: 23px;
+	font-weight: 600;
+	color: #555555;
+}
+.textoPropuesta{
+	text-align:left;
+	font-size: 16px;
+	font-weight:300;
+	overflow:hidden;
+	padding: 0 0 5px 0;
+}
+
+.noPropuestaContainer{
+	display:block;
+	width:100%;
+	background: #eee;
+	border: 1px solid #ddd;
+}
+
+.tituloNoPropuesta {
+	text-align: center;
+	margin: auto;
+	padding: 20px 30px;
+
+	font-size: 40px;
+	color: #f55;
+}
+.textoNoPropuesta {
+ 	font-size: 20px;
+ 	text-align: center;
+}
+
+.twitterButton {
+  display: inline-block;
+  background: #7FC2EE;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 10px 10px 10px 35px;
+  margin: 10px 5px 0 0px;
+  color: #fff;
+  position:relative;
+  cursor:pointer;
+  opacity:.8;
+  transition:all 200ms;
+}
+.twitterButton::before{
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	margin: -2px 5px;
+	left: 0;
+	content: '';
+	padding-left: 25px;
+	background-image:url(../IMG/twitterIcon.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: contain;
+}
+.twitterButton:hover {
+	opacity:1;
+	transition:all 200ms;
+}
+
+.partidoContainer .twitterButton {
+  position: absolute;
+  margin: 0;
+  left: 8px;
+  bottom: 10px;
+  text-align: center;
+  padding: 8px 15px 8px 35px;
+  line-height: 20px;
+}
+.candidatoContainer_Header .twitterButton {
+  position: absolute;
+  right: 125px;
+  top: 0;
+  width: 280px;
+  text-align: right;
+}
+
+.partidosContainer .twitterButton {
+  position: absolute;
+  right: 5px;
+  top: 0;
+}
+
+.propuestaContainer .twitterButton {
+  border-radius: 22px;
+  padding: 5px 10px 5px 32px;
+  margin: 10px 10px 5px 0px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+.propuestaContainer:hover > .twitterButton {
+	opacity: 1;
+	transition: all 200ms;
+}
+
+.facebookButton {
+	display: inline-block;
+	background: #415E9B;
+	border-radius: 3px;
+	text-decoration: none;
+	font-size: 15px;
+	padding: 10px 10px 10px 35px;
+	margin: 10px 5px 0 0px;
+	color: #fff;
+	position:relative;
+	cursor:pointer;
+	opacity:.8;
+	transition:all 200ms;
+}
+.facebookButton::before{
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	margin: -2px 5px;
+	left: 0;
+	content: '';
+	padding-left: 25px;
+	background-image:url(../IMG/facebookIcon.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: contain;
+}
+.facebookButton:hover {
+	opacity:1;
+	transition:all 200ms;
+}
+
+.partidoContainer .facebookButton {
+  position: absolute;
+  margin: 0;
+  right: 250px;
+  bottom: 10px;    text-align: center;        padding: 8px 15px 8px 35px;
+  line-height: 20px;
+}
+.candidatoContainer_Header .facebookButton {
+  position: absolute;
+  right: 125px;
+  bottom: 10px;
+  width: 280px;
+  text-align: right;
+}
+
+.partidosContainer > .facebookButton {
+  position: absolute;
+  right: 5px;
+  top: 0;
+}
+
+.atrasContainer{
+	text-align:right;
+	width: auto;
+	padding: 5px 10px;
+	border-radius: 24px;	
+	display: inline-block;
+	cursor: pointer;
+	transition: all 200ms;
+	margin: 10px 0 0 0;
+}
+.atrasContainer:hover{
+	background:#f8f8f8;
+	transition:all 200ms;
+}
+.flechaAtras{
+	width:30px;
+	height:30px;
+	background-image:url(../IMG/backIcon.png);
+	background-size:cover;
+	background-position:center center;
+	display: inline-block;
+	margin: 0 10px 0 0;
+}
+
+.textoAtras{
+	font-size:30px;
+	font-weight: 300;
+	color:#169CBF;
+	display: inline-block;
+	vertical-align: super;
+}
+
+.arrowButton{
+	width:40px;
+	height:40px;
+	display:inline-block;
+	background-size:contain !important;
+	background-position:center center;
+	background-repeat:no-repeat;
+	border-radius:20px;
+	float: right;
+	margin: 6px 0;
+}
+
+.arrowButton.down{
+	background:url(../IMG/downIcon.png), #fff;
+}
+.arrowButton.down:hover{
+	background:url(../IMG/downIcon.png), #e8e8e8;
+}
+
+.arrowButton.up{
+	background:url(../IMG/upIcon.png), #fff;
+}
+.arrowButton.up:hover{
+	background:url(../IMG/upIcon.png), #e8e8e8;
+}
+
+.footerContainer {
+  text-align: center;
+  min-height: 300px;
+  width: 100%;
+  background: #444;
+  box-shadow: inset 0 2px 10px rgba(0,0,0,.5);
+  padding: 40px 0;
+}
+
+.logoPartido {
+  margin: auto;
+  width: 240px;
+  max-width: 240px;
+  height: 240px;
+  background-image: url(../IMG/Isologo.gif);
+  background-size: cover;
+  background-position: center center;
+  border-radius: 125px;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  display: inline-block;
+}
+
+.footerLinkGrande {
+  text-align: left;
+  line-height: 32px;
+  text-decoration: none;
+  color: #169CBF;
+  font-size: 43px;
+  font-weight: 300;
+  display: block;
+  margin: 0 10px;
+  padding: 30px 0;
+  height: 120px;
+}
+
+.footerLinkGrande div {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.iconoAbout {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  background: url(../IMG/helpIcon.png), #169CBF;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 30px;
+  box-shadow: 0 1px 5px rgba(0,0,0,.4);
+  margin: 10px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.aboutContainer {
+  background-color: #169CBF;
+  padding: 55px;
+  position: fixed;
+  top: 40px;
+  left: 0;
+  width: 493px;
+  font-size: 25px;
+  text-align: justify;
+  color: #eee;
+  border-radius: 0 5px 5px 0;
+  z-index:999;
+  margin: 0 0 0 -493px;
+  cursor:default;
+}
+
+.aboutContainer:before {
+	width: 128px;
+	height: 128px;
+	display:block;
+	margin: 0 auto;
+	margin-bottom: 30px;
+	content: '';
+	background-image:url(../IMG/exclamationIcon.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: contain;
+}
+
+.aboutContainer:after {
+	width: 30px;
+	height: 30px;
+	display:inline-block;
+	position:absolute;
+	right:5px;
+	top:5px;
+	margin: 0 auto;
+	content: 'X';
+	background:#479;
+	border-radius: 5px;
+	text-align:center;
+	font-size:16px;
+	font-weight:600;
+	line-height:30px;
+	cursor:pointer;
+}
+
+
+@media (max-width: 480px)  {
+}
+@media (max-width: 650px)  {
+	.partidoContainer{
+		width:100%;
+		margin: 10px 0 !important;
+	}
+
+	.imagenPartido{
+		height: 245px;
+	}
+
+	.candidatoContainer{
+		width:100%;
+		margin:10px 0;
+	}
+	
+	.tipo .title{
+		font-size:24px;
+		line-height: 50px;
+	}
+	.tipo img {
+	  width: 40px;
+	  height: 40px;
+	}
+}
+@media (max-width: 800px)  {
+	.tituloPropuesta{
+		padding:40px 0px 5px 0 !important;
+	}
+	
+	.propuestaContainer .candidatoContainer {
+	  border-radius: 3px !important;
+	  left: 25px !important;
+	  right: 10px !important;
+  	}
+	.colorCandidato_mini {
+  		height: 30px;
+	}
+	.quantityList{
+		display:none;
+	}
+	
+	.propuestaContainer .twitterButton{
+		left: 25px !important;
+		opacity: 1 !important;
+		bottom: 5px !important;
+		border-radius:3px !important;
+		padding:7px 10px 7px 32px !important;
+	}
+	
+	.textoPropuesta {
+		padding: 0 0 40px 0 !important;
+	}
+	
+	.headerContainer{
+		background-image: url(../IMG/shareLogo.png) !important;
+		height:200px !important;
+	}
+	
+	.github-fork-ribbon-wrapper{
+		display:none !important;
+	}
+	
+	.partidosContainer .twitterButton {
+		position: relative;
+		display: block;
+		width: 99%;
+		margin: auto;	
+	}
+	
+	.imagenPartido_Header{
+		height: 245px;
+  		width: 100%;
+		display:block;
+	}
+	
+	.nombre_Header{
+		height: 150px;
+		position: initial;
+		text-align: center !important;
+	}
+	
+	.partidoContainer .twitterButton{
+		position: initial;
+		width: 100%;
+		margin: 5px;
+	}
+	.partidoContainer .twitterButton::before {
+		left:17px;
+	}
+	
+	.partidoContainer .facebookButton{
+		position: initial;
+		width: 100%;
+		margin: 5px;
+	}
+	.partidoContainer .facebookButton::before {
+		left:17px;
+	}
+	
+	.item.candidatos_Header{
+		position: initial;
+		display: inline-block;
+		width: 50%;
+		line-height: 40px;
+		padding: 10px 0 0 0;
+	}
+
+	.item.propuestas_Header{
+		position: initial;
+		display: inline-block;
+		width: 50%;
+		line-height: 40px;
+		padding: 10px 0 0 0;
+	}
+
+	.item.candidatos_Header::after {
+		position: initial;
+		display: block;
+	}
+	
+	.item.propuestas_Header::after {
+		position: initial;
+		display: block;
+	}
+	
+	.candidatoContainer_Header .imagenCandidato{
+		zoom:.85;
+	}
+	
+	.candidatoContainer_Header .nombreCandidato{
+		zoom:.85;
+	}
+
+	.candidatoContainer_Header .colorCandidato{
+		zoom:.85;
+	}
+
+	.candidatoContainer_Header .listaCandidato{
+		zoom:.85;
+	}
+	
+	.candidatoContainer_Header .item.propuestas_Header{
+		width:100%;
+	}
+	
+	.candidatoContainer_Header .twitterButton {
+		position: initial;
+		display: block;
+		width: 98% !important;
+		margin: 5px;
+		text-align: left;
+	}
+	.candidatoContainer_Header .twitterButton::before{
+		left:6px;
+	}
+
+	.candidatoContainer_Header .facebookButton {
+		position: initial;
+		display: block;
+		width: 98% !important;
+		margin: 5px;
+		text-align: left;
+	}
+	.candidatoContainer_Header .facebookButton::before{
+		left:6px;
+	}
+	
+	.aboutContainer{
+		width: 100%;
+		font-size: 18px;
+		padding: 35px;
+	}
+	.aboutContainer:before{
+		width:80px;
+		height:80px;
+	}
+}

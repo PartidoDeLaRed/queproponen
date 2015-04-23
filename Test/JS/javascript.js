@@ -468,8 +468,7 @@ function ChangeUrl(title, url)
 		document.title = title;
         var obj = { Title: title, Url: url };
         history.pushState(obj, obj.Title, obj.Url);
-    }
-	ga('send', 'pageview', { 'page': location.pathname + location.search  + location.hash });
+    } 
 }
 
 function CargaInicial()
