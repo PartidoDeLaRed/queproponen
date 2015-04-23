@@ -186,13 +186,13 @@ function MostrarPropuesta(modo, prop)
 	if(prop.partido != undefined)
 	{
 		var candidato = candidatos.filter(function(e){return e.codigo == prop.candidato && e.partido == prop.partido;})[0];
-		
+		var id = propuestas.indexOf(prop);
 		switch(modo)
 		{
 			case 0:
 			{
 				var container = document.createElement('div');
-				$(container).attr('id', prop.titulo);
+				$(container).attr('id', 'p'+id);
 				$(container).css('position', 'relative');
 				$(container).addClass('propuestaContainer');
 				$(container).click(function(){
@@ -277,12 +277,12 @@ function MostrarPropuesta(modo, prop)
 				$(tweet).addClass('twitterButton');
 				$(tweet).html('Hablá con '+candidato.nombre+' sobre esto');
 				
-				setTimeout(makeShort(container, window.location.href+prop.titulo.split(' ').join('-')), 4000);
-				
 				$(tweet).click(function(e) {
-					window.open('https://twitter.com/intent/tweet?'+
-					'related=PartidodelaRed&'+
-					'text='+ 'Hola ' + candidato.twitter + " quiero decirte sobre tu propuesta: "+shortURL.innerHTML+" %23yvosquepropones", 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+					makeShort(container, window.location.origin + window.location.pathname + '#candidato/'+candidato.nombre.split(' ').join('-')+'/#propuesta/'+'p'+id, function(){
+						window.open('https://twitter.com/intent/tweet?'+
+						'related=PartidodelaRed&'+
+						'text='+ 'Hola ' + candidato.twitter + " quiero decirte sobre tu propuesta "+container.dataset.shorturl+" %23yvosquepropones", 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+					});
 				});
 				$(container).append(tweet);
 				
@@ -491,7 +491,8 @@ function CargarSeccion()
 {
 	if(window.location.hash.split('/')[1] != undefined)
 	{
-		var nombre = window.location.hash.split('/')[1].split('-').join(' ');
+		secciones = unescape(window.location.hash).split('/');
+		var nombre = secciones[1].split('-').join(' ');
 		if(window.location.hash.indexOf('partido') != -1)
 		{
 			var lista = partidos.filter(function(e){ return e.nombre == nombre; });
@@ -507,11 +508,21 @@ function CargarSeccion()
 			if(lista.length > 0)
 			{
 				MostrarCandidato(1, lista[0]);
+				if(secciones.indexOf('#propuesta') != -1)
+				{
+					var nombrePropuesta = secciones[3];
+					setTimeout(function(){hacerScrollID(nombrePropuesta)}, 1000);
+				}
 				return true;
 			}
 		}
 	}
 	CargaInicial();
+}
+function hacerScrollID(elemento)
+{
+	$('html, body').animate({ scrollTop: ($('#'+elemento).offset().top - 200) }, 500);
+	$('#'+elemento).effect("highlight", {}, 3000);
 }
 
 function AbrirPropuestas()

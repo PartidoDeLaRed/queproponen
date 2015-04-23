@@ -1,4 +1,4 @@
-function makeShort(contenedor, longURL) 
+function makeShort(contenedor, longURL, callback) 
 {
     var request = gapi.client.urlshortener.url.insert({
       'resource': {
@@ -9,7 +9,8 @@ function makeShort(contenedor, longURL)
     {
         if(response.id != null)
         {
-            $(contenedor).data('data-shorturl', response.id);
+            contenedor.setAttribute('data-shorturl', response.id);
+			callback();
         }
     });
  }
