@@ -84,35 +84,35 @@ Propuesta("Creación de un sistema de alerta temprana", "Que vincule a las área
 Propuesta("Acceso a la vivienda para las clases populares y medias", "Construcción de 40.000 viviendas. Reforma del código de planeamiento urbano para que propicie el desarrollo equitativo y planificado de la ciudad por sobre la especulación del mercado inmobiliario. Así los sectores populares, medios y también los jóvenes puedan acceder a la vivienda propia.", temas.VIVIENDA, 0, 2),
 
 //Anibal Ibarra
-Propuesta("Detener los impuestazos y la suba sistemática de los servicios. Gobernar sin déficit (como lo hicimos en nuestra gestión)","", temas. ECONOMIA, 0, 3),
-Propuesta("Reducir el endeudamiento actual y sólo tomar deuda a plazos e intereses razonables para hacer obras d infraestructura relevantes","", temas. ECONOMIA, 0, 3),
-Propuesta("Promover la cultura del medio ambiente desde el nivel inicial y en los niños","", temas. MEDIO_AMBIENTE, 0, 3),
-Propuesta("Promoción y concientización de la separación de residuos en el hogar","", temas. MEDIO_AMBIENTE, 0, 3),
-Propuesta("Control estricto sobre las empresas de basura. Impulsar el reciclado, la reducción y reutilización de la basura","", temas. MEDIO_AMBIENTE, 0, 3),
-Propuesta("Llevar las políticas culturales a los barrios. Poner en valor y renovar los teatros que dependen de la ciudad","", temas. SOCIEDAD, 0, 3),
-Propuesta("Apoyar a los artistas independientes con recursos e infraestructura de la ciudad","", temas. SOCIEDAD, 0, 3),
-Propuesta("Ampliar espacios culturales de la ciudad (como hicimos con la Usina del Arte; el Teatro 25 de Mayo y el cine teatro El Plata)","", temas. SOCIEDAD, 0, 3),
-Propuesta("Cumplir con el Plan Hidráulico y hacer las obras necesarias para soportar lluvias intensas en toda la ciudad","", temas. PLANEAMIENTO_URBANO, 0, 3),
-Propuesta("Trabajo coordinado con la Policía Federal y el traspaso definitivo de la fuerza a la Ciudad","", temas. SEGURIDAD, 0, 3),
-Propuesta("Transformación de la Policía Metropolitana en una policía de prevención del delito y proximidad","", temas. SEGURIDAD, 0, 3),
-Propuesta("Extensión de la Policía Metropolitana en todos los barrios de la Ciudad","", temas. SEGURIDAD, 0, 3),
-Propuesta("Mayor prevención en personas y zonas vulnerables. Mayor cobertura y prevención en adultos mayores","", temas. SALUD, 0, 3),
-Propuesta("Mayor presupuesto en salud en relación al presupuesto total de gastos de la Ciudad","", temas. SALUD, 0, 3),
-Propuesta("Equipamiento de hospitales con tecnología de última generación","", temas. SALUD, 0, 3),
-Propuesta("Creación de nuevos centros de salud en los barrios. En nuestra gestión había 0 y construimos 37 centros médicos barriales","", temas. SALUD, 0, 3),
-Propuesta("Ampliación en cantidad de los equipos de orientación escolar","", temas. EDUCACION, 0, 3),
-Propuesta("Capacitaciones y actualizaciones curriculares de los docentes en servicio y la concentración horaria","", temas. EDUCACION, 0, 3),
-Propuesta("Mayor presupuesto educativo en relación al total de gastos de la Ciudad","", temas. EDUCACION, 0, 3),
-Propuesta("Ampliación de las escuelas bilingües y plurilingües","", temas. EDUCACION, 0, 3),
-Propuesta("Shock de construcción de nuevas escuelas y jardines maternales. Garantizar las vacantes en sala de 4 años","", temas. EDUCACION, 0, 3),
-Propuesta("Articulación de los colectivos con el subterráneo. Creación del Boleto Único Porteño para subte, colectivos y trenes ","", temas. TRANSPORTE, 0, 3),
-Propuesta("Impulsar la expansión de la red de subterráneos. Hacer las 3 líneas nuevas planeadas en nuestra gestión (F-G-I) ","", temas. TRANSPORTE, 0, 3),
-Propuesta("Otorgar créditos a tasa subsidiada -por un fondo especial- para la compra de viviendas","", temas. VIVIENDA, 0, 3),
-Propuesta("Retomar el plan de Urbanización de villas y asentamientos de emergencia","", temas. VIVIENDA, 0, 3),
-Propuesta("Mayor carga impositiva para las viviendas desocupadas para estimular la oferta en alquileres y así bajar los costos","", temas. VIVIENDA, 0, 3),
-Propuesta("Eliminar las condiciones abusivas de las inmobiliarias en los alquileres urbanos. Presentamos hace 3 años un proyecto","", temas. VIVIENDA, 0, 3),
-Propuesta("Promocionar también al sector privado con ventajas impositivas para la construcción de viviendas sociales","", temas. VIVIENDA, 0, 3),
-Propuesta("Retomar la política de construcción de viviendas. En nuestra gestión hicimos 5.000 viviendas. Hoy eso está paralizado","", temas. VIVIENDA, 0, 3),
+Propuesta("Detener los impuestazos y la suba sistemática de los servicios. Gobernar sin déficit (como lo hicimos en nuestra gestión)","", temas.ECONOMIA, 0, 3),
+Propuesta("Reducir el endeudamiento actual y sólo tomar deuda a plazos e intereses razonables para hacer obras d infraestructura relevantes","", temas.ECONOMIA, 0, 3),
+Propuesta("Promover la cultura del medio ambiente desde el nivel inicial y en los niños","", temas.MEDIO_AMBIENTE, 0, 3),
+Propuesta("Promoción y concientización de la separación de residuos en el hogar","", temas.MEDIO_AMBIENTE, 0, 3),
+Propuesta("Control estricto sobre las empresas de basura. Impulsar el reciclado, la reducción y reutilización de la basura","", temas.MEDIO_AMBIENTE, 0, 3),
+Propuesta("Llevar las políticas culturales a los barrios. Poner en valor y renovar los teatros que dependen de la ciudad","", temas.SOCIEDAD, 0, 3),
+Propuesta("Apoyar a los artistas independientes con recursos e infraestructura de la ciudad","", temas.SOCIEDAD, 0, 3),
+Propuesta("Ampliar espacios culturales de la ciudad (como hicimos con la Usina del Arte; el Teatro 25 de Mayo y el cine teatro El Plata)","", temas.SOCIEDAD, 0, 3),
+Propuesta("Cumplir con el Plan Hidráulico y hacer las obras necesarias para soportar lluvias intensas en toda la ciudad","", temas.PLANEAMIENTO_URBANO, 0, 3),
+Propuesta("Trabajo coordinado con la Policía Federal y el traspaso definitivo de la fuerza a la Ciudad","", temas.SEGURIDAD, 0, 3),
+Propuesta("Transformación de la Policía Metropolitana en una policía de prevención del delito y proximidad","", temas.SEGURIDAD, 0, 3),
+Propuesta("Extensión de la Policía Metropolitana en todos los barrios de la Ciudad","", temas.SEGURIDAD, 0, 3),
+Propuesta("Mayor prevención en personas y zonas vulnerables. Mayor cobertura y prevención en adultos mayores","", temas.SALUD, 0, 3),
+Propuesta("Mayor presupuesto en salud en relación al presupuesto total de gastos de la Ciudad","", temas.SALUD, 0, 3),
+Propuesta("Equipamiento de hospitales con tecnología de última generación","", temas.SALUD, 0, 3),
+Propuesta("Creación de nuevos centros de salud en los barrios. En nuestra gestión había 0 y construimos 37 centros médicos barriales","", temas.SALUD, 0, 3),
+Propuesta("Ampliación en cantidad de los equipos de orientación escolar","", temas.EDUCACION, 0, 3),
+Propuesta("Capacitaciones y actualizaciones curriculares de los docentes en servicio y la concentración horaria","", temas.EDUCACION, 0, 3),
+Propuesta("Mayor presupuesto educativo en relación al total de gastos de la Ciudad","", temas.EDUCACION, 0, 3),
+Propuesta("Ampliación de las escuelas bilingües y plurilingües","", temas.EDUCACION, 0, 3),
+Propuesta("Shock de construcción de nuevas escuelas y jardines maternales. Garantizar las vacantes en sala de 4 años","", temas.EDUCACION, 0, 3),
+Propuesta("Articulación de los colectivos con el subterráneo. Creación del Boleto Único Porteño para subte, colectivos y trenes ","", temas.TRANSPORTE, 0, 3),
+Propuesta("Impulsar la expansión de la red de subterráneos. Hacer las 3 líneas nuevas planeadas en nuestra gestión (F-G-I) ","", temas.TRANSPORTE, 0, 3),
+Propuesta("Otorgar créditos a tasa subsidiada -por un fondo especial- para la compra de viviendas","", temas.VIVIENDA, 0, 3),
+Propuesta("Retomar el plan de Urbanización de villas y asentamientos de emergencia","", temas.VIVIENDA, 0, 3),
+Propuesta("Mayor carga impositiva para las viviendas desocupadas para estimular la oferta en alquileres y así bajar los costos","", temas.VIVIENDA, 0, 3),
+Propuesta("Eliminar las condiciones abusivas de las inmobiliarias en los alquileres urbanos. Presentamos hace 3 años un proyecto","", temas.VIVIENDA, 0, 3),
+Propuesta("Promocionar también al sector privado con ventajas impositivas para la construcción de viviendas sociales","", temas.VIVIENDA, 0, 3),
+Propuesta("Retomar la política de construcción de viviendas. En nuestra gestión hicimos 5.000 viviendas. Hoy eso está paralizado","", temas.VIVIENDA, 0, 3),
 
 //Heller
 Propuesta("Plan Metropolitano de Salud","", temas.SALUD, 0, 4),
@@ -808,7 +808,7 @@ Propuesta("Formación docente","La formación docente debe anclarse en las nueva
 
 Propuesta(" ","Garantizar el cumplimiento de las leyes de obligatoriedad escolar (ley nro.898 CABA) con la consecuente construcción de instancias y programas intersectoriales que sostengan y andamien las trayectorias escolares de los niños, niñas y adolescentes.", temas.EDUCACION, 10, 0),
 
-Propuesta("Equipos de Orientación Escolar","El trabajo pedagógico en las escuelas debe perfeccionarse para poder apuntalar las necesidades crecientes del Sistema Educativo. Para eso, deben consolidarse los Equipos de Conducción de las escuelas generando articulación con otras instancias ya creadas para tal fin (Equipo de Orientación Escolar, por ejemplo).", temas. EDUCACION, 10, 0),
+Propuesta("Equipos de Orientación Escolar","El trabajo pedagógico en las escuelas debe perfeccionarse para poder apuntalar las necesidades crecientes del Sistema Educativo. Para eso, deben consolidarse los Equipos de Conducción de las escuelas generando articulación con otras instancias ya creadas para tal fin (Equipo de Orientación Escolar, por ejemplo).", temas.EDUCACION, 10, 0),
 
 Propuesta("Bachilleratos populares","Oficialización de todos los bachilleratos populares de la Ciudad con reconocimiento de todas sus especificidades pedagógicas, becas para todos sus estudiantes, salarios para sus docentes y financiamiento integral.", temas.EDUCACION, 10, 0),
 
@@ -868,6 +868,52 @@ Propuesta("Hay que construir una red de transporte público digno y humano, para
 Propuesta("Hay que aumentar los salarios de los trabajadores de la salud, terminar con la tercerización del sector, abrir concursos y cubrir personal. Es necesario que se respeten los derechos de las mujeres, como el aborto no punible, e impulsar la lucha por el derecho al aborto legal, seguro y gratuito.", "", temas.SALUD, 11, 0),
 Propuesta("Hay que terminar con los subsidios a la educación privada y religiosa y volcar esos recursos a la educación pública. El macrismo dice que la gente no quiere ir a la escuela pública, pero eso sucede justamente porque el gobierno se encargó de destruirla.", "", temas.EDUCACION, 11, 0),
 Propuesta("La inseguridad es hija del capitalismo. Hay que terminar con la pobreza comenzando por crear puestos de trabajo. Llenar la Ciudad de policías no es la solución para un problema que es complejo y donde además la policía ha demostrado ser soda del narcotráfico y de todos los negocios sucios.", "", temas.SEGURIDAD, 11, 0),
+
+
+// Gustavo Tenaglia- Humanistas
+
+Propuesta("Activar el programa de Autogestión para la vivienda.","", temas.VIVIENDA ,12, 0),
+Propuesta("Disponer todo lo necesario para el desarrollo del PRO.CRE.AR. Dar al banco Ciudad la función social para la que fue creado diseñando una linea de créditos hipotecarios a tasa diferenciada para quienes alquilan.","", temas.VIVIENDA ,12, 0),
+Propuesta("Plan de urbanización de villas y asentamientos. .","", temas.VIVIENDA ,12, 0),
+Propuesta("Ley de Sistemas Barriales de Salud.","", temas.SALUD ,12, 0),
+Propuesta("Ampliado la cobertura de los Hospitales Públicos impulsa la creación de Sistemas Públicos y descentralizados para la Atención Primaria de la Salud. Su objetivo es desarrollar acciones de promoción, prevención, asistencia y rehabilitación de la salud de los habitantes de cada barrio. ","", temas.SALUD ,12, 0),
+Propuesta("Para garantizar que el proyecto responda a las necesidades reales de la población y como una vía mas para fortalecer la participación ciudadana los vecinos, que son quienes mejor conocen las problemáticas que los afectan, tendrán participación y decisión en el control y funcionamiento de los S.B.S. ","", temas.SALUD ,12, 0),
+Propuesta("Esto se trabajará vinculando los Sistemas Barriales de Salud con el Consejo Consultivo de cada Comuna. ","", temas.SALUD ,12, 0),
+Propuesta("Elaborar una ley de educación básica para la ciudad.","", temas.EDUCACION ,12, 0),
+Propuesta("Creación del  instituto de ciencia y tecnología.","", temas.EDUCACION ,12, 0),
+Propuesta("Implementación de mecanismos de democracia directa para detectar y dar respuestas a las problemáticas propias de cada Comuna","", temas.INSTITUCIONAL ,12, 0),
+Propuesta("Efectivizar la toma de decisiones mediante consulta popular vinculante.","", temas.INSTITUCIONAL ,12, 0),
+Propuesta("Creación y desarrollo de espacios de iniciativa vecinal y organización autogestiva","", temas.INSTITUCIONAL ,12, 0),
+Propuesta("Presupuesto participativo, consejos consultivos, ejercicio de las competencias comunales en efectivo cumplimiento de la ley de comunas","", temas.INSTITUCIONAL ,12, 0),
+Propuesta("Implementación de la Ley Nacional de Educación Sexual (Ley 26.150), sancionada en el año 2006 y que aún no se ha incorporado al sistema educativo de la Ciudad de Buenos Aires.","", temas.DERECHOS_HUMANOS ,12, 0),
+Propuesta("Implementación de la Ley Nacional de Educación Sexual (Ley 26.150), sancionada en el año 2006 y que aún no se ha incorporado al sistema educativo de la Ciudad de Buenos Aires.","", temas.DERECHOS_HUMANOS ,12, 0),
+Propuesta("Creación de grupos interdisciplinarios dedicados a la contención y acompañamiento de las personas LGBTTIQ en comisarias y hospitales, cuando deban recurrir por casos de violencia. Es imprescindible que en esos momentos no vuelvan a sufrir maltrato, ya que en la actualidad el pedido de ayuda termina siendo un nuevo perjuicio.","", temas.DERECHOS_HUMANOS ,12, 0),
+Propuesta("Derecho a la identidad de género de las personas. Reglamentación de la Ley 26.743 (sancionada en 2012 y aún no reglamentada en la Ciudad):“Todas las personas mayores de dieciocho años de edad podrán [...] acceder a intervenciones quirúrgicas totales y parciales y/o tratamientos integrales hormonales para adecuar su cuerpo, incluida su genitalidad, a su identidad de género autopercibida, sin necesidad de requerir autorización judicial o administrativa”. Y “todas las prestaciones de salud contempladas en el presente artículo quedan incluidas en el Plan Médico Obligatorio","", temas.DERECHOS_HUMANOS ,12, 0),
+
+Propuesta("Proponemos un Programa de políticas Publicas Integral. Reforzar la legislación vigente sobre discapacidad, garantizando el cumplimiento de sus derechos laborales y seguridad social, por medio de una supervisión adecuada.","", temas.DERECHOS_HUMANOS ,12, 0),
+Propuesta("TRANSPORTE: con medidas de accesibilidad, sobre todo en SUBTES. Hoy se cumple solo en un 30% existiendo líneas completamente inaccesibles.","", temas.DERECHOS_HUMANOS ,12, 0),
+Propuesta("Equiparación de derechos y oportunidades, La Ciudad debe cumplir con el cupo laboral (5%) de personas con discapacidad que marca la ley en los organismos y empresas del estado, sobre el total de la planta permanente de trabajadores del Gob. de la Ciudad. Como así también con la capacitación simultanea para el puesto asignado.","", temas.DERECHOS_HUMANOS ,12, 0),
+Propuesta("ESCUELA INCLUSIVA: en infraestructura, pero también en las barreras que hoy existen en lo curricular, cultural y en las metodologías que impiden que muchos niños y niñas puedan estudiar en igualdad de condiciones.","", temas.DERECHOS_HUMANOS ,12, 0),
+Propuesta("Certificado Único de Discapacidad (C.U.D.): Documento indispensable para obtener todos los derechos y beneficios que marca la ley: requiere la máxima prioridad. Celeridad en el otorgamiento de turnos para gestionarlo y la atención adecuada. Acelerar y eliminar los tiempos de espera excesivos para su rápido otorgamiento con la adecuada infraestructura, médico – administrativa.","", temas.DERECHOS_HUMANOS ,12, 0),
+Propuesta("VIVIENDA: Plan para priorizar a las personas con discapacidad en situación de vulnerabilidad.","", temas.DERECHOS_HUMANOS ,12, 0),
+Propuesta("CREACIÓN DE UN PROTOCOLO HOSPITALARIO PARA GARANTIZAR EL ACCESO AL ABORTO NO PUNIBLE. En 2012 la Corte Suprema de Justicia exhortó al Estado Nacional y a las jurisdicciones provinciales a que sancionen protocolos hospitalarios que garanticen el acceso de las mujeres a abortos no punibles. En la Ciudad Autónoma de Buenos Aires se regulan los permisos con exigencias que pueden dificultar el acceso a este derecho.","", temas.SALUD ,12, 0),
+Propuesta("PROTOCOLO PARA MUJERES EN SITUACION DE VIOLENCIA DE GÉNERO. Cada 30 horas una mujer muere víctima de femicidio, entendemos la inmediata solución y la urgencia de acabar con la violencia de género. Proponemos: dar respuesta a todas las necesidad de las mujeres en situación de violencia de género, con el armado de una red que les brinde contención, protección, resguardo y amparo; integrada por profesionales y organizaciones de la sociedad civil.","", temas.SEGURIDAD ,12, 0),
+
+Propuesta("COMUNA LIBRE DE VIOLENCIA-Promover la metodología de la NO-VIOLENCIA, involucrando a las instituciones educativas y a las organizaciones sociales. Los humanistas tenemos mucha experiencia para aportar en este campo.", "", temas.SEGURIDAD , 12, 0),
+
+Propuesta("LEY DE EDUCACION SEXUAL Y REPRODUCTIVA. Implementación real de esta ley en todos los establecimientos educativos de la Ciudad Autónoma de buenos Aires.","", temas.EDUCACION ,12, 0),
+Propuesta("MEDIOS DE COMUNICACIÓN COMUNALES","Para visibilizar las problemáticas de la Comuna, para darle voz a las distintas realidades, para que participen generando sus propios contenidos también las escuelas, clubes y centros culturales; necesitamos contar con un canal de TV Digital, una radio y un periódico Comunales.", temas.INSTITUCIONAL ,12, 0),
+
+Propuesta("El Banco de la ciudad de Buenos Aires debe cumplir con su carta orgánica, brindar créditos empresas sociales, Pymes, buscando la equidad distributiva.","", temas.ECONOMIA ,12, 0),
+Propuesta("La creación de una Obra Social Comunal; brindando servicios sociales y económicos a las comunas. Garantizando la competitividad en los precios de la canasta familiar.","", temas.ECONOMIA ,12, 0),
+Propuesta("Creación de una Banca Comunal para la entrega de microcréditos sin interés.","", temas.ECONOMIA ,12, 0),
+
+// 
+Propuesta("MERCADO CENTRAL COMUNAL", "Promover el intercambio y la comercialización directa entre los vecinos de la Comuna y los productores de alimentos y otros rubros, favoreciendo el beneficio económico y de calidad en una interacción recíproca.", temas.ECONOMIA ,12, 0),
+
+Propuesta("Hospital General de Agudos para Lugano. Finalización de la obra con 250 camas de internación.","", temas.SALUD ,12, 0),
+Propuesta("Reglamentación e implementación de la Ley de Centros Culturales votada en diciembre de 2014. Reapertura de todos los espacios clausurados durante la última gestión del GCBA.","", temas.SOCIEDAD)
+
 
 ];
 }
