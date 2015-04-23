@@ -738,5 +738,128 @@ Propuesta("Mejorar la Administración de Justicia, propiciando el desarrollo dev
 
 Propuesta("Propugnamos la orientación del gasto público, con sentido retributivo, hacia la cobertura  de las necesidades básicas de la población,  así como del ingreso real de los asalariados","", temas.ECONOMIA, 14, 0),
 
+
+// Pablo Ferreyra
+
+
+Propuesta("Realizar una planificación urbana integral, participativa y sustentable","Es necesario desarrollar un plan integral que regule el uso del espacio urbano en función de las necesidades concretas de todos los sectores que en ella viven, que promueva la inclusión social, la función social de la propiedad y de la Ciudad y haga posible el acceso a una vivienda digna y hábitat adecuado a todos sus habitantes de manera igualitaria. Una primera medida para acompañar ese proceso sería desarrollar un diseño institucional centralizado que elimine la multiplicidad de ventanillas y programas difusos por lo que proponemos la creación de un único Ministerio de Vivienda y hábitat que centralice todas las políticas enmarcándolas en una planificación integral encarada desde la perspectiva del derecho a la Ciudad.", temas.VIVIENDA, 10, 0),
+
+Propuesta("Creación de un fondo para la compra de vivienda joven y primera vivienda", "Impulsamos un fondo combinado, desde el cual impulsar créditos blandos a tasas preferenciales, entre el Banco Ciudad y dos nuevos ingresos de renta urbana: la recuperación por parte del Estado de la valorización del suelo que extraen los grandes emprendimientos inmobiliarios y un impuesto a las más de 340 mil viviendas que se encuentran en desuso en la Ciudad debido a la especulación.", temas.VIVIENDA, 10, 0),
+
+Propuesta("Reforma del Impuesto Inmobiliario","Proponemos también reformar del impuesto inmobiliario, modificando su base imponible, de manera que grave la concentración de propiedades inmuebles en una sola persona y agregar una contribución especial a los Grandes Desarrollos Inmobiliarios.", temas.VIVIENDA, 10, 0),
+
+Propuesta("Urbanización participativa de villas y asentamientos", "En una Ciudad con casi 500.000 personas sin vivienda digna, es fundamental hacer cumplir las leyes de urbanización, avanzando hacia procesos participativos que garanticen la seguridad en la tenencia, la infraestructura y el acceso a todos los servicios básicos como agua, cloacas, luz y gas así como también la accesibilidad al transporte, la salud, la educación, el espacio público, etc. Se trata de avanzar en desarrollos que permitan la integración de estos barrios con el resto de la Ciudad.", temas.VIVIENDA, 10, 0),
+
+Propuesta("Regulación de alquileres y Construcción de viviendas", "En aras de combatir la especulación y reducir los precios de los alquileres, creemos que debe avanzarse en regular fuertemente la actividad. Para ello, deben rebajarse por ley las comisiones inmobiliarias, ampliarse los plazos mínimos de alquiler y establecerse precios máximos por barrio. También, creemos importante incrementar el impuesto al sello para los alquileres destinados a turistas extranjeros.Con lo obtenido en la reforma tributaria en materia inmobiliaria puede también generarse un fondo de garantía social que haga de garante en un contrato alquiler a aquellas familias que por alguna razón no puedan contar con dicha figura.", temas.VIVIENDA, 10, 0),
+
+Propuesta("Subte","Terminar con las obras planificadas por la ley N°670 (líneas F, G e I, 10, 0),, con prioridad en la I (Parque Chacabuco-Plaza Italia, 10, 0),, que potenciará la conexión de los barrios del suroeste de la ciudad a la red. Será un nuevo eje Norte-Sur conectado con las demás líneas.", temas.TRANSPORTE, 10, 0),
+
+Propuesta("Concesión Metrovías","Rescisión sin indemnización de la concesión a Metrovías y estatización del servicio a través del SBASE.", temas.TRANSPORTE, 10, 0),
+
+Propuesta("Boleto","Tarifa social que nos incluya a todos integrada a los demás modos cubiertos en el SUBE. El costo de ese boleto debería ser por km recorrido y multimodal.", temas.TRANSPORTE, 10, 0),
+
+Propuesta("Horario de Servicio","Extensión del horario del servicio desde las 5:00 hs. hasta la 1:30 hs.", temas.TRANSPORTE, 10, 0),
+
+Propuesta("Material rodante","Renovar el material rodante de todas las líneas adquiriendo la cantidad suficiente para garantizar una frecuencia de un servicio cada 2 minutos en hora pico.", temas.TRANSPORTE, 10, 0),
+
+Propuesta("Extensión de líneas","Extensión de la red de subtes: Línea C a Estación Buenos Aires y unión con línea H por el sur, logrando el segundo circuito circular H-C. La construcción de línea H2, a Aeroparque y Ciudad Universitaria. Extensión de la línea E de Retiro a Plaza Italia. Esto complementará la construcción de la futura línea I, permitiendo un viaje circular pasando por Parque Chacabuco, Plaza Italia, Retiro y Plaza de Mayo.", temas.TRANSPORTE, 10, 0),
+
+Propuesta(" ","Elaborar plan metropolitano de transporte integral con participación ciudadana.", temas.TRANSPORTE, 10, 0),
+
+Propuesta(" ","Crear una sociedad dependiente de Subterráneos de Buenos Aires Sociedad del Estado (SBASE, 10, 0),, o del ejecutivo porteño, que explote los ramales de Metrobus y que sirva para integrar los distintos trazados de Metrobus, hoy desarticulados.", temas.TRANSPORTE, 10, 0),
+
+Propuesta(" ","Implementación de Estaciones Multimodales de trasbordo.", temas.VIVIENDA, 10, 0),
+
+Propuesta("Pasos a nivel","Implementación de tecnología antes de los pasos a nivel, de manera de hacerlos más seguros en términos viales hasta tanto no se realicen las obras de bajo nivel.", temas.TRANSPORTE, 10, 0),
+
+Propuesta("Líneas de tránsito rápido de Metrobus","Creación de líneas exclusivas de transito rápido de Metrobus para en el AMBA La implementación de sistemas BRT (Metrobus, 10, 0), desde el 1er y 2do cordón del conurbano hasta el macrocentro y en la circunvalación de la Ciudad no sólo reduce los tiempos, sino que aumenta la seguridad vial y reduce la polución ambiental.", temas.TRANSPORTE, 10, 0),
+
+Propuesta("Ciclovías","Creación de un plan de desarrollo de Ciclovías basado en la complementariedad con los otros modos de transporte, especialmente, subterráneos y ferrocarriles de superficie, y la masificación de la red en el sur de la ciudad manteniendo la gratuidad del servicio.", temas.TRANSPORTE, 10, 0),
+
+Propuesta("Bicicletas Públicas","Establecimiento de puestos de bicicletas públicas en los principales puntos de transito de la ciudad como en las distintas líneas de ferrocarriles de superficie y subterráneos, tanto en sus estaciones cabeceras como en las estaciones intermedias de mayor utilización por parte de los pasajeros.", temas.TRANSPORTE, 10, 0),
+
+Propuesta("DGPDT","Ampliación de la capacidad inspectora de la DGPDT: Ampliación del cuerpo de inspectores. Concentración de competencias en la Secretaría de Trabajo de acuerdo a lo que fija la ley.", temas.ECONOMIA, 10, 0),
+
+Propuesta("DGPDT","Coordinación con el Ministerio de Trabajo nacional en las políticas de inspección: Cruzamiento de relevamiento nacional y local de datos tributarios AFIP, de la seguridad social ANSES, con las denuncias y procedimientos en la propia DGPDT de la Ciudad.", temas.ECONOMIA, 10, 0),
+
+Propuesta("Empleo Joven","Creación de programas inclusivos de empleo joven que ofrezcan formación profesional y circuitos de introducción al mundo del trabajo, generando oportunidades de inclusión social y laboral de los jóvenes.", temas.ECONOMIA, 10, 0),
+
+Propuesta("Economía Popular", "Creación del Área de Economía Popular: que institucionalice los mercados populares y establezca líneas de fomento a la producción y comercialización de las experiencias de economía Popular así como acceso a derechos para sus trabajadores. Que el Poder Ejecutivo garantice el cumplimiento de todos los convenios firmados con las cooperativas de trabajadores y concrete las expropiaciones pendientes.", temas.ECONOMIA, 10, 0),
+
+Propuesta(" ", "Eliminación de las exenciones impositivas a grandes empresas emplazadas en los distritos.", temas.ECONOMIA, 10, 0),
+
+Propuesta("Aborto","Legalización del aborto, por el derecho a la autonomía de nuestros cuerpos.", temas.DERECHOS_HUMANOS, 10, 0),
+
+Propuesta("Aborto","Educación sexual con materiales adecuados y contenidos sobre aborto seguro en la currícula de las escuelas.", temas.EDUCACION, 10, 0),
+
+Propuesta("Aborto","Campañas públicas de información.", temas.SOCIEDAD, 10, 0),
+
+Propuesta("Aborto","Ampliar, visibilizar e institucionalizar los servicios de salud y consejerías pre y pos aborto con disponibilidad de misoprostol y su producción pública.", temas.SALUD, 10, 0),
+
+Propuesta("Sanción de una Ley de Educación para la Ciudad","Que defienda y fortalezca la educación pública, laica y gratuita. Que apunte a revertir las desigualdades sociales preexistentes a la escuela. Que fomente el trabajo pedagógico y la formación docente acorde a las distintas realidades sociales y educativas. La sanción de la misma debe ser el resultado de un proceso de discusión y debate en la sociedad, particularmente, entre los diferentes sectores de la comunidad educativa (familias, docentes, sindicatos, organizaciones sociales, alumnos, 10, 0),.", temas.EDUCACION, 10, 0),
+
+Propuesta("Jardines de Nivel Inicial","Construcción de jardines de nivel inicial desde los 45 días para garantizar la vacante en escuelas privadas desde esa edad a todos los niños y niñas de la Ciudad garantizando condiciones de habitabilidad, materiales pedagógicos, derechos laborales para docentes y material didáctico.", temas.EDUCACION, 10, 0),
+
+Propuesta("Ley de financiamiento educativo", "En cuya elaboración deberá participar la comunidad educativa. Esta ley deberá poder garantizar la cobertura de vacantes en todos los niveles. También deberá atender a las demandas en cuestiones de infraestructura, material didáctico y creación de nuevos edificios escolares.", temas.EDUCACION, 10, 0),
+
+Propuesta("Participatividad","Desarrollo de mecanismos para que estudiantes, docentes, vecinos, padres y madres, puedan informarse, participar y decidir sobre el sistema educativo en cada escuela. Construir la educación que necesitamos para transformar nuestra Ciudad e instalar la democracia de la educación para hacer parte a la sociedad en su conjunto.", temas.EDUCACION, 10, 0),
+
+Propuesta("Formación docente","La formación docente debe anclarse en las nuevas configuraciones sociales y las realidades propias de nuestra Ciudad. Para ello, es necesario la formación continua de los docentes y generar las bases para que la misma resulte una instancia de enriquecimiento de las prácticas de enseñanza.", temas.EDUCACION, 10, 0),
+
+Propuesta(" ","Garantizar el cumplimiento de las leyes de obligatoriedad escolar (ley nro.898 CABA, 10, 0), con la consecuente construcción de instancias y programas intersectoriales que sostengan y andamien las trayectorias escolares de los niños, niñas y adolescentes.", temas.EDUCACION, 10, 0),
+
+Propuesta("Equipos de Orientación Escolar","El trabajo pedagógico en las escuelas debe perfeccionarse para poder apuntalar las necesidades crecientes del Sistema Educativo. Para eso, deben consolidarse los Equipos de Conducción de las escuelas generando articulación con otras instancias ya creadas para tal fin (Equipo de Orientación Escolar, por ejemplo, 10, 0),.", temas. EDUCACION, 10, 0),
+
+Propuesta(" ","Oficialización de todos los bachilleratos populares de la Ciudad con reconocimiento de todas sus especificidades pedagógicas, becas para todos sus estudiantes, salarios para sus docentes y financiamiento integral.", temas.EDUCACION, 10, 0),
+
+Propuesta("Ley de Paritaria Docente","Sanción de una Ley de Paritaria Docente que institucionalice y fortalezca el espacio de debate entre los Sindicatos y el Gobierno de la Ciudad.", temas.EDUCACION, 10, 0),
+
+Propuesta("Plan de Reforma de la Formación Docente","Frente a la crisis que genera la falta de docentes que hoy vivimos en la Ciudad proponemos un Plan de Reforma de la Formación Docente en la Ciudad que re discuta la organización de los Institutos de Formación Docente, poniendo especial atención en sus Planes de Estudios y en la estructura y dinámica de las Prácticas Docentes.", temas.EDUCACION, 10, 0),
+
+Propuesta("Sistema de Evaluación","Elaborar un sistema de evaluación que sea parte de una planificación pedagógica, sistemática y que atienda a los diversos contextos y particularidades, entendiéndola como una herramienta más del proceso pedagógico.", temas.EDUCACION, 10, 0),
+
+Propuesta("Prevención y Control Sanitario","Avanzar hacia un sistema comunitario de prevención y promoción de la salud. Crear, promover y dotar de recursos a los Centros de Salud y Atención Comunitaria para llevar adelante mecanismos de prevención y control sanitario a nivel local. Elaboración y sistematización de estadísticas sociosanitarias a nivel comunal.", temas.SALUD, 10, 0),
+
+Propuesta("Promotor de Salud","Profesionalización de la figura del promotor de salud: Avanzar en la capacitación y formación de promotores de salud que actúen dentro del primer nivel sanitario trabajando con las problemáticas específicas de una comuna desde una perspectiva interdisciplinar.", temas.SALUD, 10, 0),
+
+Propuesta(" ","Sancionar la ley de producción pública de medicamentos.", temas.SALUD, 10, 0),
+
+Propuesta("Ley de Identidad de género","Reglamentación y cumplimiento de La Ley de Identidad de género (4238, 10, 0), en la Ciudad, sin restricciones: Garantizando el suministro gratuito de preservativos y anticonceptivos en todos los centros de salud.", temas.SALUD, 10, 0),
+
+Propuesta("Diverdidad", "Políticas públicas de investigación, formación y atención en salud de las identidades sexuales, culturales y de género para una salud que respete y trabaje en la diversidad.", temas.SALUD, 10, 0),
+
+Propuesta("Hospitales Públicos","Mejorar integralmente la situación de los hospitales públicos en relación a su infraestructura, equipamiento y servicios: Cumplir la compra de equipos dispuesta por ley, revertir las tercerizaciones de servicios tales como seguridad, facturación, maestranza, mantenimiento, lavadero, cocina.", temas.SALUD, 10, 0),
+
+Propuesta("Salud Mental","Cumplir con las leyes de Salud Mental: Avanzar hacia una nueva perspectiva del tratamiento de los pacientes que priorice un trabajo interdisciplinario tendiente a la implementación progresiva de un modelo de atención ambulatorio y comunitario.", temas.SALUD, 10, 0),
+
+Propuesta("Adicciones","Atención pública y campañas de reducción de daños para consumos problemáticos: Con centros públicos de atención en cada barrio y hospital, tomando la inclusión social como objetivo y fortaleciendo las alternativas de tratamientos ambulatorios.", temas.SALUD, 10, 0),
+
+Propuesta("Seguridad Democrática","Desarrollar desde la legislatura un plan de seguridad democrática: para controlar el sistema de seguridad y atacar de manera efectiva todas las situaciones de violencia institucional que afectan en mayor medida a los sectores más postergados de la sociedad.", temas.SEGURIDAD, 10, 0),
+
+Propuesta("Control comunal y participación de la comunidad en asuntos de seguridad","De cara a fortalecer un Estado en el cual la agenda de gestión de la seguridad pública y el control de su brazo represivo sea fijada con la participación de todos los sectores.", temas.SEGURIDAD, 10, 0),
+
+Propuesta("Control de las Fuerzas","Eliminar todas las instancias represivas policiales y parapoliciales de la Ciudad para lo cual es necesario abandonar el simple rechazo al aparato represivo y revertir el actual modelo de delegación a uno de control sobre las fuerzas.", temas.SEGURIDAD, 10, 0),
+
+Propuesta(" ","Aumento y reconfiguración del presupuesto para política cultural", temas.SOCIEDAD, 10, 0),
+
+Propuesta("Presupuesto para Cultura","En la actualidad el presupuesto destinado a cultura es el 2,7% (alrededor de 2.300 millones de pesos, 10, 0),. Los festivales y eventos centrales reciben seis veces más financiamiento que los programas destinados al desarrollo cultural en barrios. Además de haber reducido el presupuesto total de cultura en más de un 20% en los últimos años, el Gobierno de la Ciudad lo subejecuta sistemáticamente, como en el resto de las áreas sociales. Es posible y necesario aumentar este presupuesto y que el destino de ese dinero sea una política cultural diferente, democrática y descentralizada.", temas.SOCIEDAD, 10, 0),
+
+Propuesta("Gestión comunal de la política cultural para el desarrollo de la cultura de los barrios","Las comunas pueden ser los ámbitos que articulen la existencia de entes descentralizados de gestión cultural, colegiados, con participación de los Gobiernos Comunales, de las instituciones culturales estatales y comunitarias de los barrios y de los trabajadores de la cultura. De ese modo, las políticas culturales pueden adquirir vínculo real con los territorios y sus habitantes, y que sean ellos mismos quienes definan sobré qué se va a impulsar y financiar en sus territorios.", temas.SOCIEDAD, 10, 0),
+
+Propuesta("Puesta en funcionamiento de la Ley de Centros Culturales y aprobación de la ley de financiamiento","Esta última ley tendrá las siguientes características: Comprender la importancia que tienen los Centros Culturales y Sociales para la difusión de la actividad cultural independiente; Asistir a los Centros Culturales y Sociales en cuestiones de infraestructura, desarrollo, difusión y creación artística.; Facilitar la asistencia a los artistas, gestores del arte y la cultura, grupos y/o colectivos estables o eventuales, y que, de ese modo, los estimule a continuar produciendo actividades culturales.; Promover y fomentar la creación de nuevos Centros Culturales y Sociales destinados a actividades culturales independientes en el ámbito de la Ciudad Autónoma de Buenos Aires, priorizando el apoyo a las entidades que persigan un interés comunitario.", temas.SOCIEDAD, 10, 0),
+
+Propuesta("Registro de artistas independientes y fondo de incentivo para la producción artística cultural independiente","Es necesario crear un Registro de Artistas Independientes para avanzar en su visibilización como trabajadores de la cultura, y en la democratización en el acceso al financiamiento y la promoción de sus iniciativas. Es por eso que debe estar atado a la creación de un Fondo de Incentivo de la producción artística y cultural independiente que garantice el financiamiento del estado, y el reconocimiento de su rol fundamental para la cultura y el arte de la ciudad de buenos aires.", temas.SOCIEDAD, 10, 0),
+
+Propuesta("Refundar las escuelas de arte","Con el objetivo de formar profesionales del arte que apunten al fortalecimiento de nuestras identidades culturales. Para ello es necesario crear nuevas escuelas de arte y que estas escuelas cuenten con ingreso irrestricto, becas, equipamiento e infraestructuras acordes a la formación profesional.", temas.SOCIEDAD, 10, 0),
+
+Propuesta("Recolección diferenciada de residuos","Implementar un sistema de conteiners para cada tipo de residuos y su recolección diferenciada. Separar los residuos en origen no es suficiente si terminan todos en los mismos rellenos, sin escalas.", temas.MEDIO_AMBIENTE, 10, 0),
+
+Propuesta("Reducir y reciclar residuos","Generar campañas efectivas que cuenten con el otorgamiento del material necesario para la separación en origen de residuos. Además de implementar plantas de separación a gran escala y plantas de reciclado para los residuos ya seleccionados", temas.MEDIO_AMBIENTE, 10, 0),
+
+Propuesta(" ","Urbanización de los asentamientos situados en la orilla de la Cuenca Matanza Riachuelo: Relocalizar a las familias que habiten el camino de sirga en zonas no contaminadas y no inundables, con servicios de agua, cloaca y electricidad.", temas.PLANEAMIENTO_URBANO, 10, 0),
+
+Propuesta("Recuperación de los espacios verdes concesionados indebidamente","Recuperar los espacios verdes en manos de capitales privados para el disfrute colectivo de estas áreas sin aranceles y en igualdad de oportunidades para todos los habitantes.", temas.PLANEAMIENTO_URBANO, 10, 0),
+
+
 ];
 }
