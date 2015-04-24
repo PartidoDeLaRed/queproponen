@@ -1036,7 +1036,7 @@ Propuesta("Crédito Hipotecario","En este sentido también en conjunto con el Ba
 
 //Humberto Tumini
 
-Propuesta("Daremos mas seguridad", "Capacitando mejor a la policía para que nos cuiden, no para que les tengamos miedos y cobren coimas. Construyendo un mapa del delito en la ciudad, con ayuda de los vecinos, para poder combatirlo en serio.", temas.SEGURIDAD ,4, 0)
+Propuesta("Daremos mas seguridad", "Capacitando mejor a la policía para que nos cuiden, no para que les tengamos miedos y cobren coimas. Construyendo un mapa del delito en la ciudad, con ayuda de los vecinos, para poder combatirlo en serio.", temas.SEGURIDAD ,4, 0),
 
 Propuesta("Salud pública de excelencia", "Es posible, en Rosario Hermes Binner lo hizo. Subiremos el presupuesto que también bajó Macri. Para poner en buenas condiciones los 14 hospitales y los centros de atención primaria, equipándolos y reabriendo salas y quirófanos. Cubriendo, además, el actual déficit de médicos y enfermeras. Desarrollaremos campañas de prevención hoy casi inexistentes y crearemos laboratorios públicos de medicamentos, para abaratar los mismos y abastecer a bajo costo a todo el sistema de salud estatal.", temas.SALUD ,4, 0),
 
@@ -1060,7 +1060,7 @@ Propuesta("Se cumplirá rigurosamente la ley del aborto no punible.", "Nosotros 
 
 Propuesta("Mejoraremos el transporte", "Con más subterráneos y mayores frecuencias, para que no viajemos como animales -si logramos subir- en los horarios pico. Terminaremos en un año la línea H hasta plaza Francia y la E hasta Retiro.", temas.TRANSPORTE ,4, 0),
 
-Propuesta("Garantizaremos que las calles de Buenos Aires estén limpias de basura", "Con un presupuesto que es el triple del que tiene Rosario, cómo no vamos a poder tenerla limpia.", temas.MEDIO_AMBIENTE ,4, 0),
+Propuesta("Garantizaremos que las calles de Buenos Aires estén limpias de basura", "Con un presupuesto que es el triple del que tiene Rosario, cómo no vamos a poder tenerla limpia.", temas.MEDIO_AMBIENTE ,4, 0)
 
 ];
 }

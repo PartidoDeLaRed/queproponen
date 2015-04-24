@@ -849,17 +849,60 @@ text-align: center;
 	cursor:pointer;
 }
 
-
-@media (max-width: 480px)  {
+@media (width: 320px)  {
+	*{
+		zoom:.965 !important;
+	}
 }
+
+@media (width: 360px)  {
+	*{
+		zoom:.975 !important;
+	}
+}
+
 @media (max-width: 650px)  {
+	
+	.tipo{
+		zomm:.7;
+	}
+	
 	.partidoContainer{
 		width:100%;
 		margin: 10px 0 !important;
 	}
 
 	.imagenPartido{
-		height: 145px;
+		height: 125px;
+		width:50%;
+	}
+	
+	.item.candidatos{
+		position: absolute;
+		right: 25%;
+		width: 25%;
+		top: 0;
+		height: 125px;
+		padding: 30px 0;
+		border-left: 1px solid #ccc;
+		font-size: 40px;
+	}
+	.item.candidatos:before{
+		bottom:25px
+	}
+
+	.partidoContainer .item.propuestas{
+		position: absolute;
+		right: 0;
+		width: 25%;
+		top: 0;
+		height: 125px;
+		padding: 30px 0;
+		border-left: 1px solid #ccc;
+		font-size: 40px;
+	}
+	.partidoContainer .item.propuestas:before{
+		bottom:25px
 	}
 
 	.candidatoContainer{
