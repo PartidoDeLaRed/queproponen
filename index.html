@@ -94,12 +94,12 @@ window.onload = load;
          var js, fjs = d.getElementsByTagName(s)[0];
          if (d.getElementById(id)) {return;}
          js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
+         js.src = "//connect.facebook.net/es_LA/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
     </script>
 
-    <div class="github-fork-ribbon-wrapper right">
+    <div class="github-fork-ribbon-wrapper left">
         <div class="github-fork-ribbon">
             <a href="https://github.com/DemocraciaEnRed/vos-que-propones">Fork me on GitHub</a>
         </div>
@@ -121,14 +121,27 @@ window.onload = load;
     </div>
 
 	<div class='footerContainer'>
-        <div style="max-width: 960px; margin:auto; text-align: center;">
-            <div class="logoPartido"></div>
-            <div style="display:inline-block; vertical-align:top;">
+        <div style="max-width: 960px; margin:auto; text-align: left;">
+        
+            <div style="display:inline-block; vertical-align:top; float: right;">
             	<a class="footerLinkGrande" href="http://partidodelared.org" target="_blank">Quienes somos <div>PartidoDelaRed.org</div></a>
-            	<a class="footerLinkGrande" href="http://democraciaenred.org" target="_blank" style="text-align: left;">Participá en la red <div>DemocraciaEnRed.org</div></a>
+            	<a class="footerLinkGrande" href="http://democraciaenred.org" target="_blank">Participá en la red <div>DemocraciaEnRed.org</div></a>
             </div>
+
+        	<div class="fb-page" data-href="https://www.facebook.com/PartidoDeLaRed" data-width="400" data-height="280" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/PartidoDeLaRed"><a href="https://www.facebook.com/PartidoDeLaRed">Partido de la Red</a></blockquote></div></div>
+        
         </div>
   	</div>
    <div style="display:none;" id="shortener"></div>
+
+	<div class="likeButtons">
+    	<div style="display:block;">   
+			<div class="fb-like" data-href="https://facebook.com/PartidoDeLaRed" data-width="150" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
+        </div>
+    	<div style="display:block;">   
+            <a href="https://twitter.com/PartidodelaRed" class="twitter-follow-button" data-show-count="false" data-lang="es" data-size="large" data-show-screen-name="false">Seguir a @PartidodelaRed</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>    
+        </div>
+	</div>
 </body>
 </html>

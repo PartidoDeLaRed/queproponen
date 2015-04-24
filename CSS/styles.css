@@ -750,7 +750,7 @@ text-align: center;
   text-align: center;
   min-height: 300px;
   width: 100%;
-  background: #444;
+  background: #006176;
   box-shadow: inset 0 2px 10px rgba(0,0,0,.5);
   padding: 40px 0;
 }
@@ -769,16 +769,14 @@ text-align: center;
 }
 
 .footerLinkGrande {
-  text-align: left;
-  line-height: 32px;
+  text-align: right;
+  line-height: 40px;
   text-decoration: none;
-  color: #169CBF;
-  font-size: 43px;
+  color: #eee;
+  font-size: 50px;
   font-weight: 300;
   display: block;
-  margin: 0 10px;
-  padding: 30px 0;
-  height: 120px;
+  height: 103px;
 }
 
 .footerLinkGrande div {
@@ -849,9 +847,56 @@ text-align: center;
 	cursor:pointer;
 }
 
+.likeButtons {
+  position: fixed;
+  top: 20px;
+  right: 0px;
+  z-index: 1000;
+  border: 1px solid #169CBF;
+  border-right: none;
+  width: 100px;
+  text-align: center;
+  padding: 100px 10px 10px 10px;
+  background-color: #B4E9F6;
+  transition:all 200ms;
+  opacity:1;
+}
+.likeButtons:before {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  content: '';
+  background-image: url(../IMG/logo_128.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+}
+
+.likeButtons > div {
+  margin: 10px 0;
+}
+
+
+@media (max-width: 1124px)  {
+	.likeButtons{
+		opacity:0 !important;
+		transition:all 200ms;
+	}
+
+	.footerContainer > div{
+		padding:0 30px;
+	}
+}
+
 @media (width: 320px)  {
 	*{
 		zoom:.965 !important;
+	}
+	.footerContainer{
+		zoom:.7 !important;
 	}
 }
 
@@ -1077,4 +1122,19 @@ text-align: center;
 		font-size: 30px;
 	}
 
+	.footerContainer > div > div{
+		float:none !important;
+	}
+
+	.footerContainer > div{
+		text-align:center !important;
+	}
+
+	.footerLinkGrande {
+	  text-align: center !important;
+	}
+}
+
+@media  (max-width: 680px){
+	
 }
