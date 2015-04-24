@@ -1,3 +1,9 @@
+function ToggleCategoriaBarra(barra){
+	var barra = $(barra);
+	ToggleCategoria(barra.find('.arrowButton')[0]);
+
+}
+
 function ToggleCategoria(boton)
 {
 	var contenedorPropuestas = $(boton).parents('.tipo').children('.contPropuestas');
