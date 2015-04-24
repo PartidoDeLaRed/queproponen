@@ -1034,5 +1034,33 @@ Propuesta("Villas y Asentamientos","Seguramente, también, vamos a coincidir en 
 Propuesta("Crédito Hipotecario","En este sentido también en conjunto con el Banco Ciudad, se desarrollará una política activa de acceso al crédito hipotecario para que los que actualmente alquilan y no tienen vivienda puedan acceder a su primera vivienda. Además, crearemos un programa para que el acceso de los jóvenes a una vivienda por medio del alquiler sea más sencillo y accesible.", temas.VIVIENDA ,6, 0),
 
 
+//Humberto Tumini
+
+Propuesta("Daremos mas seguridad", "Capacitando mejor a la policía para que nos cuiden, no para que les tengamos miedos y cobren coimas. Construyendo un mapa del delito en la ciudad, con ayuda de los vecinos, para poder combatirlo en serio.", temas.SEGURIDAD ,4, 0)
+
+Propuesta("Salud pública de excelencia", "Es posible, en Rosario Hermes Binner lo hizo. Subiremos el presupuesto que también bajó Macri. Para poner en buenas condiciones los 14 hospitales y los centros de atención primaria, equipándolos y reabriendo salas y quirófanos. Cubriendo, además, el actual déficit de médicos y enfermeras. Desarrollaremos campañas de prevención hoy casi inexistentes y crearemos laboratorios públicos de medicamentos, para abaratar los mismos y abastecer a bajo costo a todo el sistema de salud estatal.", temas.SALUD ,4, 0),
+
+Propuesta("Con mas y mejor educación pública", "Subiremos el presupuesto que bajó Macri. Para arreglar así las escuelas en mal estado, construir 100 nuevas cerca de donde viven los niños y no que tengan que viajar. Para cubrir todas las vacantes y evitar las deserciones. Para tener docentes bien pagos. El 80% de las escuelas serán de jornada completa y apoyaremos a las Cooperadoras escolares Pondremos boleto estudiantil para los universitarios.", temas.EDUCACION ,4, 0),
+
+Propuesta("Congelaremos el ABL e Ingresos Brutos por 2 años", "Macri aumentó ya el ABL el 700% e Ingresos Brutos casi el 600%, son impuestos que pagamos todos. Nosotros los congelaremos.", temas.ECONOMIA ,4, 0),
+
+Propuesta("Con viviendas posibles de comprar y facilidades para alquilar", "Daremos créditos del Banco Ciudad a 40 años, con una cuota no mayor al 30% de los ingresos. Construiremos 3 veces mas viviendas populares. Habrá garantía del gobierno para alquilar y menores costos de inmobiliaria y depósito. No aceptaremos viviendas ociosas sin justa razón, les cobraremos impuestos.", temas. VIVIENDA ,4, 0),
+
+Propuesta("En cuatro años todos los barrios carenciados de la Ciudad tendrán cloacas, luz, gas y agua", "Las promesas que hizo Macri, bien gracias. Su gestión usó sólo un 46 por ciento del presupuesto destinado a la urbanización de dichos barrios entre 2008 y 2013.", temas.PLANEAMIENTO_URBANO ,4, 0),
+
+Propuesta("Cuidaremos el medio ambiente", "No permitiremos la construcción de shoppings y torres de departamentos en espacios verdes.", temas. PLANEAMIENTO_URBANO ,4, 0),
+
+Propuesta("Cuidaremos a los jóvenes", "Para ellos habrá educación, deportes, trabajo digno, cultura, libertades y derechos, no marginación. Ni malos tratos y persecuciones policiales por estar en la esquina o fumar un porro", temas.SOCIEDAD ,4, 0),
+
+Propuesta("Promoveremos la despenalización del consumo de marihuana, al igual que en el Uruguay", "Es un problema de salud su consumo, como el de alcohol o tabaco, no de seguridad.", temas.SOCIEDAD ,4, 0),
+
+Propuesta("Defenderemos a las mujeres y sus derechos", "Jerarquizando su problemática en el gobierno, elevando su Dirección a rango de Secretaría. Luchando en serio contra la violencia de género. Garantizando igualdad laboral y social con los hombres.", temas.DERECHOS_HUMANOS ,4, 0),
+
+Propuesta("Se cumplirá rigurosamente la ley del aborto no punible.", "Nosotros la haremos cumplir e impulsaremos en el Congreso de la Nación el proyecto de ley para que el aborto sea legal, gratuito y seguro, que ya ha sido presentado.", temas.DERECHOS_HUMANOS ,4, 0),
+
+Propuesta("Mejoraremos el transporte", "Con más subterráneos y mayores frecuencias, para que no viajemos como animales -si logramos subir- en los horarios pico. Terminaremos en un año la línea H hasta plaza Francia y la E hasta Retiro.", temas.TRANSPORTE ,4, 0),
+
+Propuesta("Garantizaremos que las calles de Buenos Aires estén limpias de basura", "Con un presupuesto que es el triple del que tiene Rosario, cómo no vamos a poder tenerla limpia.", temas.MEDIO_AMBIENTE ,4, 0),
+
 ];
 }
