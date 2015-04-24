@@ -849,7 +849,7 @@ text-align: center;
 
 .likeButtons {
   position: fixed;
-  top: 20px;
+  top: 350px;
   right: 0px;
   z-index: 1000;
   border: 1px solid #169CBF;
