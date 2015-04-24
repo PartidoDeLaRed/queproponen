@@ -16,7 +16,7 @@ function MostrarContenedor(tipo)
 			break;
 		case contenedores.PROPUESTAS:
 			template = "<div class='propuestasContainer'>"+
-					"<div class='title' onclick='javascript:ToggleCategoriaBarra(this)'>Propuestas</div>"+
+					"<div class='title'>Propuestas</div>"+
 					"<div class='tipo'>"+
 						"<div class='title' onclick='javascript:ToggleCategoriaBarra(this)' ><img src='IMG/temas/salud.png' height='50' width='50' /><span style='color:"+temas.SALUD.color+";'>Salud</span><div class='arrowButton down' onclick='javascript:ToggleCategoria(this)'></div><span class='quantityList'>0</span></div>"+
 					"<div id='salud' class='contPropuestas'></div> </div>"+
