@@ -50,7 +50,10 @@ $(document).ready(function(e) {
 	};
 
 	CargarAbout();
-	
+	$('.aboutContainer').css('margin-left', '-'+$('.aboutContainer').outerWidth() +'px');
+	$(window).on('resize', function(){
+		$('.aboutContainer').css('margin-left', '-'+$('.aboutContainer').outerWidth() +'px');
+    });
 });
 
 
