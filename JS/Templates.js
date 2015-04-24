@@ -179,7 +179,7 @@ function HeaderCandidato(cand)
 
 	var tweet = document.createElement('a');
 	$(tweet).addClass('twitterButton');
-	$(tweet).html('Compartílo en twitter');
+	$(tweet).html('Compartilo en twitter');
 	$(tweet).click(function(e) {
 		makeShort(container, window.location.origin + window.location.pathname + '#candidato/'+cand.nombre.split(' ').join('-'), function(){
 			window.open('https://twitter.com/intent/tweet?'+
@@ -191,7 +191,7 @@ function HeaderCandidato(cand)
 	
 	var facebook = document.createElement('a');
 	$(facebook).addClass('facebookButton');
-	$(facebook).html('Compartílo en facebook');
+	$(facebook).html('Compartilo en facebook');
 	$(facebook).click(function(e) {
 		window.open(
 		'http://www.facebook.com/dialog/feed?app_id=825676227513877' +
