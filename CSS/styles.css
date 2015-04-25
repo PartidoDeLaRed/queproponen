@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 *{
@@ -335,7 +335,6 @@ text-align: center;
 	display: inline-block;
 	cursor:pointer;
 	opacity:.8;
-	overflow: hidden;
 	transition:all 200ms ease-out;
 }
 .candidatoContainer:hover{
@@ -437,6 +436,76 @@ text-align: center;
   float: left;
   margin: 13px 0;
   font-size: 20px;
+}
+
+.numeroNoPropuestas{
+    color:#F00 !important;
+}
+    .numeroNoPropuestas:after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        BOTTOM: 0;
+        content: 'El candidato no tiene propuestas visibles en ninguno de sus canales oficiales online';
+        background: #b44;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        padding: 3px;
+        z-index: 1000;
+    }
+
+    .item.propuestas_Header.numeroNoPropuestas:after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        BOTTOM: 0;
+        content: 'No tiene propuestas visibles en ninguno de sus canales oficiales online';
+        background: #b44;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        padding: 3px;
+        z-index: 1000;
+        line-height: 19px;
+        line-height: 24px !important;
+    }
+
+    .item.propuestas.numeroNoPropuestas:after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        BOTTOM: 0;
+        content: 'El candidato no tiene propuestas visibles en ninguno de sus canales oficiales online';
+        background: #b44;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        padding: 3px;
+        z-index: 1000;
+    }
+
+    .partidoContainer .item.propuestas.numeroNoPropuestas:after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        BOTTOM: 0;
+        content: 'No tiene propuestas visibles en ninguno de sus canales oficiales online';
+        background: #b44;
+        color: #fff;
+        font-size: 13px;
+        text-align: center;
+        padding: 3px;
+        z-index: 1000;
+        line-height: 11px !important;
+    }
+
+.candidatoContainer:hover{
+    z-index:1000;
 }
 
 .listaCandidato{
@@ -796,7 +865,7 @@ text-align: center;
   border-radius: 30px;
   box-shadow: 0 1px 5px rgba(0,0,0,.4);
   margin: 10px;
-  z-index: 1000;
+  z-index: 1001;
   cursor: pointer;
 }
 
@@ -811,7 +880,7 @@ text-align: center;
   text-align: justify;
   color: #eee;
   border-radius: 0 5px 5px 0;
-  z-index:999;
+  z-index:1000;
   margin: 0 0 0 -1000px;
   cursor:default;
 }
@@ -850,7 +919,7 @@ text-align: center;
 .likeButtons {
   position: fixed;
   top: 350px;
-  right: 0px;
+  left: 0px;
   z-index: 1000;
   border: 1px solid #169CBF;
   border-right: none;
@@ -1017,8 +1086,9 @@ text-align: center;
 	
 	.nombre_Header{
 		height: 150px;
-		position: initial;
-		text-align: center !important;
+        position: relative;
+        left: 0;
+  		text-align: center !important;
 	}
 	
 	.partidoContainer .twitterButton{
@@ -1040,19 +1110,20 @@ text-align: center;
 	}
 	
 	.item.candidatos_Header{
-		position: initial;
-		display: inline-block;
-		width: 50%;
-		line-height: 40px;
-		padding: 10px 0 0 0;
+        position: relative;
+        right: 0;
+        display: inline-block;
+        width: 50%;
+        line-height: 40px;
+        padding: 10px 0 0 0;
 	}
 
 	.item.propuestas_Header{
-		position: initial;
-		display: inline-block;
-		width: 50%;
-		line-height: 40px;
-		padding: 10px 0 0 0;
+        position: relative;
+        display: inline-block;
+        width: 50%;
+        line-height: 69px;
+        padding: 20px 0 0 0;
 	}
 
 	.item.candidatos_Header::after {
@@ -1061,7 +1132,7 @@ text-align: center;
 	}
 	
 	.item.propuestas_Header::after {
-		position: initial;
+		position: relative;
 		display: block;
 	}
 	

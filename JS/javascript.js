@@ -49,7 +49,7 @@ function MostrarPartido(modo, part)
 			cantPropuestas = propuestas.filter(function(a){return a.partido == part.codigo}).length;
 			$(propuestasDIV).html(cantPropuestas);
 			if(cantPropuestas == 0)
-				$(propuestasDIV).css('color','#f11');
+			    $(propuestasDIV).addClass('numeroNoPropuestas');
 			$(container).append(propuestasDIV);
 
 			$('.partidosContainer').append(container);
@@ -128,7 +128,7 @@ function MostrarCandidato(modo, cand)
 			$(propuestasDIV).addClass('item').addClass('propuestas');
 			$(propuestasDIV).html(propuestas.filter(function(a){return a.candidato == cand.codigo && a.partido == cand.partido}).length);
 			if(propuestas.filter(function(a){return a.candidato == cand.codigo && a.partido == cand.partido}).length == 0)
-				$(propuestasDIV).css('color','#f11');
+				$(propuestasDIV).addClass('numeroNoPropuestas');
 			$(container).append(propuestasDIV);
 		}break;
 		case 1:
