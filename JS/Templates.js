@@ -67,7 +67,7 @@ function CompartirInicio(tipo)
 	  'text='+ '%23yvosquepropones las propuestas de todos los candidatos para CABA en un solo lugar queproponen.com.ar', 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 	else
 	  window.open('http://www.facebook.com/dialog/feed?app_id=825676227513877' +
-        '&link=http://quepropones.com.ar' +
+        '&link=http://queproponen.com.ar' +
         '&picture=http:%2F%2Fqueproponen.com.ar%2Fvosquepropones%2FIMG%2FshareLogo.png' +
         '&name=' + 'Todas las propuestas de los candidatos en un solo lugar' +
         '&caption=' + 'via queproponen.com.ar - Partido de la Red' +
