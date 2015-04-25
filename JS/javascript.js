@@ -281,14 +281,17 @@ function MostrarPropuesta(modo, prop)
 	
 				var tweet = document.createElement('a');
 				$(tweet).addClass('twitterButton');
+				$(tweet).attr('target', 'popup');
 				$(tweet).html('Hablá con '+candidato.nombre+' sobre esto');
 				
 				$(tweet).click(function(e) {
-					makeShort(container, window.location.origin + window.location.pathname + '#candidato/'+candidato.nombre.split(' ').join('-')+'/#propuesta/'+'p'+id, function(){
-						window.open('https://twitter.com/intent/tweet?'+
-						'related=PartidodelaRed&'+
-						'text='+ 'Hola ' + candidato.twitter + " quiero decirte sobre tu propuesta "+container.dataset.shorturl+" %23yvosquepropones", 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
-					});
+					//makeShort(container, window.location.origin + window.location.pathname + '#candidato/'+candidato.nombre.split(' ').join('-')+'/propuesta/'+'p'+id, function(){
+					window.open('https://twitter.com/share?'+
+					'url=http%3A%2F%2Fqueproponen.com.ar%2F'+'%23candidato%2F'+candidato.nombre.split(' ').join('-')+'%2Fpropuesta%2F'+id+'&'+
+					'related=PartidodelaRed&'+
+					'hashtags=yvosquepropones&'+
+					'text='+ 'Hola ' + candidato.twitter + " esta propuesta me parece", 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+					//});
 				});
 				$(container).append(tweet);
 				
@@ -324,7 +327,7 @@ function GenerarGrafico()
 		$(chart).attr('id','chart').css('width','100%').css('height','300');
 		$(chart).insertAfter($('.propuestasContainer').children('.title').get(0));
 		var data = {
-			labels: ["Salud", "Vivienda", "Sociedad", "Institucional", "Planeamiento Urbano", "Seguridad", "Medio Ambiente", "Economia", "Internacional", "Educacion", "Transporte", "Derechos Humanos"],
+			labels: ["Salud", "Vivienda", "Sociedad", "Institucional", "P. Urbano", "Seguridad", "M. Ambiente", "Economia", "Internacional", "Educacion", "Transporte", "D. Humanos"],
 			datasets: [
 				{
 					label: "",
@@ -399,11 +402,12 @@ function NoPropuesta(cosa)
 			$(tweet).addClass('twitterButton');
 			$(tweet).html('Escribile a '+a.nombre);
 			$(tweet).click(function(e) {
-				makeShort(cont, window.location.origin + window.location.pathname + '#candidato/'+a.nombre.split(' ').join('-'), function(){
-					window.open('https://twitter.com/intent/tweet?'+
-						'related=PartidodelaRed&'+
-						'text=' + 'Hola ' + a.twitter + ' %23yvosquepropones para la Ciudad sobre ' + $(e.target).parents('.tipo').children('.title').children('span').html() +' '+ cont.dataset.shorturl, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
-				});
+				//makeShort(cont, window.location.origin + window.location.pathname + '#candidato/'+a.nombre.split(' ').join('-'), function(){
+				window.open('https://twitter.com/intent/tweet?'+
+				'url=http%3A%2F%2Fqueproponen.com.ar%2F'+'%23candidato%2F'+a.nombre.split(' ').join('-')+'&'+
+				'related=PartidodelaRed&'+
+				'text=' + 'Hola ' + a.twitter + ' %23yvosquepropones para la Ciudad sobre ' + $(e.target).parents('.tipo').children('.title').children('span').html() +' '+ cont.dataset.shorturl, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+				//});
 			});
 			$(tweetContainer).append(tweet);
 		});
@@ -424,11 +428,12 @@ function NoPropuesta(cosa)
 		$(tweet).addClass('twitterButton');
 		$(tweet).html('Preguntale a '+cosa.nombre+' que piensa sobre esto');
 			$(tweet).click(function(e) {
-				makeShort(cont, window.location.origin + window.location.pathname + '#candidato/'+cosa.nombre.split(' ').join('-'), function(){
-					window.open('https://twitter.com/intent/tweet?'+
-						'related=PartidodelaRed&'+
-						'text=' + 'Hola ' + cosa.twitter + ' %23yvosquepropones para la Ciudad sobre '+$(e.target).parents('.tipo').children('.title').children('span').html() +' '+ cont.dataset.shorturl, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
-				});
+				//makeShort(cont, window.location.origin + window.location.pathname + '#candidato/'+cosa.nombre.split(' ').join('-'), function(){
+				window.open('https://twitter.com/intent/tweet?'+
+				'url=http%3A%2F%2Fqueproponen.com.ar%2F'+'%23candidato%2F'+cosa.nombre.split(' ').join('-')+'&'+
+				'related=PartidodelaRed&'+
+				'text=' + 'Hola ' + cosa.twitter + ' %23yvosquepropones para la Ciudad sobre '+$(e.target).parents('.tipo').children('.title').children('span').html() +' '+ cont.dataset.shorturl, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+				//});
 			});
 		$(tweetContainer).append(tweet);
 		$(cont).append(tweetContainer);
@@ -452,11 +457,6 @@ function CambiarURL(tipo, cosa)
 		{
 			title = '¿Que proponen? - ' +cosa.nombre + ' - Partido de la Red';
 			url = window.location.origin + window.location.pathname + '#candidato/'+(cosa.nombre.split(' ').join('-'));
-		}break;
-		case 2:
-		{
-			title = '¿Que proponen? - ' +cosa.titulo + ' - Partido de la Red';
-			url = window.location.origin + window.location.pathname + '#propuesta/'+(cosa.titulo.split(' ').join('-'));
 		}break;
 		case 3:
 		{
@@ -519,10 +519,10 @@ function CargarSeccion()
 			if(lista.length > 0)
 			{
 				MostrarCandidato(1, lista[0]);
-				if(secciones.indexOf('#propuesta') != -1)
+				if(secciones.indexOf('propuesta') != -1)
 				{
 					var nombrePropuesta = secciones[3];
-					setTimeout(function(){hacerScrollID(nombrePropuesta)}, 1000);
+					setTimeout(function(){hacerScrollID('p'+nombrePropuesta)}, 1000);
 				}
 				return true;
 			}
@@ -532,8 +532,8 @@ function CargarSeccion()
 }
 function hacerScrollID(elemento)
 {
-	$('html, body').animate({ scrollTop: ($('#'+elemento).offset().top - 200) }, 500);
-	$('#'+elemento).effect("highlight", {}, 3000);
+	$('html, body').animate({ scrollTop: ($('#'+elemento).offset().top - 200) }, 1000);
+	$('#'+elemento).effect("highlight", {},5000);
 }
 
 function AbrirPropuestas()
