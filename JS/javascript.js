@@ -406,7 +406,7 @@ function NoPropuesta(cosa)
 				window.open('https://twitter.com/intent/tweet?'+
 				'url=http%3A%2F%2Fqueproponen.com.ar%2F'+'%23candidato%2F'+a.nombre.split(' ').join('-')+'&'+
 				'related=PartidodelaRed&'+
-				'text=' + 'Hola ' + a.twitter + ' %23yvosquepropones para la Ciudad sobre ' + $(e.target).parents('.tipo').children('.title').children('span').html() +' '+ cont.dataset.shorturl, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+				'text=' + 'Hola ' + a.twitter + ' %23yvosquepropones para la Ciudad sobre ' + $(e.target).parents('.tipo').children('.title').children('span').html(), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 				//});
 			});
 			$(tweetContainer).append(tweet);
@@ -432,7 +432,7 @@ function NoPropuesta(cosa)
 				window.open('https://twitter.com/intent/tweet?'+
 				'url=http%3A%2F%2Fqueproponen.com.ar%2F'+'%23candidato%2F'+cosa.nombre.split(' ').join('-')+'&'+
 				'related=PartidodelaRed&'+
-				'text=' + 'Hola ' + cosa.twitter + ' %23yvosquepropones para la Ciudad sobre '+$(e.target).parents('.tipo').children('.title').children('span').html() +' '+ cont.dataset.shorturl, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+				'text=' + 'Hola ' + cosa.twitter + ' %23yvosquepropones para la Ciudad sobre '+$(e.target).parents('.tipo').children('.title').children('span').html(), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 				//});
 			});
 		$(tweetContainer).append(tweet);
@@ -541,4 +541,9 @@ function AbrirPropuestas()
 	$('.tipo').children('.title').children('div').each(function(index, element) {
 		ToggleCategoria(element);
     });
+}
+
+function ClickAfiliacion()
+{
+	ga('send', 'pageview', { 'page': location.pathname + location.search  + "#Afiliacion" });
 }

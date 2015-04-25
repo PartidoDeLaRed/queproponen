@@ -103,7 +103,7 @@ function HeaderPartido(part)
 		window.open('https://twitter.com/intent/tweet?'+
 		'url=http%3A%2F%2Fqueproponen.com.ar%2F'+'%23partido%2F'+part.nombre.split(' ').join('-')+'&'+
 		'related=PartidodelaRed&'+
-		'text='+ '%23yvosquepropones Mirá las propuestas para CABA de ' + part.nombre +' '+container.dataset.shorturl, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+		'text='+ '%23yvosquepropones Mirá las propuestas para CABA de ' + part.nombre, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 		//});
 	});
 	$(nombre).append(tweet);
@@ -186,7 +186,7 @@ function HeaderCandidato(cand)
 		window.open('https://twitter.com/intent/tweet?'+
 		'url=http%3A%2F%2Fqueproponen.com.ar%2F'+'%23candidato%2F'+cand.nombre.split(' ').join('-')+'&'+
 		'related=PartidodelaRed&'+
-		'text='+ '%23yvosquepropones Mirá las propuestas para CABA de ' + cand.nombre +' '+container.dataset.shorturl, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+		'text='+ '%23yvosquepropones Mirá las propuestas para CABA de ' + cand.nombre, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 		//});
 	});
 	$(container).append(tweet);
