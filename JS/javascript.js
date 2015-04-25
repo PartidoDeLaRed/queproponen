@@ -524,6 +524,11 @@ function CargarSeccion()
 					var nombrePropuesta = secciones[3];
 					setTimeout(function(){hacerScrollID('p'+nombrePropuesta)}, 1000);
 				}
+				else if(secciones.indexOf('#propuesta') != -1)
+				{
+					var nombrePropuesta = secciones[3];
+					setTimeout(function(){hacerScrollID(nombrePropuesta)}, 1000);
+				}
 				return true;
 			}
 		}
