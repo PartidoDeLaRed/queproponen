@@ -267,9 +267,9 @@ Propuesta("Prohibición de la utilización de la publicdad oficial como propagan
 Propuesta("Sistema para solicitar información pública en formato abierto y accesible", "", temas.SOCIEDAD, 2, 0),
 Propuesta("Incentivos y protección para los denunciantes de corrupción", "", temas.INSTITUCIONAL, 2, 0),
 Propuesta("Modificación de las normas para reducir la discrecionalidad en las compras y contrataciones", "", temas.INSTITUCIONAL, 2, 0),
-Propuesta("Presupuesto", "Aumentar y ejecutar la totalidad del presupuesto destinado a vivienda.", temas.PLANEAMIENTO_URBANO, 2, 0),
-Propuesta("Préstamos", "Subsidiar la tasa de interés para entregar 3800 préstamos al año con una tasa de un dígito. Reducir a la mitad el ingreso requerido para acceder al préstamo privilegiando la primera casa.", temas.ECONOMIA, 2, 0),
-Propuesta("Urbanización", "Priorizar la integración en la urbanización duplicando la participación del gasto en vivienda.", temas.PLANEAMIENTO_URBANO, 2, 0),
+Propuesta("Presupuesto", "Aumentar y ejecutar la totalidad del presupuesto destinado a vivienda.", temas.VIVIENDA, 2, 0),
+Propuesta("Préstamos", "Subsidiar la tasa de interés para entregar 3800 préstamos al año con una tasa de un dígito. Reducir a la mitad el ingreso requerido para acceder al préstamo privilegiando la primera casa.", temas.VIVIENDA, 2, 0),
+Propuesta("Urbanización", "Priorizar la integración en la urbanización duplicando la participación del gasto en vivienda.", temas.VIVIENDA, 2, 0),
 
 //Graciela Ocaña
 Propuesta("Instalación de cámaras de seguridad en todas las comunas", "", temas.SEGURIDAD, 2, 1),
