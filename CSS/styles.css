@@ -909,8 +909,8 @@ text-align: center;
 }
 
 .aboutContainer:before {
-	width: 128px;
-	height: 128px;
+	width: 80px;
+	height: 80px;
 	display:block;
 	margin: 0 auto;
 	margin-bottom: 30px;
@@ -1007,7 +1007,24 @@ text-align: center;
 	}
 
 	.headerContainer{
-		height:150px !important;
+		height: 235px !important;
+		background-position: center -200px !important;
+	}
+	.aboutContainer {
+	  padding: 45px 35px 35px 35px !important;
+	}
+}
+
+
+@media (width: 568px)  {
+	.aboutContainer {
+	  padding: 45px 35px 35px 35px !important;
+	}
+}
+
+@media (width: 480px)  {
+	.aboutContainer {
+	  padding: 45px 35px 35px 35px !important;
 	}
 }
 
@@ -1167,7 +1184,7 @@ text-align: center;
         right: 0;
         display: inline-block;
         width: 50%;
-        line-height: 40px;
+        line-height: 69px;
         padding: 10px 0 0 0;
 	}
 
@@ -1176,7 +1193,7 @@ text-align: center;
         display: inline-block;
         width: 50%;
         line-height: 69px;
-        padding: 20px 0 0 0;
+        padding: 10px 0 0 0;
 	}
 
 	.item.candidatos_Header::after {
@@ -1234,11 +1251,10 @@ text-align: center;
 	.aboutContainer{
 		width: 100%;
 		font-size: 18px;
-		padding: 35px;
+		padding: 85px 35px 35px 35px;
 	}
 	.aboutContainer:before{
-		width:80px;
-		height:80px;
+		display:none;
 	}
 	
 	.contentContainer .title{
