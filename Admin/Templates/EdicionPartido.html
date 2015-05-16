@@ -1,0 +1,26 @@
+<div class="pn-wraper">
+    <div class="pn-container">
+ 		<div class="pn-title">Edición de Partido</div>
+    	<form name="formEdicionPartido" id="formEdicionPartido" onSubmit="return false;">
+        	<div>
+                <label class="labelInput">Nombre</label><input id="name-input" name="name" class="textInput" type="text" placeholder="nombre del partido" required="required"/>
+            </div>
+            <div class="input-color">
+                <label class="labelInput">Color</label><input id="color-input" name="color" class="color" value="#000000" />
+            </div>
+            <div>
+                <label class="labelInput">Imagen</label><input id="image-input" name="image" type="file" placeholder="imagen del partido" required="required"/>
+            </div>
+            <button id="submit" type="submit">Agregar Partido</button>
+        </form>
+ 		<div class="pn-closeButton" onclick="javascript:CerrarPanel()"></div>
+    </div>
+</div>
+
+<script>
+
+$( "#formEdicionPartido" ).submit(function( event ) {
+	event.preventDefault();
+	EdicionPartido();
+});
+</script>

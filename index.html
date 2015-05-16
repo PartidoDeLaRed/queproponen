@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, user-scalable=no">
 
-<meta name="description" pcontent="Conocé todas las propuestas de los candidatos a Jefe de Gobierno por CABA 2015" />
+<meta name="description" pcontent="Conocé todas las propuestas de los candidatos a Jefe de Gobierno en diferentes ciudades de Argentina" />
 <meta name="keywords" pcontent="propuestas, candidatos, partidos, frentes, elecciones, 2015, jefe de gobierno, ciudad de buenos aires, caba, partido de la red, pdr" />
 
 <link rel="icon" type="image/png" href="http://queproponen.com.ar/IMG/icon.png">
@@ -12,58 +12,34 @@
 <meta property="og:title" content="¿Qué proponen? - Partido de la Red"/>
 <meta property="og:url" content="http://queproponen.com.ar"/>
 <meta property="og:site_name" content="¿Qué proponen? - Partido de la Red"/>
-<meta property="og:description" content="Conocé todas las propuestas de los candidatos a Jefe de Gobierno por CABA"/>
+<meta property="og:description" content="Conocé todas las propuestas de los candidatos a Jefe de Gobierno de varias ciudades de Argentina"/>
 <title>¿Que Proponen? - Partido de la Red</title>
 
 <link href="CSS/styles.css" rel="stylesheet" type="text/css" />
 
-<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css" />
-<script src="JS/Utilities.js"></script>
-<script src="JS/Clases.js"></script>
-<script src="JS/Templates.js"></script>
-<script src="JS/Partidos.js"></script>
-<script src="JS/Candidatos.js"></script>
-<script src="JS/Propuestas.js"></script>
-<script src="JS/javascript.js"></script>
-<script src="JS/Chart.js"></script>
-<script src="JS/Shortener.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
 <script src="https://apis.google.com/js/client.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <script language="javascript" type="application/javascript">
 if (window.location.hash == 'close.html') window.close();
 
 $(document).ready(function(e) {
-	CargarPartidos();
-	CargarCandidatos();
-	CargarPropuestas();
-	partidos = shuffle(partidos);
-	candidatos = shuffle(candidatos);
-	CargarSeccion();
 
-	window.onhashchange =  function (event, data) {
-		CargarSeccion();
-	};
-
-	CargarAbout();
-	$('.aboutContainer').css('margin-left', '-'+$('.aboutContainer').outerWidth() +'px');
-	$(window).on('resize', function(){
-		$('.aboutContainer').css('margin-left', '-'+$('.aboutContainer').outerWidth() +'px');
-    });
+	if (navigator.geolocation) 
+	{
+		navigator.geolocation.getCurrentPosition(function(pos){
+			$.ajax({
+				method: "GET",
+				url: 'http://maps.googleapis.com/maps/api/geocode/json?latlng='+pos.coords.latitude+','+pos.coords.longitude+'&sensor=true',
+				success: function(data){
+					if(data.results[2].address_components[0].short_name == 'CF')
+						$('.bannerAfiliacion').slideDown('fast');
+				}
+			})
+		});
+	}
 });
-
-
-function load()
-{
-    //Get your own Browser API Key from  https://code.google.com/apis/console/
-    gapi.client.setApiKey('AIzaSyBq8cgwmzcjrwp2tRKFVgV8_IY6PuQHIhU');
-    gapi.client.load('urlshortener', 'v1',function(){document.getElementById("shortener").innerHTML="";});
-}
-window.onload = load;
 
 </script>
 
@@ -99,25 +75,20 @@ window.onload = load;
        }(document, 'script', 'facebook-jssdk'));
     </script>
 
-    <div class="github-fork-ribbon-wrapper right">
-        <div class="github-fork-ribbon">
-            <a href="https://github.com/DemocraciaEnRed/vos-que-propones">Fork me on GitHub</a>
-        </div>
+	<div class="headerContainer">
+    	<div class="bannerAfiliacion" style="display:none;">Si querés que el Partido de la Red sea una opción en 2017, <a href="http://4milfundadores.com" target="_blank">Afiliate!</a></div>
+        <div class="widthLimiter">
+	        <div class="logo"></div>
+			<div class="title">¿Qué proponen?</div>
+            <nav class="menu">
+            </nav>
+  		</div>
     </div>
-    
-	<div class="headerContainer" onclick="javascript:CargaInicial()">
-		<div class="bannerAfiliacion">Si querés que el Partido de la Red sea una opción en 2017, <a href="http://4milfundadores.com/" onclick="javascript:ClickAfiliacion()" target="_blank">¡Afiliate!</a></div>
-    </div>
-
-	<div class="searchContainer">
-    	<div class="searchBox">
-            <input class="searchField" type="text" placeholder="Buscá partidos políticos, candidatos o propuestas..."/>
-            <div class="searchButton"></div>
-        </div>
-    </div>
-
-	<div id="contenido" class="mainContainer">
+	
+    <div id="contenido" class="mainContainer">
     	<div class="contentContainer">
+        	<div class="title">Muy Pronto!</div>
+        	<div class="subtitle">Todas las propuestas de los candidatos a Jefe de Gobierno</div>
         </div>
     </div>
 
@@ -133,7 +104,6 @@ window.onload = load;
         
         </div>
   	</div>
-   <div style="display:none;" id="shortener"></div>
 
 	<div class="likeButtons">
     	<div style="display:block;">   

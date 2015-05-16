@@ -1,0 +1,53 @@
+<div class="pn-wraper">
+    <div class="pn-container">
+ 		<div class="pn-title">Edición de Propuesta</div>
+    	<form name="formEdicionPropuesta" id="formEdicionPropuesta" onSubmit="return false;">
+            <div>
+                <label class="labelInput">Candidato</label><select id="candidato-input" name="candidato" class="selectInput" required="required"/>
+            </div>
+            <div>
+                <label class="labelInput">Categoría</label><select id="categoria-input" name="categoria" class="selectInput" required="required"/>
+            </div>
+        	<div>
+                <input id="titulo-input" name="name" class="textInput" type="text" placeholder="Título de la propuesta" required="required" style="width:100%;"/>
+            </div>
+        	<div>
+                <textarea id="texto-input" name="texto" class="textAreaInput" cols="100%" rows="5" placeholder="Desarrollo de la propuesta (opcional)"/>
+            </div>
+        	<div style="text-align:left;">
+                <label style="font-size:20px; margin:0;"><input type="checkbox" id="mas-input" name="mas" class="checkInput" checked />Agregar otra propuesta</label>
+            </div>
+            <button id="submit" type="submit">Agregar Propuesta</button>
+        </form>
+ 		<div class="pn-closeButton" onclick="javascript:CerrarPanel()"></div>
+    </div>
+</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script>
+$(document).ready(function(e) {
+	partidos.forEach(function(part)
+	{
+		part.candidatos.forEach(function(cand)
+		{
+			var option = document.createElement('option');
+			$(option).attr('id', cand.codigo);
+			$(option).attr('value', cand.codigo);
+			$(option).html(cand.nombre);
+			$('#candidato-input').append(option);
+		});
+	});
+	categorias.forEach(function(cat)
+	{
+		var option = document.createElement('option');
+		$(option).attr('id', cat.codigo);
+		$(option).attr('value', cat.codigo);
+		$(option).html(cat.nombre);
+		$('#categoria-input').append(option);
+	});
+	
+});
+$( "#formEdicionPropuesta" ).submit(function( event ) {
+	event.preventDefault();
+	EdicionPropuesta();
+});
+</script>

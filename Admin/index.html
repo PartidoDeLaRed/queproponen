@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no">
+
+<meta name="description" pcontent="Conocé todas las propuestas de los candidatos a Jefe de Gobierno por CABA 2015" />
+<meta name="keywords" pcontent="propuestas, candidatos, partidos, frentes, elecciones, 2015, jefe de gobierno, ciudad de buenos aires, caba, partido de la red, pdr" />
+
+<link rel="icon" type="image/png" href="http://queproponen.com.ar/IMG/icon.png">
+<meta property="og:image" content="http://queproponen.com.ar/IMG/backgroundHeader.jpg" />
+<meta property="og:title" content="¿Qué proponen? - Partido de la Red"/>
+<meta property="og:url" content="http://queproponen.com.ar"/>
+<meta property="og:site_name" content="¿Qué proponen? - Partido de la Red"/>
+<meta property="og:description" content="Conocé todas las propuestas de los candidatos a Jefe de Gobierno por CABA"/>
+<title>¿Que Proponen? - Partido de la Red</title>
+
+<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
+<link href="CSS/switch.css" rel="stylesheet" type="text/css" />
+<link href="CSS/login.css" rel="stylesheet" type="text/css" />
+<link href="CSS/panels.css" rel="stylesheet" type="text/css" />
+<link href="CSS/loading.css" rel="stylesheet" type="text/css" />
+<link href="CSS/admin.css" rel="stylesheet" type="text/css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="JS/javascript.js"></script>
+<script src="JS/admin.js"></script>
+<script src="JS/admin_partidos.js"></script>
+<script src="JS/admin_candidatos.js"></script>
+<script src="JS/admin_propuestas.js"></script>
+<script src="JS/Clases.js"></script>
+<script src="JS/Partidos.js"></script>
+<script src="JS/Candidatos.js"></script>
+<script src="JS/Propuestas.js"></script>
+<script src="JS/Categorias.js"></script>
+<script src="JS/Templates.js"></script>
+<script src="JS/Chart.js"></script>
+<script src="JS/Cookies.js"></script>
+<script src="JS/Utilities.js"></script>
+<script src="JS/jscolor.js"></script>
+<script src="JS/checkbox.min.js"></script>
+
+<link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+
+<script language="javascript" type="application/javascript">
+if (window.location.hash == 'close.html') window.close();
+
+$(document).ready(function(e) {
+	if(leerCookie('login') == null)
+	{
+		CargarLogin();
+		$('#paneles').fadeIn('fast');	
+	}
+	else
+	{
+		VerifyLogin();
+	}
+	$(window).scroll(function() {
+		var a = $(window).scrollTop();
+		var b = $('.propuestasContainer').offset().top - 100;
+        if(a >= b)
+		{
+			if($('.candidatosContainerFixed').css('margin-top') == '-126px')
+				$('.candidatosContainerFixed').animate({marginTop:'0px'}, 100);
+		}
+		else
+		{
+			if($('.candidatosContainerFixed').css('margin-top') == '0px')
+				$('.candidatosContainerFixed').animate({marginTop:'-126px'}, 100);
+		}
+    });
+});
+
+</script>
+
+</head>
+
+<body>
+	<div class="headerContainer">
+        <div class="widthLimiter">
+	        <div class="logo"></div>
+			<div class="title" onclick="javascript:CargaInicial(false)">¿Qué proponen?</div>
+            <nav class="menu">
+            </nav>
+  		</div>
+    </div>
+	
+    <div id="contenido" class="mainContainer">
+    	<div class="contentContainer"></div>
+    	<div id="paneles"></div>
+    	<div id="loading">
+            <div class="spinner">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

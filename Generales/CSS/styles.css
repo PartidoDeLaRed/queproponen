@@ -11,7 +11,7 @@
 body,html{
 	width:100%;	
 	height: 100%;
-	background: #169CBF;
+	background: #F5F7FA;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -74,7 +74,7 @@ body,html{
   border-radius: 0;
   display: inline-block;
   vertical-align: middle;
-  opacity: .8;
+  opacity: 1;
 }
 
 .widthLimiter {
@@ -92,14 +92,6 @@ body,html{
 	color: #169CBF;
 	cursor: pointer;
 }
-.headerContainer .title {
-    position: absolute;
-    left: 80px;
-    top: 50%;
-    margin: -20px 0 0 0;
-    line-height: 40px;
-}
-
 
 .title.candidatosPerdedoresHeader {
   font-size: 30px !important;
@@ -122,6 +114,19 @@ body,html{
 		background-image:url(../IMG/collapseIcon.png);
 	}
 
+.headerContainer .title {
+    line-height: 35px;
+    vertical-align: top;
+	display: inline-block;
+}
+
+.headerText{
+	position: absolute;
+	left: 80px; 
+	top: 50%;
+	margin: -20px 0 0 0;
+}
+
 .candidatosPerdedores {
 	background-color: #e8ebef;
 	padding: 20px;
@@ -131,12 +136,22 @@ body,html{
 }
 
 .subtitle{	
-	font-size: 36px;
-	font-weight: 400;
+	font-size: 30px;
+	font-weight: 300;
 	color: #169cbf;
-	text-align: center;
+	text-align: left;
 	margin: auto;
-	text-shadow: 2px 2px 1px #ddd;
+	text-shadow: 3px 3px 2px #ddd;
+}
+
+.headerContainer .subtitle {
+    font-size: 40px;
+    font-weight: 300;
+    text-shadow: none;
+    line-height: 37px;
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: top;
 }
 
 nav.menu {
@@ -213,7 +228,6 @@ nav.menu div.selected {
 	box-shadow: inset 0px 1px 6px .2px #035;
 	background: #fff;
 	height: 80px;
-
 	max-width: 940px;
 	margin: 0 auto;
 	position: relative;
@@ -942,10 +956,72 @@ img {
 
 .footerContainer {
   text-align: center;
-  min-height: 300px;
   width: 100%;
   background: #169CBF;
-  padding: 40px 0;
+  color: #F5F7FA;
+}
+
+.linksContainer {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.linksContainer a {
+    color: #eee;
+    text-decoration: none;
+    margin: 0 7px;
+    border-bottom: 1px dotted;
+	transition:all 300ms;
+}
+.linksContainer a:hover {
+	color:#fff;
+	border-bottom:1px solid;
+	transition:all 300ms;
+}
+
+.contactContainer {
+    margin: 20px 0;
+	display:inline-block;
+}
+
+.contactContainer a {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    margin: 5px 5px;
+	opacity:.8;
+	transition:all 300ms;
+}
+.contactContainer a:hover {
+	opacity:1;
+	transition:all 300ms;
+}
+.contactContainer a.facebook {
+    background-image: url(../IMG/facebookIcon.png);
+}
+.contactContainer a.twitter {
+    background-image: url(../IMG/twitterIcon.png);
+}
+.contactContainer a.google {
+    background-image: url(../IMG/googleplusIcon.png);
+}
+
+.creditsContainer {
+    border-top: 1px solid #96CEDD;
+    background-color: #96CEDD;
+    color: #0A728D;
+    padding: 10px 0;
+}
+
+.heartIcon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url(../IMG/heartIcon.png);
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: bottom;
 }
 
 .logoPartido {
@@ -962,14 +1038,16 @@ img {
 }
 
 .footerLinkGrande {
-  text-align: right;
-  line-height: 40px;
-  text-decoration: none;
-  color: #eee;
-  font-size: 50px;
-  font-weight: 300;
-  display: block;
-  height: 103px;
+    text-align: center;
+    line-height: 25px;
+    text-decoration: none;
+    color: #eee;
+    font-size: 30px;
+    font-weight: 300;
+    display: inline-block;
+    margin: 31px 80px;
+    width: 235px;
+    vertical-align: top;
 }
 
 .footerLinkGrande div {
@@ -1134,6 +1212,10 @@ img {
 	}
 	.partidoContainer .facebookButton::before {
 		left:17px;
+	}
+	
+	.candidatosContainerFixed .candidatoContainer .imagenCandidato{
+		display:none;
 	}
 	
 	.footerContainer > div > div{

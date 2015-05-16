@@ -1,0 +1,46 @@
+<div class="pn-wraper">
+    <div class="pn-container">
+ 		<div class="pn-title">Edición de Candidato</div>
+    	<form name="formEdicionCandidato" id="formEdicionCandidato" onSubmit="return false;">
+        	<div>
+                <label class="labelInput">Nombre</label><input id="name-input" name="name" class="textInput" type="text" placeholder="nombre del candidato" required="required"/>
+            </div>
+            <div>
+                <label class="labelInput">Partido</label><select id="partido-input" name="partido" class="selectInput" required="required"/>
+            </div>
+        	<div>
+                <label class="labelInput">Lista</label><input id="list-input" name="list" class="textInput" type="text" placeholder="lista del candidato" required="required"/>
+            </div>
+        	<div>
+                <label class="labelInput">Twitter</label><input id="twitter-input" name="twitter" class="textInput" type="text" placeholder="twitter del candidato"/>
+            </div>
+            <div>
+                <label class="labelInput">Imagen</label><input id="image-input" name="image" type="file" placeholder="imagen del partido" required="required"/>
+            </div>
+        	<div>
+                <label class="labelInput">Pasó las PASO</label><input id="PASO-input" type="checkbox" checked="false">
+            </div>
+            <button id="submit" type="submit">Agregar Candidato</button>
+        </form>
+ 		<div class="pn-closeButton" onclick="javascript:CerrarPanel()"></div>
+    </div>
+</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script>
+$(document).ready(function(e) {
+	partidos.forEach(function(part)
+	{
+		var option = document.createElement('option');
+		$(option).attr('id', part.codigo);
+		$(option).attr('value', part.codigo);
+		$(option).html(part.nombre);
+    	$('#partido-input').append(option);
+	});
+	
+	$('#PASO-input').checkboxpicker();
+});
+$( "#formEdicionCandidato" ).submit(function( event ) {
+	event.preventDefault();
+	EdicionCandidato();
+});
+</script>
