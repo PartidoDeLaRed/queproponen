@@ -1,7 +1,7 @@
 function CargaGenerales()
 {
 	$('.menu').children('.selected').removeClass('selected');
-	$($('.menu').children()[1]).addClass('selected');
+	$($('.menu').children()[0]).addClass('selected');
 	CargaInicial(true);
 }
 

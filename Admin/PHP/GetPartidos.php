@@ -40,8 +40,8 @@ function CargarPropuestas($qry_propuestas)
 	while($propuesta = mysql_fetch_array( $qry_propuestas )) 
 	{
 		$tema = mysql_fetch_array( mysql_query("select * from tbCategorias where catID = ".$propuesta['catID']) );
-		$partido = mysql_fetch_array( mysql_query("select * from tbPartidos where partID = ".$candidato['partID']) );
-		$candidato = mysql_fetch_array( mysql_query("select * from tbCandidatos where candID = ".$info['candID']) );
+		$partido = mysql_fetch_array( mysql_query("select * from tbPartidos where partID = ".$propuesta['partID']) );
+		$candidato = mysql_fetch_array( mysql_query("select * from tbCandidatos where candID = ".$propuesta['candID']) );
 		array_push($propuestas, 
 			array (	'codigo'=> $propuesta['propID'],
 				  	'titulo'=>utf8_encode($propuesta['propTitulo']),

@@ -1,5 +1,7 @@
 var editarPropuesta = false;
 var edicionPropuestaCodigo = -1;
+partidoAnteriorCodigo = -1;
+candidatoAnteriorCodigo = -1;
 function MostrarAgregarPropuesta(cand)
 {
 	$('#paneles').fadeIn('fast');
@@ -19,13 +21,17 @@ function MostrarEditarPropuesta(prop)
 	$('#paneles').fadeIn('fast');
 	$('#paneles').load('Templates/EdicionPropuesta.html', null, function(a, b, c)
 	{
-		$('#mas-input').attr('checked','false').css('display','none');
+		$('#mas-input').prop('checked', false)
+		$('.label-mas-input').css('display','none');
 		document.getElementById('titulo-input').value = prop.titulo;
 		document.getElementById('texto-input').value = prop.texto;
 		document.getElementById('candidato-input').value = prop.candidato.codigo;
 		document.getElementById('categoria-input').value = prop.categoria.codigo;
 		editarPropuesta = true;
 		edicionPropuestaCodigo = prop.codigo;
+		partidoAnteriorCodigo = prop.partido.codigo;
+		candidatoAnteriorCodigo = prop.candidato.codigo;
+		$('#submit').html('Editar Propuesta');
 	});
 }
 
@@ -70,16 +76,34 @@ function EdicionPropuesta()
 		}
 		else
 		{
+			partidoAnterior = partidos.filter(function(_part){return _part.codigo == partidoAnteriorCodigo;})[0];
+			candidatoAnterior = partidoAnterior.candidatos.filter(function(cand){return cand.codigo == candidatoAnteriorCodigo;})[0];
+			propuesta = candidatoAnterior.propuestas.filter(function(_prop){return _prop.codigo == prop.codigo;})[0];
+			propuesta.titulo = prop.titulo;
+			propuesta.texto = prop.texto;
+			propuesta.partido = prop.partido;
+			propuesta.candidato = prop.candidato;
+			propuesta.categoria = prop.categoria;
+			if(candidatoAnterior.codigo != prop.candidato.codigo)
+			{
+				partidoNuevo = partidos.filter(function(_part){return _part.codigo == prop.partido.codigo;})[0];
+				candidatoNuevo = partidoNuevo.candidatos.filter(function(cand){return cand.codigo == prop.candidato.codigo;})[0];
+				candidatoNuevo.propuestas.push(propuesta);
+				candidatoAnterior.propuestas.splice(candidatoAnterior.propuestas.indexOf(propuesta), 1);
+			}
 			var container = $('#prop'+prop.codigo);
-			if(!container.parent().attr('id') == 'cat'+prop.categoria.codigo)
+			if(container.parent().attr('id') != 'cat'+prop.categoria.codigo)
 			{
 				container.detach();
 				$('#cat'+prop.categoria.codigo).append(container);
+				VerificarPropuestas();
 			}
-			container.children('.tituloPropuesta').html(prop.titulo);
-			container.children('.textoPropuesta').html(prop.texto);
-			container.children('.imagenCandidato_mini').css('background-image', 'IMG/candidatos/'+prop.candidato.imagen);
-			container.children('.colorCandidato_mini').css('background-color', prop.partido.color);
+			$(container).find('.tituloPropuesta').html(prop.titulo);
+			$(container).find('.textoPropuesta').html(prop.texto);
+			$(container).attr('data-partido',prop.partido.codigo);
+			$(container).attr('data-candidato',prop.candidato.codigo);
+			$($(container).children()[2]).children('.imagenCandidato_mini').css('background-image', 'url(../IMG/candidatos/'+prop.candidato.imagen+')');
+			$($(container).children()[2]).children('.colorCandidato_mini').css('background-color', prop.partido.color);
 		}
 		$('#loading').fadeOut('fast');
   	});

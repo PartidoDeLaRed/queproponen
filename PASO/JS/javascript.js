@@ -1,50 +1,3 @@
-function ToggleCategoriaBarra(barra){
-	var barra = $(barra);
-	ToggleCategoria(barra.find('.arrowButton')[0]);
-
-}
-
-function ToggleCategoria(boton)
-{
-	var contenedorPropuestas = $(boton).parents('.tipo').children('.contPropuestas');
-	if(contenedorPropuestas.css('display') == 'none')
-		$(boton).removeClass('down').addClass('up');
-	else
-		$(boton).removeClass('up').addClass('down');
-	contenedorPropuestas.slideToggle('fast');
-}
-
-function CambiarURL(tipo, cosa)
-{
-	var title = '';
-	var url= '';
-	switch(tipo)
-	{
-		case 0:
-		{
-			title = '¿Que proponen? - ' +cosa.nombre + ' - Partido de la Red';
-			url = window.location.origin + window.location.pathname + '#partido/'+(cosa.nombre.split(' ').join('-'));
-		}break;
-		case 1:
-		{
-			title = '¿Que proponen? - ' +cosa.nombre + ' - Partido de la Red';
-			url = window.location.origin + window.location.pathname + '#candidato/'+(cosa.nombre.split(' ').join('-'));
-		}break;
-		case 3:
-		{
-			title = '¿Que proponen?' + ' - Partido de la Red';
-			url = window.location.origin + window.location.pathname;
-		}break;
-	}
-    if (typeof (history.pushState) != "undefined") 
-	{
-		document.title = title;
-        var obj = { Title: title, Url: url };
-        history.pushState(obj, obj.Title, obj.Url);
-    }
-	ga('send', 'pageview', { 'page': location.pathname + location.search  + location.hash });
-}
-
 function CargaGenerales()
 {
 	window.location = (location.origin + location.pathname).replace('PASO/','');
@@ -133,6 +86,54 @@ function CargarSeccion()
 	}
 	CargaInicial();
 }
+
+function ToggleCategoriaBarra(barra){
+	var barra = $(barra);
+	ToggleCategoria(barra.find('.arrowButton')[0]);
+
+}
+
+function ToggleCategoria(boton)
+{
+	var contenedorPropuestas = $(boton).parents('.tipo').children('.contPropuestas');
+	if(contenedorPropuestas.css('display') == 'none')
+		$(boton).removeClass('down').addClass('up');
+	else
+		$(boton).removeClass('up').addClass('down');
+	contenedorPropuestas.slideToggle('fast');
+}
+
+function CambiarURL(tipo, cosa)
+{
+	var title = '';
+	var url= '';
+	switch(tipo)
+	{
+		case 0:
+		{
+			title = '¿Que proponen? - ' +cosa.nombre + ' - Partido de la Red';
+			url = window.location.origin + window.location.pathname + '#partido/'+(cosa.nombre.split(' ').join('-'));
+		}break;
+		case 1:
+		{
+			title = '¿Que proponen? - ' +cosa.nombre + ' - Partido de la Red';
+			url = window.location.origin + window.location.pathname + '#candidato/'+(cosa.nombre.split(' ').join('-'));
+		}break;
+		case 3:
+		{
+			title = '¿Que proponen?' + ' - Partido de la Red';
+			url = window.location.origin + window.location.pathname;
+		}break;
+	}
+    if (typeof (history.pushState) != "undefined") 
+	{
+		document.title = title;
+        var obj = { Title: title, Url: url };
+        history.pushState(obj, obj.Title, obj.Url);
+    }
+	ga('send', 'pageview', { 'page': location.pathname + location.search  + location.hash });
+}
+
 function hacerScrollID(elemento)
 {
 	$('html, body').animate({ scrollTop: ($('#'+elemento).offset().top - 200) }, 1000);

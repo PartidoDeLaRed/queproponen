@@ -12,6 +12,11 @@ or die ("No se pudo conectar a MySql porque ".mysql_error());
 mysql_select_db($database) 
 or die ("No se pudo acceder a la base de datos porque ".mysql_error()); 
 
+$info = mysql_fetch_array( mysql_query("SELECT * FROM tbPartidos where partID = ".$_GET['codigo'].";") );
+//Borramos la imagen
+if($info['partImagen'] != 'default.png')
+	unlink(implode('/', explode('/',getcwd(),-2)).'/IMG/partidos/'.$info['partImagen']);
+
 //Borramos el partido
 $match = "delete from tbPartidos where partID=".$_GET['codigo']; 
 $qry = mysql_query($match)

@@ -10,7 +10,10 @@ function MostrarContenedor(tipo)
 			+"<div class='partidosContainer'><div class='title'>Partidos Políticos y Frentes</div></div> ";
 			break;
 		case contenedores.CANDIDATOS:
-			template = "<div class='candidatosContainerFixed' ></div><div class='candidatosContainer'>"+
+			template = 
+			"<a class='twitterButton' onclick='javascript:CompartirInicio(0)'>Compartí en Twitter</a>"
+			+"<a class='facebookButton' onclick='javascript:CompartirInicio(1)'>Compartí en Facebook</a>"
+			+"<div class='candidatosContainerFixed' ></div><div class='candidatosContainer'>"+
             	"<div class='title'>Candidatos a Jefe de Gobierno</div>"+
 				"</div><div class='title candidatosPerdedoresHeader closed' onclick='javascript:ToggleCandidatosPerdedores()'>Candidatos que no pasaron las PASO</div><div class='candidatosPerdedores' ></div> ";
 			break;
@@ -40,17 +43,17 @@ function CompartirInicio(tipo)
 	if(tipo == 0)
 	  window.open('https://twitter.com/intent/tweet?'+
 	  'related=PartidodelaRed&'+
-	  'text='+ '%23yvosquepropones las propuestas de todos los candidatos para CABA en un solo lugar queproponen.com.ar', 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+	  'text='+ '%23yvosquepropones las propuestas de todos los candidatos para '+ Ciudad +' en un solo lugar '+location.origin+location.pathname, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 	else
 	  window.open('http://www.facebook.com/dialog/feed?app_id=825676227513877' +
-        '&link=http://queproponen.com.ar' +
+        '&link='+location.origin+location.pathname +
         '&picture=http:%2F%2Fqueproponen.com.ar%2Fvosquepropones%2FIMG%2FshareLogo.png' +
-        '&name=' + 'Todas las propuestas de los candidatos en un solo lugar' +
+        '&name=' + 'Todas las propuestas de los candidatos para '+Ciudad+' en un solo lugar' +
         '&caption=' + 'via queproponen.com.ar - Partido de la Red' +
-        '&description=' + 'Conocé todas las propuestas de los candidatos a Jefe de Gobierno de CABA y discutilas directamente con los ellos.' +
-        '&redirect_uri=' + 'http://queproponen.com.ar/close.html' +
+        '&description=' + 'Conocé todas las propuestas de los candidatos a Gobernador de '+ Ciudad +' y discutilas directamente con los ellos.' +
+        '&redirect_uri='+location.origin+location.pathname+'close.html' +
         '&display=popup'
-		, 'Compartí todas las propuestas', 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+		, 'Compartí todas las propuestas', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 }
 
 function HeaderPartido(part)
@@ -75,12 +78,10 @@ function HeaderPartido(part)
 	$(tweet).addClass('twitterButton');
 	$(tweet).html('Compartí sus propuestas en twitter');
 	$(tweet).click(function(e) {
-		//makeShort(container, window.location.origin + window.location.pathname + '#partido/'+part.nombre.split(' ').join('-'), function(){
 		window.open('https://twitter.com/intent/tweet?'+
 		'url=http%3A%2F%2Fqueproponen.com.ar%2F'+'%23partido%2F'+part.nombre.split(' ').join('-')+'&'+
 		'related=PartidodelaRed&'+
-		'text='+ '%23yvosquepropones Mirá las propuestas para CABA de ' + part.nombre, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
-		//});
+		'text='+ '%23yvosquepropones Mirá las propuestas para '+ Ciudad +' del ' + part.nombre, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 	});
 	$(nombre).append(tweet);
 
@@ -94,7 +95,7 @@ function HeaderPartido(part)
         '&picture=http:%2F%2Fqueproponen.com.ar%2Fvosquepropones%2FIMG%2FshareLogo.png' +
         '&name=' + 'Todas las propuestas de ' + part.nombre +
         '&caption=' + 'via queproponen.com.ar - Partido de la Red' +
-        '&description=' + 'Conocé todas sus propuestas y la de todos los candidatos a Jefe e Gobierno en la Ciudad' +
+        '&description=' + 'Conocé todas sus propuestas y la de todos los candidatos a Gobernador en '+ Ciudad +
         '&redirect_uri=' + 'http://queproponen.com.ar/close.html' +
         '&display=popup'
 		, 'Compartí todas las propuestas del partido', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
@@ -162,7 +163,7 @@ function HeaderCandidato(cand)
 		window.open('https://twitter.com/intent/tweet?'+
 		'url=http%3A%2F%2Fqueproponen.com.ar%2F'+'%23candidato%2F'+cand.nombre.split(' ').join('-')+'&'+
 		'related=PartidodelaRed&'+
-		'text='+ '%23yvosquepropones Mirá las propuestas para CABA de ' + cand.nombre, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+		'text='+ '%23yvosquepropones Mirá las propuestas para ' + Ciudad + ' de ' + cand.nombre, 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 		//});
 	});
 	$(container).append(tweet);
@@ -177,7 +178,7 @@ function HeaderCandidato(cand)
         '&picture=http:%2F%2Fqueproponen.com.ar%2Fvosquepropones%2FIMG%2FshareLogo.png' +
         '&name=' + 'Todas las propuestas de ' + cand.nombre +
         '&caption=' + 'via queproponen.com.ar - Partido de la Red' +
-        '&description=' + 'Conocé todas sus propuestas y la de todos los candidatos a Jefe e Gobierno en la Ciudad' +
+        '&description=' + 'Conocé todas sus propuestas y la de todos los candidatos a Jefe de Gobierno en '+ Ciudad +
         '&redirect_uri=' + 'http://queproponen.com.ar/close.html' +
         '&display=popup'
 		, 'Compartí todas las propuestas del partido', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);

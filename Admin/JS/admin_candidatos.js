@@ -1,15 +1,17 @@
-var editarCandidato = false;
-var edicionCandidatoCodigo = -1;
+window.editarCandidato = false;
+window.edicionCandidatoCodigo = -1;
+partidoAnteriorCodigo = -1;
 function MostrarAgregarCandidato(part)
 {
 	$('#paneles').fadeIn('fast');
 	$('#paneles').load('Templates/EdicionCandidato.html', null, function(a, b, c)
 	{
-		editarCandidato = false;
+		window.editarCandidato = false;
 		if(part != undefined)
 		{
 			document.getElementById('partido-input').value = part.codigo;
 		}
+		$('.imageSource').css('background-image','url(../IMG/candidatos/default.png)');
 	});
 }
 
@@ -22,34 +24,63 @@ function MostrarEditarCandidato(cand)
 		document.getElementById('name-input').value = cand.nombre;
 		document.getElementById('list-input').value = cand.lista;
 		document.getElementById('twitter-input').value = cand.twitter;
-		$('PASO-input').prop('checked', paso);
+		$('.imageSource').css('background-image','url(../IMG/candidatos/'+cand.imagen+')');
+		$('#PASO-input').prop('checked', paso);
 		document.getElementById('partido-input').value = cand.partido.codigo;
-		editarCandidato = true;
-		edicionCandidatoCodigo = cand.codigo;
+		window.editarCandidato = true;
+		window.edicionCandidatoCodigo = cand.codigo;
+		partidoAnteriorCodigo = cand.partido.codigo;
+		$('#submit').html('Editar Candidato');
 	});
 }
 
 function EdicionCandidato()
 {
-	$('#loading').fadeIn('fast');
-
 	var check = $('#PASO-input');
 	var _name = document.getElementById('name-input').value;
 	var _lista = document.getElementById('list-input').value;
 	var _twitter = document.getElementById('twitter-input').value;
 	var _PASO = document.getElementById('PASO-input').checked ? 1 : 0;
 	var _partido = document.getElementById('partido-input').value;
-	var _image = document.getElementById('image-input').files[0] ? document.getElementById('name-input').value.split(' ').join('_') + '.' + document.getElementById('image-input').files[0].name.split('.')[1] : '-';
+	var _image = null;
+	var upload = $('#image-input').data('uploadifive');
+	if(window.nombreImagenCandidato != null)
+	{
+		if($.inArray(window.nombreImagenCandidato.split('.')[1], ['png','PNG','jpg','JPG','jpeg','JPEG','gif','GIF','bmp','BMP']) != -1)
+		{
+			_image = document.getElementById('name-input').value.split(' ').join('_') + '.' + window.nombreImagenCandidato.split('.')[1];
+			$('#image-input').data('uploadifive').settings.formData =  {'name' : _image};
+			$('#image-input').data('uploadifive').settings.onUploadComplete = function(file, response, data)
+			{
+				ActionEdicionCandidato(_name, _lista, _twitter, _PASO, _partido, _image);
+				var container = $('.candidatosContainer').children('#cand'+window.edicionCandidatoCodigo);
+				$(container).find('.imagenCandidato').css('background-image', 'none').css('background-image', 'url(../IMG/candidatos/'+response+'?'+ new Date().getTime()+')');
+			};
+			$('#image-input').uploadifive('upload');
+		}
+		else
+		{
+			alert('Formato de archivo inválido. Solo se aceptan PNG, JPG y GIF');
+			$('#image-input').uploadifive('clearQueue');
+		}
+	}
+	else
+		ActionEdicionCandidato(_name, _lista, _twitter, _PASO, _partido, _image);
+}
+
+function ActionEdicionCandidato(_name, _lista, _twitter, _PASO, _partido, _image)
+{
+	$('#loading').fadeIn('fast');
 	$.ajax({
 	  method: "GET",
-	  url: location.origin + location.pathname + (!editarCandidato ? "PHP/AgregarCandidato.php" : "PHP/EditarCandidato.php"),
+	  url: location.origin + location.pathname + (!window.editarCandidato ? "PHP/AgregarCandidato.php" : "PHP/EditarCandidato.php"),
 	  data: {
-		codigo: edicionCandidatoCodigo,
+		codigo: window.edicionCandidatoCodigo,
 		name: _name,
 		list: _lista,
 		twitter: _twitter,
 		PASO: _PASO,
-		image: _image,
+		image: _image != null ? _image : (!window.editarCandidato ? 'default.png' : 'noChange'),
 		partido: _partido
 	  }
 	})
@@ -59,28 +90,36 @@ function EdicionCandidato()
 		var cand = $.parseJSON(msg);
 		$('#paneles').fadeOut('fast');
 		$('#paneles').html('');
-		if(!editarCandidato)
+		if(!window.editarCandidato)
 		{
 			MostrarCandidato(0, cand, cand.partido);
 			partidos.filter(function(part){return part.codigo == cand.partido.codigo;})[0].candidatos.push(cand);
 		}
 		else
 		{
-			candidato = partidos.filter(function(part){return part.codigo == cand.partido.codigo;})[0].candidatos.filter(function(cand){return cand.codigo == edicionCandidatoCodigo;})[0];
+			partidoAnterior = partidos.filter(function(_part){return _part.codigo == partidoAnteriorCodigo;})[0];
+			candidato = partidoAnterior.candidatos.filter(function(cand){return cand.codigo == window.edicionCandidatoCodigo;})[0];
 			candidato.nombre = cand.nombre;
 			candidato.lista = cand.lista;
 			candidato.imagen = cand.imagen;
+			candidato.ganador = cand.ganador;
 			candidato.partido = cand.partido;
-			var container = $('.candidatosContainer').children('#cand'+edicionCandidatoCodigo);
-			$(container.children()[1]).children('.nombreCandidato').html(cand.nombre);
-			$(container.children()[1]).children('.listaCandidato').html(cand.lista);
-			$(container.children()[1]).children('.colorCandidato').css('background-color', cand.partido.color).html(cand.partido.nombre);
-			container.children('.imagenCandidato').css('background-image', 'url(IMG/candidatos/'+cand.imagen+')');
-			$($('.propuestaContainer[data-candidato="'+cand.codigo+'"]').children()[2]).children('.imagenCandidato_mini').css('background-image', 'url(IMG/candidatos/'+cand.imagen+')');
+			if(cand.partido.codigo != partidoAnteriorCodigo)
+			{
+				partidoNuevo = partidos.filter(function(_part){return _part.codigo == cand.partido.codigo;})[0];
+				partidoNuevo.candidatos.push(candidato);
+				partidoAnterior.candidatos.splice(partidoAnterior.candidatos.indexOf(candidato), 1);
+			}
+			var container = $('.candidatosContainer').children('#cand'+window.edicionCandidatoCodigo);
+			$(container).find('.nombreCandidato').html(cand.nombre);
+			$(container).find('.listaCandidato').html(cand.lista);
+			$(container).find('.colorCandidato').css('background-color', cand.partido.color).html(cand.partido.nombre);
+			$(container).find('.imagenCandidato').css('background-image', 'url(../IMG/candidatos/'+cand.imagen+'?'+ new Date().getTime()+')');
+			$(container).attr('data-partido',cand.partido.codigo);
+			$('.propuestaContainer[data-candidato="'+cand.codigo+'"]').find('.imagenCandidato_mini').css('background-image', 'url(../IMG/candidatos/'+cand.imagen+'?'+ new Date().getTime()+')');
 		}
 		$('#loading').fadeOut('fast');
   	});
-
 }
 
 function MostrarEliminarCandidato(cand)

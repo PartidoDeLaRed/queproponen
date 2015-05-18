@@ -76,7 +76,7 @@ function MostrarCandidato(modo, cand, part)
 				$('.contentContainer').html('');
 				
 				cont.append(MostrarVolver(0, part));
-				cont.append(HeaderCandidato(cand));
+				cont.append(HeaderCandidato(cand, part));
 				
 				cont.append(MostrarContenedor(contenedores.PROPUESTAS));
 				

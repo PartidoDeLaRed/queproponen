@@ -34,7 +34,7 @@ function MostrarPartido(modo, part)
 
 			var imagen = document.createElement('div');
 			$(imagen).addClass('imagenPartido');
-			$(imagen).css('background-image', 'url(IMG/partidos/' + part.imagen + ')');
+			$(imagen).css('background-image', 'url(../IMG/partidos/' + part.imagen + ')');
 			$(container).append(imagen);
 			
 			var nombre = document.createElement('div');

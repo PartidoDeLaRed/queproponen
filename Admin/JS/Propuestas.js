@@ -36,7 +36,7 @@ function MostrarPropuesta(prop, part, cand)
 			var cont = document.createElement('div');
 			$(cont).css('display', 'inline-block');
 			$(cont).css('vertical-align', 'top');
-			$(cont).css('margin', '0 0 0 30px');
+			$(cont).css('margin', '0 30px 0 30px');
 			
 			var titulo = document.createElement('div');
 			$(titulo).addClass('tituloPropuesta');

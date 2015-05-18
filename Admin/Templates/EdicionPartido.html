@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="Uploadifive/uploadifive.css">
 <div class="pn-wraper">
     <div class="pn-container">
  		<div class="pn-title">Edición de Partido</div>
@@ -9,7 +10,8 @@
                 <label class="labelInput">Color</label><input id="color-input" name="color" class="color" value="#000000" />
             </div>
             <div>
-                <label class="labelInput">Imagen</label><input id="image-input" name="image" type="file" placeholder="imagen del partido" required="required"/>
+                <label class="labelInput">Imagen</label><div class="imageSource"></div><input id="image-input" type="file" placeholder="imagen del partido"/>
+                <div class="sugerencia">Tamaño recomendado: 220px x 140px. Máximo: 1MB</div>
             </div>
             <button id="submit" type="submit">Agregar Partido</button>
         </form>
@@ -17,9 +19,30 @@
     </div>
 </div>
 
+<script>        
+	window.nombreImagenPartido = null;
+   	$('#image-input').uploadifive({
+		'auto'			: false,
+		'fileSizeLimit' : 1048,
+		'queueSizeLimit' : 1,
+		'multi'        : false,
+        'uploadScript' : 'PHP/SubirImagenPartido.php',
+		'width'        : '30%',
+		'onAddQueueItem' : function(file) {
+			window.nombreImagenCandidato = file.name;
+			var actualImage = $('#image-input').parent().children()[1].files[0];
+			var tmppath = URL.createObjectURL(actualImage);
+			$('.imageSource').css('background-image', 'url('+tmppath+')');
+        },
+		'onUploadComplete' : function(file, response, data) {
+        },
+		'onError'      : function(errorType, file, uploadAll) {
+        }
+	});        
+</script>
 <script>
 
-$( "#formEdicionPartido" ).submit(function( event ) {
+$( "#formEdicionPartido" ).on('submit', function( event ) {
 	event.preventDefault();
 	EdicionPartido();
 });

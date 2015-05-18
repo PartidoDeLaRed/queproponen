@@ -19,7 +19,7 @@ or die ("No se pudieron encontrar datos porque ".mysql_error());
 $info = mysql_fetch_array( $qry );
 
 //Agregamos el nuevo
-$match = "insert into tbPartidos values (".($info['partID']+1).", '".$_GET['name']."', '".$_GET['image']."', '".$_GET['color']."');"; 
+$match = "insert into tbPartidos values (".($info['partID']+1).", '".utf8_decode($_GET['name'])."', '".$_GET['image']."', '".$_GET['color']."');"; 
 $qry = mysql_query($match)
 or die ("No se pudieron encontrar datos porque ".mysql_error()); 
 

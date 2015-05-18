@@ -57,7 +57,7 @@ function MostrarPropuesta(prop, part, cand)
 			
 			$(tweet).click(function(e) {
 				window.open('https://twitter.com/share?'+
-				'url=http%3A%2F%2Fqueproponen.com.ar%2F'+'PASO%2F%23candidato%2F'+cand.nombre.split(' ').join('-')+'%2Fpropuesta%2F'+prop.codigo+'&'+
+				'url='+location.origin+location.pathname+'%23candidato%2F'+cand.nombre.split(' ').join('-')+'%2Fpropuesta%2F'+prop.codigo+'&'+
 				'related=PartidodelaRed&'+
 				'hashtags=yvosquepropones&'+
 				'text='+ 'Hola ' + cand.twitter + " esta propuesta me parece", 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
@@ -166,7 +166,7 @@ function NoPropuesta(cosa)
 			$(tweet).click(function(e) {
 				//makeShort(cont, window.location.origin + window.location.pathname + '#candidato/'+a.nombre.split(' ').join('-'), function(){
 				window.open('https://twitter.com/intent/tweet?'+
-				'url=http%3A%2F%2Fqueproponen.com.ar%2F'+'PASO%2F%23candidato%2F'+a.nombre.split(' ').join('-')+'&'+
+				'url='+location.origin+location.pathname+'%23candidato%2F'+a.nombre.split(' ').join('-')+'&'+
 				'related=PartidodelaRed&'+
 				'text=' + 'Hola ' + a.twitter + ' %23yvosquepropones para la Ciudad sobre ' + $(e.target).parents('.tipo').children('.title').children('span').html(), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 				//});
@@ -192,7 +192,7 @@ function NoPropuesta(cosa)
 			$(tweet).click(function(e) {
 				//makeShort(cont, window.location.origin + window.location.pathname + '#candidato/'+cosa.nombre.split(' ').join('-'), function(){
 				window.open('https://twitter.com/intent/tweet?'+
-				'url=http%3A%2F%2Fqueproponen.com.ar%2F'+'PASO%2F%23candidato%2F'+cosa.nombre.split(' ').join('-')+'&'+
+				'url='+location.origin+location.pathname+'%23candidato%2F'+cosa.nombre.split(' ').join('-')+'&'+
 				'related=PartidodelaRed&'+
 				'text=' + 'Hola ' + cosa.twitter + ' %23yvosquepropones para la Ciudad sobre '+$(e.target).parents('.tipo').children('.title').children('span').html(), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 				//});

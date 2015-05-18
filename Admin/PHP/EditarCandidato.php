@@ -12,8 +12,11 @@ or die ("No se pudo conectar a MySql porque ".mysql_error());
 mysql_select_db($database) 
 or die ("No se pudo acceder a la base de datos porque ".mysql_error()); 
 
+$agregarImagen = '';
+if($_GET['image'] != 'noChange')
+	$agregarImagen = "', candImagen='".$_GET['image'];
 //Guardamos los datos editados
-$match = "update tbCandidatos set candNombre='".$_GET['name']."', candImagen='".$_GET['image']."', candLista='".$_GET['list']."', partID=".$_GET['partido'].", candTwitter='".$_GET['twitter']."', candPASO=".$_GET['PASO']." where candID = ".$_GET['codigo'].";"; 
+$match = "update tbCandidatos set candNombre='".utf8_decode($_GET['name']).$agregarImagen."', candLista='".utf8_decode($_GET['list'])."', partID=".$_GET['partido'].", candTwitter='".$_GET['twitter']."', candPASO=".$_GET['PASO']." where candID = ".$_GET['codigo'].";"; 
 $qry = mysql_query($match)
 or die ("No se pudieron encontrar datos porque ".mysql_error()); 
 

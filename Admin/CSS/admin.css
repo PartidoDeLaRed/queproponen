@@ -15,7 +15,7 @@
     display: inline-block;
     background-color: #f2f2f2;
     background-image: url(../IMG/editIcon.png);
-    background-size: 23px 23px;
+    background-size: 17px 17px;
     background-position: center center;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -32,7 +32,8 @@
 	display: inline-block;
 	background-color: #f2f2f2;      
     background-image: url(../IMG/deleteIcon.png);
-	background-size: 25px 25px;
+	
+    background-size: 19px 19px;
 	background-position: center center;
 	background-repeat: no-repeat;
     border-left: 1px solid #ccc;
@@ -48,14 +49,15 @@
     position: absolute;
     right: 0;
     top: 0;
-    width: 70px;
+    width: 35px;
     height: 50%;
     border: 1px solid #ddd;
 }
 
 .propuestaContainer .botonEliminar {
     position: absolute;      right: 0;      
-    top: 50%;      width: 70px;      height: 50%;
+    top: 50%;      
+    width: 35px;      height: 50%;
     border: 1px solid #ddd;
 }
 
@@ -65,7 +67,7 @@
     display: inline-block;
     background-color: #f2f2f2;
     background-image: url(../IMG/addDocIcon.png);
-    background-size: 25px 25px;
+    background-size: 19px 19px;
     background-position: center center;
     background-repeat: no-repeat;
     border-right: 1px solid #ccc;
@@ -83,7 +85,7 @@
     display: inline-block;      
     background-color: #f2f2f2;      
     background-image: url(../IMG/addPersonIcon.png);      
-    background-size: 25px 25px;      
+    background-size: 19px 19px;      
     background-position: center center;      
     background-repeat: no-repeat;      
     border-right: 1px solid #ccc;      
@@ -146,6 +148,7 @@
 	transition: all 200ms ease-out;
 	position: relative;
 	color: #aaa;
+	vertical-align: bottom;
 }
 
 .addCandidato:before {

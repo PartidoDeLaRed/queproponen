@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="Uploadifive/uploadifive.css">
 <div class="pn-wraper">
     <div class="pn-container">
  		<div class="pn-title">Edición de Candidato</div>
@@ -15,7 +16,8 @@
                 <label class="labelInput">Twitter</label><input id="twitter-input" name="twitter" class="textInput" type="text" placeholder="twitter del candidato"/>
             </div>
             <div>
-                <label class="labelInput">Imagen</label><input id="image-input" name="image" type="file" placeholder="imagen del partido" required="required"/>
+                <label class="labelInput">Imagen</label><div class="imageSource"></div><input id="image-input" type="file" placeholder="imagen del partido"/>
+                <div class="sugerencia">Tamaño recomendado: 150px x 150px. Máximo: 1MB</div>
             </div>
         	<div>
                 <label class="labelInput">Pasó las PASO</label><input id="PASO-input" type="checkbox" checked="false">
@@ -27,20 +29,41 @@
 </div>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <script>
-$(document).ready(function(e) {
-	partidos.forEach(function(part)
-	{
-		var option = document.createElement('option');
-		$(option).attr('id', part.codigo);
-		$(option).attr('value', part.codigo);
-		$(option).html(part.nombre);
-    	$('#partido-input').append(option);
+	$(document).ready(function(e) {
+		partidos.forEach(function(part)
+		{
+			var option = document.createElement('option');
+			$(option).attr('id', part.codigo);
+			$(option).attr('value', part.codigo);
+			$(option).html(part.nombre);
+			$('#partido-input').append(option);
+		});
+		
+		$('#PASO-input').checkboxpicker();
 	});
-	
-	$('#PASO-input').checkboxpicker();
-});
-$( "#formEdicionCandidato" ).submit(function( event ) {
-	event.preventDefault();
-	EdicionCandidato();
-});
+
+	window.nombreImagenCandidato = null;
+   	$('#image-input').uploadifive({
+		'auto'			: false,
+		'fileSizeLimit' : 1048,
+		'multi'        : false,
+		'queueSizeLimit' : 1,
+        'uploadScript' : 'PHP/SubirImagenCandidato.php',
+		'width'        : '30%',
+		'onAddQueueItem' : function(file) {
+			window.nombreImagenPartido = file.name;
+			var actualImage = $('#image-input').parent().children()[1].files[0];
+			var tmppath = URL.createObjectURL(actualImage);
+			$('.imageSource').css('background-image', 'url('+tmppath+')');
+        },
+		'onUploadComplete' : function(file, response, data) {
+        },
+		'onError'      : function(errorType, file, uploadAll) {
+        }
+	});        
+
+	$( "#formEdicionCandidato" ).submit(function( event ) {
+		event.preventDefault();
+		EdicionCandidato();
+	});
 </script>

@@ -31,7 +31,7 @@ function MostrarCandidato(modo, cand, part)
 
 			var imagen = document.createElement('div');
 			$(imagen).addClass('imagenCandidato');
-			$(imagen).css('background-image', 'url(IMG/candidatos/' + cand.imagen + ')');
+			$(imagen).css('background-image', 'url(../IMG/candidatos/' + cand.imagen + ')');
 			$(container).append(imagen);
 
 			var cont = document.createElement('div');
@@ -119,13 +119,10 @@ function MostrarCandidato(modo, cand, part)
 			$(container).attr('id', cand.nombre);
 			$(container).addClass('candidatoContainer');
 			$(container).css('cursor', 'pointer');
-			$(container).click(function(){
-				MostrarCandidato(1, cand, part)
-			});
 
 			var imagen = document.createElement('div');
 			$(imagen).addClass('imagenCandidato_mini');
-			$(imagen).css('background-image', 'url(IMG/candidatos/' + cand.imagen + ')');
+			$(imagen).css('background-image', 'url(../IMG/candidatos/' + cand.imagen + ')');
 			$(container).append(imagen);
 			
 			var color = document.createElement('div');

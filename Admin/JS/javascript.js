@@ -64,6 +64,14 @@ function CargaPaso()
 	CargaInicial();
 }
 
+function SetearDatos()
+{
+	var ciudad = document.createElement('div');
+	$(ciudad).html(Ciudad);
+	$(ciudad).addClass('subtitle');
+	$('.headerText').append(ciudad);
+}
+
 function CargaInicial()
 {
 	cont = $('.contentContainer');

@@ -58,7 +58,7 @@ body,html{
 
 .logo {
   margin: auto;
-  background-image: url(../IMG/logo.png);
+  background-image: url(../../IMG/logo.png);
   background-position: center center;
   background-size: contain;
   width: 80px;
@@ -76,18 +76,24 @@ body,html{
 }
 
 .title{
+	display: inline-block;
 	text-align: left;
+	vertical-align: sub;
 	font-size: 33px;
 	font-weight: 400;
 	color: #169CBF;
-	cursor: pointer;            
+	cursor: pointer;
 }
 .headerContainer .title {
-    position: absolute;
-    left: 80px;
-    top: 50%;
-    margin: -20px 0 0 0;
-    line-height: 40px;
+    line-height: 35px;
+    vertical-align: top;
+	display: inline-block;
+}
+
+.headerText{
+	position: absolute;
+	left: 80px; 
+	top: 22px;
 }
 
 .title.candidatosPerdedoresHeader {
@@ -105,10 +111,10 @@ body,html{
 		background-size: contain;
 	}
 	.title.candidatosPerdedoresHeader.closed:after {
-		background-image:url(../IMG/expandIcon.png);
+		background-image:url(../../IMG/expandIcon.png);
 	}
 	.title.candidatosPerdedoresHeader.opened:after {
-		background-image:url(../IMG/collapseIcon.png);
+		background-image:url(../../IMG/collapseIcon.png);
 	}
 
 .candidatosPerdedores {
@@ -126,6 +132,16 @@ body,html{
 	text-align: left;
 	margin: auto;
 	text-shadow: 3px 3px 2px #ddd;
+}
+
+.headerContainer .subtitle {
+    font-size: 40px;
+    font-weight: 300;
+    text-shadow: none;
+    line-height: 37px;
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: top;
 }
 
 nav.menu {
@@ -198,7 +214,7 @@ nav.menu .botonLogout.selected {
     position: absolute;
     top: 0;
     right: 0;
-	background-image:url(../IMG/searchIcon.png);
+	background-image:url(../../IMG/searchIcon.png);
     background-size: 50px;
     background-repeat: no-repeat;
     background-position: center center;
@@ -711,7 +727,7 @@ text-align: center;
 	text-shadow: 2px 2px 1px #ddd;
 }
 
-img {
+../IMG {
   box-shadow: 1px 1px 1px #ccc;
   border-radius: 25px;
 }
@@ -821,7 +837,7 @@ img {
 	margin: -9px 7px 0 7px;
 	left: 0;
 	content: '';
-	background-image:url(../IMG/twitterIcon.png);
+	background-image:url(../../IMG/twitterIcon.png);
 	background-repeat: no-repeat;
 	background-position: left center;
 	background-size: contain;
@@ -904,7 +920,7 @@ img {
 	left: 0;
 	content: '';
 	padding-left: 25px;
-	background-image:url(../IMG/facebookIcon.png);
+	background-image:url(../../IMG/facebookIcon.png);
 	background-repeat: no-repeat;
 	background-position: left center;
 	background-size: contain;
@@ -967,7 +983,7 @@ img {
 .flechaAtras{
 	width:30px;
 	height:30px;
-	background-image:url(../IMG/backIcon.png);
+	background-image:url(../../IMG/backIcon.png);
 	background-size:cover;
 	background-position:center center;
 	display: inline-block;
@@ -995,17 +1011,17 @@ img {
 }
 
 .arrowButton.down{
-	background:url(../IMG/downIcon.png), #fff;
+	background:url(../../IMG/downIcon.png), #fff;
 }
 .arrowButton.down:hover{
-	background:url(../IMG/downIcon.png), #e8e8e8;
+	background:url(../../IMG/downIcon.png), #e8e8e8;
 }
 
 .arrowButton.up{
-	background:url(../IMG/upIcon.png), #fff;
+	background:url(../../IMG/upIcon.png), #fff;
 }
 .arrowButton.up:hover{
-	background:url(../IMG/upIcon.png), #e8e8e8;
+	background:url(../../IMG/upIcon.png), #e8e8e8;
 }
 
 .footerContainer {
@@ -1021,7 +1037,7 @@ img {
   width: 240px;
   max-width: 240px;
   height: 240px;
-  background-image: url(../IMG/Isologo.gif);
+  background-image: url(../../IMG/Isologo.gif);
   background-size: cover;
   background-position: center center;
   border-radius: 125px;
@@ -1060,7 +1076,7 @@ img {
 	margin: 0 auto;
 	margin-bottom: 30px;
 	content: '';
-	background-image:url(../IMG/exclamationIcon.png);
+	background-image:url(../../IMG/exclamationIcon.png);
 	background-repeat: no-repeat;
 	background-position: left center;
 	background-size: contain;
@@ -1090,7 +1106,7 @@ img {
   right: 0;
   top: 0;
   content: '';
-  background-image: url(../IMG/logo_128.png);
+  background-image: url(../../IMG/logo_128.png);
   background-repeat: no-repeat;
   background-position: left center;
 
@@ -1230,7 +1246,7 @@ img {
 		font-size:24px;
 		line-height: 50px;
 	}
-	.tipo img {
+	.tipo ../IMG {
 	  width: 40px;
 	  height: 40px;
 	}
@@ -1266,7 +1282,7 @@ img {
 	}
 	
 	.headerContainer{
-		background-image: url(../IMG/backgroundHeader.jpg) !important;
+		background-image: url(../../IMG/backgroundHeader.jpg) !important;
 		height: 300px;
 	
 		background-position: center -270px;

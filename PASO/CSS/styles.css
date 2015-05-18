@@ -98,8 +98,7 @@ body,html{
 .headerText{
 	position: absolute;
 	left: 80px; 
-	top: 50%;
-	margin: -20px 0 0 0;
+	top: 22px;
 }
 
 .title.candidatosPerdedoresHeader {
@@ -243,7 +242,7 @@ nav.menu div.selected {
 	text-align: center;
 	margin: 0 auto;
     
-	padding: 20px 0;
+	padding: 10px 0;
 }
 
 .contentContainer .title{
@@ -459,6 +458,7 @@ text-align: center;
 	left: 0;
 	right: 0;
 	text-align:center;    
+
 	content: 'Propuestas';
 	font-size: 15px;
 	font-weight: 300 !important;
@@ -988,7 +988,7 @@ img {
 	display: inline-block;
 	cursor: pointer;
 	transition: all 200ms;
-	margin: 10px 0 0 0;
+	margin: 0 0 10px 0;
 }
 .atrasContainer:hover{
 	background:#f8f8f8;
@@ -1072,6 +1072,9 @@ img {
     width: 32px;
     height: 32px;
     display: inline-block;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:contain;
     margin: 5px 5px;
 	opacity:.8;
 	transition:all 300ms;
@@ -1129,8 +1132,8 @@ img {
     font-size: 30px;
     font-weight: 300;
     display: inline-block;
-    margin: 31px 80px;
-    width: 235px;
+    margin: 31px 0;
+    width: 40%;
     vertical-align: top;
 }
 
@@ -1199,12 +1202,9 @@ img {
 
 @media (max-width: 1124px)  {
 	.likeButtons{
+		display:none;
 		opacity:0 !important;
 		transition:all 200ms;
-	}
-
-	.footerContainer > div{
-		padding:0 30px;
 	}
 }
 
@@ -1216,25 +1216,15 @@ img {
 		zoom:.7 !important;
 	}
 
-	.headerContainer{
-		height: 200px !important;
-	
-		background-position: center -160px !important;
-}
-
 .bannerAfiliacion {
 }
 }
 
-@media (width: 360px)  {
+@media (max-width: 360px)  {
 	*{
-		zoom:.975 !important;
+		zoom:.975;
 	}
 
-	.headerContainer{
-		height: 235px !important;
-		background-position: center -200px !important;
-	}
 	.aboutContainer {
 	  padding: 45px 35px 35px 35px !important;
 	}
@@ -1247,7 +1237,10 @@ img {
 	}
 }
 
-@media (width: 480px)  {
+@media (max-width: 480px)  {
+	.headerContainer{
+		zoom: .7 !important;
+	}
 	.aboutContainer {
 	  padding: 45px 35px 35px 35px !important;
 	}
@@ -1264,14 +1257,22 @@ img {
 }
 
 @media (max-width: 600px)  {
-	
-	.headerContainer{
-		height:200px;
-	
+	.footerLinkGrande {
+    	display:block;
+		width:auto !important;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.bannerAfiliacion{
+		padding: 10px 0;
+		font-weight: 400;
+	}
 }
 
+@media (max-width: 680px)  {
+	
 	.tipo{
-		zomm:.7;
+		zomm:.8;
 	}
 	
 	.partidoContainer{
@@ -1327,10 +1328,34 @@ img {
 	  width: 40px;
 	  height: 40px;
 	}
+
+	.footerContainer > div > div {
+    	display: block;
+	}
+	.footerLinkGrande {
+    	float: none !important;
+		margin-top: 0;
+		width: 49%;
+	}
 }
 @media (max-width: 800px)  {
+	nav.menu {
+		position: relative;
+		width: 100%;
+		padding: 10px;
+		margin: 5px 0 0 0;
+		border-top: 1px solid #169CBF;
+	}
+
+	nav.menu div {
+		width: 32%;
+		margin: 0;
+		text-align: center;
+		border-right: 1px solid #BDD2DA;
+	}
+
 	.tituloPropuesta{
-		padding:40px 0px 5px 0 !important;
+		padding: 5px 0 0 15px !important;
 	}
 	
 	.propuestaContainer .candidatoContainer {
@@ -1355,7 +1380,9 @@ img {
 	}
 	
 	.textoPropuesta {
-		padding: 0 0 40px 0 !important;
+		padding: 0 0 40px 10px !important;
+		zoom: 1;
+		font-weight: 400;
 	}
 	
 	.partidosContainer .twitterButton {

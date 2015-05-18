@@ -123,8 +123,7 @@ body,html{
 .headerText{
 	position: absolute;
 	left: 80px; 
-	top: 50%;
-	margin: -20px 0 0 0;
+	top: 22px;
 }
 
 .candidatosPerdedores {
@@ -696,6 +695,7 @@ img {
 	text-align: left;
 	border-radius: 5px;
 	overflow: hidden;
+	zoom: 1 !important;
 }
 .propuestaContainer .candidatoContainer{
 	position: absolute;    
@@ -988,6 +988,9 @@ img {
     width: 32px;
     height: 32px;
     display: inline-block;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:contain;
     margin: 5px 5px;
 	opacity:.8;
 	transition:all 300ms;
@@ -1045,8 +1048,8 @@ img {
     font-size: 30px;
     font-weight: 300;
     display: inline-block;
-    margin: 31px 80px;
-    width: 235px;
+    margin: 31px 0;
+    width: 40%;
     vertical-align: top;
 }
 
@@ -1117,10 +1120,6 @@ img {
 		display:none;
 		transition:all 200ms;
 	}
-
-	.footerContainer > div{
-		padding:0 30px;
-	}
 }
 
 @media (width: 320px)  {
@@ -1129,35 +1128,39 @@ img {
 	}
 }
 
-@media (width: 360px)  {
+@media (max-width: 360px)  {
 	*{
-		zoom: .95 !important;
+		zoom: .95;
+	}
+	.tipo{
+		zoom:1;
 	}
 	.headerContainer{
-		zoom: .9 !important;
+		zoom: .7 !important;
+	}
+	.tituloPropuesta{
+		zoom: 1 !important;
 	}
 }
 
 @media (max-width: 600px)  {
 	.headerContainer{
-		zoom: .9;
+		zoom: .8;
+	}
+	.footerLinkGrande {
+    	display:block;
+		width:auto !important;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	
+	.bannerAfiliacion{
+		padding: 10px 0;
+		font-weight: 400;
 	}
 }
 
 @media (max-width: 680px)  {
-	
-	.tipo{
-		zomm:.7;
-	}
-	
-	.tipo .title{
-		font-size:24px;
-		line-height: 50px;
-	}
-	.tipo img {
-	  width: 40px;
-	  height: 40px;
-	}
 	
 	.candidatosContainerFixed .item.propuestas::before{
 		content:'Prop.';
@@ -1168,10 +1171,34 @@ img {
 	.candidatosContainerFixed .imagenCandidato{
 		width:90%;
 		height: 70px;
+		display:block !important;
+	}
+	.footerContainer > div > div {
+    	display: block;
+	}
+	.footerLinkGrande {
+    	float: none !important;
+		margin-top: 0;
+		width: 49%;
 	}
 }
 @media (max-width: 800px)  {
 	
+	nav.menu {
+		position: relative;
+		width: 100%;
+		padding: 10px;
+		margin: 5px 0 0 0;
+		border-top: 1px solid #169CBF;
+	}
+
+	nav.menu div {
+		width: 32%;
+		margin: 0;
+		text-align: center;
+		border-right: 1px solid #BDD2DA;
+	}
+
 	.quantityList{
 		display:none;
 	}
@@ -1186,7 +1213,9 @@ img {
 	}	
 
 	.textoPropuesta {
-		padding: 0 0 40px 0 !important;
+		padding: 0 0 40px 10px !important;
+		zoom: 1;
+		font-weight: 400;
 	}
 	
 	.partidosContainer .twitterButton {

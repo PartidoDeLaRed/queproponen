@@ -128,8 +128,8 @@ function MostrarCandidato(modo, cand)
 				}
 				else
 				{
-					$('.candidatoContainer[data-codigo='+cand.codigo+']').removeClass('deselectedItem').addClass('selectedItem');
-					$('.candidatoContainer[data-codigo!='+cand.codigo+']').removeClass('selectedItem').addClass('deselectedItem');
+					$('.candidatosContainer').children('.candidatoContainer[data-codigo='+cand.codigo+']').removeClass('deselectedItem').addClass('selectedItem');
+					$('.candidatosContainer').children('.candidatoContainer[data-codigo!='+cand.codigo+']').removeClass('selectedItem').addClass('deselectedItem');
 					$('.contPropuestas').children('.propuestaContainer[data-candidato='+cand.codigo+']').slideDown('fast');
 					$('.contPropuestas').children('.propuestaContainer[data-candidato!='+cand.codigo+']').slideUp('fast');
 					setTimeout(function(){
