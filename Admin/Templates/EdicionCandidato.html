@@ -13,7 +13,7 @@
                 <label class="labelInput">Lista</label><input id="list-input" name="list" class="textInput" type="text" placeholder="lista del candidato" required="required"/>
             </div>
         	<div>
-                <label class="labelInput">Twitter</label><input id="twitter-input" name="twitter" class="textInput" type="text" placeholder="twitter del candidato"/>
+                <label class="labelInput">Twitter</label><input id="twitter-input" name="twitter" class="textInput" type="text" placeholder="@ejemplo"/>
             </div>
             <div>
                 <label class="labelInput">Imagen</label><div class="imageSource"></div><input id="image-input" type="file" placeholder="imagen del partido"/>
@@ -51,7 +51,7 @@
         'uploadScript' : 'PHP/SubirImagenCandidato.php',
 		'width'        : '30%',
 		'onAddQueueItem' : function(file) {
-			window.nombreImagenPartido = file.name;
+			window.nombreImagenCandidato = file.name;
 			var actualImage = $('#image-input').parent().children()[1].files[0];
 			var tmppath = URL.createObjectURL(actualImage);
 			$('.imageSource').css('background-image', 'url('+tmppath+')');

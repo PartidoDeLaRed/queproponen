@@ -3,7 +3,7 @@ window.edicionPartidoCodigo = -1;
 function MostrarAgregarPartido()
 {
 	$('#paneles').fadeIn('fast');
-	$('#paneles').load('Templates/EdicionPartido.html', null, function(a, b, c)
+	$('#paneles').load('Templates/EdicionPartido.html?'+ new Date().getTime(), null, function(a, b, c)
 	{
 		jscolor.init();
 		$('.imageSource').css('background-image','url(../IMG/partidos/default.png)');

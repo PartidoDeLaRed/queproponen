@@ -4,7 +4,7 @@ partidoAnteriorCodigo = -1;
 function MostrarAgregarCandidato(part)
 {
 	$('#paneles').fadeIn('fast');
-	$('#paneles').load('Templates/EdicionCandidato.html', null, function(a, b, c)
+	$('#paneles').load('Templates/EdicionCandidato.html?'+ new Date().getTime(), null, function(a, b, c)
 	{
 		window.editarCandidato = false;
 		if(part != undefined)

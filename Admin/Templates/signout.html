@@ -1,0 +1,21 @@
+<div class="pn-wraper">
+    <div class="pn-container">
+ 		<div class="pn-title">Registración de Usuario</div>
+    	<form name="formSignOut" onSubmit="signout_submit(); return false;">
+        	<div>
+                <label class="labelInput">Usuario</label><input id="user-input" name="user-input" type="text" class="textInput" placeholder="Usuario" required="required" autocomplete="off"/>
+            </div>
+            <div>
+                <label class="labelInput">Contraseña</label><input id="pass-input" name="pass-input" type="password" class="textInput" placeholder="Contraseña" required="required" autocomplete="off"/>
+            </div>
+        	<div>
+                <label class="labelInput">Nombre</label><input id="name-input" name="name-input" type="text" class="textInput" placeholder="Nombre y apellido del usuario" required="required" autocomplete="off"/>
+            </div>
+        	<div>
+                <label class="labelInput">Mail</label><input id="mail-input" name="mail-input" type="mail" class="textInput" placeholder="por@ejemplo.com" required="required" autocomplete="off"/>
+            </div>
+            <button id="submit" type="submit">Registrar Usuario</button>
+        </form>
+ 		<div class="pn-closeButton" onclick="javascript:CerrarPanel()"></div>
+    </div>
+</div>

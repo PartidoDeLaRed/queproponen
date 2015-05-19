@@ -29,7 +29,7 @@
         'uploadScript' : 'PHP/SubirImagenPartido.php',
 		'width'        : '30%',
 		'onAddQueueItem' : function(file) {
-			window.nombreImagenCandidato = file.name;
+			window.nombreImagenPartido = file.name;
 			var actualImage = $('#image-input').parent().children()[1].files[0];
 			var tmppath = URL.createObjectURL(actualImage);
 			$('.imageSource').css('background-image', 'url('+tmppath+')');

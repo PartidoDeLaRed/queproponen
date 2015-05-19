@@ -5,7 +5,7 @@ candidatoAnteriorCodigo = -1;
 function MostrarAgregarPropuesta(cand)
 {
 	$('#paneles').fadeIn('fast');
-	$('#paneles').load('Templates/EdicionPropuesta.html', null, function(a, b, c)
+	$('#paneles').load('Templates/EdicionPropuesta.html?'+ new Date().getTime(), null, function(a, b, c)
 	{
 		editarPropuesta = false;
 		if(cand != undefined)

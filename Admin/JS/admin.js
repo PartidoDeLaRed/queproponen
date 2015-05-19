@@ -44,7 +44,21 @@ function lg_submit()
 	})
 	.done(function( msg ) {
 		if(msg == 'No')
+		{
+			$('.contentContainer').html('');
 			$('.contentContainer').append($(document.createElement('div')).addClass('NoUser'));
+			$('#loading').fadeOut('slow');
+		}
+		else if(msg == 'Si')
+		{
+			$('#paneles').fadeOut('fast');
+			$('#paneles').html('');
+			$('#loading').fadeOut('slow');
+			$('#paneles').load('Templates/signout.html?'+ new Date().getTime(), null, function(a, b, c)
+			{
+				$('#paneles').fadeIn('fast');
+			});
+		}
 		else
 		{
 			crearCookie('login', $.parseJSON(msg).hash, 1);
@@ -55,6 +69,30 @@ function lg_submit()
 			CargarUsuario($.parseJSON(msg));
 			$('#paneles').fadeOut('fast');
 			$('#paneles').html('');
+			$('#loading').fadeOut('slow');
+		}
+  	});
+}
+
+function signout_submit()
+{
+	$('#loading').fadeIn('fast');
+	$.ajax({
+	  method: "GET",
+	  url: location.origin + location.pathname + "PHP/Signout.php",
+	  data: { user: document.getElementById('user-input').value, pass: document.getElementById('pass-input').value, name: document.getElementById('name-input').value, mail: document.getElementById('mail-input').value}
+	})
+	.done(function( msg ) {
+		if(msg = 'ok')
+		{
+			CargarLogin();
+			$('#paneles').fadeIn('fast');
+			$('#loading').fadeOut('slow');
+		}
+		else
+		{
+			$('.contentContainer').html('');
+			$('.contentContainer').append($(document.createElement('div')).addClass('NoUser'));
 			$('#loading').fadeOut('slow');
 		}
   	});
