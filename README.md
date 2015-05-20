@@ -19,14 +19,14 @@ Hay dos versiones del sitio:
 En el inicio se mostrarán la lista de partidos, debajo la lista de candidatos y finalmente la lista de propuestas organizadas por categoría.
 Se podrá navegar apretando los partidos - llevándote a la subpágina del partido con su lista de candidatos y propuestas -, los candidatos - llevándote a la subpágina del candidato con su lista de propuestas -
 
-Un ejemplo de esta versión se puede ver en [Queproponen CABA PASO](caba.queproponen.com.ar/PASO)
+Un ejemplo de esta versión se puede ver en [caba.queproponen.com.ar/PASO](http://caba.queproponen.com.ar/PASO)
 
 **'Generales'**
 
 Pensada para una menor cantidad de candidatos y donde existe un candidato por partido, en el inicio se mostrarán la lista de candidatos con un header en cada uno indicando su partido, debajo la lista de propuestas organizadas por categoría.
 Al apretar un candidato, dinámicamente en la misma página, se mostarán abajo sólo sus propuestas.
 
-Un ejemplo de esta versión se puede ver en [Queproponen CABA GENERALES](caba.queproponen.com.ar)
+Un ejemplo de esta versión se puede ver en [caba.queproponen.com.ar](http://caba.queproponen.com.ar)
 
 finalmente  está el módulo **Admin**
 
