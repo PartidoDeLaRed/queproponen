@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 /* CSS Document */
 
 *{
@@ -277,7 +277,7 @@ nav.menu div.selected {
 	margin: 0;
 	background:#fff;
 	border: 1px solid #ddd;
-	border-radius: 0;
+	border-radius: 3px;
 	display: inline-block;
 	background-position: center center;
 	background-size: cover;
@@ -491,9 +491,9 @@ text-align: center;
 .candidatoContainer{	
 	text-align: center;
 	width: 192px;
-	margin: 0px;
-	border: 1px solid #f0f0f0;
-	border-radius: 0;
+	margin: 5px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
 	background:#fff;
 	display: inline-block;
 	cursor:pointer;
