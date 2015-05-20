@@ -464,6 +464,7 @@ text-align: center;
 
 
 
+
 	content: 'Propuestas';
 	font-size: 15px;
 	font-weight: 300 !important;
@@ -839,7 +840,7 @@ img {
   background: #7FC2EE;
   border-radius: 3px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 13px;
 
   padding: 10px 10px 10px 35px;
   margin: 10px 5px 0 0px;
