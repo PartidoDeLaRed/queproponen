@@ -130,6 +130,8 @@ function MostrarCandidato(modo, cand)
 				{
 					$('.candidatosContainer').children('.candidatoContainer[data-codigo='+cand.codigo+']').removeClass('deselectedItem').addClass('selectedItem');
 					$('.candidatosContainer').children('.candidatoContainer[data-codigo!='+cand.codigo+']').removeClass('selectedItem').addClass('deselectedItem');
+					$('.candidatosContainerFixed').children('.candidatoContainer[data-codigo='+cand.codigo+']').removeClass('deselectedItem').addClass('selectedItem');
+					$('.candidatosContainerFixed').children('.candidatoContainer[data-codigo!='+cand.codigo+']').removeClass('selectedItem').addClass('deselectedItem');
 					$('.contPropuestas').children('.propuestaContainer[data-candidato='+cand.codigo+']').slideDown('fast');
 					$('.contPropuestas').children('.propuestaContainer[data-candidato!='+cand.codigo+']').slideUp('fast');
 					setTimeout(function(){
@@ -154,16 +156,16 @@ function MostrarCandidato(modo, cand)
 			$(container).attr('id', cand.nombre);
 			$(container).addClass('candidatoContainer');
 
-			var imagen = document.createElement('div');
-			$(imagen).addClass('imagenCandidato_mini');
-			$(imagen).css('background-image', 'url(IMG/candidatos/' + cand.imagen + ')');
-			$(container).append(imagen);
-			
 			var color = document.createElement('div');
 			$(color).addClass('colorCandidato_mini');
 			$(color).css('background-color', cand.partido.color);
 			$(container).append(color);
 
+			var imagen = document.createElement('div');
+			$(imagen).addClass('imagenCandidato_mini');
+			$(imagen).css('background-image', 'url(IMG/candidatos/' + cand.imagen + ')');
+			$(container).append(imagen);
+			
 			if(!cand.ganador)
 			{
 				var nombre = document.createElement('div');

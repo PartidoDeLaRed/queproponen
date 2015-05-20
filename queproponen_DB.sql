@@ -46,6 +46,7 @@ CREATE TABLE IF NOT EXISTS `tbCandidatos` (
 CREATE TABLE IF NOT EXISTS `tbCategorias` (
   `catID` int(11) NOT NULL,
   `catNombre` varchar(50) NOT NULL,
+  `catAbreviatura` varchar(20) NOT NULL,
   `catColor` varchar(10) NOT NULL,
   `catImagen` varchar(200) NOT NULL,
   `catOrden` int(11) NOT NULL,
@@ -56,19 +57,19 @@ CREATE TABLE IF NOT EXISTS `tbCategorias` (
 -- Volcado de datos para la tabla `tbCategorias`
 --
 
-INSERT INTO `tbCategorias` (`catID`, `catNombre`, `catColor`, `catImagen`, `catOrden`) VALUES
-(7, 'Transporte', '#BC92E7', 'transporte.png', 10),
-(6, 'Economía', '#90E5BA', 'economia.png', 7),
-(5, 'Planeamiento Urbano', '#D8AD83', 'planeamientoUrbano.png', 4),
-(4, 'Derechos Humanos', '#443868', 'derechosHumanos.png', 11),
-(3, 'Seguridad', '#F6F6A1', 'seguridad.png', 5),
-(2, 'Sociedad', '#FF7F88', 'sociedad.png', 2),
-(1, 'Educación', '#7FAAFF', 'educacion.png', 9),
-(0, 'Salud', '#FF7FD4', 'salud.png', 0),
-(8, 'Internacional', '#55D4FF', 'internacional.png', 8),
-(9, 'Institucional', '#FFAA7F', 'institucional.png', 3),
-(10, 'Medio Ambiente', '#97EC97', 'medioAmbiente.png', 6),
-(11, 'Vivienda', '#EE446F', 'vivienda.png', 1);
+INSERT INTO `tbCategorias` (`catID`, `catNombre`, `catAbreviatura`, `catColor`, `catImagen`, `catOrden`) VALUES
+(7, 'Transporte', 'Transporte', '#BC92E7', 'transporte.png', 10),
+(6, 'Economía', 'Economía', '#90E5BA', 'economia.png', 7),
+(5, 'Planeamiento Urbano', 'P. Urbano', '#D8AD83', 'planeamientoUrbano.png', 4),
+(4, 'Derechos Humanos', 'D. Humanos', '#443868', 'derechosHumanos.png', 11),
+(3, 'Seguridad', 'Seguridad', '#F6F6A1', 'seguridad.png', 5),
+(2, 'Sociedad', 'Sociedad', '#FF7F88', 'sociedad.png', 2),
+(1, 'Educación', 'Educación', '#7FAAFF', 'educacion.png', 9),
+(0, 'Salud', 'Salud', '#FF7FD4', 'salud.png', 0),
+(8, 'Internacional', 'Inter.', '#55D4FF', 'internacional.png', 8),
+(9, 'Institucional', 'Institu.', '#FFAA7F', 'institucional.png', 3),
+(10, 'Medio Ambiente', 'M. Ambiente', '#97EC97', 'medioAmbiente.png', 6),
+(11, 'Vivienda', 'Vivienda', '#EE446F', 'vivienda.png', 1);
 
 -- --------------------------------------------------------
 
@@ -89,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `tbDatos` (
 --
 
 INSERT INTO `tbDatos` (`datID`, `datCiudad`, `datFacebook`, `datTwitter`) VALUES
-(0, 'Entre Ríos', 'PartidoDeLaRed', 'PartidodelaRed');
+(0, 'CABA', 'PartidoDeLaRed', 'PartidodelaRed');
 
 -- --------------------------------------------------------
 

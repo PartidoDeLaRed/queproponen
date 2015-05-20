@@ -82,7 +82,7 @@ function VerificarPropuestas(cosa)
 		{
 			$(element).children('.title').children('.arrowButton').show('fast');
 		}
-		$(element).children('.title').children('.quantityList').html(cantidad + ' propuestas');
+		$(element).children('.title').children('.quantityList').html(cantidad);
 	});	
 }
 

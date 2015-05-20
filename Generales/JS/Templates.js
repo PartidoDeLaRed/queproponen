@@ -14,7 +14,7 @@ function MostrarContenedor(tipo)
 			"<a class='twitterButton' onclick='javascript:CompartirInicio(0)'>Compartí en Twitter</a>"
 			+"<a class='facebookButton' onclick='javascript:CompartirInicio(1)'>Compartí en Facebook</a>"
 			+"<div class='candidatosContainerFixed' ></div><div class='candidatosContainer'>"+
-            	"<div class='title'>Candidatos a Jefe de Gobierno</div>"+
+            	"<div class='title'>Candidatos a Gobernador</div>"+
 				"</div><div class='title candidatosPerdedoresHeader closed' onclick='javascript:ToggleCandidatosPerdedores()'>Candidatos que no pasaron las PASO</div><div class='candidatosPerdedores' ></div> ";
 			break;
 		case contenedores.PROPUESTAS:
@@ -178,7 +178,7 @@ function HeaderCandidato(cand)
         '&picture=http:%2F%2Fqueproponen.com.ar%2Fvosquepropones%2FIMG%2FshareLogo.png' +
         '&name=' + 'Todas las propuestas de ' + cand.nombre +
         '&caption=' + 'via queproponen.com.ar - Partido de la Red' +
-        '&description=' + 'Conocé todas sus propuestas y la de todos los candidatos a Jefe de Gobierno en '+ Ciudad +
+        '&description=' + 'Conocé todas sus propuestas y la de todos los candidatos a Gobernador en '+ Ciudad +
         '&redirect_uri=' + 'http://queproponen.com.ar/close.html' +
         '&display=popup'
 		, 'Compartí todas las propuestas del partido', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);

@@ -12,7 +12,7 @@ or die ("No se pudo conectar a MySql porque ".mysql_error());
 mysql_select_db($database) 
 or die ("No se pudo acceder a la base de datos porque ".mysql_error()); 
 
-$match = "select * from tbUsuarios where usrUser='".$_GET['user']."' and usrPass='".$_GET['pass']."' limit 1;"; 
+$match = "select * from tbUsuarios where usrUser='".str_replace("'","&#39;",$_GET['user'])."' and usrPass='".str_replace("'","&#39;",$_GET['pass'])."' limit 1;"; 
 $qry = mysql_query($match)
 or die ("Fallo la query porque ".mysql_error()); 
 
@@ -39,8 +39,8 @@ if($info != false)
 		
 		$user = json_encode(
 			array (	'codigo'=> $info['usrID'],
-					'user'=>utf8_encode($info['usrUser']),
-					'name'=>utf8_encode($info['usrName']),
+					'user'=>str_replace("&#39;","'",utf8_encode($info['usrUser'])),
+					'name'=>str_replace("&#39;","'",utf8_encode($info['usrName'])),
 					'hash'=>md5($_GET['pass'])
 			)
 		);

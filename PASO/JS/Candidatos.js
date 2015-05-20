@@ -104,16 +104,16 @@ function MostrarCandidato(modo, cand, part)
 				MostrarCandidato(1, cand, part)
 			});
 
-			var imagen = document.createElement('div');
-			$(imagen).addClass('imagenCandidato_mini');
-			$(imagen).css('background-image', 'url(IMG/candidatos/' + cand.imagen + ')');
-			$(container).append(imagen);
-			
 			var color = document.createElement('div');
 			$(color).addClass('colorCandidato_mini');
 			$(color).css('background-color', part.color);
 			$(container).append(color);
 
+			var imagen = document.createElement('div');
+			$(imagen).addClass('imagenCandidato_mini');
+			$(imagen).css('background-image', 'url(IMG/candidatos/' + cand.imagen + ')');
+			$(container).append(imagen);
+			
 			return container;
 		}break;
 	}

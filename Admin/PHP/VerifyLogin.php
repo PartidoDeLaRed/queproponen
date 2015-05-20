@@ -21,8 +21,8 @@ while($info = mysql_fetch_array( $qry ))
 { 
 	$user = json_encode(
 		array (	'codigo'=> $info['usrID'],
-				'user'=>utf8_encode($info['usrUser']),
-		  		'name'=>utf8_encode($info['usrName'])
+				'user'=>str_replace("&#39;","'",utf8_encode($info['usrUser'])),
+		  		'name'=>str_replace("&#39;","'",utf8_encode($info['usrName']))
 		)
 	);
 }

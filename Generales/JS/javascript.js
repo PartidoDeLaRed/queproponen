@@ -17,6 +17,9 @@ function SetearDatos()
 	$(ciudad).addClass('subtitle');
 	$('.headerText').append(ciudad);
 	
+	$('meta[property="og:description"]').attr('content', 'Conocé todas las propuestas de los candidatos a Gobernador por '+Ciudad);
+	$('meta[name="description"]').attr('content', 'Conocé todas las propuestas de los candidatos a Gobernador por '+Ciudad);
+	
 	//Facebook
 	$('.fb-like').attr('data-href', 'https://facebook.com/'+Facebook);
 	

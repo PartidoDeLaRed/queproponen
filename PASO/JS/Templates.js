@@ -102,16 +102,14 @@ function HeaderPartido(part)
 
 	var candidatosDIV = document.createElement('div');
 	$(candidatosDIV).addClass('item').addClass('candidatos_Header');
-	$(candidatosDIV).html(candidatos.filter(function(a){return a.partido == part.codigo}).length);
+	$(candidatosDIV).html(part.candidatos.length);
 	$(container).append(candidatosDIV);
 
 	
 	var propuestasDIV = document.createElement('div');
 	$(propuestasDIV).addClass('item').addClass('propuestas_Header');
-	var cantPropuestas = 0;
-	cantPropuestas = propuestas.filter(function(a){return a.partido == part.codigo}).length;
-	$(propuestasDIV).html(cantPropuestas);
-	if(cantPropuestas == 0)
+	$(propuestasDIV).html(part.propuestas.length);
+	if(part.propuestas.length == 0)
 	    $(propuestasDIV).addClass('numeroNoPropuestas');
 	$(container).append(propuestasDIV);
 	
@@ -182,8 +180,8 @@ function HeaderCandidato(cand, part)
 
 	var propuestasDIV = document.createElement('div');
 	$(propuestasDIV).addClass('item').addClass('propuestas_Header');
-	$(propuestasDIV).html(propuestas.filter(function(a){return a.candidato == cand.codigo && a.partido == cand.partido}).length);
-	if(propuestas.filter(function(a){return a.candidato == cand.codigo && a.partido == cand.partido}).length == 0)
+	$(propuestasDIV).html(cand.propuestas.length);
+	if(cand.propuestas.length == 0)
 	    $(propuestasDIV).addClass('numeroNoPropuestas');
 	$(container).append(propuestasDIV);
 	
