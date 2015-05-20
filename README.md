@@ -2,8 +2,6 @@
 
 Sitio en producción: http://queproponen.com.ar/
 
-Aplicación 
-
 
 'Qué propones' está orientada a mostrar a la ciudadanía todas las propuestas que los pre-candidatos a Jefe de Gobierno hicieron en sus campañas.
 Asimismo, que las personas puedan interactuar directamente con los candidatos luego de ver sus propuestas, contribuyendo un debate más enriquecedor.
