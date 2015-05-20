@@ -8,6 +8,10 @@ Asimismo, que las personas puedan interactuar directamente con los candidatos lu
 
 La **metodología** de recopilación de la información se realizó investigando los medios sociales de los candidatos, frentes y partidos. Se considera una propuesta a aquellas consignas cuyo destinatario sea una política pública a realizar en caso de que el candidato sea electo, NO a bases de acción política o manifiestos políticos. Cada vez que la página se carga, los Partidos Políticos y Frentes se ordenan de forma aleatoria.
 
+## Tu Provincia en queproponen.com.ar
+
+Si querés que tu provincia ó ciudad esté dentro del dominio queproponen.com.ar envianos un mail a sumate@queproponen.com.ar indicándonos de que provincia sos y nosotros te daremos las intrucciones a seguir.
+
 ## Módulos
 
 Hay dos versiones del sitio:
@@ -29,17 +33,12 @@ Un ejemplo de esta versión se puede ver en [caba.queproponen.com.ar](http://cab
 finalmente  está el módulo **Admin**
 
 Aplicación para poder administrar los datos que se mostrarán en la página - Partidos, Candidatos y Propuestas -
-
-
-## Implementación dentro de queproponen.com.ar
-
-Si querés que tu provincia esté dentro del dominio queproponen.com.ar envianos un mail a sumate@queproponen.com.ar indicándonos de que provincia sos y nosotros te daremos las intrucciones a seguir.
-
+ 
 ## Implementación Externa
 
 1. Copiar el contenido de la versión que elija en su servidor
 2. Copiar la carpeta 'Admin' en la misma carpeta
-3. Crear una base de datos en su servidor e importar las tablas mediante el archivo 'queproponen_DB.sql'
+3. Crear una base de datos en su servidor e importar las tablas mediante el archivo 'queproponen_DB.sql' en su servidor
 4. Modificar los datos del archivo 'config.php' presentes en las carpetas PHP de la versión que elijió y el 'Admin'.
   1. Nombre de servidor (en cualquier hosting normálmente localhost)
   2. Nombre de la base de datos
