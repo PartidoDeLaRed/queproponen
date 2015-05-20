@@ -39,7 +39,7 @@ Si querés que tu provincia esté dentro del dominio queproponen.com.ar envianos
 
 1. Copiar el contenido de la versión que elija en su servidor
 2. Copiar la carpeta 'Admin' en la misma carpeta
-3. Crear una base de datos en su servidor e importar las tablas mediante el archivo 'queproponen_DB.sql' en su servidor
+3. Crear una base de datos en su servidor e importar las tablas mediante el archivo 'queproponen_DB.sql'
 4. Modificar los datos del archivo 'config.php' presentes en las carpetas PHP de la versión que elijió y el 'Admin'.
   1. Nombre de servidor (en cualquier hosting normálmente localhost)
   2. Nombre de la base de datos
