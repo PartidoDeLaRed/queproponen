@@ -19,7 +19,7 @@ or die ("No se pudieron encontrar datos porque ".mysql_error());
 $info = mysql_fetch_array( $qry );
 
 //Agregamos el nuevo
-$match = "insert into tbPropuestas values (".($info['propID']+1).", '".utf8_decode($_GET['titulo'])."', '".utf8_decode($_GET['texto'])."', ".$_GET['categoria'].", ".$_GET['partido'].", ".$_GET['candidato'].");"; 
+$match = "insert into tbPropuestas values (".($info['propID']+1).", '".utf8_decode($_GET['titulo'])."', '".utf8_decode($_GET['texto'])."', '".utf8_decode($_GET['fuente'])."', ".$_GET['categoria'].", ".$_GET['partido'].", ".$_GET['candidato'].");"; 
 $qry = mysql_query($match);
 //or die ("No se pudieron encontrar datos porque ".mysql_error()); 
 
@@ -35,6 +35,7 @@ $categoria = mysql_fetch_array( mysql_query("select * from tbCategorias where ca
 $propuesta = array ('codigo'=> $info['propID'],
 					'titulo'=>utf8_encode($info['propTitulo']),
 					'texto'=>$info['propTexto'],
+				  	'fuente'=>utf8_encode($propuesta['propFuente']),
 					'categoria' => array (	'codigo' => $categoria['catID'],
 				  				 			'nombre' => utf8_encode($categoria['catNombre']),
 				  				 			'abreviatura' => utf8_encode($categoria['catAbreviatura']),

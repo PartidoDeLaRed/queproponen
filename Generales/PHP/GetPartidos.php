@@ -40,6 +40,7 @@ function CargarPropuestas($qry_propuestas)
 			array (	'codigo'=> $propuesta['propID'],
 				  	'titulo'=>utf8_encode($propuesta['propTitulo']),
 				  	'texto'=>$propuesta['propTexto'],
+				  	'fuente'=>$propuesta['propFuente'],
 				  	'categoria' => array ('codigo' => $tema['catID'],
 				  					 'nombre' => utf8_encode($tema['catNombre']),
 									 'color' => $tema['catColor'])

@@ -27,6 +27,9 @@ function MostrarCandidato(modo, cand, part)
 			$(container).attr('id', 'cand'+cand.codigo);
 			$(container).attr('data-partido', part.codigo);
 			$(container).addClass('candidatoContainer');
+			$(container).click(function(){
+				MostrarCandidato(1, cand, part);
+			});
 			$('.candidatosContainer').append(container);
 
 			var imagen = document.createElement('div');
@@ -89,28 +92,18 @@ function MostrarCandidato(modo, cand, part)
 		}break;
 		case 1:
 		{
-			cand = CargarCandidatos(-1, cand.codigo);
-			var cont = $('.contentContainer');
-			cont.stop(true, true).fadeOut('300ms', function() {
-				$('.contentContainer').html('');
-				
-				cont.append(MostrarVolver(0, part));
-				cont.append(HeaderCandidato(cand));
-				
-				cont.append(MostrarContenedor(contenedores.PROPUESTAS));
-				
-				cand.propuestas.forEach(function(prop)
-				{
-					MostrarPropuesta(prop, cand.partido, cand);
-				});
-				VerificarPropuestas(cand);
-				AbrirPropuestas();
-	
-            }).fadeIn('300ms').animate({marginTop:'0px'},'300ms');
-			$('html, body').animate({
-		        scrollTop: cont.offset().top
-		    }, 500, function(){GenerarGrafico()});
-			CambiarURL(1, cand);
+			if($('.candidatoContainer[id=cand'+cand.codigo+']').hasClass('selectedItem'))
+			{
+				$('.candidatoContainer').removeClass('selectedItem').removeClass('deselectedItem');
+				$('.contPropuestas').children('.propuestaContainer').slideDown('fast');
+			}
+			else
+			{
+				$('.candidatosContainer').children('.candidatoContainer[id=cand'+cand.codigo+']').removeClass('deselectedItem').addClass('selectedItem');
+				$('.candidatosContainer').children('.candidatoContainer[id!=cand'+cand.codigo+']').removeClass('selectedItem').addClass('deselectedItem');
+				$('.contPropuestas').children('.propuestaContainer[data-candidato='+cand.codigo+']').slideDown('fast');
+				$('.contPropuestas').children('.propuestaContainer[data-candidato!='+cand.codigo+']').slideUp('fast');
+			}
 		}break;
 
 		case 2:

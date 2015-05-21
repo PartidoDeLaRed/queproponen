@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 *{
@@ -277,7 +277,7 @@ nav.menu div.selected {
 	margin: 0;
 	background:#fff;
 	border: 1px solid #ddd;
-	border-radius: 3px;
+	border-radius: 0;
 	display: inline-block;
 	background-position: center center;
 	background-size: cover;
@@ -465,6 +465,11 @@ text-align: center;
 
 
 
+
+
+
+
+
 	content: 'Propuestas';
 	font-size: 15px;
 	font-weight: 300 !important;
@@ -490,6 +495,7 @@ text-align: center;
 }
 .candidatoContainer{	
 	text-align: center;
+	overflow: hidden;
 	width: 192px;
 	margin: 5px;
 	border: 1px solid #ddd;
@@ -734,6 +740,7 @@ text-align: center;
 	margin: 0;
 	padding: 10px;
 	font-size: 34px;
+	line-height: 60px;
 	font-weight: 600;
 	color:#FCF;
 	background: #e8ebef;
@@ -742,7 +749,7 @@ text-align: center;
 }
 
 .tipo span{
-	margin: 4px 15px;
+	margin: 0px 15px;
 	vertical-align:super;	
 	text-shadow: 0px 0px 1px #ccc;
 }
@@ -763,7 +770,6 @@ img {
 .propuestaContainer{
 	width:100%;
 	margin: 2px 0;
-	padding: 10px 10px 10px 15px;
 	background: #e8ebef;
 	border: 1px solid #e5e5e5;
 	text-align: left;
@@ -798,7 +804,7 @@ img {
 
 .tituloPropuesta{
 	text-align:left;
-	padding: 5px 10px;
+	padding: 5px 10px 5px 40px;
 	font-size: 20px;
 	font-weight: 600;
 	color: #444;
@@ -808,9 +814,44 @@ img {
 	font-size: 16px;
 	font-weight: 400;
 	overflow:hidden;
-	padding: 0 0 0 10px;
+	padding: 5px 0 0 0;
 	color: #444;
 	line-height: 23px;
+}
+
+.linkFuentePropuesta {
+    display: inline-block;
+    margin: 0 5px;
+    font-weight: 600;
+    color: #169CBF;
+    cursor: pointer;
+}
+
+.fuentePropuesta {
+    padding: 10px;
+    background-color: #169CBF;
+    color: #fff;
+    margin: 0;
+	display:none;
+}
+
+.fuentePropuesta a {
+    color: #eee;
+    text-decoration: none;
+    padding: 0 0 0 20px;
+    position: relative;
+}
+
+.fuentePropuesta a:before {
+    content: '';
+    background-image: url(../IMG/linkIcon.png);
+    background-position: center;
+    background-size: contain;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 0;
+    top: 2px;
 }
 
 .noPropuestaContainer{
@@ -1021,19 +1062,19 @@ img {
 }
 
 .arrowButton{
-	width:40px;
-	height:40px;
+	width: 35px;
+	height: 35px;
 	display:inline-block;
 	background-size:contain !important;
 	background-position:center center;
 	background-repeat:no-repeat;
 	border-radius:20px;
 	float: right;
-	margin: 6px 0;
+	margin: 13px 5px 0 0;
 }
 
 .arrowButton.down{
-	background:url(../IMG/downIcon.png), #fff;
+	background: url(../IMG/downIcon.png);
 }
 .arrowButton.down:hover{
 	background:url(../IMG/downIcon.png), #e8e8e8;
@@ -1233,6 +1274,18 @@ img {
 		zoom:.975;
 	}
 
+.quantityList {
+    display: none;
+}
+
+.propuestaContainer {
+    padding: 10px 10px 10px 15px; */;
+}
+
+.propuestaContainer > div {
+    margin: 0px !important;
+}
+
 	.aboutContainer {
 	  padding: 45px 35px 35px 35px !important;
 	}
@@ -1275,6 +1328,38 @@ img {
 		padding: 10px 0;
 		font-weight: 400;
 	}
+
+	.candidatoContainer{
+		width:100%;
+		margin:10px 0;
+	
+		text-align: left;
+	}
+
+	.candidatoContainer div {
+		max-width: 100% !important;
+		text-align: left;
+	}
+	
+	.candidatoContainer .imagenCandidato {
+		height: 90px;
+		width: 90px;
+	}
+	
+	.candidatoContainer div > .listaCandidato {
+		text-align: left;
+		font-size: 15px;
+	}
+	
+	.candidatoContainer div > .colorCandidato {
+		font-size: 20px;
+	}
+	
+	.candidatoContainer div > .nombreCandidato {
+		text-align: left;
+		font-size: 30px;
+	}
+	
 }
 
 @media (max-width: 680px)  {
@@ -1323,11 +1408,6 @@ img {
 		bottom:25px
 	}
 
-	.candidatoContainer{
-		width:100%;
-		margin:10px 0;
-	}
-	
 	.tipo .title{
 		font-size:24px;
 		line-height: 50px;
@@ -1349,49 +1429,54 @@ img {
 @media (max-width: 800px)  {
 	nav.menu {
 		position: relative;
-		width: 100%;
-		padding: 10px;
+	    width: 100%;
+	  	padding: 0px;
 		margin: 5px 0 0 0;
-		border-top: 1px solid #169CBF;
+	  	border-top: 1px solid #D4D4D5;
+	  	background-color: #E5E6E8;
 	}
 
 	nav.menu div {
-		width: 32%;
+		width: 32.8%;
+		line-height: 70px;
+		font-size: 25px;
+		background-color: #E5E6E8;
+		color: #607077;
 		margin: 0;
 		text-align: center;
-		border-right: 1px solid #BDD2DA;
 	}
 
 	.tituloPropuesta{
-		padding: 5px 0 0 15px !important;
-	}
+		margin: 6px 0 0 40px;
+	
+		padding: 0;
+}
 	
 	.propuestaContainer .candidatoContainer {
 	  border-radius: 3px !important;
-	  left: 25px !important;
 	  right: 10px !important;
   	}
 	.colorCandidato_mini {
-  		height: 30px;
+  		/* height: 30px; */
 	}
 	.quantityList{
-		display:none;
 	}
 	
 	.propuestaContainer .twitterButton{
-		left: 25px !important;
-		opacity: 1 !important;
-		bottom: 5px !important;
-
-		border-radius:3px !important;
-		padding:7px 10px 7px 32px !important;
+    position: relative;    
+    width: 100%;    opacity: 1;    
+    border-radius: 0;    
+    padding: 10px 10px 10px 32px !important;    
+    margin: 5px 0;
 	}
 	
 	.textoPropuesta {
-		padding: 0 0 40px 10px !important;
+		padding: 10px 0 !important;
 		zoom: 1;
 		font-weight: 400;
-	}
+	
+		text-align: justify;
+}
 	
 	.partidosContainer .twitterButton {
 		position: relative;
@@ -1510,7 +1595,7 @@ img {
 	
 	.contentContainer .title{
 		line-height: 60px !important;
-		font-size: 30px;
+		font-size: 27px;
 	}
 
 	.footerContainer > div > div{

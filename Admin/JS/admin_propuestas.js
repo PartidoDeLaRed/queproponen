@@ -25,6 +25,7 @@ function MostrarEditarPropuesta(prop)
 		$('.label-mas-input').css('display','none');
 		document.getElementById('titulo-input').value = prop.titulo;
 		document.getElementById('texto-input').value = prop.texto;
+		document.getElementById('fuente-input').value = prop.fuente;
 		document.getElementById('candidato-input').value = prop.candidato.codigo;
 		document.getElementById('categoria-input').value = prop.categoria.codigo;
 		editarPropuesta = true;
@@ -41,6 +42,7 @@ function EdicionPropuesta()
 
 	var _titulo = document.getElementById('titulo-input').value;
 	var _texto = document.getElementById('texto-input').value;
+	var _fuente = document.getElementById('fuente-input').value;
 	var _candidato = document.getElementById('candidato-input').value;
 	var _partido = partidos.filter(function(part){ return part.candidatos.filter(function(cand){return cand.codigo == document.getElementById('candidato-input').value;}).length > 0;})[0].codigo;
 	var _categoria = document.getElementById('categoria-input').value;
@@ -51,6 +53,7 @@ function EdicionPropuesta()
 		codigo: edicionPropuestaCodigo,
 		titulo: _titulo,
 		texto: _texto,
+		fuente: _fuente,
 		candidato: _candidato,
 		partido: _partido,
 		categoria: _categoria
@@ -81,6 +84,7 @@ function EdicionPropuesta()
 			propuesta = candidatoAnterior.propuestas.filter(function(_prop){return _prop.codigo == prop.codigo;})[0];
 			propuesta.titulo = prop.titulo;
 			propuesta.texto = prop.texto;
+			propuesta.fuente = prop.fuente;
 			propuesta.partido = prop.partido;
 			propuesta.candidato = prop.candidato;
 			propuesta.categoria = prop.categoria;
@@ -100,6 +104,7 @@ function EdicionPropuesta()
 			}
 			$(container).find('.tituloPropuesta').html(prop.titulo);
 			$(container).find('.textoPropuesta').html(prop.texto);
+			$(container).find('.fuentePropuesta a').attr('href',prop.fuente).html(prop.fuente);
 			$(container).attr('data-partido',prop.partido.codigo);
 			$(container).attr('data-candidato',prop.candidato.codigo);
 			$($(container).children()[2]).children('.imagenCandidato_mini').css('background-image', 'url(../IMG/candidatos/'+prop.candidato.imagen+')');

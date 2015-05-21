@@ -23,6 +23,7 @@ or die ("No se pudieron encontrar datos porque ".mysql_error());
 			array (	'codigo'=> $info['propID'],
 				  	'titulo'=>utf8_encode($info['propTitulo']),
 				  	'texto'=>$info['propTexto'],
+				  	'fuente'=>utf8_encode($propuesta['propFuente']),
 				  	'categoria' => array ('codigo' => $tema['catID'],
 				  					 'nombre' => utf8_encode($tema['catNombre']),
 									 'color' => $tema['catColor'])
@@ -41,6 +42,7 @@ while($info = mysql_fetch_array( $qry ))
 		array (	'codigo'=> $info['propID'],
 				'titulo'=>utf8_encode($info['propTitulo']),
 				'texto'=>$info['propTexto'],
+			  	'fuente'=>utf8_encode($propuesta['propFuente']),
 				'categoria' => array ('codigo' => $tema['catID'],
 				  				 'nombre' => utf8_encode($tema['catNombre']),
 								 'color' => $tema['catColor']),

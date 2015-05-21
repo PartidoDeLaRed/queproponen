@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-05-2015 a las 18:52:46
+-- Tiempo de generación: 20-05-2015 a las 19:36:42
 -- Versión del servidor: 5.1.73
 -- Versión de PHP: 5.2.17
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `pz000328_queproponen_entrerios`
+-- Base de datos: `pz000328_queproponen`
 --
 
 -- --------------------------------------------------------
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `tbDatos` (
 --
 
 INSERT INTO `tbDatos` (`datID`, `datCiudad`, `datFacebook`, `datTwitter`) VALUES
-(0, 'CABA', 'PartidoDeLaRed', 'PartidodelaRed');
+(0, 'Ciudad', 'PartidoDeLaRed', 'PartidodelaRed');
 
 -- --------------------------------------------------------
 
@@ -116,6 +116,7 @@ CREATE TABLE IF NOT EXISTS `tbPropuestas` (
   `propID` int(11) NOT NULL,
   `propTitulo` varchar(200) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `propTexto` text CHARACTER SET utf8 COLLATE utf8_spanish_ci,
+  `propFuente` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `catID` int(11) NOT NULL,
   `partID` int(11) NOT NULL,
   `candID` int(11) NOT NULL,

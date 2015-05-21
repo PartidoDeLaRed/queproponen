@@ -43,6 +43,7 @@ function CargarPropuestas($qry_propuestas)
 			array (	'codigo'=> $propuesta['propID'],
 				  	'titulo'=>utf8_encode($propuesta['propTitulo']),
 				  	'texto'=>utf8_encode($propuesta['propTexto']),
+				  	'fuente'=>utf8_encode($propuesta['propFuente']),
 				  	'candidato'=>utf8_encode($propuesta['candID']),
 				  	'categoria' => array ('codigo' => $tema['catID'],
 				  					 'nombre' => utf8_encode($tema['catNombre']),

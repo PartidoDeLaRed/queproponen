@@ -481,9 +481,19 @@ text-align: center;
 	border-radius: 3px;
 	background:#fff;
 	display: inline-block;
-	cursor:default;
+	cursor:pointer;
 	opacity:1;
 	transition:all 200ms ease-out;
+}
+
+.selectedItem{
+	transition:all 200ms ease-out;
+	box-shadow:0 2px 5px rgba(0,0,0,.5) !important;
+	opacity:1;
+}
+.deselectedItem{
+	transition:all 200ms ease-out;
+	opacity: .3;
 }
 
 .candidatoContainer_Header{	
@@ -744,7 +754,7 @@ text-align: center;
 .propuestaContainer{
 	width:100%;
 	margin: 5px 0;
-	padding: 10px 10px 10px 15px;
+	padding: 0;
 	background: #e8ebef;
 	border: 1px solid #e5e5e5;
 	text-align: left;
@@ -790,6 +800,41 @@ text-align: center;
 	font-weight:300;
 	overflow:hidden;
 	padding: 0 0 0 10px;
+}
+
+.linkFuentePropuesta {
+    display: inline-block;
+    margin: 0 5px;
+    font-weight: 600;
+    color: #169CBF;
+    cursor: pointer;
+}
+
+.fuentePropuesta {
+    padding: 10px;
+    background-color: #169CBF;
+    color: #fff;
+    margin: 0;
+	display:none;
+}
+
+.fuentePropuesta a {
+    color: #eee;
+    text-decoration: none;
+    padding: 0 0 0 20px;
+    position: relative;
+}
+
+.fuentePropuesta a:before {
+    content: '';
+    background-image: url(../IMG/linkIcon.png);
+    background-position: center;
+    background-size: contain;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 0;
+    top: 2px;
 }
 
 .noPropuestaContainer{

@@ -35,7 +35,7 @@ function MostrarPropuesta(prop, part, cand)
 			var cont = document.createElement('div');
 			$(cont).css('display', 'inline-block');
 			$(cont).css('vertical-align', 'top');
-			$(cont).css('margin', '0 0 0 30px');
+			$(cont).css('margin', '10px 40px');
 			
 			var titulo = document.createElement('div');
 			$(titulo).addClass('tituloPropuesta');
@@ -47,7 +47,24 @@ function MostrarPropuesta(prop, part, cand)
 			$(texto).html(prop.texto);
 			$(cont).append(texto);
 	
+			var fuente = document.createElement('div');
+			$(fuente).addClass('fuentePropuesta');
+			var fuenteLink = document.createElement('a');
+			$(fuenteLink).attr('href',prop.fuente);
+			$(fuenteLink).attr('target','_blank');
+			$(fuenteLink).html(prop.fuente);
+			$(fuente).append(fuenteLink);
+	
+			var linkFuente = document.createElement('div');
+			$(linkFuente).addClass('linkFuentePropuesta');
+			$(linkFuente).html('fuente');
+			$(linkFuente).click(function(e) {
+                $(fuente).slideToggle(100);
+            });
+			$(texto).append(linkFuente);
+	
 			$(container).append(cont);
+			$(container).append(fuente);
 	
 			var tweet = document.createElement('a');
 			$(tweet).addClass('twitterButton');
