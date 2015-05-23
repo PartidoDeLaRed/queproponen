@@ -23,9 +23,10 @@ function VerifyLogin()
 		}
 		else
 		{
+			CargarCiudades();
 			CargarCategorias();
 			CargarPartidos(-1);
-			CargaInicial(false);
+			CargaInicial(true);
 			CargarUsuario($.parseJSON(msg));
 			$('#paneles').fadeOut('fast');
 			$('#paneles').html('');
@@ -63,9 +64,10 @@ function lg_submit()
 		{
 			crearCookie('login', $.parseJSON(msg).hash, 1);
 			$('.contentContainer').html('');
-			CargarPartidos(-1);
+			CargarCiudades();
 			CargarCategorias();
-			CargaInicial(false);
+			CargarPartidos(-1);
+			CargaInicial(true);
 			CargarUsuario($.parseJSON(msg));
 			$('#paneles').fadeOut('fast');
 			$('#paneles').html('');

@@ -25,6 +25,7 @@ $candidatos = array();
 while($info = mysql_fetch_array( $qry )) 
 { 
 	$partido = mysql_fetch_array( mysql_query("select * from tbPartidos where partID = ".$info['partID']) );
+	$ciudad = mysql_fetch_array( mysql_query("select * from tbCiudades where ciuID = ".$candidato['ciuID']) );
 	array_push($candidatos, 
 		array (	'codigo'=> $info['candID'],
 				'nombre'=>utf8_encode($info['candNombre']),
@@ -36,6 +37,8 @@ while($info = mysql_fetch_array( $qry ))
 									'nombre' => utf8_encode($partido['partNombre']),
 									'imagen' => $partido['partImagen'],
 									'color' => $partido['partColor']),
+				'ciudad' => array ('codigo' => $ciudad['ciuID'],
+									'nombre' => $ciudad['ciuNombre']),
 				'propuestas'=> CargarPropuestas(mysql_query("select * from tbPropuestas where candID = ".$info['candID']))
 		)
 	);

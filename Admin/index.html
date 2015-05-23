@@ -34,6 +34,7 @@
 <script src="JS/Candidatos.js"></script>
 <script src="JS/Propuestas.js"></script>
 <script src="JS/Categorias.js"></script>
+<script src="JS/Ciudades.js"></script>
 <script src="JS/Templates.js"></script>
 <script src="JS/Chart.js"></script>
 <script src="JS/Cookies.js"></script>
@@ -91,8 +92,9 @@ $(document).ready(function(e) {
         <div class="widthLimiter">
 	        <div class="logo"></div>
             <div class="headerText">
-				<div class="title" onclick="javascript:CargaInicial()">¿Qué proponen?</div>
+				<div class="title" onclick="javascript:CargaInicial(true)">¿Qué proponen?</div>
             </div>
+            <select class="selectCiudades" id="selectCiudades" onchange="javascript:CambiarCiudad()"></select>
             <nav class="menu">
             </nav>
   		</div>

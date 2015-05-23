@@ -185,3 +185,12 @@ input:focus, button:focus, select:focus textarea:focus {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+.selectCiudades {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    top: 11px;
+    padding: 10px;
+    font-size: 20px;
+}

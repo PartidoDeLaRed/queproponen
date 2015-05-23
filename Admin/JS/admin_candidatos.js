@@ -22,6 +22,7 @@ function MostrarEditarCandidato(cand)
 	{
 		var paso = cand.ganador == '1' ? true : false;
 		document.getElementById('name-input').value = cand.nombre;
+		document.getElementById('ciudad-input').value = cand.ciudad.codigo;
 		document.getElementById('list-input').value = cand.lista;
 		document.getElementById('twitter-input').value = cand.twitter;
 		$('.imageSource').css('background-image','url(../IMG/candidatos/'+cand.imagen+')');
@@ -38,6 +39,7 @@ function EdicionCandidato()
 {
 	var check = $('#PASO-input');
 	var _name = document.getElementById('name-input').value;
+	var _ciudad = document.getElementById('ciudad-input').value;
 	var _lista = document.getElementById('list-input').value;
 	var _twitter = document.getElementById('twitter-input').value;
 	var _PASO = document.getElementById('PASO-input').checked ? 1 : 0;
@@ -52,7 +54,7 @@ function EdicionCandidato()
 			$('#image-input').data('uploadifive').settings.formData =  {'name' : _image};
 			$('#image-input').data('uploadifive').settings.onUploadComplete = function(file, response, data)
 			{
-				ActionEdicionCandidato(_name, _lista, _twitter, _PASO, _partido, _image);
+				ActionEdicionCandidato(_name, _lista, _twitter, _PASO, _ciudad, _partido, _image);
 				var container = $('.candidatosContainer').children('#cand'+window.edicionCandidatoCodigo);
 				$(container).find('.imagenCandidato').css('background-image', 'none').css('background-image', 'url(../IMG/candidatos/'+response+'?'+ new Date().getTime()+')');
 			};
@@ -65,10 +67,10 @@ function EdicionCandidato()
 		}
 	}
 	else
-		ActionEdicionCandidato(_name, _lista, _twitter, _PASO, _partido, _image);
+		ActionEdicionCandidato(_name, _lista, _twitter, _PASO, _ciudad, _partido, _image);
 }
 
-function ActionEdicionCandidato(_name, _lista, _twitter, _PASO, _partido, _image)
+function ActionEdicionCandidato(_name, _lista, _twitter, _PASO, _ciudad, _partido, _image)
 {
 	$('#loading').fadeIn('fast');
 	$.ajax({
@@ -81,6 +83,7 @@ function ActionEdicionCandidato(_name, _lista, _twitter, _PASO, _partido, _image
 		twitter: _twitter,
 		PASO: _PASO,
 		image: _image != null ? _image : (!window.editarCandidato ? 'default.png' : 'noChange'),
+		ciudad: _ciudad,
 		partido: _partido
 	  }
 	})
@@ -92,17 +95,20 @@ function ActionEdicionCandidato(_name, _lista, _twitter, _PASO, _partido, _image
 		$('#paneles').html('');
 		if(!window.editarCandidato)
 		{
-			MostrarCandidato(0, cand, cand.partido);
+			if(cand.ciudad.codigo == document.getElementById('selectCiudades').value)
+				MostrarCandidato(0, cand, cand.partido);
 			partidos.filter(function(part){return part.codigo == cand.partido.codigo;})[0].candidatos.push(cand);
 		}
 		else
 		{
 			partidoAnterior = partidos.filter(function(_part){return _part.codigo == partidoAnteriorCodigo;})[0];
 			candidato = partidoAnterior.candidatos.filter(function(cand){return cand.codigo == window.edicionCandidatoCodigo;})[0];
+			var ciudadAnterior = candidato.ciudad;
 			candidato.nombre = cand.nombre;
 			candidato.lista = cand.lista;
 			candidato.imagen = cand.imagen;
 			candidato.ganador = cand.ganador;
+			candidato.ciudad = cand.ciudad;
 			candidato.partido = cand.partido;
 			if(cand.partido.codigo != partidoAnteriorCodigo)
 			{
@@ -110,13 +116,19 @@ function ActionEdicionCandidato(_name, _lista, _twitter, _PASO, _partido, _image
 				partidoNuevo.candidatos.push(candidato);
 				partidoAnterior.candidatos.splice(partidoAnterior.candidatos.indexOf(candidato), 1);
 			}
+
 			var container = $('.candidatosContainer').children('#cand'+window.edicionCandidatoCodigo);
-			$(container).find('.nombreCandidato').html(cand.nombre);
-			$(container).find('.listaCandidato').html(cand.lista);
-			$(container).find('.colorCandidato').css('background-color', cand.partido.color).html(cand.partido.nombre);
-			$(container).find('.imagenCandidato').css('background-image', 'url(../IMG/candidatos/'+cand.imagen+'?'+ new Date().getTime()+')');
-			$(container).attr('data-partido',cand.partido.codigo);
-			$('.propuestaContainer[data-candidato="'+cand.codigo+'"]').find('.imagenCandidato_mini').css('background-image', 'url(../IMG/candidatos/'+cand.imagen+'?'+ new Date().getTime()+')');
+			if(cand.ciudad.codigo == ciudadAnterior.codigo)
+			{
+				$(container).find('.nombreCandidato').html(cand.nombre);
+				$(container).find('.listaCandidato').html(cand.lista);
+				$(container).find('.colorCandidato').css('background-color', cand.partido.color).html(cand.partido.nombre);
+				$(container).find('.imagenCandidato').css('background-image', 'url(../IMG/candidatos/'+cand.imagen+'?'+ new Date().getTime()+')');
+				$(container).attr('data-partido',cand.partido.codigo);
+				$('.propuestaContainer[data-candidato="'+cand.codigo+'"]').find('.imagenCandidato_mini').css('background-image', 'url(../IMG/candidatos/'+cand.imagen+'?'+ new Date().getTime()+')');
+			}
+			else
+				$(container).remove();
 		}
 		$('#loading').fadeOut('fast');
   	});

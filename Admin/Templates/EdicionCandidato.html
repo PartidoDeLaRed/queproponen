@@ -7,6 +7,9 @@
                 <label class="labelInput">Nombre</label><input id="name-input" name="name" class="textInput" type="text" placeholder="nombre del candidato" required="required"/>
             </div>
             <div>
+                <label class="labelInput">Ciudad</label><select id="ciudad-input" name="ciudad" class="selectInput" required="required"/>
+            </div>
+            <div>
                 <label class="labelInput">Partido</label><select id="partido-input" name="partido" class="selectInput" required="required"/>
             </div>
         	<div>
@@ -40,6 +43,20 @@
 		});
 		
 		$('#PASO-input').checkboxpicker();
+
+		ciudades.forEach(function(ciu)
+		{
+			var option = document.createElement('option');
+			$(option).attr('id', ciu.codigo);
+			$(option).attr('value', ciu.codigo);
+			$(option).html(ciu.nombre);
+			$('#ciudad-input').append(option);
+		});
+		if(ciudades.length < 2)
+		{
+			document.getElementById('ciudad-input').value = 0;
+			$('#ciudad-input').hide();
+		}
 	});
 
 	window.nombreImagenCandidato = null;

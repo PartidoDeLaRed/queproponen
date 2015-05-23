@@ -61,7 +61,7 @@ function CargaPaso()
 {
 	$('.menu').children('.selected').removeClass('selected');
 	$($('.menu').children()[1]).addClass('selected');
-	CargaInicial();
+	CargaInicial(true);
 }
 
 function SetearDatos()
@@ -72,30 +72,85 @@ function SetearDatos()
 	$('.headerText').append(ciudad);
 }
 
-function CargaInicial()
+function CargaInicial(nuevo)
 {
-	cont = $('.contentContainer');
-	cont.stop(true, true).fadeOut('300ms', function() {
-		cont.html('');
-		cont.append(MostrarContenedor(contenedores.PARTIDOS));
-		cont.append(MostrarContenedor(contenedores.CANDIDATOS));
-		cont.append(MostrarContenedor(contenedores.PROPUESTAS));
-		
-		partidos.forEach(function(part) {
-			MostrarPartido(0, part);
-			part.candidatos.forEach(function(cand) {
-				MostrarCandidato(0, cand, part);
-				cand.propuestas.forEach(function(prop) {
-					MostrarPropuesta(prop, part, cand);
+	if(nuevo){
+		cont = $('.contentContainer');
+		cont.stop(true, true).fadeOut('300ms', function() {
+			cont.html('');
+			cont.append(MostrarContenedor(contenedores.PARTIDOS));
+			cont.append(MostrarContenedor(contenedores.CANDIDATOS));
+			cont.append(MostrarContenedor(contenedores.PROPUESTAS));
+			
+			if(ciudades.length == 1 || document.getElementById('selectCiudades').value == -1)
+			{
+				partidos.forEach(function(part) {
+					MostrarPartido(0, part);
+					part.candidatos.forEach(function(cand) {
+						MostrarCandidato(0, cand, part);
+						cand.propuestas.forEach(function(prop) {
+							MostrarPropuesta(prop, part, cand);
+						});
+					});
+				});
+			}
+			else
+			{
+				var ciudad = document.getElementById('selectCiudades').value;
+				partidos.filter(function(part) { return part.candidatos.filter(function(cand) { return cand.ciudad.codigo == ciudad; }).length > 0; })
+				.forEach(function(part) {
+					MostrarPartido(0, part);
+					part.candidatos.filter(function(cand) { return cand.ciudad.codigo == ciudad; })
+					.forEach(function(cand) {
+						MostrarCandidato(0, cand, part);
+						cand.propuestas.forEach(function(prop) {
+							MostrarPropuesta(prop, part, cand);
+						});
+					});
+				});
+			}
+			VerificarPropuestas(null);
+		}).fadeIn('300ms').animate({marginTop:'0px'},'300ms').animate({scrollTop:200}, '300');
+		$('html, body').animate({
+			scrollTop: 0
+		}, 500);
+		CambiarURL(3, null);
+	}
+	else
+	{
+		$('.partidosContainer').children('.partidoContainer').remove();
+		$('.candidatosContainer').children('.candidatoContainer').remove();
+		$('.propuestasContainer').find('.propuestaContainer').remove();
+		$('.propuestasContainer').find('.noPropuestaContainer').remove();
+		if(ciudades.length == 1 || document.getElementById('selectCiudades').value == -1)
+		{
+			partidos.forEach(function(part) {
+				MostrarPartido(0, part);
+				part.candidatos.forEach(function(cand) {
+					MostrarCandidato(0, cand, part);
+					cand.propuestas.forEach(function(prop) {
+						MostrarPropuesta(prop, part, cand);
+					});
 				});
 			});
-		});
+		}
+		else
+		{
+			var ciudad = document.getElementById('selectCiudades').value;
+			partidos.filter(function(part) { return part.candidatos.filter(function(cand) { return cand.ciudad.codigo == ciudad; }).length > 0; })
+			.forEach(function(part) {
+				MostrarPartido(0, part);
+				part.candidatos.filter(function(cand) { return cand.ciudad.codigo == ciudad; })
+				.forEach(function(cand) {
+					MostrarCandidato(0, cand, part);
+					cand.propuestas.forEach(function(prop) {
+						MostrarPropuesta(prop, part, cand);
+					});
+				});
+			});
+		}
 		VerificarPropuestas(null);
-    }).fadeIn('300ms').animate({marginTop:'0px'},'300ms').animate({scrollTop:200}, '300');
-	$('html, body').animate({
-		scrollTop: 0
-	}, 500);
-	CambiarURL(3, null);
+	}
 }
 
 function CargarSeccion()
@@ -129,7 +184,7 @@ function CargarSeccion()
 			}
 		}
 	}
-	CargaInicial();
+	CargaInicial(true);
 }
 function hacerScrollID(elemento)
 {

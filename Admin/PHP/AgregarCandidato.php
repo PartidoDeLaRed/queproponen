@@ -19,7 +19,7 @@ or die ("No se pudieron encontrar datos porque ".mysql_error());
 $info = mysql_fetch_array( $qry );
 
 //Agregamos el nuevo
-$match = "insert into tbCandidatos values (".($info['candID']+1).", '".utf8_decode($_GET['name'])."', '".utf8_decode($_GET['list'])."', '".$_GET['image']."', '".$_GET['twitter']."', ".$_GET['partido'].", ".$_GET['PASO'].");"; 
+$match = "insert into tbCandidatos values (".($info['candID']+1).", '".utf8_decode($_GET['name'])."', '".utf8_decode($_GET['list'])."', '".$_GET['image']."', '".$_GET['twitter']."', ".$_GET['ciudad'].", ".$_GET['partido'].", ".$_GET['PASO'].");"; 
 $qry = mysql_query($match)
 or die ("No se pudieron encontrar datos porque ".mysql_error()); 
 
@@ -30,6 +30,7 @@ or die ("No se pudieron encontrar datos porque ".mysql_error());
 $info = mysql_fetch_array( $qry );
 
 $partido = mysql_fetch_array( mysql_query("select * from tbPartidos where partID = ".$info['partID']) );
+$ciudad = mysql_fetch_array( mysql_query("select * from tbCiudades where ciuID = ".$info['ciuID']) );
 $candidato = array ('codigo'=> $info['candID'],
 					'nombre'=>utf8_encode($info['candNombre']),
 		  			'lista'=>utf8_encode($info['candLista']),
@@ -39,7 +40,10 @@ $candidato = array ('codigo'=> $info['candID'],
 					'partido' => array ('codigo' => $partido['partID'],
 										'nombre' => utf8_encode($partido['partNombre']),
 										'imagen' => $partido['partImagen'],
-										'color' => $partido['partColor'])
+										'color' => $partido['partColor']),
+					'ciudad' => array ('codigo' => $ciudad['ciuID'],
+										'nombre' => $ciudad['ciuNombre']),
+					'propuestas'=> array()
 			);
 
 echo json_encode($candidato);
