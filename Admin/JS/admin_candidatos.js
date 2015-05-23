@@ -11,6 +11,7 @@ function MostrarAgregarCandidato(part)
 		{
 			document.getElementById('partido-input').value = part.codigo;
 		}
+		document.getElementById('ciudad-input').value = document.getElementById('selectCiudades').value;
 		$('.imageSource').css('background-image','url(../IMG/candidatos/default.png)');
 	});
 }

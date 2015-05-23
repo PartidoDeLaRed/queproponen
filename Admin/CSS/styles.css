@@ -61,8 +61,8 @@ body,html{
   background-image: url(../../IMG/logo.png);
   background-position: center center;
   background-size: contain;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 0;
   display: inline-block;
   vertical-align: middle;
@@ -79,7 +79,7 @@ body,html{
 	display: inline-block;
 	text-align: left;
 	vertical-align: sub;
-	font-size: 33px;
+	font-size: 30px;
 	font-weight: 400;
 	color: #169CBF;
 	cursor: pointer;
@@ -92,8 +92,8 @@ body,html{
 
 .headerText{
 	position: absolute;
-	left: 80px; 
-	top: 22px;
+	left: 60px; 
+	top: 10px;
 }
 
 .title.candidatosPerdedoresHeader {
@@ -135,10 +135,10 @@ body,html{
 }
 
 .headerContainer .subtitle {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 300;
     text-shadow: none;
-    line-height: 37px;
+    line-height: 35px;
     display: inline-block;
     margin-left: 10px;
     vertical-align: top;

@@ -13,14 +13,22 @@ function CargarCiudades()
 		$(option).attr('value', -1);
 		$(option).html('Todo');
 		$('.selectCiudades').append(option);
-		ciudades.forEach(function(ciu)
+		if(ciudades.length > 1)
 		{
-			var option = document.createElement('option');
-			$(option).attr('id', ciu.codigo);
-			$(option).attr('value', ciu.codigo);
-			$(option).html(ciu.nombre);
-			$('.selectCiudades').append(option);
-		});
+			ciudades.forEach(function(ciu)
+			{
+				var option = document.createElement('option');
+				$(option).attr('id', ciu.codigo);
+				$(option).attr('value', ciu.codigo);
+				$(option).html(ciu.nombre);
+				$('.selectCiudades').append(option);
+			});
+			$('.selectCiudades').show();
+		}
+		else
+		{
+			$('.selectCiudades').hide();
+		}
   	})
 	.fail(function( msg ) {
   	});

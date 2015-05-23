@@ -12,7 +12,7 @@ function VerifyLogin()
 	$.ajax({
 	  method: "GET",
 	  url: location.origin + location.pathname + "PHP/VerifyLogin.php",
-	  data: { hash: leerCookie('login') }
+	  data: { hash: leerCookie('login_'+ Ciudad.split(' ').join('-')) }
 	})
 	.done(function( msg ) {
 		if(msg == 'No')
@@ -62,7 +62,7 @@ function lg_submit()
 		}
 		else
 		{
-			crearCookie('login', $.parseJSON(msg).hash, 1);
+			crearCookie('login_'+ Ciudad.split(' ').join('-') , $.parseJSON(msg).hash, 1);
 			$('.contentContainer').html('');
 			CargarCiudades();
 			CargarCategorias();
@@ -127,7 +127,7 @@ function CargarUsuario(usr)
 
 function CerrarSesion(usr)
 {
-	borrarCookie('login');
+	borrarCookie('login_'+ Ciudad.split(' ').join('-'));
 	$('#loading').fadeIn('fast');
 	$.ajax({
 	  method: "GET",

@@ -66,10 +66,7 @@ function CargaPaso()
 
 function SetearDatos()
 {
-	var ciudad = document.createElement('div');
-	$(ciudad).html(Ciudad);
-	$(ciudad).addClass('subtitle');
-	$('.headerText').append(ciudad);
+	$('.nombreCiudad').html(Ciudad);
 }
 
 function CargaInicial(nuevo)

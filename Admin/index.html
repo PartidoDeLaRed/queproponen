@@ -55,18 +55,18 @@ $(document).ready(function(e) {
 		success: function(data){
 			Ciudad = $.parseJSON(data).ciudad;
 			SetearDatos();
+			if(leerCookie('login_'+ Ciudad.split(' ').join('-')) == null)
+			{
+				CargarLogin();
+				$('#paneles').fadeIn('fast');	
+			}
+			else
+			{
+				VerifyLogin();
+			}
 		}
 	})
 
-	if(leerCookie('login') == null)
-	{
-		CargarLogin();
-		$('#paneles').fadeIn('fast');	
-	}
-	else
-	{
-		VerifyLogin();
-	}
 	$(window).scroll(function() {
 		var a = $(window).scrollTop();
 		var b = $('.propuestasContainer').offset().top - 100;
@@ -93,8 +93,9 @@ $(document).ready(function(e) {
 	        <div class="logo"></div>
             <div class="headerText">
 				<div class="title" onclick="javascript:CargaInicial(true)">¿Qué proponen?</div>
+				<div class="nombreCiudad subtitle"></div>
+	            <select class="selectCiudades" id="selectCiudades" onchange="javascript:CambiarCiudad()"></select>
             </div>
-            <select class="selectCiudades" id="selectCiudades" onchange="javascript:CambiarCiudad()"></select>
             <nav class="menu">
             </nav>
   		</div>
