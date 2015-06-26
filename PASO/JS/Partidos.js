@@ -15,10 +15,20 @@ function CargarPartidos(_partido)
 		{
 			partidos = $.parseJSON(msg);
 			partidos = shuffle(partidos);
+
+			var candidatos = []
+			partidos.forEach(function(part){ part.candidatos.forEach(function(cand){ candidatos.push(cand)})});
+			
+			if(candidatos.filter(function(cand){ return cand.ganador == '1' }).length == 0)
+				$('#generalesMenuItem').remove();
+			if(candidatos.filter(function(cand){ return cand.ganador == '0' }).length == 0)
+				$('#PASOMenuItem').remove();
 		}
   	});
 	return part;
 }
+
+var partidoSeleccionado = -1;
 
 function MostrarPartido(modo, part)
 {
@@ -62,8 +72,15 @@ function MostrarPartido(modo, part)
 		}break;
 		case 1:
 		{
+			partidoSeleccionado = part.codigo;
 			var cont = $('.contentContainer');
 			cont.stop(true, true).fadeOut('300ms', function() {
+				if(document.getElementById('selectCargos'))
+				{
+					var cargo = document.getElementById('selectCargos').value;
+					var ciudad = document.getElementById('selectCiudades').value;
+				}
+				
 				$('.contentContainer').html('');
 				
 				cont.append(MostrarVolver(0, null));
@@ -71,11 +88,15 @@ function MostrarPartido(modo, part)
 				
 				cont.append(MostrarContenedor(contenedores.CANDIDATOS));
 				cont.append(MostrarContenedor(contenedores.PROPUESTAS));
+				CargarCargos();
+				CargarCiudades();
 				
-				part.candidatos.forEach(function(cand) {MostrarCandidato(0, cand);});
-				part.propuestas.forEach(function(prop) {
+				part.candidatos.filter(function(cand){return cand.partido == partidoSeleccionado}).forEach(function(cand) {MostrarCandidato(0, cand);});
+				part.propuestas.filter(function(prop){return prop.partido == partidoSeleccionado}).forEach(function(prop) {
 					MostrarPropuesta(prop, part, part.candidatos.filter(function(e){ return e.codigo == prop.candidato})[0]);
 				});
+				var cargo = document.getElementById('selectCargos').value;
+				var ciudad = document.getElementById('selectCiudades').value;
 				VerificarPropuestas(part);
 				AbrirPropuestas();
 				

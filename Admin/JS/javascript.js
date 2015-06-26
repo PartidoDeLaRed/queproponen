@@ -78,35 +78,11 @@ function CargaInicial(nuevo)
 			cont.append(MostrarContenedor(contenedores.PARTIDOS));
 			cont.append(MostrarContenedor(contenedores.CANDIDATOS));
 			cont.append(MostrarContenedor(contenedores.PROPUESTAS));
-			
-			if(ciudades.length == 1 || document.getElementById('selectCiudades').value == -1)
-			{
-				partidos.forEach(function(part) {
-					MostrarPartido(0, part);
-					part.candidatos.forEach(function(cand) {
-						MostrarCandidato(0, cand, part);
-						cand.propuestas.forEach(function(prop) {
-							MostrarPropuesta(prop, part, cand);
-						});
-					});
-				});
-			}
+			CargarContenido();
+			if(cargos.length > 1)
+				$('#textTipoCandidato').html('Todos');
 			else
-			{
-				var ciudad = document.getElementById('selectCiudades').value;
-				partidos.filter(function(part) { return part.candidatos.filter(function(cand) { return cand.ciudad.codigo == ciudad; }).length > 0; })
-				.forEach(function(part) {
-					MostrarPartido(0, part);
-					part.candidatos.filter(function(cand) { return cand.ciudad.codigo == ciudad; })
-					.forEach(function(cand) {
-						MostrarCandidato(0, cand, part);
-						cand.propuestas.forEach(function(prop) {
-							MostrarPropuesta(prop, part, cand);
-						});
-					});
-				});
-			}
-			VerificarPropuestas(null);
+				$('#textTipoCandidato').html(cargos[0].nombre);
 		}).fadeIn('300ms').animate({marginTop:'0px'},'300ms').animate({scrollTop:200}, '300');
 		$('html, body').animate({
 			scrollTop: 0
@@ -119,35 +95,55 @@ function CargaInicial(nuevo)
 		$('.candidatosContainer').children('.candidatoContainer').remove();
 		$('.propuestasContainer').find('.propuestaContainer').remove();
 		$('.propuestasContainer').find('.noPropuestaContainer').remove();
-		if(ciudades.length == 1 || document.getElementById('selectCiudades').value == -1)
-		{
-			partidos.forEach(function(part) {
-				MostrarPartido(0, part);
-				part.candidatos.forEach(function(cand) {
-					MostrarCandidato(0, cand, part);
-					cand.propuestas.forEach(function(prop) {
-						MostrarPropuesta(prop, part, cand);
-					});
-				});
-			});
-		}
-		else
-		{
-			var ciudad = document.getElementById('selectCiudades').value;
-			partidos.filter(function(part) { return part.candidatos.filter(function(cand) { return cand.ciudad.codigo == ciudad; }).length > 0; })
-			.forEach(function(part) {
-				MostrarPartido(0, part);
-				part.candidatos.filter(function(cand) { return cand.ciudad.codigo == ciudad; })
-				.forEach(function(cand) {
-					MostrarCandidato(0, cand, part);
-					cand.propuestas.forEach(function(prop) {
-						MostrarPropuesta(prop, part, cand);
-					});
-				});
-			});
-		}
-		VerificarPropuestas(null);
+		CargarContenido();
 	}
+}
+
+function CargarContenido()
+{
+	var cargo = document.getElementById('selectCargos').value;
+	var ciudad = document.getElementById('selectCiudades').value;
+	if(cargo == -1)
+	{
+		partidos.forEach(function(part) {
+			MostrarPartido(0, part);
+			part.candidatos.forEach(function(cand) {
+				MostrarCandidato(0, cand, part);
+				cand.propuestas.forEach(function(prop) {
+					MostrarPropuesta(prop, part, cand);
+				});
+			});
+		});
+	}
+	else if(ciudad == -1)
+	{
+		partidos.filter(function(part) { return part.candidatos.filter(function(cand) { return cand.cargo.codigo == cargo; }).length > 0; })
+		.forEach(function(part) {
+			MostrarPartido(0, part);
+			part.candidatos.filter(function(cand) { return cand.cargo.codigo == cargo; })
+			.forEach(function(cand) {
+				MostrarCandidato(0, cand, part);
+				cand.propuestas.forEach(function(prop) {
+					MostrarPropuesta(prop, part, cand);
+				});
+			});
+		});
+	}
+	else
+	{
+		partidos.filter(function(part) { return part.candidatos.filter(function(cand) { return cand.cargo.codigo == cargo && cand.ciudad.codigo == ciudad; }).length > 0; })
+		.forEach(function(part) {
+			MostrarPartido(0, part);
+			part.candidatos.filter(function(cand) { return cand.cargo.codigo == cargo && cand.ciudad.codigo == ciudad; })
+			.forEach(function(cand) {
+				MostrarCandidato(0, cand, part);
+				cand.propuestas.forEach(function(prop) {
+					MostrarPropuesta(prop, part, cand);
+				});
+			});
+		});
+	}
+	VerificarPropuestas(null);
 }
 
 function CargarSeccion()

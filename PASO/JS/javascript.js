@@ -7,7 +7,7 @@ function CargaPaso()
 {
 	$('.menu').children('.selected').removeClass('selected');
 	$($('.menu').children()[1]).addClass('selected');
-	CargaInicial();
+	CargaInicial(true);
 }
 
 function SetearDatos()
@@ -16,6 +16,9 @@ function SetearDatos()
 	$(ciudad).html(Ciudad);
 	$(ciudad).addClass('subtitle');
 	$('.headerText').append(ciudad);
+	$('.textProvincia').html(Ciudad);
+	if(ciudad != 'CABA')
+		$('.bannerAfiliacion').remove();
 	
 	$('meta[property="og:description"]').attr('content', 'Conocé todas las propuestas de los candidatos a Gobernador por '+Ciudad);
 	$('meta[name="description"]').attr('content', 'Conocé todas las propuestas de los candidatos a Gobernador por '+Ciudad);
@@ -28,32 +31,89 @@ function SetearDatos()
 	$('#followButton').html('@'+Twitter);
 }
 
-function CargaInicial()
+function CargaInicial(nuevo)
 {
-	cont = $('.contentContainer');
-	cont.stop(true, true).fadeOut('300ms', function() {
-		cont.html('');
-		cont.append(MostrarContenedor(contenedores.PARTIDOS));
-		cont.append(MostrarContenedor(contenedores.CANDIDATOS));
-		cont.append(MostrarContenedor(contenedores.PROPUESTAS));
+	if(nuevo)
+	{
+		cont = $('.contentContainer');
+		cont.stop(true, true).fadeOut('300ms', function() {
+			cont.html('');
+			cont.append(MostrarContenedor(contenedores.PARTIDOS));
+			cont.append(MostrarContenedor(contenedores.CANDIDATOS));
+			cont.append(MostrarContenedor(contenedores.PROPUESTAS));
+			CargarCargos();
+			CargarCiudades();
+			
+			CargarContenido();
 		
+			if(cargos.length == 0)
+				$('#textTipoCandidato').html(cargos[0].nombre);
+		
+		}).fadeIn('300ms').animate({marginTop:'0px'},'300ms').animate({scrollTop:200}, '300');
+		$('html, body').animate({
+			scrollTop: 0
+		}, 500, function(){GenerarGrafico()});
+		CambiarURL(3, null);
+	}
+	else
+	{
+		$('.partidosContainer').children('.partidoContainer').remove();
+		$('.partidosContainer').children('.noElements').remove();
+		$('.candidatosContainer').children('.candidatoContainer').remove();
+		$('.candidatosContainer').children('.noElements').remove();
+		$('.propuestasContainer').find('.propuestaContainer').remove();
+		$('.propuestasContainer').find('.noPropuestaContainer').remove();
+		CargarContenido();
+	}
+}
+
+function CargarContenido()
+{
+	var cargo = document.getElementById('selectCargos').value;
+	var ciudad = document.getElementById('selectCiudades').value;
+	if(cargo == -1)
+	{
 		partidos.forEach(function(part) {
 			MostrarPartido(0, part);
 			part.candidatos.forEach(function(cand) {
-				MostrarCandidato(0, cand);
+				MostrarCandidato(0, cand, part);
 				cand.propuestas.forEach(function(prop) {
 					MostrarPropuesta(prop, part, cand);
 				});
 			});
 		});
-		VerificarPartidos();
-		VerificarCandidatos();
-		VerificarPropuestas(null);
-    }).fadeIn('300ms').animate({marginTop:'0px'},'300ms').animate({scrollTop:200}, '300');
-	$('html, body').animate({
-		scrollTop: 0
-	}, 500, function(){GenerarGrafico()});
-	CambiarURL(3, null);
+	}
+	else if(ciudad == -1)
+	{
+		partidos.filter(function(part) { return part.candidatos.filter(function(cand) { return cand.cargo.codigo == cargo; }).length > 0; })
+		.forEach(function(part) {
+			MostrarPartido(0, part);
+			part.candidatos.filter(function(cand) { return cand.cargo.codigo == cargo; })
+			.forEach(function(cand) {
+				MostrarCandidato(0, cand, part);
+				cand.propuestas.forEach(function(prop) {
+					MostrarPropuesta(prop, part, cand);
+				});
+			});
+		});
+	}
+	else
+	{
+		partidos.filter(function(part) { return part.candidatos.filter(function(cand) { return cand.cargo.codigo == cargo && cand.ciudad.codigo == ciudad; }).length > 0; })
+		.forEach(function(part) {
+			MostrarPartido(0, part);
+			part.candidatos.filter(function(cand) { return cand.cargo.codigo == cargo && cand.ciudad.codigo == ciudad; })
+			.forEach(function(cand) {
+				MostrarCandidato(0, cand, part);
+				cand.propuestas.forEach(function(prop) {
+					MostrarPropuesta(prop, part, cand);
+				});
+			});
+		});
+	}
+	VerificarPartidos();
+	VerificarCandidatos();
+	VerificarPropuestas(null);
 }
 
 function CargarSeccion()
@@ -87,7 +147,7 @@ function CargarSeccion()
 			}
 		}
 	}
-	CargaInicial();
+	CargaInicial(true);
 }
 
 function ToggleCategoriaBarra(barra){

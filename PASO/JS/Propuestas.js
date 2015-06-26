@@ -68,17 +68,19 @@ function MostrarPropuesta(prop, part, cand)
 			$(container).append(fuente);
 	
 			var tweet = document.createElement('a');
-			$(tweet).addClass('twitterButton');
-			$(tweet).attr('target', 'popup');
-			$(tweet).html('Hablá con '+cand.nombre+' sobre esto');
-			
-			$(tweet).click(function(e) {
-				window.open('https://twitter.com/share?'+
-				'url='+location.origin+location.pathname+'%23candidato%2F'+cand.nombre.split(' ').join('-')+'%2Fpropuesta%2F'+prop.codigo+'&'+
-				'related=PartidodelaRed&'+
-				'hashtags=yvosquepropones&'+
-				'text='+ 'Hola ' + cand.twitter + " esta propuesta me parece", 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
-			});
+			$(tweet).addClass('twitterButton noTwitter');
+			if(cand.twitter.indexOf("@") > -1)
+			{
+				$(tweet).attr('target', 'popup');
+				$(tweet).html('Hablá con '+cand.nombre+' sobre esto');
+				$(tweet).click(function(e) {
+					window.open('https://twitter.com/share?'+
+					'url='+location.origin+location.pathname+'%23candidato%2F'+cand.nombre.split(' ').join('-')+'%2Fpropuesta%2F'+prop.codigo+'&'+
+					'related=PartidodelaRed&'+
+					'hashtags=yvosquepropones&'+
+					'text='+ 'Hola ' + cand.twitter + " esta propuesta me parece", 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+				});
+			}
 			$(container).append(tweet);
 			
 			$(container).append(MostrarCandidato(2, cand, part));
@@ -185,7 +187,7 @@ function NoPropuesta(cosa)
 				window.open('https://twitter.com/intent/tweet?'+
 				'url='+location.origin+location.pathname+'%23candidato%2F'+a.nombre.split(' ').join('-')+'&'+
 				'related=PartidodelaRed&'+
-				'text=' + 'Hola ' + a.twitter + ' %23yvosquepropones para la Ciudad sobre ' + $(e.target).parents('.tipo').children('.title').children('span').html(), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+				'text=' + 'Hola ' + a.twitter + ' %23yvosquepropones para ' + ObtenerNombreLocalidad(0, null) + ' sobre ' + $(e.target).parents('.tipo').children('.title').children('span').html(), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 				//});
 			});
 			$(tweetContainer).append(tweet);
@@ -203,6 +205,7 @@ function NoPropuesta(cosa)
 
 		var tweetContainer = document.createElement('div');
 		$(tweetContainer).css('display', 'block').css('margin','0 auto 20px auto').css('text-align','center');
+
 		var tweet = document.createElement('a');
 		$(tweet).addClass('twitterButton');
 		$(tweet).html('Preguntale a '+cosa.nombre+' que piensa sobre esto');
@@ -211,7 +214,7 @@ function NoPropuesta(cosa)
 				window.open('https://twitter.com/intent/tweet?'+
 				'url='+location.origin+location.pathname+'%23candidato%2F'+cosa.nombre.split(' ').join('-')+'&'+
 				'related=PartidodelaRed&'+
-				'text=' + 'Hola ' + cosa.twitter + ' %23yvosquepropones para la Ciudad sobre '+$(e.target).parents('.tipo').children('.title').children('span').html(), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
+				'text=' + 'Hola ' + cosa.twitter + ' %23yvosquepropones para la ' + ObtenerNombreLocalidad(1, cosa) + ' sobre '+$(e.target).parents('.tipo').children('.title').children('span').html(), 'tweet', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 				//});
 			});
 		$(tweetContainer).append(tweet);
@@ -219,4 +222,27 @@ function NoPropuesta(cosa)
 	}
 	
 	return cont;
+}
+
+function ObtenerNombreLocalidad(tipo, candidato)
+{
+	switch(tipo)
+	{
+		case 0:
+			if (document.getElementById('selectCargos').value == 0)
+				return Ciudad 
+			else if (document.getElementById('selectCiudades').value == 0)
+				return Ciudad
+			else
+				return ciudades.filter(function(ciu){return ciu.codigo == document.getElementById('selectCiudades').value})[0].nombre;
+		break;
+		case 1:
+			if (candidato.cargo.codigo == 0)
+				return Ciudad 
+			else if (candidato.ciudad.codigo == 0)
+				return Ciudad
+			else
+				return ciudades.filter(function(ciu){return ciu.codigo == candidato.ciudad.codigo})[0].nombre;
+		break;
+	}
 }

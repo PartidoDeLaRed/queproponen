@@ -24,16 +24,22 @@ $candidatos = array();
 while($info = mysql_fetch_array( $qry )) 
 { 
 	$partido = mysql_fetch_array( mysql_query("select * from tbPartidos where partID = ".$info['partID']) );
+	$cargo = mysql_fetch_array( mysql_query("select * from tbCargos where carID = ".$info['carID']) );
+	$ciudad = mysql_fetch_array( mysql_query("select * from tbCiudades where ciuID = ".$info['ciuID']) );
 	array_push($candidatos, 
 		array (	'codigo'=> $info['candID'],
 				'nombre'=>utf8_encode($info['candNombre']),
 		  		'lista'=>utf8_encode($info['candLista']),
-		  		'imagen'=>$info['candImagen'],
+		  		'imagen'=>utf8_encode($info['candImagen']),
 				'twitter'=>$info['candTwitter'],
 				'ganador'=>$info['candPASO'],
+				'cargo' => array ('codigo' => $cargo['carID'],
+									'nombre' => utf8_encode($cargo['carNombre'])),
+				'ciudad' => array ('codigo' => $ciudad['ciuID'],
+									'nombre' => utf8_encode($ciudad['ciuNombre'])),
 				'partido' => array ('codigo' => $partido['partID'],
 									'nombre' => utf8_encode($partido['partNombre']),
-									'imagen' => $partido['partImagen'],
+									'imagen' => utf8_encode($partido['partImagen']),
 									'color' => $partido['partColor']),
 				'propuestas'=> CargarPropuestas(mysql_query("select * from tbPropuestas where candID = ".$info['candID']))
 		)

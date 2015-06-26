@@ -5,13 +5,18 @@ function MostrarContenedor(tipo)
 	{
 		case contenedores.PARTIDOS:
 			template = 
-			"<a class='twitterButton' onclick='javascript:CompartirInicio(0)'>Compartí en Twitter</a>"
-			+"<a class='facebookButton' onclick='javascript:CompartirInicio(1)'>Compartí en Facebook</a>"
+			"<div class='mainSharer'><a class='twitterButton' onclick='javascript:CompartirInicio(0)'>Compartí en Twitter</a>"
+			+"<a class='facebookButton' onclick='javascript:CompartirInicio(1)'>Compartí en Facebook</a></div>"
 			+"<div class='partidosContainer'><div class='title'>Partidos Políticos y Frentes</div></div> ";
 			break;
 		case contenedores.CANDIDATOS:
 			template = "<div class='candidatosContainer'>"+
-            	"<div class='title'>Candidatos a Gobernador</div>"+
+            	"<div class='title'>Candidatos a <div id='textTipoCandidato' style='display: inline-block;'></div>"+
+					"<div id='filtersContainer'>"+
+						"<select class='mainSelect' id='selectCargos' onchange='javascript:CambiarCargo()'></select>"+
+						"<div class='selectCiudadesContainer' style='display:none;'><label>por</label><select class='mainSelect' id='selectCiudades' onchange='javascript:CambiarCiudad()'></select></div>"+
+					"</div>"+
+				"</div>"+
 				"</div>";
 			break;
 		case contenedores.PROPUESTAS:
@@ -93,7 +98,7 @@ function HeaderPartido(part)
         '&picture=http:%2F%2Fqueproponen.com.ar%2Fvosquepropones%2FIMG%2FshareLogo.png' +
         '&name=' + 'Todas las propuestas del ' + part.nombre +
         '&caption=' + 'via queproponen.com.ar - Partido de la Red' +
-        '&description=' + 'Conocé todas sus propuestas y la de todos los candidatos a Jefe e Gobierno en'+ Ciudad +
+        '&description=' + 'Conocé todas sus propuestas y la de todos los candidatos de'+ Ciudad +
         '&redirect_uri=' + 'http://queproponen.com.ar/close.html' +
         '&display=popup'
 		, 'Compartí todas las propuestas del partido', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
@@ -207,7 +212,7 @@ function MostrarVolver(tipo, cosa)
 		
 	$(cont).click(function(e) {
 		if(cosa == null)
-			CargaInicial();
+			CargaInicial(true);
 		else if(cosa.color != undefined)
 			MostrarPartido(1, cosa);
 		else if (cosa.twitter != undefined)

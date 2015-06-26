@@ -5,17 +5,29 @@ function MostrarContenedor(tipo)
 	{
 		case contenedores.PARTIDOS:
 			template = 
-			"<a class='twitterButton' onclick='javascript:CompartirInicio(0)'>Compartí en Twitter</a>"
-			+"<a class='facebookButton' onclick='javascript:CompartirInicio(1)'>Compartí en Facebook</a>"
+			"<div class='mainSharer'><a class='twitterButton' onclick='javascript:CompartirInicio(0)'>Compartí en Twitter</a>"
+			+"<a class='facebookButton' onclick='javascript:CompartirInicio(1)'>Compartí en Facebook</a></div>"
 			+"<div class='partidosContainer'><div class='title'>Partidos Políticos y Frentes</div></div> ";
 			break;
 		case contenedores.CANDIDATOS:
 			template = 
-			"<a class='twitterButton' onclick='javascript:CompartirInicio(0)'>Compartí en Twitter</a>"
-			+"<a class='facebookButton' onclick='javascript:CompartirInicio(1)'>Compartí en Facebook</a>"
-			+"<div class='candidatosContainerFixed' ></div><div class='candidatosContainer'>"+
-            	"<div class='title'>Candidatos a Gobernador</div>"+
-				"</div><div class='title candidatosPerdedoresHeader closed' onclick='javascript:ToggleCandidatosPerdedores()'>Candidatos que no pasaron las PASO</div><div class='candidatosPerdedores' ></div> ";
+			"<div class='mainSharer'>"
+				+"<a class='twitterButton' onclick='javascript:CompartirInicio(0)'>Compartí en Twitter</a>"
+				+"<a class='facebookButton' onclick='javascript:CompartirInicio(1)'>Compartí en Facebook</a>"
+			+"</div>"
+			+"<div class='candidatosContainerFixed' ></div>"
+			+"<div class='candidatosContainer'>"
+				+"<div class='title'>Candidatos a "
+					+"<div id='textTipoCandidato' style='display: inline-block;'></div>"
+					+"<div id='filtersContainer'>"
+						+"<select class='mainSelect' id='selectCargos' onchange='javascript:CambiarCargo()'></select>"
+						+"<div class='selectCiudadesContainer' style='display:none;'>"
+							+"<label>por</label><select class='mainSelect' id='selectCiudades' onchange='javascript:CambiarCiudad()'></select>"
+						+"</div>"
+					+"</div>"
+				+"</div>"
+			+"</div>"
+			+"<div class='title candidatosPerdedoresHeader closed' onclick='javascript:ToggleCandidatosPerdedores()'>Candidatos que no pasaron las PASO</div><div class='candidatosPerdedores' ></div> ";
 			break;
 		case contenedores.PROPUESTAS:
 			template = "<div class='propuestasContainer'>"+

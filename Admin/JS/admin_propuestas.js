@@ -24,7 +24,7 @@ function MostrarEditarPropuesta(prop)
 		$('#mas-input').prop('checked', false)
 		$('.label-mas-input').css('display','none');
 		document.getElementById('titulo-input').value = prop.titulo;
-		document.getElementById('texto-input').value = prop.texto;
+		document.getElementById('texto-input').value = replaceHtml(prop.texto);
 		document.getElementById('fuente-input').value = prop.fuente;
 		document.getElementById('candidato-input').value = prop.candidato.codigo;
 		document.getElementById('categoria-input').value = prop.categoria.codigo;
@@ -34,6 +34,10 @@ function MostrarEditarPropuesta(prop)
 		candidatoAnteriorCodigo = prop.candidato.codigo;
 		$('#submit').html('Editar Propuesta');
 	});
+}
+
+function replaceHtml(string_to_replace) {
+    return $("<div>").append(string_to_replace.replace(/&nbsp;/g, ' ').replace(/<br.*?>/g, '')).text();
 }
 
 function EdicionPropuesta()
@@ -103,7 +107,15 @@ function EdicionPropuesta()
 				VerificarPropuestas();
 			}
 			$(container).find('.tituloPropuesta').html(prop.titulo);
-			$(container).find('.textoPropuesta').html(prop.texto);
+			$(container).find('.textoPropuesta').html(prop.texto.replace(/\r?\n/g, '<br />'));
+			var linkFuente = document.createElement('div');
+			$(linkFuente).addClass('linkFuentePropuesta');
+			$(linkFuente).html('fuente');
+			$(linkFuente).click(function(e) {
+                $(container).find('.fuentePropuesta').slideToggle(100);
+            });
+			$(container).find('.textoPropuesta').append(linkFuente);
+
 			$(container).find('.fuentePropuesta a').attr('href',prop.fuente).html(prop.fuente);
 			$(container).attr('data-partido',prop.partido.codigo);
 			$(container).attr('data-candidato',prop.candidato.codigo);

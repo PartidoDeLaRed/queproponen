@@ -34,6 +34,7 @@
 <script src="JS/Candidatos.js"></script>
 <script src="JS/Propuestas.js"></script>
 <script src="JS/Categorias.js"></script>
+<script src="JS/Cargos.js"></script>
 <script src="JS/Ciudades.js"></script>
 <script src="JS/Templates.js"></script>
 <script src="JS/Chart.js"></script>
@@ -94,7 +95,6 @@ $(document).ready(function(e) {
             <div class="headerText">
 				<div class="title" onclick="javascript:CargaInicial(true)">¿Qué proponen?</div>
 				<div class="nombreCiudad subtitle"></div>
-	            <select class="selectCiudades" id="selectCiudades" onchange="javascript:CambiarCiudad()"></select>
             </div>
             <nav class="menu">
             </nav>
@@ -102,6 +102,10 @@ $(document).ready(function(e) {
     </div>
 	
     <div id="contenido" class="mainContainer">
+    	<div id="filtersContainer" style="max-width:960px; margin:10px auto; text-align:left; font-size:20px; display:none;">
+        	Ver candidatos a <select class="mainSelect" id="selectCargos" onchange="javascript:CambiarCargo()"></select>
+        	<div class="selectCiudadesContainer" style="display:none;"><label>por</label><select class="mainSelect" id="selectCiudades" onchange="javascript:CambiarCiudad()"></select></div>
+        </div>
     	<div class="contentContainer"></div>
     	<div id="paneles"></div>
     	<div id="loading">

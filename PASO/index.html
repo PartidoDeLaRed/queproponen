@@ -18,20 +18,21 @@
 
 <link href="CSS/styles.css" rel="stylesheet" type="text/css" />
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="JS/javascript.js"></script>
 <script src="JS/Clases.js"></script>
 <script src="JS/Partidos.js"></script>
 <script src="JS/Candidatos.js"></script>
 <script src="JS/Propuestas.js"></script>
+<script src="JS/Cargos.js"></script>
+<script src="JS/Ciudades.js"></script>
 <script src="JS/Categorias.js"></script>
 <script src="JS/Templates.js"></script>
 <script src="JS/Chart.js"></script>
-<script src="JS/Shortener.js"></script>
 <script src="JS/Utilities.js"></script>
 
 <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
 <script src="https://apis.google.com/js/client.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
@@ -54,19 +55,6 @@ $(document).ready(function(e) {
 			SetearDatos();
 		}
 	})
-	if (navigator.geolocation) 
-	{
-		navigator.geolocation.getCurrentPosition(function(pos){
-			$.ajax({
-				method: "GET",
-				url: 'http://maps.googleapis.com/maps/api/geocode/json?latlng='+pos.coords.latitude+','+pos.coords.longitude+'&sensor=true',
-				success: function(data){
-					if(data.results[2].address_components[0].short_name == 'CF')
-						$('.bannerAfiliacion').slideDown('fast');
-				}
-			})
-		});
-	}
 	CargarPartidos(-1);
 	CargarCategorias();
 	CargarSeccion();
@@ -130,15 +118,14 @@ $(document).ready(function(e) {
 	</script>
 
 	<div class="headerContainer">
-    	<div class="bannerAfiliacion" style="display:none;">Si querés que el Partido de la Red sea una opción en 2017, <a href="http://4milfundadores.com" target="_blank">¡Afiliate!</a></div>
         <div class="widthLimiter">
 	        <div class="logo"></div>
             <div class="headerText">
 				<div class="title" onclick="javascript:CargaInicial(false)">¿Qué proponen?</div>
             </div>
             <nav class="menu">
-                <div onclick="javascript:CargaGenerales()">Generales</div>
-                <div class="selected" onclick="javascript:CargaPaso()">PASO</div>
+                <div id="generalesMenuItem" onclick="javascript:CargaGenerales()">Generales</div>
+                <div id="PASOMenuItem" class="selected" onclick="javascript:CargaPaso()">PASO</div>
                 <div onclick="javascript:CargarAbout()" style="border:none !important">Acerca de</div>
             </nav>
   		</div>
@@ -153,20 +140,20 @@ $(document).ready(function(e) {
         <div style="max-width: 960px; margin:auto;">
             <div style="font-size:30px; padding: 10px;">¿Qué Proponen?</div>
             <div class="linksContainer">
-            	<a href="http://queproponen.com.ar/caba/">CABA</a>
-            	<a href="http://queproponen.com.ar/chaco/">Chaco</a>
-            	<a href="http://queproponen.com.ar/entrerios/">Entre Ríos</a>
-            	<a href="http://queproponen.com.ar/larioja/">La Rioja</a>
-            	<a href="http://queproponen.com.ar/santafe/">Santa Fe</a>
+            	<a href="http://caba.queproponen.com.ar">CABA</a>
+<!--            	<a href="http://buenosaires.queproponen.com.ar">Buenos Aires</a>
+            	<a href="http://chaco.queproponen.com.ar">Chaco</a>
+            	<a href="http://entrerios.queproponen.com.ar">Entre Ríos</a>
+-->            	<a href="http://larioja.queproponen.com.ar">La Rioja</a>
+            	<a href="http://santafe.queproponen.com.ar">Santa Fe</a>
             </div>
             <div class="contactContainer">
             	<div style="font-size: 23px;">Contactanos</div>
+                <a class="page" href="http://partidodelared.org" target="_blank"></a>
                 <a class="facebook" href="http://facebook.com/PartidoDeLaRed" target="_blank"></a>
                 <a class="twitter" href="http://twitter.com/PartidodelaRed" target="_blank"></a>
                 <a class="google" href="http://plus.google.com/101519187164139196788" target="_blank"></a>
             </div>
-           	<a class="footerLinkGrande" href="http://partidodelared.org" target="_blank" style="float:left; text-align:left;">Quienes somos <div>PartidoDelaRed.org</div></a>
-           	<a class="footerLinkGrande" href="http://democraciaenred.org" target="_blank" style="text-align:right;">Participá en la red <div>DemocraciaEnRed.org</div></a>
         </div>
         <div class="creditsContainer">
             <div>Hecho con <div class="heartIcon"></div> por pares del Partido de la Red - 2015</div>

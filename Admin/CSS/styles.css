@@ -8,6 +8,15 @@
 	font-family: 'Lato', sans-serif;
 }
 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url(../IMG/dropdownArrow.png);
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 25px 13px;
+}
+
 body,html{
 	width:100%;	
 	height: 100%;

@@ -9,7 +9,7 @@ function MostrarContenedor(tipo)
 			break;
 		case contenedores.CANDIDATOS:
 			template = "<div class='candidatosContainer'>"+
-            	"<div class='title'>Candidatos a Gobernador</div><div class='addCandidato' onclick='javascript:MostrarAgregarCandidato()'></div>"+
+            	"<div class='title'>Candidatos a <div id='textTipoCandidato'></div></div><div class='addCandidato' onclick='javascript:MostrarAgregarCandidato()'></div>"+
 				"</div>";
 			break;
 		case contenedores.PROPUESTAS:

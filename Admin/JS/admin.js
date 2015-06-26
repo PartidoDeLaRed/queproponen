@@ -23,6 +23,7 @@ function VerifyLogin()
 		}
 		else
 		{
+			CargarCargos();
 			CargarCiudades();
 			CargarCategorias();
 			CargarPartidos(-1);
@@ -64,6 +65,7 @@ function lg_submit()
 		{
 			crearCookie('login_'+ Ciudad.split(' ').join('-') , $.parseJSON(msg).hash, 1);
 			$('.contentContainer').html('');
+			CargarCargos();
 			CargarCiudades();
 			CargarCategorias();
 			CargarPartidos(-1);

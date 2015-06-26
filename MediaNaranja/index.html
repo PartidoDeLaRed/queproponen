@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="theme-color" content="#5DB9D2">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+
+<meta name="description" content="Conocé todas las propuestas de los candidatos a Gobernador por CABA 2015" />
+<meta name="keywords" content="propuestas, candidatos, partidos, frentes, elecciones, 2015, Jefe de Gobierno, Gobernador, ciudad de buenos aires, caba, partido de la red, pdr, santa fe, chaco, la rioja, entre rios" />
+
+<link rel="icon" type="image/png" href="http://queproponen.com.ar/IMG/icon.png">
+<meta property="og:image" content="http://queproponen.com.ar/IMG/backgroundHeader.jpg" />
+<meta property="og:title" content="¿Qué proponen? - Partido de la Red"/>
+<meta property="og:url" content="http://queproponen.com.ar"/>
+<meta property="og:site_name" content="¿Qué proponen? - Partido de la Red"/>
+<meta property="og:description" content="Conocé todas las propuestas de los candidatos a Gobernador por CABA"/>
+<title>Media Naranja - Partido de la Red</title>
+
+<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
+<link href="CSS/medianaranja.css" rel="stylesheet" type="text/css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="JS/medianaranja.js"></script>
+<script src="JS/Candidatos.js"></script>
+<script src="JS/Categorias.js"></script>
+<script src="JS/Chart.js"></script>
+<script src="JS/Utilities.js"></script>
+<script src="JS/jquery.barrating.js"></script>
+
+<link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://apis.google.com/js/client.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<script language="javascript" type="application/javascript">
+if (window.location.hash == 'close.html') window.close();
+
+//Variables Globales
+var Ciudad = 'CABA';
+var Facebook = 'PartidoDeLaRed';
+var Twitter = 'PartidodelaRed';
+
+$(document).ready(function(e) {
+	
+	var height = $(window).innerHeight() - $('.headerContainer').outerHeight(true) - $('.footerContainer').outerHeight(true) - 14;
+	$('.mainContainer').css('min-height', height + 'px');
+	
+	$.ajax({
+		method: "GET",
+		url: 'PHP/GetData.php',
+		success: function(data){
+			Ciudad = $.parseJSON(data).ciudad;
+			Facebook = $.parseJSON(data).facebook;
+			Twitter = $.parseJSON(data).twitter;
+			SetearDatos();
+		}
+	})
+
+	$('.bannerAfiliacion').slideDown('fast');
+	$('#startSurvey').click(function(e) {
+        $('#startContainer').fadeOut('slow', function(){ 
+			$('.contentContainer').fadeIn('slow'); 
+			$('#subTitleMediaNaranja').fadeIn('fast'); 
+		});
+    });
+	
+	if(window.location.href.split('?')[1])
+	{
+		if(window.location.href.split('?')[1] == "direct")
+		{
+			$('#startContainer').fadeOut('10ms', function(){ 
+				$('.contentContainer').fadeIn('10ms'); 
+				$('#subTitleMediaNaranja').fadeIn('10ms'); 
+			});
+		}
+	}
+});
+
+</script>
+
+</head>
+
+<body>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-62135932-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+			  appId      : '825676227513877',
+			  xfbml      : true,
+			  version    : 'v2.3'
+			});
+		};
+		
+		(function(d, s, id){
+			 var js, fjs = d.getElementsByTagName(s)[0];
+			 if (d.getElementById(id)) {return;}
+			 js = d.createElement(s); js.id = id;
+			 js.src = '//connect.facebook.net/es_LA/sdk.js';
+			 fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+    </script>
+    
+    <script>
+		window.twttr = (function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0],
+			t = window.twttr || {};
+			if (d.getElementById(id)) return t;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "https://platform.twitter.com/widgets.js";
+			fjs.parentNode.insertBefore(js, fjs);
+			
+			t._e = [];
+			t.ready = function(f) {
+			t._e.push(f);
+			};
+			
+			return t;
+		}(document, "script", "twitter-wjs"));
+	</script>
+
+	<div class="headerContainer">
+    	<div class="bannerAfiliacion" style="display:none;">Si vivís en CABA y querés que el Partido de la Red sea una opción en 2017, <a href="http://4milfundadores.com" target="_blank">¡Afiliate!</a></div>
+        <div class="widthLimiter">
+	        <div class="logo"></div>
+            <div class="headerText">
+				<div class="title">¿Qué proponen?</div>
+            </div>
+			<div id="subTitleMediaNaranja"></div>
+  		</div>
+    </div>
+	
+    <div id="contenido" class="mainContainer">
+    	<div id="startContainer" style="text-align:center; padding:1px">
+            <div class="imgMediaNaranja"></div>
+            <div class="textoMediaNaranja">Elegí entre las propuestas de los candidatos para saber con quien tenés más afinidad</div>
+            <div id="startSurvey" class="surveyButton">¡ENCONTRAR A MI MEDIA NARANJA!</div>
+        </div>
+    	<div class="contentContainer">
+            <div class="surveyProgressContainer">
+                <div class="surveyProgressActive"></div>        
+                <div class="surveyProgressInactive"></div>        
+            </div>        
+        	<div class="surveyContainer">
+            	<div class="loadingPanel"></div>
+                <div class="surveyHeader">
+                    <div class="surveyHeaderTitle"></div>
+                    <div class="surveyHeaderSubtitle"></div>        
+                </div>
+                <div class="surveyTitle">Seleccione una de estas propuestas</div>
+                <div class="surveyItemsContainer">
+	            </div>
+                <div class="candidatosNoPropuestas">
+                	<div class="candidatosNoPropuestasHeader">Candidatos que <span class="accentText">no tienen</span> propuestas en esta categoría</div>
+                	<div class="candidatosNoPropuestasContainer"></div>
+                </div>
+                <div class="surveyRatingContainer">
+	                <div class="surveyTitle">¿Cuánto te interesa este tema?</div>
+                    <div class="ratingContainer">
+                        <select id="ratingSelect" name="ratingSelect">
+                            <option value="1">Muy poco</option>
+                            <option value="2">Poco</option>
+                            <option value="3">Mas o menos</option>
+                            <option value="4">Bastante</option>
+                            <option value="5">Mucho</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="surveyFooter">
+                    <div class="surveyNoSelection" style="display:none;">¡Seleccioná alguna propuesta!</div>        
+                    <div class="surveyButton Next">Siguiente categoría</div>        
+                    <div class="surveyButton End">Encontrar mi media naranja</div>        
+                </div>
+            </div>        
+        </div>
+    </div>
+
+	<div class='footerContainer'>
+        <div style="max-width: 960px; margin:auto;">
+            <div style="font-size:30px; padding: 10px;">¿Qué Proponen?</div>
+            <div class="linksContainer">
+            	<a href="http://queproponen.com.ar/caba/">CABA</a>
+<!--            	<a href="http://queproponen.com.ar/chaco/">Chaco</a>
+            	<a href="http://queproponen.com.ar/entrerios/">Entre Ríos</a>
+            	<a href="http://queproponen.com.ar/santafe/">Santa Fe</a>
+-->            	<a href="http://queproponen.com.ar/larioja/">La Rioja</a>
+            </div>
+            <div class="contactContainer">
+            	<div style="font-size: 23px;">Contactanos</div>
+                <a class="page" href="http://partidodelared.org" target="_blank"></a>
+                <a class="facebook" href="http://facebook.com/PartidoDeLaRed" target="_blank"></a>
+                <a class="twitter" href="http://twitter.com/PartidodelaRed" target="_blank"></a>
+                <a class="google" href="http://plus.google.com/101519187164139196788" target="_blank"></a>
+            </div>
+        </div>
+        <div class="creditsContainer">
+            <div>Hecho con <div class="heartIcon"></div> por pares del Partido de la Red - 2015</div>
+        </div>
+  	</div>
+
+	<div class="likeButtons">
+    	<div style="display:block;">
+			<div class="fb-like" data-href="https://facebook.com/PartidoDeLaRed" data-width="150" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
+        </div>
+    	<div style="display:block;">   
+            <a id="followButton" href="https://twitter.com/PartidodelaRed" class="twitter-follow-button" data-show-count="false" data-lang="es" data-size="large" data-show-screen-name="false">@PartidodelaRed</a>
+        </div>
+	</div>
+</body>
+</html>

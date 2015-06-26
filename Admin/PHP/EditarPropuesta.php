@@ -28,8 +28,8 @@ $candidato = mysql_fetch_array( mysql_query("select * from tbCandidatos where ca
 $categoria = mysql_fetch_array( mysql_query("select * from tbCategorias where catID = ".$_GET['categoria']) );
 $propuesta = array ('codigo'=> $info['propID'],
 					'titulo'=>utf8_encode($info['propTitulo']),
-					'texto'=>$info['propTexto'],
-				  	'fuente'=>utf8_encode($propuesta['propFuente']),
+					'texto'=>utf8_encode($info['propTexto']),
+				  	'fuente'=>utf8_encode($info['propFuente']),
 					'categoria' => array (	'codigo' => $categoria['catID'],
 				  				 			'nombre' => utf8_encode($categoria['catNombre']),
 				  				 			'abreviatura' => utf8_encode($categoria['catAbreviatura']),

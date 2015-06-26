@@ -6,9 +6,9 @@ Copyright (c) 2012 Reactive Apps, Ronnie Garcia
 .uploadifive-button {
 	font-size: 14px;
     
-	padding: 20px 0;
+	padding: 15px 0;
     
-	height: 62px;
+	height: 52px;
 	background-color: #78A3B1;
     background-image: none;
     color: #fff;
@@ -19,7 +19,7 @@ Copyright (c) 2012 Reactive Apps, Ronnie Garcia
     display: inline-block;
 	vertical-align: bottom;
 	overflow: hidden;
-	margin: 10px 0;
+	margin: 3px 0;
 	cursor: pointer;
 	width: 22% !important;
 	transition: all 300ms;
@@ -27,20 +27,20 @@ Copyright (c) 2012 Reactive Apps, Ronnie Garcia
 .uploadifive-button:hover {
     background-color: #93BCC9;
     border-bottom: 4px solid #3B8CA7;
-    padding: 18px 0;
+    padding: 12px 0;
     transition: all 300ms;
 }
 .uploadifive-queue{
 	display: inline-block;
     width: 40%;
     
-	height: 62px;
+	height: 52px;
 	background-color: #FFFFFF;
     
 	border: 1px solid #3B8CA7;
     border-radius: 0 5px 5px 0;
 	vertical-align: bottom;
-	margin: 10px 0;
+	margin: 3px 0;
 }
 .uploadifive-queue-item {
 	background-color: #e0e0e0;

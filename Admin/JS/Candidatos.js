@@ -25,10 +25,13 @@ function MostrarCandidato(modo, cand, part)
 		{
 			var container = document.createElement('div');
 			$(container).attr('id', 'cand'+cand.codigo);
+			$(container).attr('data-cargo', cand.cargo.codigo);
+			$(container).attr('data-ciudad', cand.ciudad.codigo);
 			$(container).attr('data-partido', part.codigo);
 			$(container).addClass('candidatoContainer');
-			$(container).click(function(){
-				MostrarCandidato(1, cand, part);
+			$(container).click(function(e){
+				if(!$(e.target).hasClass('botonEditar') && !$(e.target).hasClass('botonAgregarPropuesta') && !$(e.target).hasClass('botonEliminar'))
+					MostrarCandidato(1, cand, part);
 			});
 			$('.candidatosContainer').append(container);
 

@@ -40,7 +40,7 @@ function MostrarCandidato(modo, cand, part)
 			$(cont).css('display', 'inline-block');
 			$(cont).css('vertical-align', 'top');
 			$(cont).css('margin', '6px 0');
-			$(cont).css('max-width', '215px');
+			$(cont).css('max-width', '95%');
 			
 			var nombre = document.createElement('div');
 			$(nombre).addClass('nombreCandidato');
@@ -77,6 +77,8 @@ function MostrarCandidato(modo, cand, part)
 				
 				cont.append(MostrarVolver(0, part));
 				cont.append(HeaderCandidato(cand, part));
+				CargarCargos();
+				CargarCiudades();
 				
 				cont.append(MostrarContenedor(contenedores.PROPUESTAS));
 				

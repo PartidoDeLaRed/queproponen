@@ -16,6 +16,8 @@ function SetearDatos()
 	$(ciudad).html(Ciudad);
 	$(ciudad).addClass('subtitle');
 	$('.headerText').append(ciudad);
+	if(Ciudad != 'CABA')
+		$('.bannerAfiliacion').remove();
 	
 	$('meta[property="og:description"]').attr('content', 'Conocé todas las propuestas de los candidatos a Gobernador por '+Ciudad);
 	$('meta[name="description"]').attr('content', 'Conocé todas las propuestas de los candidatos a Gobernador por '+Ciudad);
@@ -31,32 +33,68 @@ function SetearDatos()
 function CargaInicial(nuevo)
 {
 	cont = $('.contentContainer');
-	cont.stop(true, true).fadeOut('300ms', function() {
+	if(nuevo)
+	{
 		cont.html('');
+		CargarCategorias();
 		cont.append(MostrarContenedor(contenedores.CANDIDATOS));
 		cont.append(MostrarContenedor(contenedores.PROPUESTAS));
+		CargarCargos();
+		CargarCiudades();
+		CargarContenido();
+		if(cargos.length == 1)
+		{
+			$('#textTipoCandidato').html(cargos[0].nombre);
+			$('#textTipoCandidato').css('display', 'inline-block');
+			$('#filtersContainer').css('display', 'none');
+		}
+		else
+		{
+			$('#textTipoCandidato').css('display', 'none');
+			$('#filtersContainer').css('display', 'inline-block');
+		}
+		$('html, body').animate({
+			scrollTop: 0
+		}, 500, function(){GenerarGrafico()});
+	}
+	else
+	{
+		$('.candidatosContainerFixed').children('.candidatoContainer').remove();
+		$('.candidatosContainer').children('.candidatoContainer').remove();
+		$('.candidatosContainer').children('.noElements').remove();
+		$('.propuestasContainer').find('.propuestaContainer').remove();
+		$('.propuestasContainer').find('.noPropuestaContainer').remove();
 		
-		candidatos.forEach(function(cand) { MostrarCandidato(0, cand); });
-		candidatos.filter(function(cand) { return cand.ganador == 1 }).forEach(function(cand) { cand.propuestas.forEach(function(prop) {MostrarPropuesta(prop, cand.partido, cand); }) });
-		VerificarPropuestas(null);
+		CargarContenido();
+	}
 		
-    }).fadeIn('300ms').animate({marginTop:'0px'},'300ms').animate({scrollTop:200}, '300');
-	$('html, body').animate({
-		scrollTop: 0
-	}, 500, function(){GenerarGrafico()});
 
-	if(nuevo)
-		CambiarURL(3, null);
 	setTimeout(function(){GenerarGrafico();}, 1000);	
 }
 
-function CargarSeccion()
+function CargarContenido()
 {
+	var cargo = document.getElementById('selectCargos').value;
+	var ciudad = document.getElementById('selectCiudades').value;
+
+	var candidatosFiltrados = candidatos.filter(function(cand) { return (cand.cargo.codigo == cargo && (ciudad != -1 ? cand.ciudad.codigo == ciudad : true)) });
+	candidatosFiltrados.forEach(function(cand) { MostrarCandidato(0, cand); });
+	candidatosFiltrados.filter(function(cand) { return cand.ganador == 1 }).forEach(function(cand) { cand.propuestas.forEach(function(prop) {MostrarPropuesta(prop, cand.partido, cand); }) });
+	VerificarPropuestas(null);
+	VerificarCandidatos();
+	var perdedores = candidatosFiltrados.filter(function(cand) { return cand.ganador == 0 }).length;
+	if(perdedores == 0)
+		$('.candidatosPerdedoresHeader').css('display', 'none');
+	else
+		$('.candidatosPerdedoresHeader').css('display', 'block');
+}
+
+function CargarSeccion(nuevo)
+{
+	CargarCandidatos();
+	CargaInicial(true);
 	if(window.location.hash.split('/')[1] != undefined)
 	{
-		if($('.partidosContainer').children('.partidoContainer').length == 0)
-			CargaInicial(false);
-
 		secciones = unescape(window.location.hash).split('/');
 		var nombre = secciones[1].split('-').join(' ');
 		if(window.location.hash.indexOf('candidato') != -1)
@@ -64,6 +102,10 @@ function CargarSeccion()
 			var cand = candidatos.filter(function(e){ return e.nombre == nombre; })[0];
 			if(cand != undefined)
 			{
+				document.getElementById('selectCargos').value = parseInt(cand.cargo.codigo);
+				document.getElementById('selectCiudades').value = parseInt(cand.ciudad.codigo);
+				$('#selectCiudades').change();
+
 				setTimeout(function(){MostrarCandidato(1, cand, cand.partido);}, 500);
 				if(secciones.indexOf('propuesta') != -1)
 				{
@@ -79,8 +121,6 @@ function CargarSeccion()
 			}
 		}
 	}
-	else
-		CargaInicial(true);
 }
 
 function ToggleCandidatosPerdedores()

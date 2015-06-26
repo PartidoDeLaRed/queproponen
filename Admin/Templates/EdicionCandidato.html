@@ -7,6 +7,9 @@
                 <label class="labelInput">Nombre</label><input id="name-input" name="name" class="textInput" type="text" placeholder="nombre del candidato" required="required"/>
             </div>
             <div>
+                <label class="labelInput">Cargo</label><select id="cargo-input" name="cargo" class="selectInput" required="required"/>
+            </div>
+            <div>
                 <label class="labelInput">Ciudad</label><select id="ciudad-input" name="ciudad" class="selectInput" required="required"/>
             </div>
             <div>
@@ -44,12 +47,32 @@
 		
 		$('#PASO-input').checkboxpicker();
 
+		cargos.forEach(function(car)
+		{
+			var option = document.createElement('option');
+			$(option).attr('id', car.codigo);
+			$(option).attr('value', car.codigo);
+			$(option).html(car.nombre);
+			$('#cargo-input').append(option);
+		});
+		$('#cargo-input').change(function(e) {
+            if(document.getElementById('cargo-input').value == 0)
+			{
+				document.getElementById('ciudad-input').value = 0;
+				$('#ciudad-input').parent().slideUp('100ms');
+			}
+			else
+				$('#ciudad-input').parent().slideDown('100ms');
+        });
+
 		ciudades.forEach(function(ciu)
 		{
 			var option = document.createElement('option');
 			$(option).attr('id', ciu.codigo);
 			$(option).attr('value', ciu.codigo);
 			$(option).html(ciu.nombre);
+			if(ciu.codigo == 0)
+				$(option).css('display','none');
 			$('#ciudad-input').append(option);
 		});
 		if(ciudades.length < 2)

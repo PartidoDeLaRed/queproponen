@@ -12,7 +12,7 @@
 	left: 50%;
     top: 0;
     
-	margin: 90px 0 0 -350px;
+	margin: 70px 0 0 -350px;
     
 	padding: 90px 30px 30px 30px;
     
@@ -30,15 +30,15 @@
     display: inline-block;
     text-align: left;
     color: #333;
-    line-height: 83px;
+    line-height: 52px;
     margin: 0;
     font-weight: 400;
 }
 
 .pn-container .textInput{
     font-size: 21px;
-    padding: 15px;
-    margin: 10px 0px;
+    padding: 10px;
+    margin: 3px 0px;
     width: 70%;
     border: 1px solid #eee;
     border-radius: 5px;
@@ -57,10 +57,10 @@
 
 .pn-container .selectInput {
     font-size: 20px;
-    padding: 10px;
+    padding: 5px;
     color: #555;
     width: 70%;
-    height: 62px;
+    height: 52px;
     border: 1px solid #eee;
     border-radius: 5px;
     text-align: left;
@@ -79,7 +79,7 @@
     font-size: 20px;
     width: 200px;
     float: right;
-    margin: 10px 0 0 0;
+    margin: 0;
     padding: 15px;
     background-color: #4C7E8E;
     color: #fff;
@@ -98,7 +98,7 @@
 .pn-container button:hover {
     transition: all 100ms;
     box-shadow: 0px 2px 1px #174F61;
-    margin-top: 8px;
+    margin-top: -2px;
 	
     margin-bottom: 2px;
 }
@@ -110,7 +110,7 @@
     font-weight: 600;
     font-size: 20px;
     border-radius: 5px;
-    margin: 10px 0;
+    margin: 3px 0;
 }
 
 input#image-input {
@@ -128,7 +128,7 @@ input#image-input {
     display: inline-block;
     vertical-align: middle;
     width: 70%;
-    height: 45px;
+    height: 42px;
     outline: none;
 }
 
@@ -172,6 +172,7 @@ input:focus, button:focus, select:focus, textarea:focus {
 }
 
 .sugerencia {
+    margin: -5px 0 5px 0;
     margin-left: 30%;
     text-align: left;
 }
@@ -179,26 +180,40 @@ input:focus, button:focus, select:focus, textarea:focus {
 .imageSource {
     display: inline-block;
     width: 49px;
-    height: 62px;
+    height: 52px;
     vertical-align: bottom;
-    margin: 10px 0;
+    margin: 3px 0;
     border: 1px solid #ddd;
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-.selectCiudades {
-    width: 167px;
-    padding: 5px;
-    margin: 0 10px;
-    font-size: 20px;
-	display:none;
-	border-radius: 3px;
-    border: 1px solid #ddd;
-    color: #555;
-    background-color: #F5F7FA;
+.mainSelect {
+  width: auto;
+  padding: 5px 20px 5px 5px;
+  margin: 0 10px;
+  font-size: 20px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  color: #555;
+  background-color: #F5F7FA;
+  display: inline-block;
+	transition:all 300ms;
 }
-.selectCiudades:focus {
+.mainSelect:focus {
     box-shadow: none !important;
+	transition:all 300ms;
+}
+.mainSelect:hover {
+    border-color: #333 !important;
+	transition:all 300ms;
+}
+
+.selectCiudadesContainer {
+    display: inline-block;
+}
+
+#textTipoCandidato{
+	display:inline-block;
 }

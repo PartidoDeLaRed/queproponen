@@ -9,7 +9,15 @@ function CargarCandidatos()
 	})
 	.done(function( msg ) {
 		candidatos = $.parseJSON(msg);
-		candidatos = shuffle(candidatos);
+		candidatos = shuffle(candidatos).sort(function(a,b){return a.partido.codigo - b.partido.codigo});
+
+		if(candidatos.filter(function(cand){ return cand.ganador == '1' }).length == 0)
+			$('#generalesMenuItem').remove();
+		if(candidatos.filter(function(cand){ return cand.ganador == '0' }).length == 0)
+		{
+			$('#PASOMenuItem').remove();
+			$('.candidatosPerdedores').hide('fast');
+		}
   	});
 }
 
@@ -138,6 +146,12 @@ function MostrarCandidato(modo, cand)
 						AbrirCategorias();
 						VerificarPropuestas(cand);
 						GenerarGrafico();
+						var scrollTop = $('body').scrollTop();
+						var scrollTop1 = $('.propuestasContainer').offset().top - 150;
+						if(scrollTop < scrollTop1)
+							$('body').animate({
+								scrollTop: $('.propuestasContainer').offset().top - 150
+							}, 500);
 					}, 200);
 					CambiarURL(1, cand);
 				}
@@ -177,5 +191,16 @@ function MostrarCandidato(modo, cand)
 			
 			return container;
 		}break;
+	}
+}
+
+function VerificarCandidatos()
+{
+	if($('.candidatosContainer').children('.candidatoContainer').length == 0)
+	{
+		var noCandidatos = document.createElement('div');
+		$(noCandidatos).addClass('noElements');
+		$(noCandidatos).html('No hay candidatos');
+		$('.candidatosContainer').append(noCandidatos);
 	}
 }

@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, user-scalable=no">
 
-<meta name="description" pcontent="Conocé todas las propuestas de los candidatos a Jefe de Gobierno en diferentes ciudades de Argentina" />
-<meta name="keywords" pcontent="propuestas, candidatos, partidos, frentes, elecciones, 2015, jefe de gobierno, ciudad de buenos aires, caba, partido de la red, pdr" />
+<meta name="description" pcontent="Conocé todas las propuestas de los candidatos en varias provincias de Argnetina" />
+<meta name="keywords" pcontent="propuestas, candidatos, partidos, frentes, elecciones, 2015, jefe de gobierno, gobernador, intendente, consejal, ciudad de buenos aires, caba, partido de la red, pdr, santa fe, la rioja" />
 
 <link rel="icon" type="image/png" href="http://queproponen.com.ar/IMG/icon.png">
-<meta property="og:image" content="http://queproponen.com.ar/IMG/backgroundHeader.jpg" />
+<meta property="og:image" content="http://queproponen.com.ar/IMG/shareMainImage.png" />
 <meta property="og:title" content="¿Qué proponen? - Partido de la Red"/>
 <meta property="og:url" content="http://queproponen.com.ar"/>
 <meta property="og:site_name" content="¿Qué proponen? - Partido de la Red"/>
-<meta property="og:description" content="Conocé todas las propuestas de los candidatos a Jefe de Gobierno de varias ciudades de Argentina"/>
+<meta property="og:description" content="Conocé todas las propuestas de los candidatos en varias ciudades de Argentina"/>
 <title>¿Que Proponen? - Partido de la Red</title>
 
 <link href="CSS/styles.css" rel="stylesheet" type="text/css" />
@@ -20,28 +20,135 @@
 <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
 <script src="https://apis.google.com/js/client.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="JS/Utilities.js"></script>
 
 <script language="javascript" type="application/javascript">
 if (window.location.hash == 'close.html') window.close();
 
 $(document).ready(function(e) {
 
-	if (navigator.geolocation) 
-	{
-		navigator.geolocation.getCurrentPosition(function(pos){
-			$.ajax({
-				method: "GET",
-				url: 'http://maps.googleapis.com/maps/api/geocode/json?latlng='+pos.coords.latitude+','+pos.coords.longitude+'&sensor=true',
-				success: function(data){
-					if(data.results[2].address_components[0].short_name == 'CF')
-						$('.bannerAfiliacion').slideDown('fast');
-				}
-			})
-		});
-	}
+	window.provincias = [
+		{
+			nombre: 'CABA',
+			subdominio: 'caba',
+			imagen: 'caba_200.png'
+		},
+		{
+			nombre: 'La Rioja',
+			subdominio: 'larioja',
+			imagen: 'larioja_200.png'
+		},
+		{
+			nombre: 'Santa Fe',
+			subdominio: 'santafe',
+			imagen: 'santafe_200.png'
+		},
+/*		{
+			nombre: 'Buenos Aires',
+			subdominio: 'buenosaires',
+			imagen: 'buenosaires.png'
+		},
+		{
+			nombre: 'Entre Ríos',
+			subdominio: 'entrerios',
+			imagen: 'entrerios.png'
+		},
+		{
+			nombre: 'Chaco',
+			subdominio: 'chaco',
+			imagen: 'chaco.png'
+		}
+*/	];
+	
+	CargarProvincias();
+	
+	var geolocator = document.createElement('script');
+	$(geolocator).attr('src', 'http://api.ipinfodb.com/v3/ip-city/?key=419e9aa255d951d078b59fe1f9cb1432fb9fb5f3e57b830c74cf4c97504a0323&format=json&callback=getPosition');
+	$('body').append(geolocator);
+	
 });
 
+function CargarProvincias()
+{
+	$('.contentContainer').html('');
+	//provincias = shuffle(provincias);
+	var index = 0;
+	window.provincias.forEach(function(pro){
+		var cont = document.createElement('div');
+		$(cont).addClass('hexagon');
+		$(cont).attr('id', pro.subdominio);
+		$(cont).click(function(e) {
+			window.location.href = 'http://'+pro.subdominio+'.queproponen.com.ar';
+		});
+		switch(index)
+		{
+			case 0: 
+				$(cont).css('top', 50+'px').css('left', 50+'%').css('margin-left', '-50px').css('zoom', 1.5);
+			break;
+			case 1: $(cont).css('top', 120+'px').css('left', 0).css('margin-left', '100px');
+			break;
+			case 2: $(cont).css('top', 120+'px').css('right', 0).css('margin-right', '100px');
+			break;
+		}
+
+		var image = document.createElement('div');
+		$(image).addClass('image');
+		$(image).css('background-image', 'url(IMG/provincias/'+pro.imagen+')');
+		$(cont).append(image);
+
+		var text = document.createElement('div');
+		$(text).addClass('text');
+		$(text).html(pro.nombre);
+		$(cont).append(text);
+		
+		$('.contentContainer').append(cont);
+		
+		$('.hexagon')
+		
+		index++;
+	});
+
+	setTimeout(function(){
+		var animationDelay = 1200;
+		var offset = 500;
+		$('.hexagon').each(function(){
+			var e = this;
+			setTimeout(function(){
+				$(e).css({
+					opacity: 1,
+					marginTop: 0
+				});
+			},($(e).index()) * offset)
+		});
+	},1000)
+}
+
+function getPosition(answer)
+{
+	var ciudad = 'Distrito Federal';
+	if(answer != null)
+		ciudad = answer.regionName;
+	var id='';
+	switch(ciudad)
+	{
+		case 'Distrito Federal': id='caba';
+			$('.bannerAfiliacion').slideDown('slow');
+		break;
+		case 'La Rioja': id='larioja';
+		break;
+		case 'Santa Fe': id='santafe';
+		break;
+	}
+	
+	var sel = window.provincias.filter(function(pro){return pro.subdominio == id});
+	if(sel.length > 0)
+		if($(sel).index() > 0)
+			window.provincias.move($(sel).index(), 0);
+	CargarProvincias();
+}
+
 </script>
+
 
 </head>
 
@@ -76,7 +183,7 @@ $(document).ready(function(e) {
     </script>
 
 	<div class="headerContainer">
-    	<div class="bannerAfiliacion" style="display:none;">Si querés que el Partido de la Red sea una opción en 2017, <a href="http://4milfundadores.com" target="_blank">Afiliate!</a></div>
+    	<div class="bannerAfiliacion">Si vivís en CABA y querés que el Partido de la Red sea una opción en 2017, <a href="http://4milfundadores.com" target="_blank">¡Afiliate!</a></div>
         <div class="widthLimiter">
 	        <div class="logo"></div>
 			<div class="title">¿Qué proponen?</div>
@@ -86,30 +193,34 @@ $(document).ready(function(e) {
     </div>
 	
     <div id="contenido" class="mainContainer">
+        <div class='widthLimiter mainSharer' style="padding-top:10px; text-align:center">
+            <a class='twitterButton' onclick='javascript:CompartirInicio(0)'>Compartí en Twitter</a><a class='facebookButton' onclick='javascript:CompartirInicio(1)'>Compartí en Facebook</a>
+        </div>
+    	<div class="subtitle">
+        	Encontrá las propuestas sobre los temas que te interesan de todos los candidatos en un mismo lugar
+        </div>
     	<div class="contentContainer">
-        	<div class="title">Muy Pronto!</div>
-        	<div class="subtitle">Todas las propuestas de los candidatos a Jefe de Gobierno</div>
         </div>
     </div>
 
 	<div class='footerContainer'>
         <div style="max-width: 960px; margin:auto;">
             <div style="font-size:30px; padding: 10px;">¿Qué Proponen?</div>
-            <div class="linksContainer" style="display:none;">
-            	<a href="http://queproponen.com.ar/caba/">CABA</a>
-            	<a href="http://queproponen.com.ar/chaco/">Chaco</a>
-            	<a href="http://queproponen.com.ar/entrerios/">Entre Ríos</a>
-            	<a href="http://queproponen.com.ar/larioja/">La Rioja</a>
-            	<a href="http://queproponen.com.ar/santafe/">Santa Fe</a>
+            <div class="linksContainer">
+            	<a href="http://caba.queproponen.com.ar">CABA</a>
+<!--            	<a href="http://buenosaires.queproponen.com.ar">Buenos Aires</a>
+            	<a href="http://chaco.queproponen.com.ar">Chaco</a>
+            	<a href="http://entrerios.queproponen.com.ar">Entre Ríos</a>
+-->            	<a href="http://larioja.queproponen.com.ar">La Rioja</a>
+            	<a href="http://santafe.queproponen.com.ar">Santa Fe</a>
             </div>
             <div class="contactContainer">
             	<div style="font-size: 23px;">Contactanos</div>
+                <a class="page" href="http://partidodelared.org" target="_blank"></a>
                 <a class="facebook" href="http://facebook.com/PartidoDeLaRed" target="_blank"></a>
                 <a class="twitter" href="http://twitter.com/PartidodelaRed" target="_blank"></a>
                 <a class="google" href="http://plus.google.com/101519187164139196788" target="_blank"></a>
             </div>
-           	<a class="footerLinkGrande" href="http://partidodelared.org" target="_blank" style="float:left; text-align:left;">Quienes somos <div>PartidoDelaRed.org</div></a>
-           	<a class="footerLinkGrande" href="http://democraciaenred.org" target="_blank" style="text-align:right;">Participá en la red <div>DemocraciaEnRed.org</div></a>
         </div>
         <div class="creditsContainer">
             <div>Hecho con <div class="heartIcon"></div> por pares del Partido de la Red - 2015</div>

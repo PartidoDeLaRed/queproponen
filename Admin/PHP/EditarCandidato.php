@@ -14,9 +14,9 @@ or die ("No se pudo acceder a la base de datos porque ".mysql_error());
 
 $agregarImagen = '';
 if($_GET['image'] != 'noChange')
-	$agregarImagen = "', candImagen='".$_GET['image'];
+	$agregarImagen = "', candImagen='".utf8_decode($_GET['image']);
 //Guardamos los datos editados
-$match = "update tbCandidatos set candNombre='".utf8_decode($_GET['name']).$agregarImagen."', candLista='".utf8_decode($_GET['list'])."', partID=".$_GET['partido'].", ciuID=".$_GET['ciudad'].", candTwitter='".$_GET['twitter']."', candPASO=".$_GET['PASO']." where candID = ".$_GET['codigo'].";"; 
+$match = "update tbCandidatos set candNombre='".utf8_decode($_GET['name']).$agregarImagen."', candLista='".utf8_decode($_GET['list'])."', partID=".$_GET['partido'].", carID=".$_GET['cargo'].", ciuID=".$_GET['ciudad'].", candTwitter='".$_GET['twitter']."', candPASO=".$_GET['PASO']." where candID = ".$_GET['codigo'].";"; 
 $qry = mysql_query($match)
 or die ("No se pudieron encontrar datos porque ".mysql_error()); 
 
@@ -27,19 +27,22 @@ or die ("No se pudieron encontrar datos porque ".mysql_error());
 $info = mysql_fetch_array( $qry );
 
 $partido = mysql_fetch_array( mysql_query("select * from tbPartidos where partID = ".$info['partID']) );
+$cargo = mysql_fetch_array( mysql_query("select * from tbCargos where carID = ".$info['carID']) );
 $ciudad = mysql_fetch_array( mysql_query("select * from tbCiudades where ciuID = ".$info['ciuID']) );
 $candidato = array ('codigo'=> $info['candID'],
 					'nombre'=>utf8_encode($info['candNombre']),
 		  			'lista'=>utf8_encode($info['candLista']),
-		  			'imagen'=>$info['candImagen'],
+		  			'imagen'=>utf8_encode($info['candImagen']),
 					'twitter'=>$info['candTwitter'],
 					'ganador'=>$info['candPASO'],
 					'partido' => array ('codigo' => $partido['partID'],
 										'nombre' => utf8_encode($partido['partNombre']),
-										'imagen' => $partido['partImagen'],
+										'imagen' => utf8_encode($partido['partImagen']),
 										'color' => $partido['partColor']),
+					'cargo' => array ('codigo' => $cargo['carID'],
+										'nombre' => utf8_encode($cargo['carNombre'])),
 					'ciudad' => array ('codigo' => $ciudad['ciuID'],
-										'nombre' => $ciudad['ciuNombre']),
+										'nombre' => utf8_encode($ciudad['ciuNombre'])),
 					'propuestas'=> CargarPropuestas(mysql_query("select * from tbPropuestas where candID = ".$info['candID']))
 			);
 
