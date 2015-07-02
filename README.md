@@ -21,14 +21,14 @@ Hay dos versiones del sitio:
 En el inicio se mostrarán la lista de partidos, debajo la lista de candidatos y finalmente la lista de propuestas organizadas por categoría.
 Se podrá navegar apretando los partidos - llevándote a la subpágina del partido con su lista de candidatos y propuestas -, los candidatos - llevándote a la subpágina del candidato con su lista de propuestas -
 
-Un ejemplo de esta versión se puede ver en [caba.queproponen.com.ar/PASO](http://caba.queproponen.com.ar/PASO)
+Un ejemplo de esta versión se puede ver en [caba.queproponen.com.ar/propuestas/PASO](http://caba.queproponen.com.ar/propuestas/PASO)
 
 **'Generales'**
 
 Pensada para una menor cantidad de candidatos y donde existe un candidato por partido, en el inicio se mostrarán la lista de candidatos con un header en cada uno indicando su partido, debajo la lista de propuestas organizadas por categoría.
 Al apretar un candidato, dinámicamente en la misma página, se mostarán abajo sólo sus propuestas.
 
-Un ejemplo de esta versión se puede ver en [caba.queproponen.com.ar](http://caba.queproponen.com.ar)
+Un ejemplo de esta versión se puede ver en [caba.queproponen.com.ar/propuestas](http://caba.queproponen.com.ar/propuestas)
 
 finalmente  está el módulo **Admin**
 
@@ -37,7 +37,7 @@ Aplicación para poder administrar los datos que se mostrarán en la página - P
 ## Implementación Externa
 
 1. Copiar el contenido de la versión que elija en su servidor
-2. Copiar la carpeta 'Admin' en la misma carpeta
+2. Copiar la carpeta 'Admin' en el mismo directorio
 3. Crear una base de datos en su servidor e importar las tablas mediante el archivo 'queproponen_DB.sql' en su servidor
 4. Modificar los datos del archivo 'config.php' presentes en las carpetas PHP de la versión que elijió y el 'Admin'.
   1. Nombre de servidor (en cualquier hosting normálmente localhost)
