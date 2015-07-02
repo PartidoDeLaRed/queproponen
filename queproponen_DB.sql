@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `tbDatos` (
 --
 
 INSERT INTO `tbDatos` (`datID`, `datCiudad`, `datFacebook`, `datTwitter`) VALUES
-(0, 'CABA', 'PartidoDeLaRed', 'PartidodelaRed');
+(0, 'Provincia', 'PartidoDeLaRed', 'PartidodelaRed');
 
 -- --------------------------------------------------------
 
@@ -164,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `tbUsuarios` (
 --
 
 INSERT INTO `tbUsuarios` (`usrID`, `usrName`, `usrUser`, `usrPass`, `usrMail`, `usrSistema`, `hash`) VALUES
-(0, 'Administrador', 'admin', '1234', '-', 1, 'done');
+(0, 'Administrador', 'admin', '1234', '-', 1, NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
