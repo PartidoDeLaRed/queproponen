@@ -36,6 +36,13 @@ CREATE TABLE IF NOT EXISTS `tbCargos` (
   PRIMARY KEY (`carID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `tbCategorias`
+--
+
+INSERT INTO `tbCargos` (`carID`, `carNombre`) VALUES
+(0, 'Gobernador');
+
 -- --------------------------------------------------------
 
 --
