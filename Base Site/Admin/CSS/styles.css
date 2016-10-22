@@ -9,7 +9,7 @@
 }
 
 body,html{
-	width:100%;	
+	width:100%;
 	height: 100%;
 	background: #F2F5F8;
 	position: absolute;
@@ -92,7 +92,7 @@ body,html{
 
 .headerText{
 	position: absolute;
-	left: 80px; 
+	left: 80px;
 	top: 22px;
 }
 
@@ -125,7 +125,7 @@ body,html{
 	margin: auto;
 }
 
-.subtitle{	
+.subtitle{
 	font-size: 30px;
 	font-weight: 300;
 	color: #169cbf;
@@ -164,7 +164,7 @@ nav.menu .botonLogout {
 	nav.menu .botonLogout:hover {
 	  transition: all 500ms;
 	  color: #16acb9;
-	
+
 	}
 nav.menu .botonLogout.selected {
 	color: #16acb9 !important;
@@ -231,12 +231,12 @@ nav.menu .botonLogout.selected {
 
 .contentContainer {
 	min-height: 570px;
-    
-    
+
+
 	max-width: 960px;
 	text-align: center;
 	margin: 0 auto;
-    
+
 	padding: 20px 0;
 }
 
@@ -260,7 +260,7 @@ nav.menu .botonLogout.selected {
     position: relative;
 }
 
-.partidoContainer{	
+.partidoContainer{
 	width: 220px;
 	margin: 0;
 	background:#fff;
@@ -293,11 +293,11 @@ nav.menu .botonLogout.selected {
 .imagenPartido{
 
 	height: 140px;
-	
+
 	background-color:#fff;
 	background-position: center center;
 	background-size: cover;
-	
+
 
 	margin: 5px;
 
@@ -320,10 +320,10 @@ position: absolute;
   left: 160px;
   right: 0;
   top: 0;
-  
+
 bottom:0;
 width: auto !important;
-  
+
 vertical-align: top;
 font-size: 45px;
   font-weight: 400;
@@ -380,7 +380,7 @@ text-align: center;
   width: 50%;
   height: 62px;
 }
-.item.propuestas::before{        
+.item.propuestas::before{
 	position: absolute;
 	bottom: 5px;
 	left: 0;
@@ -394,27 +394,27 @@ text-align: center;
 
 .item.candidatos_Header{
 	text-align: center;
-  	
+
 	font-weight: 300;
   	line-height: 50px;
   	color: #333;
   	position: absolute;
-  	
+
 	right: 120px;
   	top: 0;
   	bottom: 0;
-  	
+
 	font-size: 60px;
-  	
+
 	width: 120px;
   	border-left: 1px solid #e6e6e6;
 }
-.item.candidatos_Header::after{        
+.item.candidatos_Header::after{
 	position: absolute;
-	bottom: 0; 
+	bottom: 0;
 	left: 0;
 	right: 0;
-	text-align:center;    
+	text-align:center;
 	content: 'Candidatos';
 	font-size: 15px;
 	font-weight: 300 !important;
@@ -423,32 +423,32 @@ text-align: center;
 
 .item.propuestas_Header{
 	text-align: center;
-  	
+
 	font-weight: 300;
-  	
+
 	line-height: 50px;
   	color: #333;
-  	
+
 	position: absolute;
-  	
+
 	right: 0;
-  	
+
 	top: 0;
-  	
+
 	bottom: 0;
-  	
+
 	font-size: 60px;
-  	
+
 	width: 120px;
-  	
+
 	border-left: 1px solid #e6e6e6;
 }
-.item.propuestas_Header::after{        
+.item.propuestas_Header::after{
 	position: absolute;
-	bottom: 0; 
+	bottom: 0;
 	left: 0;
 	right: 0;
-	text-align:center;    
+	text-align:center;
 	content: 'Propuestas';
 	font-size: 15px;
 	font-weight: 300 !important;
@@ -457,7 +457,7 @@ text-align: center;
 
 .candidatosContainer{
     margin-bottom: 30px;
-	
+
 }
 
 .candidatosContainerFixed{
@@ -472,7 +472,7 @@ text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,.2);
   margin-top: -126px;
 }
-.candidatoContainer{	
+.candidatoContainer{
 
 	text-align: center;
 	width: 192px;
@@ -496,7 +496,7 @@ text-align: center;
 	opacity: .3;
 }
 
-.candidatoContainer_Header{	
+.candidatoContainer_Header{
 	text-align: left;
 	width:100%;
 	margin:10px 0;
@@ -517,14 +517,14 @@ text-align: center;
 	padding: 2px 5px;
 	color: #fff;
 	font-size: 12px;
-	display: inline-block;	
+	display: inline-block;
 	border-radius: 3px;
 }
 .colorCandidato_mini{
 	height: 35px;
 	width: 35px;
 	margin: -2px 0 0 -33px;
-	display:inline-block;	
+	display:inline-block;
 	border-radius: 17px;
 	border: 1px solid;
 	opacity: .15;
@@ -654,7 +654,7 @@ text-align: center;
         z-index: 1000;
         line-height: 16px !important;
     }
-    
+
 	.item.propuestas.numeroNoPropuestas:after {
         position: absolute;
         left: 0;
@@ -710,12 +710,12 @@ text-align: center;
 
 .tipo{
     margin: 0 0 30px 0;
-	
+
 }
 
 .quantityList{
 	color: #333;
-	margin: 0;	
+	margin: 0;
 	float: right;
 }
 
@@ -733,7 +733,7 @@ text-align: center;
 
 .tipo span{
 	margin: 4px 15px;
-	vertical-align:super;	
+	vertical-align:super;
 	text-shadow: 2px 2px 1px #ddd;
 }
 
@@ -742,13 +742,13 @@ text-align: center;
   border-radius: 25px;
 }
 
-.propuestasContainer{	
+.propuestasContainer{
     margin: 20px auto;
     max-width: 960px;
 }
 
 .contPropuestas{
-	display:none;	
+	display:none;
 }
 
 .propuestaContainer{
@@ -762,12 +762,12 @@ text-align: center;
 	overflow: hidden;
 }
 .propuestaContainer .candidatoContainer{
-	position: absolute;    
-	top: 12px;    
-	left: 12px;    
-	width: auto;    
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	width: auto;
 	min-width: 0;
-	text-align: left;    
+	text-align: left;
 	border: none;
 	background: none;
 	opacity: 1 !important;
@@ -783,7 +783,7 @@ text-align: center;
 	left: 12px;
 	top: 0;
 	bottom: 0;
-	display:inline-block;	
+	display:inline-block;
 	display: none;
 }
 
@@ -835,6 +835,18 @@ text-align: center;
     position: absolute;
     left: 0;
     top: 2px;
+}
+
+.tagCategoria {
+    float: left;
+    color: #fff;
+    padding: 3px 10px;
+    margin: 3px;
+    border-radius: 2px;
+    padding-left: 30px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .noPropuestaContainer{
@@ -1015,7 +1027,7 @@ text-align: center;
 	text-align:right;
 	width: auto;
 	padding: 5px 10px;
-	border-radius: 24px;	
+	border-radius: 24px;
 	display: inline-block;
 	cursor: pointer;
 	transition: all 200ms;
@@ -1186,7 +1198,7 @@ text-align: center;
 
 	.headerContainer{
 		height: 200px !important;
-	
+
 		background-position: center -160px !important;
 }
 
@@ -1232,16 +1244,16 @@ text-align: center;
 }
 
 @media (max-width: 600px)  {
-	
+
 	.headerContainer{
 		height:200px;
-	
+
 }
 
 	.tipo{
 		zomm:.7;
 	}
-	
+
 	.partidoContainer{
 		width:100%;
 
@@ -1252,7 +1264,7 @@ text-align: center;
 		height: 125px;
 		width:50%;
 	}
-	
+
 	.item.candidatos{
 		position: absolute;
 		right: 25%;
@@ -1286,7 +1298,7 @@ text-align: center;
 		width:100%;
 		margin:10px 0;
 	}
-	
+
 	.tipo .title{
 		font-size:24px;
 		line-height: 50px;
@@ -1300,7 +1312,7 @@ text-align: center;
 	.tituloPropuesta{
 		padding:40px 0px 5px 0 !important;
 	}
-	
+
 	.propuestaContainer .candidatoContainer {
 	  border-radius: 3px !important;
 	  left: 25px !important;
@@ -1312,7 +1324,7 @@ text-align: center;
 	.quantityList{
 		display:none;
 	}
-	
+
 	.propuestaContainer .twitterButton{
 		left: 25px !important;
 		opacity: 1 !important;
@@ -1321,29 +1333,29 @@ text-align: center;
 		border-radius:3px !important;
 		padding:7px 10px 7px 32px !important;
 	}
-	
+
 	.textoPropuesta {
 		padding: 0 0 40px 0 !important;
 	}
-	
+
 	.headerContainer{
 		background-image: url(../../IMG/backgroundHeader.jpg) !important;
 		height: 300px;
-	
+
 		background-position: center -270px;
 }
-	
+
 	.github-fork-ribbon-wrapper{
 		display:none !important;
 	}
-	
+
 	.partidosContainer .twitterButton {
 		position: relative;
 		display: block;
 		width: 99%;
-		margin: auto;	
+		margin: auto;
 	}
-	
+
 	.partidoContainer .twitterButton{
 		position: initial;
 		width: 100%;
@@ -1357,14 +1369,14 @@ text-align: center;
   		width: 100%;
 		display:block;
 	}
-	
+
 	.nombre_Header{
 		height: 150px;
         position: relative;
         left: 0;
   		text-align: center !important;
 	}
-	
+
 	.partidoContainer .facebookButton{
 		position: initial;
 		width: 100%;
@@ -1373,7 +1385,7 @@ text-align: center;
 	.partidoContainer .facebookButton::before {
 		left:17px;
 	}
-	
+
 	.item.candidatos_Header{
         position: relative;
         right: 0;
@@ -1395,16 +1407,16 @@ text-align: center;
 		position: initial;
 		display: block;
 	}
-	
+
 	.item.propuestas_Header::after {
 		position: relative;
 		display: block;
 	}
-	
+
 	.candidatoContainer_Header .imagenCandidato{
 		zoom:.85;
 	}
-	
+
 	.candidatoContainer_Header .nombreCandidato{
 		zoom:.85;
 	}
@@ -1416,11 +1428,11 @@ text-align: center;
 	.candidatoContainer_Header .listaCandidato{
 		zoom:.85;
 	}
-	
+
 	.candidatoContainer_Header .item.propuestas_Header{
 		width:100%;
 	}
-	
+
 	.candidatoContainer_Header .twitterButton {
 		position: initial;
 		display: block;
@@ -1442,7 +1454,7 @@ text-align: center;
 	.candidatoContainer_Header .facebookButton::before{
 		left:6px;
 	}
-	
+
 	.aboutContainer{
 		width: 100%;
 		font-size: 18px;
@@ -1451,7 +1463,7 @@ text-align: center;
 	.aboutContainer:before{
 		display:none;
 	}
-	
+
 	.contentContainer .title{
 		line-height: 60px !important;
 		font-size: 30px;
@@ -1471,5 +1483,5 @@ text-align: center;
 }
 
 @media  (max-width: 680px){
-	
+
 }

@@ -11,9 +11,8 @@ $db_user = "[DB User]";
 // MySQL password to access the database with.
 $db_pass = "[DB User Pass]";
 
-
 // connect to the mysql server
-$link = mysql_connect($server, $db_user)
+$link = mysql_connect($server, $db_user, $db_pass)
 or die ("No se pudo conectar a MySql porque ".mysql_error());
 
 // select the database
