@@ -1,0 +1,376 @@
+.versusContainer .candidatoContainer {
+width: 16.2%;
+margin: 5px .2%;
+}
+
+.versusSubtitle {
+font-size: 20px;
+font-weight: 300;
+text-align: center;
+padding: 20px 0 50px 0;
+margin: 0 auto;
+max-width: 680px;
+color: #555;
+line-height: 20px;
+}
+
+.versusContainer .candidatoContainer div > .nombreCandidato{
+text-align: center !important;
+white-space: nowrap !important;font-size: 20px !important;line-height: 25px !important;}
+
+.versusContainer > div > div > .imagenCandidato {
+width: 100% !important;
+height: 0 !important;
+margin: 0;
+border-radius: 0;
+border-width: 1px;
+}
+.versusContainer > div > div > .contDataCandidato {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 5px 0 !important;
+}
+
+.versusContainer > div > div > .contDataCandidato .listaCandidato {
+    text-align: center !important;
+}
+
+.versusContainer > div > div > .colorCandidato {
+    font-size: 15px !important;
+    padding: 2px 10px !important;
+}
+.versusContainer > div > .candidatoContainer .item.propuestas {
+display: none !important;
+}
+
+.candidatosVersusContainer {
+width: 100%;
+height: 260px;
+padding: 0;
+background-color: #fff;
+}
+
+.candidatoVersusContainer {
+width: 49.8%;
+height: 100%;
+margin: 0 .1%;
+display: inline-block;
+position: relative;
+vertical-align:top;
+border-radius: 0;
+overflow: hidden;
+}
+
+.candidatoVersusContainer.wait{
+border: 3px dashed #169CBF !important;
+opacity: .5 !important;
+}
+
+.candidatoVersusContainer.dropped{
+border: 3px solid;
+opacity: 1;
+}
+
+.candidatoVersusContainer.wait:after {
+content: 'Arrastrá un candidato';
+position: absolute;
+width: 100%;
+height: 60px;
+line-height: 60px;
+font-size: 25px;
+color: #169CBF;
+font-weight: 600;
+left: 0;
+top: 50%;
+margin-top: -30px;
+background:rgba(255,255,255,.9);
+z-index:1000;
+}
+
+.candidatoVersusSelectedContainer {
+position: relative;
+text-align: left;
+width: 100%;
+height: 100%;
+margin: 0;
+cursor: default;
+opacity: 1;
+transition: all 200ms ease-out;
+}
+
+.candidatoVersusSelectedContainer .imagenCandidato {
+width: 35%;
+height: 80%;
+margin: 0;
+background-color: #fff;
+border-radius: 0;
+display: inline-block;
+vertical-align: top;
+background-position: center center;
+background-size: cover;
+border: 0;
+border: 2px solid #fff;
+
+}
+
+.candidatoVersusSelectedContainer .colorCandidato {
+width: 100%;
+margin: 0;
+border-bottom: 3px solid rgba(0,0,0,.5);
+padding: 10px;
+color: #fff;
+font-size: 25px;
+line-height: 31px;
+display: inline-block;
+border-radius: 0px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+text-align: center;
+border: none;}
+
+.candidatoVersusSelectedContainer .nombreCandidato {
+margin: 0 10px;
+text-align: left;
+font-size: 30px;
+font-weight: 400;
+display: block;
+white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+
+.candidatoVersusSelectedContainer .listaCandidato {
+margin: 1px 10px;
+text-align: left;
+font-size: 18px;
+color: #666;
+white-space: nowrap;
+text-overflow: ellipsis;
+height: auto;
+}
+
+.candidatoVersusSelectedContainer .graficoContainer {
+/* height: 68%; */
+}
+
+.candidatoVersusSelectedContainer .item.propuestas {
+text-align: center;
+font-size: 32px;
+font-weight: 400;
+vertical-align: bottom;
+color: #333;
+position: relative;
+display: inline-block;
+padding: 3px 10px;
+width: 100%;
+height: 62px;
+}
+
+
+.propuestasVersusContainer {
+width: 100%;
+min-height: 260px;
+padding: 0 .2%;
+background-color: #fff;
+margin: 10px 0 10px 0;
+position: relative;}
+
+.versusCategoryContainer{
+    position:relative;
+    margin: 20px 0;
+}
+
+.headerFixed{
+	position:fixed !important;
+	box-shadow: 0 3px 5px rgba(0,0,0,.21);
+}
+
+.versusCategoriaCandidato{
+    position: absolute;
+    top: 0;
+    height:100%;
+    width: 200px;
+}
+
+.versusCategoriaCandidato.left{
+    left:0;
+}
+.versusCategoriaCandidato.right{
+    right:0;
+}
+
+.versusCategoriaCandidato .candidatoContainer{
+    width: 100%;
+    padding: 12px 10px;
+    margin: 0;
+    opacity: 1;
+    transition: none;
+    box-shadow: none !important;
+}
+
+.versusCategoriaCandidato .candidatoContainer .imagenCandidato {
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+.versusCategoriaCandidato.left .candidatoContainer .imagenCandidato {
+    float:left;
+}
+.versusCategoriaCandidato.right .candidatoContainer .imagenCandidato {
+    float:right;
+}
+
+.versusCategoriaCandidato .candidatoContainer .item.propuestas{
+    position: relative;
+    display: inline-block;
+    background: #eee;
+    line-height: 60px;
+    height: auto;
+    padding: 0 10px;
+    margin: 0;
+    font-size: 40px;
+    font-weight: 400;
+    width: auto;
+    height: 60px !important;
+    color: #eee;
+}
+.versusCategoriaCandidato .candidatoContainer .item.propuestas:before{
+    content:'';
+}
+.versusCategoriaCandidato.left .candidatoContainer .item.propuestas {
+    float:left;
+    margin: 2px;
+}
+.versusCategoriaCandidato.right .candidatoContainer .item.propuestas {
+    float: right;
+    margin: 2px -2px;
+}
+
+.propuestasVersusContainer .propuestasItemsContainer {
+width: 49.6%;
+margin: 85px .2% 0 .2%;
+display: inline-block;
+position: relative;
+vertical-align: top;
+/* border-radius: 3px; */
+overflow: hidden;
+}
+
+#propuestasVersus2 {
+background-color: #DBB51B;
+}
+
+#propuestasVersus1 {
+background-color: #00286D;
+}
+
+@media (max-width: 960px) {
+.versusContainer .candidatosContainer .imagenCandidato {
+height: 110px;
+}
+
+.versusContainer .candidatoContainer div > .nombreCandidato {
+    display: none;
+}
+
+.versusContainer .candidatoContainer div > .listaCandidato {
+    display: none;
+}
+
+.candidatoVersusSelectedContainer .nombreCandidato {
+    font-size: 25px;
+}
+
+.candidatoVersusSelectedContainer .listaCandidato {
+    font-size: 10px;
+    margin-bottom: -4px;
+}
+
+.candidatoVersusSelectedContainer .graficoContainer {
+margin: 0 5px;}
+
+.candidatoVersusSelectedContainer .colorCandidato {
+    font-size: 18px;
+    padding: 6px;
+}
+
+
+.versusContainer .candidatosContainer div .colorCandidato{
+font-size: 11px;
+
+margin-bottom: -6px;}
+
+.candidatosVersusContainer{
+height:200px;
+}
+}
+
+@media (max-width: 580px) {
+.versusContainer .candidatosContainer div .nombreCandidato{
+display: none;
+}
+.versusContainer .candidatosContainer div .listaCandidato{
+display:none;
+}
+.versusContainer .candidatosContainer div .colorCandidato{
+font-size:10px;
+padding:5px;
+}
+
+.contentContainer .title{
+font-size: 45px;
+}
+
+.versusSubtitle{
+padding-left: 20px;
+padding-right: 20px;
+}
+
+.candidatoVersusSelectedContainer .imagenCandidato {
+    display: none;
+}
+
+.versusContainer .candidatosContainer div .nombreCandidato{
+display: none;
+}
+.versusContainer .candidatosContainer div .listaCandidato{
+display: none;
+}
+
+.datosCandidatoContainer {
+    width: 100% !important;
+}
+
+}
+
+@media (max-width: 480px) {
+.contentContainer .title{
+font-size: 30px;
+}
+
+.candidatoContainer {
+    width: 100% !important;
+}
+
+.selectric-selectFiltros {
+    width: 65%;
+}
+
+.selectLabel {
+    width: 35%;
+    font-size: 20px;
+    line-height: 20px;
+    height: 51px;
+    padding: 5.5px 10px;
+}
+
+.comboContainer {
+    width: 100%;
+}
+
+.versusSubtitle{
+font-size: 18px;
+}
+
+.candidatoVersusContainer.wait:after{
+line-height: 30px;
+}
+}

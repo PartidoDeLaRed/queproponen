@@ -1,0 +1,137 @@
+/*Contenedor de Candidato que está en Ballotage*/
+ 
+.candidatoContainer.candidatoBallotage {
+    width: 48%;
+    margin: 0 1% 50px 1%;
+    text-align: left;
+    position: relative;
+}
+
+.candidatoContainer.candidatoBallotage .colorCandidato {
+    font-size: 25px;
+    padding: 10px 5px;
+    text-align: center;
+    margin: 0;
+}
+ 
+.candidatoContainer.candidatoBallotage .imagenCandidato {
+    height: 120px;
+    width: 24%;
+}
+ 
+.candidatoContainer.candidatoBallotage .contDataCandidato {
+    width: 56%;
+    text-align: left;
+    padding-left: 5px;
+    margin-bottom: 0;
+}
+ 
+.candidatoContainer.candidatoBallotage .contDataCandidato .nombreCandidato{
+    text-align: left;
+    white-space: pre-wrap;
+    line-height: 40px;
+    font-size: 40px;
+    margin-left: 0;
+}
+ 
+.candidatoContainer.candidatoBallotage .contDataCandidato .listaCandidato{
+    text-align: left !important;
+    font-size: 12px !important;
+    height: auto !important;
+}
+ 
+.candidatoContainer.candidatoBallotage .item.propuestas{
+    position:absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    font-size: 50px;
+    padding: 8px 2px;
+    font-weight: bold;
+    height: 120px;
+    line-height: 70px;
+    background: none;
+    border-left: 1px solid #eee;
+}
+ 
+.candidatoContainer.candidatoBallotage .item.propuestas:before{
+    font-size: 16px;
+}
+ 
+ 
+/*Contenedor de Candidato que no está en Ballotage*/
+ 
+.candidatoContainer:not(.candidatoBallotage) {
+    width: 25%;
+    margin: 0;
+    text-align: left;
+    opacity: .5;
+}
+ 
+.candidatoContainer:not(.candidatoBallotage) .colorCandidato {
+    font-size: 12px;
+    padding: 2px 5px;
+    text-align: center;
+    margin: 0;
+}
+ 
+.candidatoContainer:not(.candidatoBallotage) .imagenCandidato {
+    height: 40px;
+    width: 15%;
+}
+ 
+.candidatoContainer:not(.candidatoBallotage) .contDataCandidato {
+    width: 60%;
+    text-align: left;
+    padding-left: 5px;
+    margin-bottom: 0;
+}
+ 
+.candidatoContainer:not(.candidatoBallotage) .contDataCandidato .nombreCandidato{
+    text-align: left;
+    white-space: pre-wrap;
+    line-height: 17px;
+    font-size: 15px;
+}
+ 
+.candidatoContainer:not(.candidatoBallotage) .contDataCandidato .listaCandidato{
+    text-align: left !important;
+    font-size: 8px !important;
+    height: auto !important;
+}
+ 
+.candidatoContainer:not(.candidatoBallotage) .item.propuestas{
+    position:absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    font-size: 16px;
+    padding: 8px 2px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 15px;
+}
+ 
+.candidatoContainer:not(.candidatoBallotage) .item.propuestas:before{
+    content: 'props.';
+    font-size: 10px;
+}
+
+@media (max-width: 600px) {
+.candidatoContainer.candidatoBallotage{
+    width: 98% !important;
+    margin-left:1%;
+    margin-left:1%;
+}
+
+.candidatoContainer.candidatoBallotage .contDataCandidato{
+    margin-left:25% !important;
+}
+
+.candidatoContainer.candidatoBallotage .contDataCandidato .nombreCandidato{
+    width: 70%;
+}
+.candidatoContainer.candidatoBallotage .contDataCandidato .listaCandidato{
+    margin-left:0
+}
+}
