@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="theme-color" content="#5DB9D2">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+
+<meta name="description" content="[DESCRIPTION]" />
+<meta name="keywords" content="[KEYWORDS]" />
+
+<!-- Facebook metadata -->
+<link rel="icon" type="image/png" href="http://queproponen.com.ar/IMG/icon.png">
+<meta property="og:image" content="[IMAGE FOR	FACEBOOK]" />
+<meta property="og:title" content="¿Qué Proponen?"/>
+<meta property="og:url" content="[URL FOR	FACEBOOK]"/>
+<meta property="og:site_name" content="¿Qué proponen?"/>
+<meta property="og:description" content="[DESCRIPTION]"/>
+
+<!-- Twitter metadata -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@PartidodelaRed">
+<meta name="twitter:creator" content="@PartidodelaRed">
+<meta name="twitter:title" content="¿Qué Proponen?">
+<meta name="twitter:description" content="[DESCRIPTION]">
+<meta name="twitter:image" content="[IMAGE FOR	TWITTER]">
+
+<title>¿Que Proponen?</title>
+
+<link href="CSS/styles.css?2" rel="stylesheet" type="text/css" />
+<link href="CSS/styles_ballotage.css?1" rel="stylesheet" type="text/css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="JS/iframeResizer.contentWindow.min.js"></script>
+<script src="JS/async.js"></script>
+
+<!-- Script Principal -->
+<script src="JS/javascript.js?v3"></script>
+
+<!-- MODULOS INCLUIDOS -->
+<!-- Keep at least one of these -->
+<script src="JS/modulos/detalle.js?v3"></script>
+<script src="JS/modulos/medianaranja.js?v3"></script>
+<script src="JS/modulos/versus.js?v3"></script>
+
+<!-- MANEJO DE ENTIDADES -->
+<script src="JS/Clases.js"></script>
+<script src="JS/Partidos.js?v3"></script>
+<script src="JS/Candidatos.js?v3"></script>
+<script src="JS/Propuestas.js?v3"></script>
+<script src="JS/Cargos.js?v3"></script>
+<script src="JS/Ciudades.js?v3"></script>
+<script src="JS/Categorias.js?v3"></script>
+
+<!-- Scripts Varios -->
+<script src="JS/Cookies.js"></script>
+<script src="JS/Templates.js?v3"></script>
+<script src="JS/Chart.js"></script>
+<script src="JS/jquery.selectric.min.js"></script>
+<script src="JS/jquery.barrating.js"></script>
+<link href="CSS/selectric.css" rel="stylesheet" type="text/css" />
+<script src="JS/Utilities.js"></script>
+
+<link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+<script src="https://apis.google.com/js/client.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="JS/jquery.ui.touch-punch.min.js"></script>
+
+<script language="javascript" type="application/javascript">
+	if (window.location.hash == 'close.html') window.close();
+
+	//Variables Globales
+	var Ciudad = '[City name]';
+	var Facebook = '[Your facebook]';
+	var Twitter = '[Your twitter]';
+
+	$(document).ready(function(e) {
+		$.ajax({
+			method: "GET",
+			url: 'PHP/GetData.php',
+			success: function(data){
+				Ciudad = $.parseJSON(data).ciudad;
+				Facebook = $.parseJSON(data).facebook;
+				Twitter = $.parseJSON(data).twitter;
+				SetearDatos();
+				$('.mainContainer').on('', function(e) {
+	    		RecalcularMedidas();
+	      });
+
+				setTimeout(function(){
+					var cookie = leerCookie('yaestuvo');
+					if(cookie == null)
+					{
+						MostrarMasInfo();
+						crearCookie('yaestuvo', 'true', 30);
+					}
+				}, 2000);
+	      async.series(
+	    		CargarCategorias(),
+	    		CargarCargos(),
+	    		CargarCiudades(),
+	    		CargarCandidatos(),
+	    		CargarPartidos(),
+	    		CargarPropuestas(),
+	    		CargaInicial()
+	    	);
+			}
+		})
+});
+
+</script>
+
+</head>
+
+<body>
+
+		<!-- Google Analytics code -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', '[GA Key]', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+		<!-- Facebook API code -->
+		<script>
+			window.fbAsyncInit = function() {
+				FB.init({
+				  appId      : '[Facebook API Key]',
+				  xfbml      : true,
+				  version    : 'v2.3'
+				});
+			};
+
+			(function(d, s, id){
+				 var js, fjs = d.getElementsByTagName(s)[0];
+				 if (d.getElementById(id)) {return;}
+				 js = d.createElement(s); js.id = id;
+				 js.src = '//connect.facebook.net/es_LA/sdk.js';
+				 fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+    </script>
+
+		<!-- Twitter API code -->
+    <script>
+			window.twttr = (function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0],
+				t = window.twttr || {};
+				if (d.getElementById(id)) return t;
+				js = d.createElement(s);
+				js.id = id;
+				js.src = "https://platform.twitter.com/widgets.js";
+				fjs.parentNode.insertBefore(js, fjs);
+
+				t._e = [];
+				t.ready = function(f) {
+				t._e.push(f);
+				};
+
+				return t;
+			}(document, "script", "twitter-wjs"));
+		</script>
+
+	<div class="bannerEmbeded">
+        <div class="logo"></div>
+        <div class="headerText">
+            <div class="title" onclick="javascript:CargaInicial(false)">¿Qué proponen?</div>
+        </div>
+        <div class="creditosPDR">
+            <div style="display:inline-block; vertical-align:top;">
+                <div class="first">Creado por</div>
+                <div class="second">Partido de la Red</div>
+                <div class="likeButtonsPDR">
+                    <a href="https://facebook.com/PartidoDeLaRed" target="_blank"><div class="facebookButton">facebook</div></a>
+                    <a href="https://twitter.com/PartidodelaRed" target="_blank"><div class="twitterButton">twitter</div></a>
+                </div>
+            </div>
+			<a href="https://partidodelared.org"><div class="logoPDR"></div></a>
+        </div>
+    </div>
+	<div class="headerContainer">
+        <div class="widthLimiter">
+	        <div class="logo"></div>
+          <div class="headerText">
+						<div class="title" onclick="javascript:CargaInicial(false)">¿Qué proponen?</div>
+          </div>
+					<nav class="menu">
+						<div onclick="javascript:MostrarMasInfo()">Más Info</div>
+					</nav>
+  		</div>
+    </div>
+
+		<!-- Where all the content is displayed -->
+    <div id="contenido" class="mainContainer">
+
+        <div class="wrapperFull">
+            <div class="widthLimiter">
+                <div id="tabsContainer">
+                </div>
+            </div>
+        </div>
+
+        <div class="contentContainer">
+        </div>
+    </div>
+
+	<div class='footerContainer'>
+        <div style="max-width: 960px; margin:auto;">
+            <div style="font-size:30px; padding: 10px;">¿Qué Proponen?</div>
+            <div class="contactContainer">
+							<!-- Your Social Netwoks -->
+            	<div style="font-size: 23px;">Contactanos</div>
+                <a class="page" href="http://partidodelared.org" target="_blank"></a>
+                <a class="facebook" href="http://facebook.com/PartidoDeLaRed" target="_blank"></a>
+                <a class="twitter" href="http://twitter.com/PartidodelaRed" target="_blank"></a>
+                <a class="google" href="http://plus.google.com/101519187164139196788" target="_blank"></a>
+            </div>
+        </div>
+        <div class="creditsContainer">
+            <div>Hecho con <div class="heartIcon"></div> por pares del Partido de la Red - 2016</div>
+        </div>
+  	</div>
+
+	<!-- IF parameter in url e=1 is present -->
+	<div class="bannerEmbeded" style="height:auto !important;">
+        <div class="contactContainer">
+            <a class="page" href="http://partidodelared.org" target="_blank"></a>
+            <a class="facebook" href="http://facebook.com/PartidoDeLaRed" target="_blank"></a>
+            <a class="twitter" href="http://twitter.com/PartidodelaRed" target="_blank"></a>
+            <a class="google" href="http://plus.google.com/101519187164139196788" target="_blank"></a>
+        </div>
+        <div class="creditsContainer">
+            <div>Hecho con <div class="heartIcon"></div> por pares del Partido de la Red - 2016</div>
+        </div>
+    </div>
+
+</body>
+</html>

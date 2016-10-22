@@ -1,0 +1,113 @@
+<link rel="stylesheet" type="text/css" href="Uploadifive/uploadifive.css">
+<div class="pn-wraper">
+    <div class="pn-container">
+ 		<div class="pn-title">Edición de Candidato</div>
+    	<form name="formEdicionCandidato" id="formEdicionCandidato" onSubmit="return false;">
+        	<div>
+                <label class="labelInput">Nombre</label><input id="name-input" name="name" class="textInput" type="text" placeholder="nombre del candidato" required="required"/>
+            </div>
+            <div>
+                <label class="labelInput">Cargo</label><select id="cargo-input" name="cargo" class="selectInput" required="required"/>
+            </div>
+            <div>
+                <label class="labelInput">Ciudad</label><select id="ciudad-input" name="ciudad" class="selectInput"/>
+            </div>
+            <div>
+                <label class="labelInput">Partido</label><select id="partido-input" name="partido" class="selectInput" required="required"/>
+            </div>
+        	<div>
+                <label class="labelInput">Lista</label><input id="list-input" name="list" class="textInput" type="text" placeholder="lista del candidato" required="required"/>
+            </div>
+        	<div>
+                <label class="labelInput">Twitter</label><input id="twitter-input" name="twitter" class="textInput" type="text" placeholder="@ejemplo"/>
+            </div>
+            <div>
+                <label class="labelInput">Imagen</label><div class="imageSource"></div><input id="image-input" type="file" placeholder="imagen del partido"/>
+                <div class="sugerencia">Tamaño recomendado: 150px x 150px. Máximo: 1MB</div>
+            </div>
+        	<div>
+                <label class="labelInput">Pasó las PASO</label><input id="PASO-input" type="checkbox" checked="false">
+            </div>
+        	<div>
+                <label class="labelInput">Está en Ballotage</label><input id="ballotage-input" type="checkbox" checked="false">
+            </div>
+            <button id="submit" type="submit">Agregar Candidato</button>
+        </form>
+ 		<div class="pn-closeButton" onclick="javascript:CerrarPanel()"></div>
+    </div>
+</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script>
+	$(document).ready(function(e) {
+		partidos.forEach(function(part)
+		{
+			var option = document.createElement('option');
+			$(option).attr('id', part.codigo);
+			$(option).attr('value', part.codigo);
+			$(option).html(part.nombre);
+			$('#partido-input').append(option);
+		});
+
+		$('#PASO-input').checkboxpicker();
+		$('#ballotage-input').checkboxpicker();
+
+		cargos.forEach(function(car)
+		{
+			var option = document.createElement('option');
+			$(option).attr('id', car.codigo);
+			$(option).attr('value', car.codigo);
+			$(option).html(car.nombre);
+			$('#cargo-input').append(option);
+		});
+		$('#cargo-input').change(function(e) {
+            if(document.getElementById('cargo-input').value == 0)
+			{
+				document.getElementById('ciudad-input').value = 0;
+				$('#ciudad-input').parent().slideUp('100ms');
+			}
+			else
+				$('#ciudad-input').parent().slideDown('100ms');
+        });
+
+		ciudades.forEach(function(ciu)
+		{
+			var option = document.createElement('option');
+			$(option).attr('id', ciu.codigo);
+			$(option).attr('value', ciu.codigo);
+			$(option).html(ciu.nombre);
+			if(ciu.codigo == 0)
+				$(option).css('display','none');
+			$('#ciudad-input').append(option);
+		});
+		if(ciudades.length < 2)
+		{
+			document.getElementById('ciudad-input').value = 0;
+			$($('#ciudad-input').parent()).hide();
+		}
+	});
+
+	window.nombreImagenCandidato = null;
+   	$('#image-input').uploadifive({
+		'auto'			: false,
+		'fileSizeLimit' : 1048,
+		'multi'        : false,
+		'queueSizeLimit' : 1,
+        'uploadScript' : 'PHP/SubirImagenCandidato.php',
+		'width'        : '30%',
+		'onAddQueueItem' : function(file) {
+			window.nombreImagenCandidato = file.name;
+			var actualImage = $('#image-input').parent().children()[1].files[0];
+			var tmppath = URL.createObjectURL(actualImage);
+			$('.imageSource').css('background-image', 'url('+tmppath+')');
+        },
+		'onUploadComplete' : function(file, response, data) {
+        },
+		'onError'      : function(errorType, file, uploadAll) {
+        }
+	});
+
+	$( "#formEdicionCandidato" ).submit(function( event ) {
+		event.preventDefault();
+		EdicionCandidato();
+	});
+</script>
