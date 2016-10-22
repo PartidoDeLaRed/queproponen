@@ -10,21 +10,21 @@ La **metodología** de recopilación de la información se realizó investigando
 
 ## Módulos
 
-Dentro del sitio hay tres formas de mostrar la misma información:
+Dentro del sitio hay tres formas de mostrar la misma información, estos módulos funcionan como solapas dentro de la página. Para mostrarlos o no, basta con agregar o quitar las referencias de estos en el index.html:
 
-**'Detalle'**
+**'Detalle'** (detalle.js)
 
 Consiste en mostrar una página principal con los partidos, candidatos(en caso de haber más de un candidato por partido) y temas, pudiendo seleccionar el que se desee y ver en detalle las propuestas por el agrupamiento elegido.
 
 Un ejemplo de esta versión se puede ver en [http://queproponen.com.ar/ubasociales/#propuestas(http://queproponen.com.ar/ubasociales/#propuestas)
 
-**'Media Naranja'**
+**'Media Naranja'** (medianaranja.js)
 
 Gamification de la información. A través de las categorías se deberá elegír el bloque de propuestas (sin conocer de quien son) que más le guste (pudiendo elegir 'ninguna de las anteriores') y ponderar la categoría para generar un resultado de afinidad en base a porcentaje de elección por candidato por categoría.
 
 Un ejemplo de esta versión se puede ver en [http://queproponen.com.ar/#medianaranja](http://queproponen.com.ar/#medianaranja)
 
-**'Versus'**
+**'Versus'** (versus.js)
 
 En este formato se mostraran dos candidatos encolumnados, con todas sus propuestas, agrupadas por categoría para así poder hacer una mejor comparación entre ellos. Se podrá seleccionar cualquier par de candidatos para ser comparados.
 
