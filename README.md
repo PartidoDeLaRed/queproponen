@@ -30,6 +30,20 @@ En este formato se mostraran dos candidatos encolumnados, con todas sus propuest
 
 Un ejemplo de esta versión se puede ver en [http://queproponen.com.ar/ubaexactas/#versus](http://queproponen.com.ar/ubaexactas/#versus)
  
+## Implementaciones hechas
+
+Se hicieron varias implementaciones de este sistema, y cada una con su visualiación específica acorde a la información
+Estos diseños se pueden obtener desde sus correspondientes carpetas en este repositorio, reemplazando los archivos en la versión base.
+
+**Versión Argentina**
+Este tipo de visualización se creó pensando en dos candidatos únicamente. Se puede un ejemplo en [http://queproponen.com.ar/argentina](http://queproponen.com.ar/argentina)
+
+**Versión CABA**
+Este tipo de visualización se creó pensando en 5 candidatos, con toda la información en una sóla página y sin los módulos. Se puede un ejemplo en [http://queproponen.com.ar/caba](http://queproponen.com.ar/caba)
+
+**Versión CABA PASO**
+Esta fue la primera versión del sitio, sin módulos, se creó pensando en muchos partidos con muchos candidatos, con la posibilidad de navegarlos. Se puede un ejemplo en [http://queproponen.com.ar/caba/PASO](http://queproponen.com.ar/caba/PASO)
+
 ## Implementación
 
 1. Copiar el contenido de la carpeta 'Base Site' en el servidor
